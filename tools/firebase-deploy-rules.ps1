@@ -11,7 +11,7 @@ $firebaseCmd = Get-Command firebase -ErrorAction SilentlyContinue
 if (-not $firebaseCmd) {
     $npx = Get-Command npx -ErrorAction SilentlyContinue
     if ($npx) {
-        npx --yes firebase-tools@13.0.0 deploy --only firestore:rules --project $project --non-interactive 2>&1 | Out-Null
+        npx --yes firebase-tools@latest deploy --only firestore:rules,auth --project $project --non-interactive 2>&1 | Out-Null
         if ($LASTEXITCODE -eq 0) { Write-Output "FIREBASE_RULES=ok"; exit 0 }
     }
     Write-Output "FIREBASE_RULES=skip_no_cli"

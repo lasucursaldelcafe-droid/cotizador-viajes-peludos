@@ -7,16 +7,53 @@ const VpAuth = (function () {
   let db = null;
   let currentUser = null;
   let currentProfile = null;
+  let lastAuthError = null;
   const listeners = new Set();
+
+  const AUTH_ERRORS = {
+    'auth/unauthorized-domain': 'Dominio no autorizado. Falta configurar Firebase Auth para este sitio.',
+    'auth/popup-blocked': 'El navegador bloqueo la ventana. Intentando otra forma...',
+    'auth/popup-closed-by-user': 'Cerraste la ventana de Google. Intenta de nuevo.',
+    'auth/cancelled-popup-request': 'Espera a que termine el inicio de sesion anterior.',
+    'auth/network-request-failed': 'Sin conexion a internet. Revisa tu red.',
+    'auth/operation-not-allowed': 'Google Sign-In no esta habilitado en Firebase.',
+    'auth/account-exists-with-different-credential': 'Ya existe una cuenta con ese correo usando otro metodo.',
+    'auth/operation-not-supported-in-this-environment': 'Esta app no funciona abriendo el archivo directamente (file://). Abre https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/ o ejecuta un servidor local (Live Server, npx serve, etc.).'
+  };
+
+  const UNSUPPORTED_ENV_MSG = AUTH_ERRORS['auth/operation-not-supported-in-this-environment'];
+
+  function isAuthEnvironmentSupported() {
+    const p = location.protocol;
+    if (p !== 'http:' && p !== 'https:' && p !== 'chrome-extension:') return false;
+    try {
+      localStorage.setItem('__vp_env', '1');
+      localStorage.removeItem('__vp_env');
+      sessionStorage.setItem('__vp_env', '1');
+      sessionStorage.removeItem('__vp_env');
+    } catch (e) {
+      return false;
+    }
+    return true;
+  }
+
+  function unsupportedEnvError() {
+    return { code: 'auth/operation-not-supported-in-this-environment', message: UNSUPPORTED_ENV_MSG };
+  }
 
   function isConfigured() {
     const c = typeof VP_FIREBASE_CONFIG !== 'undefined' ? VP_FIREBASE_CONFIG : null;
     return !!(c && c.enabled && c.apiKey && c.projectId);
   }
 
+  function formatAuthError(err) {
+    if (!err) return 'Error de autenticacion';
+    return AUTH_ERRORS[err.code] || err.message || 'No se pudo iniciar sesion con Google';
+  }
+
   function notify() {
     listeners.forEach((fn) => {
-      try { fn({ user: currentUser, profile: currentProfile }); } catch (e) { console.error(e); }
+      try { fn({ user: currentUser, profile: currentProfile, error: lastAuthError }); } catch (e) { console.error(e); }
     });
   }
 
@@ -52,13 +89,15 @@ const VpAuth = (function () {
   }
 
   async function touchLogin(user) {
-    await db.collection('users').doc(user.uid).update({
+    const ref = db.collection('users').doc(user.uid);
+    await ref.set({
       lastLoginAt: firebase.firestore.FieldValue.serverTimestamp(),
       displayName: user.displayName || user.email || 'Usuario',
-      photoURL: user.photoURL || ''
-    });
-    const snap = await db.collection('users').doc(user.uid).get();
-    currentProfile = snap.data();
+      photoURL: user.photoURL || '',
+      email: user.email || ''
+    }, { merge: true });
+    const snap = await ref.get();
+    currentProfile = snap.data() || currentProfile;
   }
 
   function cotizadorMeta() {
@@ -71,10 +110,24 @@ const VpAuth = (function () {
     };
   }
 
+  function preferRedirect() {
+    const host = location.hostname;
+    if (host.includes('github.io') || host.includes('web.app') || host.includes('firebaseapp.com')) {
+      return true;
+    }
+    return /Android|iPhone|iPad|iPod|Mobile|webOS|BlackBerry/i.test(navigator.userAgent)
+      || (window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
+  }
+
   async function init() {
     if (!isConfigured()) return { configured: false };
+    if (!isAuthEnvironmentSupported()) {
+      lastAuthError = unsupportedEnvError();
+      return { configured: true, unsupportedEnv: true, user: null, profile: null, error: lastAuthError };
+    }
     if (typeof firebase === 'undefined') throw new Error('Firebase SDK no cargado');
 
+    lastAuthError = null;
     app = firebase.apps.length
       ? firebase.app()
       : firebase.initializeApp({
@@ -87,11 +140,19 @@ const VpAuth = (function () {
         });
     auth = firebase.auth();
     db = firebase.firestore();
-    auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(() => {});
+    try {
+      await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    } catch (e) {
+      console.warn('setPersistence:', e);
+    }
 
     try {
-      await auth.getRedirectResult();
+      const result = await auth.getRedirectResult();
+      if (result.user) {
+        lastAuthError = null;
+      }
     } catch (e) {
+      lastAuthError = e;
       console.warn('Redirect auth:', e);
     }
 
@@ -105,6 +166,7 @@ const VpAuth = (function () {
           try {
             await ensureUserProfile(user);
             await touchLogin(user);
+            lastAuthError = null;
             notify();
           } catch (e) {
             console.error('Perfil usuario:', e);
@@ -112,27 +174,40 @@ const VpAuth = (function () {
         }
         if (!resolved) {
           resolved = true;
-          resolve({ configured: true, user: currentUser, profile: currentProfile });
+          resolve({ configured: true, user: currentUser, profile: currentProfile, error: lastAuthError });
         }
       });
     });
   }
 
-  function preferRedirect() {
-    return /Android|iPhone|iPad|iPod|Mobile|webOS|BlackBerry/i.test(navigator.userAgent)
-      || (window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
-  }
-
   async function signInGoogle() {
+    if (!isAuthEnvironmentSupported()) {
+      lastAuthError = unsupportedEnvError();
+      throw new Error(formatAuthError(lastAuthError));
+    }
+    if (!auth) await init();
     if (!auth) throw new Error('Auth no inicializado');
+
     const provider = new firebase.auth.GoogleAuthProvider();
     provider.setCustomParameters({ prompt: 'select_account' });
+
     if (preferRedirect()) {
       await auth.signInWithRedirect(provider);
       return null;
     }
-    const cred = await auth.signInWithPopup(provider);
-    return cred.user;
+
+    try {
+      const cred = await auth.signInWithPopup(provider);
+      lastAuthError = null;
+      return cred.user;
+    } catch (e) {
+      if (e.code === 'auth/popup-blocked' || e.code === 'auth/popup-closed-by-user' || e.code === 'auth/cancelled-popup-request') {
+        await auth.signInWithRedirect(provider);
+        return null;
+      }
+      lastAuthError = e;
+      throw new Error(formatAuthError(e));
+    }
   }
 
   async function signOut() {
@@ -141,7 +216,7 @@ const VpAuth = (function () {
 
   function onChange(fn) {
     listeners.add(fn);
-    fn({ user: currentUser, profile: currentProfile });
+    fn({ user: currentUser, profile: currentProfile, error: lastAuthError });
     return () => listeners.delete(fn);
   }
 
@@ -153,6 +228,10 @@ const VpAuth = (function () {
     return !!currentUser;
   }
 
+  function getLastError() {
+    return lastAuthError;
+  }
+
   function getDb() {
     return db;
   }
@@ -160,12 +239,16 @@ const VpAuth = (function () {
   return {
     init,
     isConfigured,
+    isAuthEnvironmentSupported,
+    unsupportedEnvError,
     signInGoogle,
     signOut,
     onChange,
     isAdmin,
     isSignedIn,
     cotizadorMeta,
+    formatAuthError,
+    getLastError,
     getDb,
     get user() { return currentUser; },
     get profile() { return currentProfile; }

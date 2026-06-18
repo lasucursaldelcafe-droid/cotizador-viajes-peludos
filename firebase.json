@@ -1,5 +1,19 @@
 {
   "firestore": {
     "rules": "firestore.rules"
+  },
+  "auth": {
+    "providers": {
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "Viajes Peludos",
+        "supportEmail": "lasucursaldelcafe-droid@users.noreply.github.com",
+        "authorizedDomains": [
+          "localhost",
+          "lasucursaldelcafe-droid.github.io",
+          "viajes-peludos-cotizador.firebaseapp.com",
+          "viajes-peludos-cotizador.web.app"
+        ]
+      }
+    }
   }
 }

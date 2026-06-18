@@ -46,8 +46,17 @@ const VpAppAuth = (function () {
       return initLocal();
     }
 
-    $('authConfigHint')?.setAttribute('hidden', '');
+    if (!VpAuth.isAuthEnvironmentSupported()) {
+      console.warn('Auth:', VpAuth.formatAuthError(VpAuth.unsupportedEnvError()));
+      return initLocal();
+    }
+
     await VpAuth.init();
+
+    const lastErr = VpAuth.getLastError();
+    if (lastErr) {
+      console.warn('Auth redirect:', VpAuth.formatAuthError(lastErr));
+    }
 
     if (!VpAuth.isSignedIn()) {
       goLogin();
