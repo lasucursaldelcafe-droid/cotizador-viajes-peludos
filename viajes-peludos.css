@@ -198,6 +198,18 @@
 }
 .vp-admin-meta { display: flex; flex-wrap: wrap; gap: .5rem; font-size: .78rem; margin-top: .2rem; }
 
+.vp-download-actions {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  margin-top: 1rem;
+}
+.vp-download-actions .btn {
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
 .vp-form-panel { display: flex; flex-direction: column; gap: .75rem; }
 .vp-card h2 { color: var(--vp-purple); font-size: .95rem; }
 .vp-card .hint { font-weight: 400; color: var(--muted); font-size: .8rem; }

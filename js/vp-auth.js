@@ -87,30 +87,52 @@ const VpAuth = (function () {
         });
     auth = firebase.auth();
     db = firebase.firestore();
+    auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(() => {});
+
+    try {
+      await auth.getRedirectResult();
+    } catch (e) {
+      console.warn('Redirect auth:', e);
+    }
 
     return new Promise((resolve) => {
+      let resolved = false;
       auth.onAuthStateChanged(async (user) => {
         currentUser = user;
         currentProfile = null;
+        notify();
         if (user) {
           try {
             await ensureUserProfile(user);
             await touchLogin(user);
+            notify();
           } catch (e) {
             console.error('Perfil usuario:', e);
           }
         }
-        notify();
-        resolve({ configured: true, user: currentUser, profile: currentProfile });
+        if (!resolved) {
+          resolved = true;
+          resolve({ configured: true, user: currentUser, profile: currentProfile });
+        }
       });
     });
+  }
+
+  function preferRedirect() {
+    return /Android|iPhone|iPad|iPod|Mobile|webOS|BlackBerry/i.test(navigator.userAgent)
+      || (window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
   }
 
   async function signInGoogle() {
     if (!auth) throw new Error('Auth no inicializado');
     const provider = new firebase.auth.GoogleAuthProvider();
     provider.setCustomParameters({ prompt: 'select_account' });
-    await auth.signInWithPopup(provider);
+    if (preferRedirect()) {
+      await auth.signInWithRedirect(provider);
+      return null;
+    }
+    const cred = await auth.signInWithPopup(provider);
+    return cred.user;
   }
 
   async function signOut() {

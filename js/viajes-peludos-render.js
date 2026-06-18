@@ -393,6 +393,10 @@ function vpDocFilename(data) {
   return `Cotizacion-Viajes-Peludos-${ruta}-${data.fecha || todayISO()}.doc`;
 }
 
+function vpIsMobileDevice() {
+  return /Android|iPhone|iPad|iPod|Mobile|webOS/i.test(navigator.userAgent);
+}
+
 function vpDownloadBlob(blob, filename) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -402,7 +406,44 @@ function vpDownloadBlob(blob, filename) {
   document.body.appendChild(a);
   a.click();
   a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 3000);
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+  return url;
+}
+
+function vpOpenDownloadModal(url, filename, blob) {
+  const dlg = document.getElementById('dlgDownload');
+  const link = document.getElementById('downloadLink');
+  const openLink = document.getElementById('downloadOpen');
+  const hint = document.getElementById('downloadHint');
+  if (!dlg || !link) {
+    window.open(url, '_blank');
+    return;
+  }
+  link.href = url;
+  link.download = filename;
+  if (openLink) {
+    openLink.href = url;
+    openLink.target = '_blank';
+  }
+  if (hint) {
+    hint.textContent = vpIsMobileDevice()
+      ? 'Toca el boton morado para descargar. En iPhone: mantén pulsado el enlace y elige "Descargar archivo".'
+      : 'Si no inicia la descarga, usa "Abrir documento" y guarda desde el navegador.';
+  }
+  dlg.showModal();
+
+  const shareBtn = document.getElementById('btnShareDoc');
+  if (shareBtn && navigator.share && blob) {
+    shareBtn.hidden = false;
+    shareBtn.onclick = async () => {
+      try {
+        const file = new File([blob], filename, { type: 'application/msword' });
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          await navigator.share({ files: [file], title: 'Cotizacion Viajes Peludos' });
+        }
+      } catch (_) { /* usuario cancelo */ }
+    };
+  }
 }
 
 function vpExportDoc(data) {
@@ -418,9 +459,30 @@ function vpExportDoc(data) {
         window.AndroidApp.saveDoc(b64, filename);
       };
       reader.readAsDataURL(blob);
-      return;
+      return { ok: true, method: 'android' };
     } catch (_) { /* fallback */ }
   }
 
+  const url = URL.createObjectURL(blob);
+
+  if (navigator.canShare) {
+    try {
+      const file = new File([blob], filename, { type: 'application/msword' });
+      if (navigator.canShare({ files: [file] })) {
+        navigator.share({ files: [file], title: 'Cotizacion Viajes Peludos' }).catch(() => {
+          vpOpenDownloadModal(url, filename, blob);
+        });
+        return { ok: true, method: 'share' };
+      }
+    } catch (_) { /* continuar */ }
+  }
+
+  if (vpIsMobileDevice()) {
+    vpOpenDownloadModal(url, filename, blob);
+    return { ok: true, method: 'modal' };
+  }
+
   vpDownloadBlob(blob, filename);
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+  return { ok: true, method: 'download' };
 }

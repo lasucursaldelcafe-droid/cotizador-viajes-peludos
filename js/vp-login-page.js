@@ -13,7 +13,7 @@
   }
 
   function goToApp() {
-    window.location.href = VP_ROUTES.app;
+    window.location.replace(VP_ROUTES.app);
   }
 
   function showLocalMode() {
@@ -26,12 +26,28 @@
     $('loginConfigured')?.removeAttribute('hidden');
   }
 
+  function showLoading(msg) {
+    const btn = $('btnGoogleLogin');
+    if (btn) {
+      btn.disabled = true;
+      btn.dataset.prevText = btn.innerHTML;
+      btn.textContent = msg || 'Conectando...';
+    }
+  }
+
   async function boot() {
     $('btnGoogleLogin')?.addEventListener('click', async () => {
       try {
-        await VpAuth.signInGoogle();
+        showLoading('Abriendo Google...');
+        const user = await VpAuth.signInGoogle();
+        if (user) goToApp();
       } catch (e) {
         showToast(e.message || 'No se pudo iniciar sesion con Google');
+        const btn = $('btnGoogleLogin');
+        if (btn && btn.dataset.prevText) {
+          btn.disabled = false;
+          btn.innerHTML = btn.dataset.prevText;
+        }
       }
     });
 

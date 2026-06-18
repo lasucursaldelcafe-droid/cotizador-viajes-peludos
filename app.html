@@ -106,6 +106,21 @@
     </form>
   </dialog>
 
+  <dialog id="dlgDownload" class="vp-dialog">
+    <form method="dialog" class="vp-dialog-inner">
+      <header>
+        <h2>📝 Descargar cotización</h2>
+        <button type="button" class="btn-icon" id="btnCloseDownload" aria-label="Cerrar">✕</button>
+      </header>
+      <p id="downloadHint" class="vp-muted"></p>
+      <div class="vp-download-actions">
+        <a id="downloadLink" class="btn btn-primary" download>⬇️ Descargar Word</a>
+        <a id="downloadOpen" class="btn btn-secondary" target="_blank" rel="noopener">📂 Abrir documento</a>
+        <button type="button" class="btn btn-secondary" id="btnShareDoc" hidden>📤 Compartir / Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
   <dialog id="dlgFormato" class="vp-dialog">
     <form method="dialog" class="vp-dialog-inner">
       <header>

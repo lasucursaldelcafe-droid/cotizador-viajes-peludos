@@ -140,8 +140,14 @@
     const docData = JSON.parse(JSON.stringify(data));
     try {
       await vpPrepareDocAssets(docData);
-      vpExportDoc(docData);
-      showToast('Word (.doc) descargado — ábrelo en Word o Google Docs');
+      const result = vpExportDoc(docData);
+      if (result?.method === 'modal') {
+        showToast('Toca "Descargar Word" en la ventana');
+      } else if (result?.method === 'share') {
+        showToast('Elige donde guardar el documento');
+      } else {
+        showToast('Documento Word listo');
+      }
     } catch (e) {
       console.error(e);
       showToast('No se pudo generar el documento');
@@ -217,6 +223,7 @@
     });
 
     $('btnDoc').addEventListener('click', doDoc);
+    $('btnCloseDownload')?.addEventListener('click', () => $('dlgDownload')?.close());
     $('btnPrint').addEventListener('click', () => {
       readForm();
       setTimeout(() => window.print(), 200);
