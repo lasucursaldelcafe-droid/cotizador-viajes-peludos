@@ -11,12 +11,36 @@
     clearTimeout(showToast._t);
     showToast._t = setTimeout(() => el.classList.remove('show'), 2600);
   }
+  window.vpShowToast = showToast;
+
+  function attachCotizador(data) {
+    const meta = typeof VpAuth !== 'undefined' ? VpAuth.cotizadorMeta() : null;
+    if (meta) data.cotizador = meta;
+    return data;
+  }
+
+  let cloudTimer = null;
+  function scheduleCloudSave() {
+    if (typeof VpQuotesCloud === 'undefined' || !VpAuth.isConfigured() || !VpAuth.isSignedIn()) return;
+    clearTimeout(cloudTimer);
+    cloudTimer = setTimeout(async () => {
+      try {
+        attachCotizador(data);
+        await VpQuotesCloud.save(data);
+        $('saveStatus').title = `Nube + local · ${new Date().toLocaleTimeString('es-CO')}`;
+      } catch (e) {
+        console.error('Nube:', e);
+      }
+    }, 1200);
+  }
 
   function scheduleSave() {
     clearTimeout(saveTimer);
     saveTimer = setTimeout(() => {
+      attachCotizador(data);
       const at = vpSave(data);
       $('saveStatus').title = `Guardado ${new Date(at).toLocaleTimeString('es-CO')}`;
+      scheduleCloudSave();
     }, 350);
   }
 
@@ -81,6 +105,7 @@
 
   function renderPreview() {
     $('previewMount').innerHTML = vpRenderPreview(data);
+    document.dispatchEvent(new CustomEvent('vp-preview-updated'));
   }
 
   function readFormatoDialog() {
@@ -126,6 +151,7 @@
     const fmt = data.formato;
     data = vpCloneDefaults();
     data.formato = fmt;
+    if (typeof VpQuotesCloud !== 'undefined') VpQuotesCloud.setCloudId(null);
     fillForm();
     readForm();
     showToast('Nueva cotización');
@@ -140,14 +166,20 @@
     showToast('Textos oficiales restaurados');
   }
 
-  function init() {
+  async function boot() {
     vpApplyLayoutVars();
     vpApplyEmbeddedAssets();
+
+    if (typeof VpAuthUi !== 'undefined') await VpAuthUi.init();
+    if (typeof VpAdmin !== 'undefined') VpAdmin.init();
+    if (typeof VpResponsive !== 'undefined') VpResponsive.init();
+
     const saved = vpLoad();
     if (saved) {
       data = saved;
       if (!data.formato) data.formato = JSON.parse(JSON.stringify(VP_DEFAULTS));
       if (!data.ciudadCarta) data.ciudadCarta = 'Medellín';
+      if (data.cloudId && typeof VpQuotesCloud !== 'undefined') VpQuotesCloud.setCloudId(data.cloudId);
     }
     if (typeof VP_EMBEDDED_ASSETS !== 'undefined') {
       data.formato.assets.logo = VP_EMBEDDED_ASSETS.logo;
@@ -205,5 +237,5 @@
     scheduleSave();
   }
 
-  document.addEventListener('DOMContentLoaded', init);
+  document.addEventListener('DOMContentLoaded', boot);
 })();
