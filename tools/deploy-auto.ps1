@@ -55,6 +55,10 @@ try {
     Write-DeployStatus -Status ok -PagesUrl $pagesUrl -Message "Publicado. Pages activo en 1-3 minutos."
     exit 0
 } catch {
+    if ($_.Exception.Message -match '409' -and $pagesUrl) {
+        Write-DeployStatus -Status ok -PagesUrl $pagesUrl -Message "Publicado (Pages ya estaba activo)."
+        exit 0
+    }
     Write-DeployStatus -Status error -PagesUrl $pagesUrl -Message $_.Exception.Message
     exit 1
 }
