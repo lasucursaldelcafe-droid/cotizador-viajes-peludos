@@ -3,6 +3,7 @@
 .env.*
 .github-token
 .gh-token
+.firebase-token
 secrets/
 *.pem
 credentials.json

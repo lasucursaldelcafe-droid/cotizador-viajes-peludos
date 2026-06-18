@@ -7,7 +7,7 @@ alwaysApply: false
 
 Cuando el usuario pida **publicar**, **subir**, **actualizar en GitHub**, **GitHub Pages**, **desplegar**, **recrear repo** o ver la versión en el **celular** del Cotizador Viajes Peludos:
 
-- Si pide **recrear** o **empezar de cero** en GitHub, ejecuta `tools/recrear-github.ps1` en lugar de `publicar.ps1`.
+- Si pide **recrear** o **empezar de cero** en GitHub, ejecuta `tools/automatizar-todo.ps1 -Recreate`.
 
 Cuando el usuario pida publicar normalmente:
 
@@ -15,7 +15,7 @@ Cuando el usuario pida publicar normalmente:
 2. Ejecuta (sin pedir confirmación interactiva al usuario):
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File "D:\Desarrollo\02_Proyectos\Cotizador-Web\tools\publicar.ps1"
+powershell -NoProfile -ExecutionPolicy Bypass -File "D:\Desarrollo\02_Proyectos\Cotizador-Web\tools\automatizar-todo.ps1"
 ```
 
 3. Interpreta la salida:
@@ -23,7 +23,7 @@ powershell -ExecutionPolicy Bypass -File "D:\Desarrollo\02_Proyectos\Cotizador-W
    - `STATUS=auth_required` → guía **una sola vez**:
      - `winget install --id GitHub.cli -e --accept-source-agreements --accept-package-agreements`
      - `gh auth login` (HTTPS, cuenta `lasucursaldelcafe-droid`, permisos repo)
-     - Vuelve a ejecutar `publicar.ps1`.
+     - Vuelve a ejecutar `automatizar-todo.ps1`.
    - `STATUS=error` → muestra `MESSAGE` y propón corrección.
 
 4. **No** uses `git config --global`, **no** force push, **no** commitees `.env`, tokens ni archivos en `.gitignore` de secretos.

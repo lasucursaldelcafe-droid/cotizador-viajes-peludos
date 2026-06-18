@@ -30,7 +30,7 @@ jobs:
           const c=JSON.parse(fs.readFileSync('deploy.config.json','utf8'));
           const f=c.firebase||{};
           const emails=(f.adminEmails||[]).map(e=>\"    '\"+e+\"'\").join(',\\n')||'';
-          const js=\`/** Auto-generado en CI */\\nconst VP_FIREBASE_CONFIG={enabled:${f.enabled!==false},apiKey:'\${f.apiKey}',authDomain:'\${f.authDomain}',projectId:'\${f.projectId}',storageBucket:'\${f.storageBucket}',messagingSenderId:'\${f.messagingSenderId}',appId:'\${f.appId}',adminEmails:[\${emails}]};\\n\`;
+          const js=\`/** Auto-generado en CI */\\nwindow.VP_FIREBASE_CONFIG={enabled:${f.enabled!==false},apiKey:'\${f.apiKey}',authDomain:'\${f.authDomain}',projectId:'\${f.projectId}',storageBucket:'\${f.storageBucket}',messagingSenderId:'\${f.messagingSenderId}',appId:'\${f.appId}',adminEmails:[\${emails}]};\\n\`;
           fs.writeFileSync('js/firebase-config.js',js);
           "
 
@@ -53,6 +53,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: w9jds/firebase-action@master
         with:
-          args: deploy --only firestore:rules --project viajes-peludos-cotizador
+          args: deploy --only firestore:rules,auth --project viajes-peludos-cotizador
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
