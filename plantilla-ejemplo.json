@@ -1,0 +1,88 @@
+{
+  "template": {
+    "id": "ejemplo-empresa",
+    "nombre": "Mi empresa — formato oficial",
+    "brand": {
+      "colorPrimario": "#1e3a5f",
+      "colorSecundario": "#0a0a0a",
+      "colorTexto": "#1a1a1a",
+      "colorGris": "#646464",
+      "colorFondo": "#f7f7f7",
+      "barraSuperior": true,
+      "alturaBarraMm": 10
+    },
+    "documento": {
+      "titulo": "COTIZACIÓN",
+      "subtitulo": "Propuesta comercial formal",
+      "etiquetaNumero": "N° Cotización",
+      "etiquetaFecha": "Fecha",
+      "etiquetaValidez": "Válida hasta",
+      "etiquetaElaboro": "Elaboró",
+      "formatoPapel": "letter",
+      "orientacion": "portrait",
+      "moneda": "COP",
+      "prefijoMoneda": "$",
+      "locale": "es-CO"
+    },
+    "emisor": {
+      "etiquetaSeccion": "PROVEEDOR",
+      "campos": [
+        { "key": "nombre", "label": "Razón social", "visible": true, "enPdf": true },
+        { "key": "nit", "label": "NIT", "visible": true, "enPdf": true },
+        { "key": "direccion", "label": "Dirección", "visible": true, "enPdf": true },
+        { "key": "telefono", "label": "Teléfono", "visible": true, "enPdf": true },
+        { "key": "email", "label": "E-mail", "visible": true, "enPdf": true }
+      ]
+    },
+    "cliente": {
+      "etiquetaSeccion": "CLIENTE",
+      "campos": [
+        { "key": "empresa", "label": "Empresa", "visible": true, "enPdf": true },
+        { "key": "contacto", "label": "Atención", "visible": true, "enPdf": true },
+        { "key": "email", "label": "E-mail", "visible": true, "enPdf": true }
+      ]
+    },
+    "tabla": {
+      "etiquetaSeccion": "DETALLE",
+      "columnas": [
+        { "key": "num", "label": "#", "tipo": "auto", "anchoPct": 6, "alinear": "center" },
+        { "key": "descripcion", "label": "Descripción", "tipo": "text", "anchoPct": 40, "alinear": "left" },
+        { "key": "cantidad", "label": "Cant.", "tipo": "number", "anchoPct": 12, "alinear": "right" },
+        { "key": "precioUnit", "label": "Valor unit.", "tipo": "money", "anchoPct": 18, "alinear": "right" },
+        { "key": "subtotal", "label": "Total", "tipo": "moneyCalc", "anchoPct": 18, "alinear": "right" }
+      ],
+      "mostrarTotales": true,
+      "etiquetaSubtotal": "Subtotal",
+      "etiquetaDescuento": "Descuento",
+      "etiquetaImpuesto": "IVA",
+      "etiquetaTotal": "TOTAL A PAGAR",
+      "impuestoPct": 19,
+      "descuentoGlobalPct": 0
+    },
+    "bloques": {
+      "introduccion": {
+        "visible": true,
+        "titulo": "Objeto de la cotización",
+        "texto": "Cordial saludo. Adjuntamos propuesta económica según su solicitud."
+      },
+      "condiciones": {
+        "visible": true,
+        "titulo": "Condiciones comerciales",
+        "texto": "Validez 15 días. Pago 50%% anticipo."
+      },
+      "notas": { "visible": true, "titulo": "Observaciones", "texto": "" },
+      "firma": {
+        "visible": true,
+        "etiquetaEmisor": "Comercial",
+        "etiquetaCliente": "Cliente",
+        "mostrarLinea": true
+      },
+      "piePagina": {
+        "visible": true,
+        "texto": "Gracias por su confianza."
+      }
+    }
+  },
+  "logo": null,
+  "exportedAt": "2026-06-16"
+}
