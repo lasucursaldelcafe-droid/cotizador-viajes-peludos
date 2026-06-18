@@ -1,4 +1,4 @@
-﻿# Publicación automática Cotizador Viajes Peludos -> GitHub Pages
+# Publicación automática Cotizador Viajes Peludos -> GitHub Pages
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 
