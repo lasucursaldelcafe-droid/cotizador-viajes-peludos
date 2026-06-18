@@ -1,0 +1,27 @@
+﻿---
+description: Publicar Cotizador Viajes Peludos en GitHub Pages desde el chat
+alwaysApply: false
+---
+
+# Publicar Viajes Peludos (GitHub Pages)
+
+Cuando el usuario pida **publicar**, **subir**, **actualizar en GitHub**, **GitHub Pages**, **desplegar** o ver la versión en el **celular** del Cotizador Viajes Peludos:
+
+1. Lee `deploy.config.json` en la raíz del proyecto para owner, repo y `pages_url`.
+2. Ejecuta (sin pedir confirmación interactiva al usuario):
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "D:\Desarrollo\02_Proyectos\Cotizador-Web\tools\publicar.ps1"
+```
+
+3. Interpreta la salida:
+   - `STATUS=ok` → informa la URL en `PAGES_URL` / `deploy.config.json`.
+   - `STATUS=auth_required` → guía **una sola vez**:
+     - `winget install --id GitHub.cli -e --accept-source-agreements --accept-package-agreements`
+     - `gh auth login` (HTTPS, cuenta `lasucursaldelcafe-droid`, permisos repo)
+     - Vuelve a ejecutar `publicar.ps1`.
+   - `STATUS=error` → muestra `MESSAGE` y propón corrección.
+
+4. **No** uses `git config --global`, **no** force push, **no** commitees `.env`, tokens ni archivos en `.gitignore` de secretos.
+
+5. Repo: https://github.com/lasucursaldelcafe-droid/cotizador-viajes-peludos
