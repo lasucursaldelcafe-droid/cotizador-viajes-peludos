@@ -14,13 +14,11 @@ $emails = @()
 if ($fb.adminEmails) { $emails = @($fb.adminEmails) }
 elseif ($cfg.admin_emails) { $emails = @($cfg.admin_emails) }
 
-$emailLines = ($emails | ForEach-Object { "    '$_'" }) -join ",`n"
-if (-not $emailLines) { $emailLines = "    /* se asigna admin manual en Firestore si hace falta */" }
-
+$emailLines = ($emails | ForEach-Object { "'$_'" }) -join ", "
 $enabled = if ($null -ne $fb.enabled) { $fb.enabled.ToString().ToLower() } else { "true" }
 
 $content = @"
-/** Auto-generado desde deploy.config.json — no editar a mano */
+/** Firebase — Viajes Peludos Cotizador (auto desde deploy.config.json) */
 const VP_FIREBASE_CONFIG = {
   enabled: $enabled,
   apiKey: '$($fb.apiKey)',
@@ -29,11 +27,9 @@ const VP_FIREBASE_CONFIG = {
   storageBucket: '$($fb.storageBucket)',
   messagingSenderId: '$($fb.messagingSenderId)',
   appId: '$($fb.appId)',
-  adminEmails: [
-$emailLines
-  ]
+  adminEmails: [$emailLines]
 };
 "@
 
-Set-Content -Path $outPath -Value $content -Encoding UTF8
+[System.IO.File]::WriteAllText($outPath, $content, [System.Text.UTF8Encoding]::new($false))
 Write-Output "SYNC_FIREBASE=ok"

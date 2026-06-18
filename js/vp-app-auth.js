@@ -33,7 +33,6 @@ const VpAppAuth = (function () {
 
   async function initLocal() {
     $('authBar')?.setAttribute('hidden', '');
-    $('authConfigHint')?.removeAttribute('hidden');
     return true;
   }
 
