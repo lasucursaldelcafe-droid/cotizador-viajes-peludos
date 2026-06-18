@@ -41,8 +41,13 @@ const VpAuth = (function () {
     return { code: 'auth/operation-not-supported-in-this-environment', message: UNSUPPORTED_ENV_MSG };
   }
 
+  function getConfig() {
+    if (typeof window !== 'undefined' && window.VP_FIREBASE_CONFIG) return window.VP_FIREBASE_CONFIG;
+    return typeof VP_FIREBASE_CONFIG !== 'undefined' ? VP_FIREBASE_CONFIG : null;
+  }
+
   function isConfigured() {
-    const c = typeof VP_FIREBASE_CONFIG !== 'undefined' ? VP_FIREBASE_CONFIG : null;
+    const c = getConfig();
     return !!(c && c.enabled && c.apiKey && c.projectId);
   }
 
@@ -62,7 +67,7 @@ const VpAuth = (function () {
   }
 
   function isAdminEmail(email) {
-    const list = VP_FIREBASE_CONFIG.adminEmails || [];
+    const list = getConfig()?.adminEmails || [];
     return list.map(normalizeEmail).includes(normalizeEmail(email));
   }
 
@@ -128,15 +133,16 @@ const VpAuth = (function () {
     if (typeof firebase === 'undefined') throw new Error('Firebase SDK no cargado');
 
     lastAuthError = null;
+    const cfg = getConfig();
     app = firebase.apps.length
       ? firebase.app()
       : firebase.initializeApp({
-          apiKey: VP_FIREBASE_CONFIG.apiKey,
-          authDomain: VP_FIREBASE_CONFIG.authDomain,
-          projectId: VP_FIREBASE_CONFIG.projectId,
-          storageBucket: VP_FIREBASE_CONFIG.storageBucket,
-          messagingSenderId: VP_FIREBASE_CONFIG.messagingSenderId,
-          appId: VP_FIREBASE_CONFIG.appId
+          apiKey: cfg.apiKey,
+          authDomain: cfg.authDomain,
+          projectId: cfg.projectId,
+          storageBucket: cfg.storageBucket,
+          messagingSenderId: cfg.messagingSenderId,
+          appId: cfg.appId
         });
     auth = firebase.auth();
     db = firebase.firestore();

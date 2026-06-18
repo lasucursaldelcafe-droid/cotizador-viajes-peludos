@@ -10,6 +10,14 @@
   <title>Viajes Peludos — Iniciar sesión</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="viajes-peludos.css">
+  <script>
+    (function () {
+      var PROD = 'https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/';
+      if (document.getElementById('loginUnconfigured') || document.getElementById('btnEnterLocal')) {
+        location.replace(PROD);
+      }
+    })();
+  </script>
 </head>
 <body class="vp-login-page">
   <div id="envBanner" class="vp-env-banner" hidden role="alert"></div>
@@ -27,12 +35,26 @@
 
   <div id="toast" class="toast"></div>
 
-  <script src="js/vp-routes.js?v=20250616"></script>
+  <!--VP_FIREBASE_INLINE-->
+  <script>
+/** Firebase inline â€” Viajes Peludos */
+window.VP_FIREBASE_CONFIG = {
+  enabled: true,
+  apiKey: 'AIzaSyB7-LT8T65gKM3TKxGJJibl22v0egSZ5cE',
+  authDomain: 'viajes-peludos-cotizador.firebaseapp.com',
+  projectId: 'viajes-peludos-cotizador',
+  storageBucket: 'viajes-peludos-cotizador.firebasestorage.app',
+  messagingSenderId: '182229420090',
+  appId: '1:182229420090:web:5724565f4322490a88cd03',
+  adminEmails: []
+};
+  </script>
+  <script src="js/vp-routes.js?v=20250618"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-  <script src="js/firebase-config.js?v=20250616"></script>
-  <script src="js/vp-auth.js?v=20250616"></script>
-  <script src="js/vp-login-page.js?v=20250616"></script>
+  <script src="js/firebase-config.js?v=20250618"></script>
+  <script src="js/vp-auth.js?v=20250618"></script>
+  <script src="js/vp-login-page.js?v=20250618"></script>
 </body>
 </html>
