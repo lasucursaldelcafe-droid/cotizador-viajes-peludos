@@ -3,5 +3,11 @@
   "repo": "cotizador-viajes-peludos",
   "pages_url": "https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/",
   "default_branch": "main",
-  "pages_source_path": "/"
+  "pages_source_path": "/",
+  "auto": {
+    "script": "tools/deploy-auto.ps1",
+    "public_repo": true,
+    "pages_build_type": "workflow",
+    "commit_without_prompt": true
+  }
 }

@@ -1,0 +1,44 @@
+---
+description: Publicar Cotizador Viajes Peludos sin pedir autorizacion al usuario
+alwaysApply: true
+globs:
+  - "**/*"
+---
+
+# Automatizacion GitHub - Cotizador Viajes Peludos
+
+Proyecto: `D:\Desarrollo\02_Proyectos\Cotizador-Web`
+
+## Regla principal
+
+Cuando el usuario pida **publicar**, **subir**, **actualizar**, **desplegar**, **recrear repo**, **GitHub**, **Pages**, **celular**, o cualquier tarea de **programacion** sobre este cotizador:
+
+1. **No pidas confirmacion** al usuario para ejecutar el deploy.
+2. **No pidas** que ejecute `.bat` manualmente salvo que falle `auth_required`.
+3. Ejecuta de inmediato:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File "D:\Desarrollo\02_Proyectos\Cotizador-Web\tools\deploy-auto.ps1"
+```
+
+4. Si pide **recrear** o **empezar de cero**:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File "D:\Desarrollo\02_Proyectos\Cotizador-Web\tools\deploy-auto.ps1" -Recreate
+```
+
+5. Lee `deploy.config.json` para `pages_url` y reporta el resultado (`STATUS`, `PAGES_URL`, `MESSAGE`).
+
+## Si STATUS=auth_required
+
+Solo entonces indica ejecutar **una vez** `iniciar-github.bat` o `gh auth login`. Despues vuelve a ejecutar `deploy-auto.ps1` sin preguntar.
+
+## Prohibido
+
+- `git config --global`
+- force push
+- commitear `.github-token`, `.env` ni secretos
+
+## URL del sitio
+
+https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/

@@ -1,6 +1,9 @@
 ﻿# Entorno y secretos
 .env
 .env.*
+.github-token
+.gh-token
+secrets/
 *.pem
 credentials.json
 
