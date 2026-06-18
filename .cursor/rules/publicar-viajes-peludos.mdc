@@ -5,7 +5,11 @@ alwaysApply: false
 
 # Publicar Viajes Peludos (GitHub Pages)
 
-Cuando el usuario pida **publicar**, **subir**, **actualizar en GitHub**, **GitHub Pages**, **desplegar** o ver la versión en el **celular** del Cotizador Viajes Peludos:
+Cuando el usuario pida **publicar**, **subir**, **actualizar en GitHub**, **GitHub Pages**, **desplegar**, **recrear repo** o ver la versión en el **celular** del Cotizador Viajes Peludos:
+
+- Si pide **recrear** o **empezar de cero** en GitHub, ejecuta `tools/recrear-github.ps1` en lugar de `publicar.ps1`.
+
+Cuando el usuario pida publicar normalmente:
 
 1. Lee `deploy.config.json` en la raíz del proyecto para owner, repo y `pages_url`.
 2. Ejecuta (sin pedir confirmación interactiva al usuario):

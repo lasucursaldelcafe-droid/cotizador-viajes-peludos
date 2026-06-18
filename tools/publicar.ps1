@@ -39,29 +39,41 @@ function Get-ProjectRoot {
     return (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 }
 
-function Ensure-GhCli {
-    if (Get-Command gh -ErrorAction SilentlyContinue) { return $true }
-    if (-not (Get-Command winget -ErrorAction SilentlyContinue)) { return $false }
-    try {
-        $null = winget install --id GitHub.cli -e --accept-source-agreements --accept-package-agreements --silent 2>&1
-    } catch { }
+$script:GhExe = $null
+
+function Get-GhExe {
+    if ($script:GhExe) { return $script:GhExe }
     $paths = @(
         "$env:ProgramFiles\GitHub CLI\gh.exe",
         "$env:LocalAppData\Programs\GitHub CLI\gh.exe"
     )
     foreach ($p in $paths) {
-        if (Test-Path $p) {
-            $dir = Split-Path $p -Parent
-            if ($env:Path -notlike "*$dir*") { $env:Path = "$dir;$env:Path" }
-            return $true
-        }
+        if (Test-Path $p) { $script:GhExe = $p; return $p }
     }
-    return [bool](Get-Command gh -ErrorAction SilentlyContinue)
+    $cmd = Get-Command gh -ErrorAction SilentlyContinue
+    if ($cmd) { $script:GhExe = $cmd.Source; return $script:GhExe }
+    return $null
+}
+
+function Invoke-Gh {
+    param([Parameter(ValueFromRemainingArguments = $true)][string[]]$Args)
+    $exe = Get-GhExe
+    if (-not $exe) { throw "gh no encontrado" }
+    & $exe @Args
+}
+
+function Ensure-GhCli {
+    if (Get-GhExe) { return $true }
+    if (-not (Get-Command winget -ErrorAction SilentlyContinue)) { return $false }
+    try {
+        $null = winget install --id GitHub.cli -e --accept-source-agreements --accept-package-agreements --silent 2>&1
+    } catch { }
+    return [bool](Get-GhExe)
 }
 
 function Test-GhAuth {
     try {
-        gh auth status 2>$null | Out-Null
+        Invoke-Gh auth status 2>$null | Out-Null
         return ($LASTEXITCODE -eq 0)
     } catch { return $false }
 }
@@ -120,9 +132,9 @@ function Commit-PendingChanges {
 }
 
 function Ensure-RepoExists {
-    $view = gh repo view "$GH_USER/$REPO_NAME" 2>$null
+    Invoke-Gh repo view "$GH_USER/$REPO_NAME" 2>$null | Out-Null
     if ($LASTEXITCODE -ne 0) {
-        gh repo create $REPO_NAME --public --source=. --remote=origin --push
+        Invoke-Gh repo create $REPO_NAME --public --source=. --remote=origin --push
         if ($LASTEXITCODE -ne 0) {
             Write-DeployResult -Status error -Message "No se pudo crear el repositorio remoto."
         }
@@ -137,25 +149,14 @@ function Ensure-RepoExists {
 
 function Enable-GitHubPages {
     $apiPath = "repos/$GH_USER/$REPO_NAME/pages"
-    $postArgs = @(
-        "api", $apiPath, "-X", "POST",
-        "-f", "build_type=legacy",
-        "-f", "source[branch]=$DEFAULT_BRANCH",
-        "-f", "source[path]=/"
-    )
-    gh @postArgs 2>$null | Out-Null
+    Invoke-Gh api $apiPath -X POST -f build_type=workflow 2>$null | Out-Null
     if ($LASTEXITCODE -ne 0) {
-        $putArgs = @(
-            "api", $apiPath, "-X", "PUT",
-            "-f", "build_type=legacy",
-            "-f", "source[branch]=$DEFAULT_BRANCH",
-            "-f", "source[path]=/"
-        )
-        gh @putArgs 2>$null | Out-Null
+        Invoke-Gh api $apiPath -X PUT -f build_type=workflow 2>$null | Out-Null
         if ($LASTEXITCODE -ne 0) {
-            Write-DeployResult -Status error -Message "No se pudo configurar GitHub Pages vía API."
+            Write-DeployResult -Status error -Message "No se pudo configurar GitHub Pages (workflow)."
         }
     }
+    Invoke-Gh workflow run deploy-pages.yml --ref $DEFAULT_BRANCH 2>$null | Out-Null
 }
 
 Ensure-Git
