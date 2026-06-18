@@ -37,8 +37,14 @@ function Write-Result {
 
 function Test-GhAuth {
     param([string]$Gh)
-    & $Gh auth status 2>$null | Out-Null
-    return ($LASTEXITCODE -eq 0)
+    $prev = $ErrorActionPreference
+    $ErrorActionPreference = "SilentlyContinue"
+    try {
+        & $Gh auth status 2>&1 | Out-Null
+        return ($LASTEXITCODE -eq 0)
+    } finally {
+        $ErrorActionPreference = $prev
+    }
 }
 
 function Enable-PagesWorkflow {
