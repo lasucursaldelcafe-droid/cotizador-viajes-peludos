@@ -48,7 +48,12 @@ const VpAuth = (function () {
 
   function isConfigured() {
     const c = getConfig();
-    return !!(c && c.enabled && c.apiKey && c.projectId);
+    return !!(c && c.enabled !== false && c.apiKey && c.projectId);
+  }
+
+  function requiresAuth() {
+    const c = getConfig();
+    return !!(c && c.requireAuth !== false && isConfigured());
   }
 
   function formatAuthError(err) {
@@ -245,6 +250,7 @@ const VpAuth = (function () {
   return {
     init,
     isConfigured,
+    requiresAuth,
     isAuthEnvironmentSupported,
     unsupportedEnvError,
     signInGoogle,

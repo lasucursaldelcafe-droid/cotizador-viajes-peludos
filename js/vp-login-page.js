@@ -77,7 +77,7 @@
     });
 
     if (!VpAuth.isConfigured()) {
-      showToast('Error: configuracion Firebase no disponible.');
+      showToast('Firebase activo: recarga la pagina (Ctrl+F5).');
       return;
     }
 

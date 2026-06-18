@@ -30,7 +30,8 @@ jobs:
           const c=JSON.parse(fs.readFileSync('deploy.config.json','utf8'));
           const f=c.firebase||{};
           const emails=(f.adminEmails||[]).map(e=>\"    '\"+e+\"'\").join(',\\n')||'';
-          const js=\`/** Auto-generado en CI */\\nwindow.VP_FIREBASE_CONFIG={enabled:${f.enabled!==false},apiKey:'\${f.apiKey}',authDomain:'\${f.authDomain}',projectId:'\${f.projectId}',storageBucket:'\${f.storageBucket}',messagingSenderId:'\${f.messagingSenderId}',appId:'\${f.appId}',adminEmails:[\${emails}]};\\n\`;
+          const requireAuth=${f.requireAuth!==false};
+          const js=\`/** Auto-generado en CI */\\nwindow.VP_FIREBASE_CONFIG={enabled:${f.enabled!==false},requireAuth:\${requireAuth},apiKey:'\${f.apiKey}',authDomain:'\${f.authDomain}',projectId:'\${f.projectId}',storageBucket:'\${f.storageBucket}',messagingSenderId:'\${f.messagingSenderId}',appId:'\${f.appId}',adminEmails:[\${emails}]};\\n\`;
           fs.writeFileSync('js/firebase-config.js',js);
           "
 

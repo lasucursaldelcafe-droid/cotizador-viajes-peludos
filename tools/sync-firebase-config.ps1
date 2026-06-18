@@ -16,10 +16,12 @@ elseif ($cfg.admin_emails) { $emails = @($cfg.admin_emails) }
 
 $emailLines = ($emails | ForEach-Object { "'$_'" }) -join ", "
 $enabled = if ($null -ne $fb.enabled) { $fb.enabled.ToString().ToLower() } else { "true" }
+$requireAuth = if ($null -ne $fb.requireAuth) { $fb.requireAuth.ToString().ToLower() } else { "true" }
 
 $configObj = @"
 window.VP_FIREBASE_CONFIG = {
   enabled: $enabled,
+  requireAuth: $requireAuth,
   apiKey: '$($fb.apiKey)',
   authDomain: '$($fb.authDomain)',
   projectId: '$($fb.projectId)',

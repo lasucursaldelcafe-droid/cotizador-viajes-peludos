@@ -2,6 +2,8 @@
  * Pagina 2: proteger editor (app.html) y barra de usuario
  */
 const VpAppAuth = (function () {
+  const PROD_LOGIN = 'https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/';
+
   function $(id) { return document.getElementById(id); }
 
   function goLogin() {
@@ -31,11 +33,6 @@ const VpAppAuth = (function () {
     if (btnAdmin) btnAdmin.hidden = profile?.role !== 'admin';
   }
 
-  async function initLocal() {
-    $('authBar')?.setAttribute('hidden', '');
-    return true;
-  }
-
   async function init() {
     $('btnLogout')?.addEventListener('click', async () => {
       if (VpAuth.isConfigured()) await VpAuth.signOut();
@@ -43,12 +40,13 @@ const VpAppAuth = (function () {
     });
 
     if (!VpAuth.isConfigured()) {
-      return initLocal();
+      goLogin();
+      return false;
     }
 
     if (!VpAuth.isAuthEnvironmentSupported()) {
-      console.warn('Auth:', VpAuth.formatAuthError(VpAuth.unsupportedEnvError()));
-      return initLocal();
+      window.location.replace(PROD_LOGIN);
+      return false;
     }
 
     await VpAuth.init();
