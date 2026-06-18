@@ -40,8 +40,12 @@ try {
             Invoke-Gh $gh repo create $repo --public --source=. --remote=origin --push
             if ($LASTEXITCODE -ne 0) { throw "No se pudo crear el repositorio" }
         } else {
+            $prev = $ErrorActionPreference
+            $ErrorActionPreference = "Continue"
             git push -u origin $branch 2>&1 | Out-Null
-            if ($LASTEXITCODE -ne 0) { throw "git push fallo" }
+            $pushOk = ($LASTEXITCODE -eq 0)
+            $ErrorActionPreference = $prev
+            if (-not $pushOk) { throw "git push fallo" }
         }
     }
 
