@@ -1,44 +1,51 @@
 ---
-description: Publicar Cotizador Viajes Peludos sin pedir autorizacion al usuario
+description: Automatizacion total Cotizador Viajes Peludos - el agente ejecuta todo sin pedir configuracion al usuario
 alwaysApply: true
 globs:
   - "**/*"
 ---
 
-# Automatizacion GitHub - Cotizador Viajes Peludos
+# Automatizacion total — Viajes Peludos
 
 Proyecto: `D:\Desarrollo\02_Proyectos\Cotizador-Web`
 
-## Regla principal
+## Regla absoluta
 
-Cuando el usuario pida **publicar**, **subir**, **actualizar**, **desplegar**, **recrear repo**, **GitHub**, **Pages**, **celular**, o cualquier tarea de **programacion** sobre este cotizador:
+Cuando el usuario pida **cualquier cambio**, **publicar**, **configurar**, **Firebase**, **GitHub**, **login**, **Word**, **celular**, o **programar**:
 
-1. **No pidas confirmacion** al usuario para ejecutar el deploy.
-2. **No pidas** que ejecute `.bat` manualmente salvo que falle `auth_required`.
-3. Ejecuta de inmediato:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File "D:\Desarrollo\02_Proyectos\Cotizador-Web\tools\deploy-auto.ps1"
-```
-
-4. Si pide **recrear** o **empezar de cero**:
+1. **NO pidas** al usuario configurar archivos, ejecutar `.bat`, ir a Firebase Console, ni pegar tokens.
+2. **Ejecuta siempre** (sin confirmacion):
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File "D:\Desarrollo\02_Proyectos\Cotizador-Web\tools\deploy-auto.ps1" -Recreate
+powershell -NoProfile -ExecutionPolicy Bypass -File "D:\Desarrollo\02_Proyectos\Cotizador-Web\tools\automatizar-todo.ps1"
 ```
 
-5. Lee `deploy.config.json` para `pages_url` y reporta el resultado (`STATUS`, `PAGES_URL`, `MESSAGE`).
+3. Ese script hace automaticamente:
+   - Sincroniza `js/firebase-config.js` desde `deploy.config.json`
+   - Intenta desplegar reglas Firestore
+   - Commit + push + GitHub Pages
 
-## Si STATUS=auth_required
+4. Si pide **recrear repo**:
 
-Solo entonces indica ejecutar **una vez** `iniciar-github.bat` o `gh auth login`. Despues vuelve a ejecutar `deploy-auto.ps1` sin preguntar.
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File "D:\Desarrollo\02_Proyectos\Cotizador-Web\tools\automatizar-todo.ps1" -Recreate
+```
+
+5. Reporta URLs desde `deploy.config.json`:
+   - Login: `login_url`
+   - App: `app_url`
+
+## Configuracion central (solo el agente edita)
+
+- `deploy.config.json` — Firebase, GitHub, URLs, admin emails
+- No pedir al usuario editar `firebase-config.js` manualmente
+
+## Si STATUS=auth_required (solo GitHub CLI)
+
+Ejecutar `gh auth login` en terminal y volver a correr `automatizar-todo.ps1` sin preguntar al usuario.
 
 ## Prohibido
 
+- Pedir configuracion manual al usuario
 - `git config --global`
 - force push
-- commitear `.github-token`, `.env` ni secretos
-
-## URL del sitio
-
-https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/
