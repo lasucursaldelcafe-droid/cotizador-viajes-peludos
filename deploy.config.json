@@ -2,6 +2,8 @@
   "owner": "lasucursaldelcafe-droid",
   "repo": "cotizador-viajes-peludos",
   "pages_url": "https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/",
+  "login_url": "https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/",
+  "app_url": "https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/app.html",
   "default_branch": "main",
   "pages_source_path": "/",
   "auto": {

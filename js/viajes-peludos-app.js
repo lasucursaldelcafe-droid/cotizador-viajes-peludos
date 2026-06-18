@@ -135,16 +135,17 @@
     $('fmtNit').value = fmt.empresa.nit;
   }
 
-  async function doPdf() {
+  async function doDoc() {
     readForm();
-    if (!window.jspdf) {
-      showToast('PDF requiere internet la primera vez (librería jsPDF)');
-      return;
+    const docData = JSON.parse(JSON.stringify(data));
+    try {
+      await vpPrepareDocAssets(docData);
+      vpExportDoc(docData);
+      showToast('Word (.doc) descargado — ábrelo en Word o Google Docs');
+    } catch (e) {
+      console.error(e);
+      showToast('No se pudo generar el documento');
     }
-    const pdfData = JSON.parse(JSON.stringify(data));
-    await vpPreparePdfAssets(pdfData);
-    vpExportPdf(pdfData);
-    showToast('PDF generado');
   }
 
   function nuevaCotizacion() {
@@ -167,10 +168,12 @@
   }
 
   async function boot() {
+    const allowed = await VpAppAuth.init();
+    if (allowed === false) return;
+
     vpApplyLayoutVars();
     vpApplyEmbeddedAssets();
 
-    if (typeof VpAuthUi !== 'undefined') await VpAuthUi.init();
     if (typeof VpAdmin !== 'undefined') VpAdmin.init();
     if (typeof VpResponsive !== 'undefined') VpResponsive.init();
 
@@ -213,7 +216,7 @@
       renderList('obsList', data.observaciones);
     });
 
-    $('btnPdf').addEventListener('click', doPdf);
+    $('btnDoc').addEventListener('click', doDoc);
     $('btnPrint').addEventListener('click', () => {
       readForm();
       setTimeout(() => window.print(), 200);

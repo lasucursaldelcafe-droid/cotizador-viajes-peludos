@@ -28,7 +28,9 @@ function vpRenderPreview(data) {
       <img class="vp-watermark" src="${wmSrc}" alt="" aria-hidden="true">
       <div class="vp-content">
         <header class="vp-letterhead">
-          <img class="vp-logo" src="${logoSrc}" alt="Viajes Peludos">
+          <div class="vp-logo-wrap">
+            <img class="vp-logo" src="${logoSrc}" alt="Viajes Peludos">
+          </div>
           <div class="vp-head-rule"></div>
         </header>
 
@@ -101,8 +103,9 @@ function vpBuildPdf(data) {
   vpDrawMembretePage(pdf, fmt, pw, ph);
 
   const logoSrc = vpGetLogoSrc(fmt);
+  const logoX = (pw - L.logoW) / 2;
   try {
-    pdf.addImage(logoSrc, vpDetectImageFormat(logoSrc), L.logoX, L.logoY, L.logoW, L.logoH);
+    pdf.addImage(logoSrc, vpDetectImageFormat(logoSrc), logoX, L.logoY, L.logoW, L.logoH);
   } catch (e) { console.warn('Logo PDF', e); }
 
   pdf.setDrawColor(...purple);
@@ -280,4 +283,144 @@ async function vpPreparePdfAssets(data) {
   } catch (e) {
     console.warn('Assets PDF', e);
   }
+}
+
+/** Mismos assets embebidos para Word (.doc) */
+const vpPrepareDocAssets = vpPreparePdfAssets;
+
+function vpBuildDocHtml(data) {
+  const fmt = data.formato || VP_DEFAULTS;
+  const doc = fmt.documento;
+  const logoSrc = vpGetLogoSrc(fmt);
+  const fondoSrc = vpGetFondoSrc(fmt);
+  const fechaCarta = vpFormatFechaCarta(data.ciudadCarta, data.fecha);
+  const ruta = vpRutaTexto(data);
+  const valor = vpFormatValor(data.moneda || 'USD', data.valor);
+  const purple = VP_BRAND.purple;
+
+  const incluyeHtml = (data.incluye || []).map((item) =>
+    `<li style="margin-bottom:4pt;text-align:justify;">${escapeHtml(item)}</li>`
+  ).join('');
+
+  const obsHtml = (data.observaciones || []).map((item) =>
+    `<p style="margin:0 0 6pt;text-align:justify;font-size:9pt;color:#444;">${escapeHtml(item)}</p>`
+  ).join('');
+
+  const destinatario = data.cliente
+    ? `<p style="margin:0 0 6pt;"><b>Señor(a):</b> ${escapeHtml(data.cliente)}</p>
+       ${data.mascota ? `<p style="margin:0 0 6pt;"><b>Mascota:</b> ${escapeHtml(data.mascota)}</p>` : ''}`
+    : '';
+
+  return `<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="utf-8">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Viajes Peludos Cotizador">
+<!--[if gte mso 9]><xml>
+<w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom></w:WordDocument>
+</xml><![endif]-->
+<style>
+@page Section1 { size: 8.5in 11in; margin: 0.5in 1in 1.2in 1in; mso-page-orientation: portrait; }
+div.Section1 { page: Section1; }
+body { font-family: 'Segoe UI', Calibri, Arial, sans-serif; font-size: 10pt; color: #2d2d2d; }
+.vp-doc-header { text-align: center; margin: 0 0 14pt; }
+.vp-doc-logo-box {
+  display: inline-block;
+  background: #ffffff;
+  padding: 8pt 16pt;
+  border-radius: 6pt;
+  margin: 0 auto 10pt;
+}
+.vp-doc-logo { max-width: 220pt; max-height: 72pt; }
+.vp-doc-rule { height: 3pt; background: ${purple}; margin: 0 auto 12pt; width: 100%; }
+.vp-asunto { color: ${purple}; font-weight: bold; }
+.vp-label { color: ${purple}; font-weight: bold; font-size: 9pt; text-transform: uppercase; }
+.vp-valor { color: ${purple}; font-weight: bold; font-size: 11pt; }
+.vp-servicio, .vp-obs { color: ${purple}; font-weight: bold; text-transform: uppercase; font-size: 9.5pt; }
+.vp-footer { color: ${purple}; font-weight: bold; margin-top: 24pt; }
+</style>
+</head>
+<body>
+<div class="Section1">
+  <div class="vp-doc-header">
+    <div class="vp-doc-logo-box">
+      <img class="vp-doc-logo" src="${logoSrc}" alt="Viajes Peludos">
+    </div>
+    <div class="vp-doc-rule"></div>
+  </div>
+
+  <p style="margin:0 0 10pt;">${escapeHtml(fechaCarta)}</p>
+  ${destinatario}
+  <p class="vp-asunto" style="margin:0 0 10pt;"><b>Asunto:</b> ${escapeHtml(doc.titulo)}</p>
+  <p style="margin:0 0 8pt;font-weight:500;">Cordial saludo,</p>
+  <p style="margin:0 0 10pt;text-align:justify;">${escapeHtml(doc.intro)}</p>
+
+  <table cellpadding="4" cellspacing="0" width="100%" style="margin:8pt 0 12pt;border-left:3pt solid ${purple};">
+    <tr>
+      <td width="50%" valign="top">
+        <span class="vp-label">${escapeHtml(doc.etiquetaRuta)}</span><br>
+        <b>${escapeHtml(ruta)}</b>
+      </td>
+      <td width="50%" valign="top">
+        <span class="vp-label">${escapeHtml(doc.etiquetaValor)}</span><br>
+        <span class="vp-valor">${escapeHtml(valor)}</span>
+      </td>
+    </tr>
+  </table>
+
+  <p class="vp-servicio" style="margin:12pt 0 6pt;">${escapeHtml(doc.servicioTitulo)}</p>
+  <p style="margin:0 0 10pt;text-align:justify;">${escapeHtml(doc.servicioDescripcion)}</p>
+  <p class="vp-label" style="margin:0 0 6pt;">${escapeHtml(doc.etiquetaIncluye)}</p>
+  <ul style="margin:0 0 10pt 18pt;padding:0;">${incluyeHtml}</ul>
+  <p style="margin:0 0 12pt;text-align:justify;">${escapeHtml(doc.cierre)}</p>
+
+  <p class="vp-obs" style="margin:12pt 0 6pt;">${escapeHtml(doc.etiquetaObservaciones)}</p>
+  ${obsHtml}
+
+  <p style="margin:24pt 0 8pt;">Atentamente,</p>
+  <p class="vp-footer" style="margin:0;">${escapeHtml(fmt.empresa.nombre)}<br>
+  <span style="font-weight:normal;color:#444;font-size:9pt;">NIT ${escapeHtml(fmt.empresa.nit)}</span></p>
+</div>
+</body>
+</html>`;
+}
+
+function vpDocFilename(data) {
+  const ruta = vpRutaTexto(data).replace(/\s+/g, '-').replace(/[^\w-]/g, '') || 'ruta';
+  return `Cotizacion-Viajes-Peludos-${ruta}-${data.fecha || todayISO()}.doc`;
+}
+
+function vpDownloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.rel = 'noopener';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 3000);
+}
+
+function vpExportDoc(data) {
+  const html = vpBuildDocHtml(data);
+  const blob = new Blob(['\ufeff', html], { type: 'application/msword;charset=utf-8' });
+  const filename = vpDocFilename(data);
+
+  if (window.AndroidApp?.saveDoc) {
+    try {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const b64 = reader.result.split(',')[1];
+        window.AndroidApp.saveDoc(b64, filename);
+      };
+      reader.readAsDataURL(blob);
+      return;
+    } catch (_) { /* fallback */ }
+  }
+
+  vpDownloadBlob(blob, filename);
 }

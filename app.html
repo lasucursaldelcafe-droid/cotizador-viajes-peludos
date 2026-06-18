@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#7B2D8E">
+  <title>Viajes Peludos — Cotizador</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="viajes-peludos.css">
+</head>
+<body class="vp-app">
+  <header class="top-bar vp-top">
+    <div class="brand">
+      <img src="assets/logo-viajes-peludos.png" alt="Viajes Peludos" class="brand-logo" id="brandLogo">
+      <div>
+        <h1>Viajes Peludos</h1>
+        <p id="authConfigHint" hidden>Modo local</p>
+        <p id="cotizadorBadge" class="cotizador-badge" hidden></p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <div id="authBar" class="auth-bar">
+        <img id="authUserPhoto" class="auth-photo" alt="" hidden>
+        <div class="auth-meta">
+          <span id="authUserName"></span>
+          <small id="authUserRole"></small>
+        </div>
+        <button type="button" class="btn btn-secondary btn-sm" id="btnAdmin" hidden>👤 Admin</button>
+        <button type="button" class="btn btn-secondary btn-sm" id="btnLogout">Salir</button>
+      </div>
+      <span id="saveStatus" class="save-status" title="Guardado">💾</span>
+      <button type="button" class="btn btn-secondary btn-sm" id="btnFormato">⚙️ Textos fijos</button>
+      <button type="button" class="btn btn-secondary btn-sm" id="btnPrint">🖨️ Imprimir</button>
+      <button type="button" class="btn btn-primary btn-sm" id="btnDoc">📝 Word</button>
+    </div>
+  </header>
+
+  <nav class="vp-mobile-nav" aria-label="Vista movil">
+    <button type="button" data-tab="form" class="active">✏️ Formulario</button>
+    <button type="button" data-tab="preview">📄 Vista previa</button>
+  </nav>
+
+  <div class="vp-layout">
+    <aside class="vp-form-panel">
+      <section class="card vp-card">
+        <h2>✏️ Datos que cambian en cada cotización</h2>
+        <div class="form-grid">
+          <label>Ciudad de la carta<input type="text" id="fCiudadCarta" placeholder="Ej: Medellín"></label>
+          <label>Fecha<input type="date" id="fFecha"></label>
+          <label>Moneda
+            <select id="fMoneda">
+              <option value="USD">USD</option>
+              <option value="COP">COP</option>
+              <option value="EUR">EUR</option>
+            </select>
+          </label>
+          <label>Valor<input type="number" id="fValor" min="0" step="1"></label>
+          <label>Cliente / contacto<input type="text" id="fCliente" placeholder="Nombre del cliente"></label>
+          <label>Mascota<input type="text" id="fMascota" placeholder="Nombre y tipo"></label>
+          <label>Ciudad origen<input type="text" id="fOrigen" placeholder="Ej: MEDELLÍN"></label>
+          <label>Ciudad destino<input type="text" id="fDestino" placeholder="Ej: BOSTON"></label>
+        </div>
+        <p class="vp-ruta-preview">Ruta: <strong id="rutaPreview">—</strong></p>
+      </section>
+
+      <section class="card vp-card">
+        <h2>📋 Incluye <span class="hint">(lista del servicio)</span></h2>
+        <div id="incluyeList" class="editable-list"></div>
+        <button type="button" class="btn btn-secondary btn-sm" id="btnAddIncluye">+ Agregar ítem</button>
+      </section>
+
+      <section class="card vp-card">
+        <h2>📝 Observaciones</h2>
+        <div id="obsList" class="editable-list"></div>
+        <button type="button" class="btn btn-secondary btn-sm" id="btnAddObs">+ Agregar observación</button>
+      </section>
+
+      <section class="card vp-card vp-actions">
+        <button type="button" class="btn btn-secondary" id="btnNueva">🔄 Nueva cotización</button>
+        <button type="button" class="btn btn-secondary" id="btnResetTextos">↩️ Restaurar textos oficiales</button>
+      </section>
+    </aside>
+
+    <section class="vp-preview-panel">
+      <p class="preview-hint">Vista carta 8.5″ × 11″ · Se adapta al tamano de pantalla</p>
+      <div id="previewMount" class="preview-mount vp-preview-mount"></div>
+    </section>
+  </div>
+
+  <dialog id="dlgAdmin" class="vp-dialog vp-dialog-wide">
+    <form method="dialog" class="vp-dialog-inner">
+      <header>
+        <h2>👤 Administracion</h2>
+        <button type="button" class="btn-icon" id="btnCloseAdmin" aria-label="Cerrar">✕</button>
+      </header>
+      <div class="vp-admin-grid">
+        <section>
+          <h3>Usuarios</h3>
+          <div id="adminUsersList" class="vp-admin-list"></div>
+        </section>
+        <section>
+          <h3>Cotizaciones (quien las hizo)</h3>
+          <div id="adminQuotesList" class="vp-admin-list"></div>
+        </section>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="dlgFormato" class="vp-dialog">
+    <form method="dialog" class="vp-dialog-inner">
+      <header>
+        <h2>⚙️ Textos del formato (cambian poco)</h2>
+        <button type="button" class="btn-icon" id="btnCloseFormato" aria-label="Cerrar">✕</button>
+      </header>
+      <div class="form-grid">
+        <label class="span-2">Título documento<input type="text" id="fmtTitulo"></label>
+        <label class="span-2">Párrafo introductorio<textarea id="fmtIntro" rows="3"></textarea></label>
+        <label class="span-2">Título servicio<input type="text" id="fmtServicio"></label>
+        <label class="span-2">Descripción servicio<textarea id="fmtServicioDesc" rows="3"></textarea></label>
+        <label class="span-2">Párrafo de cierre<textarea id="fmtCierre" rows="2"></textarea></label>
+        <label>Etiqueta ruta<input type="text" id="fmtLblRuta"></label>
+        <label>Etiqueta valor<input type="text" id="fmtLblValor"></label>
+        <label>Empresa<input type="text" id="fmtEmpresa"></label>
+        <label>NIT<input type="text" id="fmtNit"></label>
+      </div>
+      <footer>
+        <button type="button" class="btn btn-primary" id="btnSaveFormato">Guardar textos</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="js/vp-assets-b64.js"></script>
+  <script src="js/vp-routes.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/default-template.js"></script>
+  <script src="js/preview-render.js"></script>
+  <script src="js/viajes-peludos.js"></script>
+  <script src="js/vp-layout.js"></script>
+  <script src="js/logo-loader.js"></script>
+  <script src="js/viajes-peludos-render.js"></script>
+  <script src="js/vp-auth.js"></script>
+  <script src="js/vp-quotes-cloud.js"></script>
+  <script src="js/vp-admin.js"></script>
+  <script src="js/vp-responsive.js"></script>
+  <script src="js/vp-app-auth.js"></script>
+  <script src="js/viajes-peludos-app.js"></script>
+</body>
+</html>
