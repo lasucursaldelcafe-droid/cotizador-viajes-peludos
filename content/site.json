@@ -5,7 +5,7 @@
     "descriptor": "Café de especialidad · Cali",
     "tagline": "Del origen al ritual.",
     "headline": "ESPECIALIDAD Y ELEGANCIA",
-    "subheadline": "Nuestra tienda es un refugio de café de especialidad en Cali: madera, concreto y luz cálida que abraza cada extracción. SCA 85+, origen en Bruselas, Pitalito, Huila y una barra donde el ritual se ve — y se siente.",
+    "subheadline": "Nuestra tienda es un refugio de café de especialidad en Cali: madera, concreto y luz cálida que abraza cada extracción. Microlotes colombianos SCA 85+, de Huila a Nariño, Cauca y Tolima — una barra donde el ritual se ve y se siente.",
     "storeConcept": "Industrial cálida",
     "storeDescription": "Un espacio íntimo donde la especialidad se vive con elegancia: madera oscura, concreto expuesto y luz ámbar que acentúa cada taza. Barra abierta, ambiente acogedor e íntimo, día y noche.",
     "visitLine": "Cali, Valle del Cauca",
@@ -24,7 +24,7 @@
     "purpose": "Conectar el origen con el consumidor final. Cada café lleva nombre: un lote, un proceso, un productor.",
     "mission": "Tostar y servir café de especialidad colombiano con puntajes SCA 85+, control riguroso de beneficio y una experiencia de marca que convierte el proceso en producto.",
     "vision": "Ser la referencia del café de especialidad en Cali por trazabilidad verificable, calidad de taza y presencia de marca.",
-    "about": "Ghost Specialty Coffee es una tienda de café de especialidad en Cali con concepto industrial cálida: madera noble, concreto y luz ámbar en un ambiente íntimo y elegante. Origen verificable en Bruselas, Pitalito, Huila. Gesha, Bourbon, Castillo y Caturra bajo métodos lavado, natural, honey y anaeróbico. Tostión artesanal con desgasificación de 48–72 horas.",
+    "about": "Ghost Specialty Coffee es una tienda de café de especialidad en Cali con concepto industrial cálida. Curamos microlotes de distintos territorios colombianos — Huila, Nariño, Cauca, Tolima y más — con trazabilidad verificable. Gesha, Bourbon, Castillo, Caturra y Papayo bajo métodos lavado, natural, honey y anaeróbico. Tostión artesanal con desgasificación de 48–72 horas.",
     "values": [
       {
         "title": "Origen verificable",
@@ -69,7 +69,7 @@
     "Barra abierta",
     "SCA 85+",
     "Del origen al ritual",
-    "Bruselas · Pitalito · Huila"
+    "Colombia · Microlotes"
   ],
   "experiences": [
     {
@@ -89,8 +89,8 @@
     {
       "id": "origen",
       "title": "Origen",
-      "subtitle": "Bruselas, Pitalito, Huila",
-      "description": "1.700–2.000 msnm. Variedades Gesha, Bourbon, Castillo y Caturra. Procesos lavado, natural, honey y anaeróbico.",
+      "subtitle": "Colombia · Microlotes",
+      "description": "Curaduría de territorios: Huila, Nariño, Cauca, Tolima. 1.400–2.200 msnm. Gesha, Bourbon, Castillo, Caturra y Papayo en procesos lavado, natural, honey y anaeróbico.",
       "layout": "left"
     },
     {
@@ -103,25 +103,25 @@
   ],
   "products": [
     {
-      "id": "ghost-huila",
-      "name": "Ghost · Huila",
-      "variety": "Castillo",
-      "origin": "Bruselas, Pitalito",
+      "id": "ghost-papayo",
+      "name": "Ghost · Papayo",
+      "variety": "Papayo",
+      "origin": "Finca aliada",
       "region": "Huila",
       "farmer": "Productores aliados",
-      "altitude": "1.900 msnm",
+      "altitude": "1.800 msnm",
       "price": 45000,
       "weight": "250 g",
-      "roast": "Tostión media",
-      "notes": ["Chocolate", "Nuez", "Dulce"],
+      "roast": "Semi-lavado · Tostión media",
+      "notes": ["Mango", "Nuez", "Dulce"],
       "featured": true
     },
     {
       "id": "ghost-gesha",
       "name": "Ghost · Gesha",
       "variety": "Gesha",
-      "origin": "Bruselas, Pitalito",
-      "region": "Huila",
+      "origin": "Microlote Nariño",
+      "region": "Nariño",
       "price": 72000,
       "weight": "250 g",
       "roast": "Tostión clara",
@@ -132,8 +132,8 @@
       "id": "ghost-bourbon",
       "name": "Ghost · Bourbon",
       "variety": "Bourbon",
-      "origin": "Huila",
-      "region": "Huila",
+      "origin": "Microlote Cauca",
+      "region": "Cauca",
       "price": 48000,
       "weight": "250 g",
       "roast": "Tostión media-clara",
