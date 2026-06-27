@@ -4,7 +4,9 @@
  */
 
 import { BRAND, whatsappUrl } from './config.js';
+import { GhostMenu } from './menu.js';
 import { GhostNavigation } from './nav.js';
+import { GhostProducts } from './products.js';
 import { ScrollReveal } from './reveal.js';
 import { $, $$ } from './utils.js';
 
@@ -12,6 +14,11 @@ class GhostApp {
   init() {
     new GhostNavigation().init();
     new ScrollReveal().init();
+
+    const page = document.body.dataset.page;
+    if (page === 'menu') void new GhostMenu().init();
+    if (page === 'origen') void new GhostProducts().init();
+
     this.#wireWhatsApp();
     this.#markCurrentPage();
     this.#logBrand();

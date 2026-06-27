@@ -4,6 +4,10 @@
     margin-inline: auto;
   }
 
+  .ghost-wrap--narrow {
+    max-width: 42rem;
+  }
+
   .ghost-section {
     padding-block: var(--section-pad);
     padding-inline: var(--gutter);

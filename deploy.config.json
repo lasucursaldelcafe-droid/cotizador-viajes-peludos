@@ -2,8 +2,8 @@
   "owner": "lasucursaldelcafe-droid",
   "repo": "cotizador-viajes-peludos",
   "pages_url": "https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/",
-  "login_url": "https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/",
-  "app_url": "https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/",
+  "login_url": "https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/login.html",
+  "app_url": "https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/admin.html",
   "default_branch": "main",
   "pages_source_path": "/",
   "firebase": {
@@ -15,7 +15,8 @@
     "storageBucket": "",
     "messagingSenderId": "",
     "appId": "",
-    "adminEmails": []
+    "adminEmails": ["hola@ghostspecialtycoffee.co"],
+    "adminPin": "ghost2026"
   },
   "auto": {
     "script": "tools/automatizar-todo.ps1",

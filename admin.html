@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Admin | Ghost Specialty Coffee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="js/firebase-config.js"></script>
+</head>
+<body class="admin-body">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <p class="admin-brand">Ghost <small>Administración</small></p>
+      <nav class="admin-nav" role="tablist" aria-label="Secciones admin">
+        <button type="button" class="admin-tab admin-tab--active" data-admin-tab="shops" aria-selected="true">Coffee shops</button>
+        <button type="button" class="admin-tab" data-admin-tab="products" aria-selected="false">Productos venta</button>
+      </nav>
+      <div class="admin-sidebar__foot">
+        <p id="adminUserEmail"></p>
+        <button type="button" class="admin-btn admin-btn--ghost" id="adminLogout">Cerrar sesión</button>
+        <p style="margin-top:1rem"><a href="index.html">← Volver al sitio</a></p>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <div>
+          <h1>Dashboard</h1>
+          <p style="margin:0.35rem 0 0;color:var(--ink-muted);font-size:0.9rem">Gestiona tiendas y productos de venta. La carta del menú es independiente.</p>
+        </div>
+        <div class="admin-header__actions">
+          <span class="admin-badge" id="adminStorageBadge">Local</span>
+          <button type="button" class="admin-btn admin-btn--primary" id="adminNewShop" hidden>Nueva coffee shop</button>
+          <button type="button" class="admin-btn admin-btn--primary" id="adminNewProduct" hidden>Nuevo producto</button>
+        </div>
+      </header>
+
+      <div id="adminPanel" aria-live="polite"></div>
+    </main>
+  </div>
+
+  <div class="admin-modal" id="adminModal" hidden>
+    <div class="admin-modal__backdrop"></div>
+    <div class="admin-modal__dialog" id="adminModalBody" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <script type="module">
+    import { requireAuth } from './js/admin/auth.js';
+    requireAuth();
+
+    const shopsBtn = document.querySelector('#adminNewShop');
+    const productsBtn = document.querySelector('#adminNewProduct');
+
+    document.querySelectorAll('[data-admin-tab]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.adminTab;
+        if (shopsBtn) shopsBtn.hidden = tab !== 'shops';
+        if (productsBtn) productsBtn.hidden = tab !== 'products';
+      });
+    });
+    if (shopsBtn) shopsBtn.hidden = false;
+  </script>
+  <script type="module" src="js/admin/dashboard.js"></script>
+</body>
+</html>
