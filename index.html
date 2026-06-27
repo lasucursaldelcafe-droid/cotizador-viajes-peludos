@@ -8,7 +8,7 @@
   <meta property="og:title" content="Ghost Specialty Coffee | Especialidad y elegancia">
   <meta property="og:description" content="Café de especialidad servido en un refugio de madera, concreto y luz cálida. Barra abierta, SCA 85+ y trazabilidad completa en Cali.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/images/brand/hero-island.png">
+  <meta property="og:image" content="assets/images/brand/product-bag-papayo.png">
   <link rel="icon" href="assets/images/brand/ghost-mark.svg" type="image/svg+xml">
   <title>Ghost Specialty Coffee | Café de especialidad · Cali</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,9 +64,43 @@
           <p class="ghost-hero__sig-sub">Specialty Coffee · Cali</p>
         </div>
 
-        <figure class="ghost-hero__stage reveal">
-          <img class="ghost-hero__photo ghost-hero__photo--cover" src="assets/images/brand/hero-island.png" alt="Interior de Ghost Specialty Coffee: barra iluminada y retail" width="1200" height="800" decoding="async" fetchpriority="high">
-        </figure>
+        <div class="ghost-slider ghost-slider--hero reveal" id="ghostHeroSlider" role="region" aria-label="Productos Ghost" aria-live="polite">
+          <div class="ghost-slider__ambient" aria-hidden="true">
+            <span class="ghost-slider__spot ghost-slider__spot--1"></span>
+            <span class="ghost-slider__spot ghost-slider__spot--2"></span>
+            <span class="ghost-slider__spot ghost-slider__spot--3"></span>
+          </div>
+          <div class="ghost-slider__viewport">
+            <div class="ghost-slider__track">
+              <figure class="ghost-slider__slide">
+                <img src="assets/images/products/bolsa-papayo.png" alt="Bolsa Ghost Papayo Special Edition 250 g" width="600" height="900" decoding="async" fetchpriority="high">
+                <figcaption class="ghost-slider__caption">Papayo · Special Edition</figcaption>
+              </figure>
+              <figure class="ghost-slider__slide" hidden>
+                <img src="assets/images/brand/product-bag-papayo.png" alt="Bolsa de café Ghost Specialty Coffee" width="600" height="900" loading="lazy" decoding="async">
+                <figcaption class="ghost-slider__caption">Bolsa 250 g · Microlote</figcaption>
+              </figure>
+              <figure class="ghost-slider__slide" hidden>
+                <img src="assets/images/brand/product-cup-hot.png" alt="Vaso take away Ghost Specialty Coffee" width="600" height="900" loading="lazy" decoding="async">
+                <figcaption class="ghost-slider__caption">Take away · Ritual en movimiento</figcaption>
+              </figure>
+              <figure class="ghost-slider__slide" hidden>
+                <img src="assets/images/products/vaso-hot.png" alt="Vaso caliente Ghost con tapa roja" width="600" height="900" loading="lazy" decoding="async">
+                <figcaption class="ghost-slider__caption">Vaso caliente · Barra</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="ghost-slider__controls">
+            <button type="button" class="ghost-slider__btn ghost-slider__prev" aria-label="Producto anterior">‹</button>
+            <div class="ghost-slider__dots" role="tablist" aria-label="Seleccionar producto">
+              <button type="button" class="ghost-slider__dot is-active" aria-label="Slide 1" aria-selected="true"></button>
+              <button type="button" class="ghost-slider__dot" aria-label="Slide 2" aria-selected="false"></button>
+              <button type="button" class="ghost-slider__dot" aria-label="Slide 3" aria-selected="false"></button>
+              <button type="button" class="ghost-slider__dot" aria-label="Slide 4" aria-selected="false"></button>
+            </div>
+            <button type="button" class="ghost-slider__btn ghost-slider__next" aria-label="Producto siguiente">›</button>
+          </div>
+        </div>
 
         <div class="ghost-hero__content">
           <p class="ghost-kicker">Del origen al ritual.</p>
@@ -133,26 +167,43 @@
       </div>
     </section>
 
-    <section class="ghost-section ghost-section--dark" aria-labelledby="store-title">
+    <section class="ghost-industrial ghost-section" aria-labelledby="store-title">
       <div class="ghost-wrap ghost-split">
-        <figure class="ghost-art-panel ghost-art-panel--photo reveal">
-          <img class="ghost-art-panel__img" src="assets/images/brand/hero-island.png" alt="Vitrina y barra de Ghost Specialty Coffee" width="1200" height="800" loading="lazy" decoding="async">
-        </figure>
-        <div>
+        <div class="ghost-industrial__scene reveal" aria-hidden="true">
+          <div class="ghost-industrial__ceiling">
+            <span class="ghost-industrial__rail"></span>
+            <span class="ghost-industrial__spot"></span>
+            <span class="ghost-industrial__pendant"></span>
+          </div>
+          <div class="ghost-industrial__wall">
+            <span class="ghost-industrial__sconce ghost-industrial__sconce--up"></span>
+            <span class="ghost-industrial__sconce ghost-industrial__sconce--down"></span>
+            <div class="ghost-industrial__bar">
+              <span class="ghost-industrial__led"></span>
+              <div class="ghost-industrial__shelf">
+                <img src="assets/images/products/bolsa-papayo.png" alt="" width="200" height="300" loading="lazy" decoding="async">
+                <img src="assets/images/brand/product-bag-papayo.png" alt="" width="200" height="300" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <span class="ghost-industrial__plant"></span>
+            <span class="ghost-industrial__floor-spot"></span>
+          </div>
+          <p class="ghost-industrial__label">Opción 1 · Industrial cálida</p>
+        </div>
+        <div class="ghost-industrial__copy">
           <p class="ghost-section__label reveal">Nuestra tienda</p>
           <h2 class="ghost-section__title reveal" id="store-title">Industrial cálida</h2>
           <p class="ghost-section__intro reveal">
-            Un espacio íntimo donde la especialidad se vive con elegancia: madera oscura, concreto expuesto
-            y luz ámbar que acentúa cada taza. No es un café cualquiera — es un refugio diseñado para que
-            el ritual respire.
+            Un refugio íntimo de madera oscura, concreto y luz ámbar 2700K. Rieles negros, spots direccionales
+            y LED cálido bajo la barra iluminan cada bolsa y cada extracción — el café es el espectáculo.
           </p>
           <ul class="ghost-store__features reveal" role="list">
-            <li class="ghost-store__feature">Barra de madera con iluminación cálida 2700K</li>
-            <li class="ghost-store__feature">Ambiente acogedor e íntimo, día y noche</li>
-            <li class="ghost-store__feature">Extracción visible: el café es el espectáculo</li>
-            <li class="ghost-store__feature">Retail curado con trazabilidad en cada bolsa</li>
+            <li class="ghost-store__feature">Iluminación cálida 2700K–3000K en barra y retail</li>
+            <li class="ghost-store__feature">Rieles y spots negros sobre zona de consumo</li>
+            <li class="ghost-store__feature">LED bajo estante para resaltar microlotes</li>
+            <li class="ghost-store__feature">Plantas y madera para contraste industrial</li>
           </ul>
-          <a class="btn btn--ghost reveal" href="contacto.html">Visítanos en Cali</a>
+          <a class="btn btn--spectral reveal" href="contacto.html">Visítanos en Cali</a>
         </div>
       </div>
     </section>
@@ -233,7 +284,7 @@
           </article>
           <article class="ghost-product ghost-product--featured ghost-product--cauca">
             <div class="ghost-product__visual ghost-product__visual--photo" aria-hidden="true">
-              <img src="assets/images/products/vaso-hot.png" alt="" width="400" height="600" loading="lazy" decoding="async">
+              <img src="assets/images/products/bolsa-papayo.png" alt="" width="400" height="600" loading="lazy" decoding="async">
               <span class="ghost-product__region">Cauca</span>
             </div>
             <h3 class="ghost-product__name">Ghost · Bourbon</h3>

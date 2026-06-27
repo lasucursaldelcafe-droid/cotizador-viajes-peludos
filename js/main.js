@@ -16,12 +16,21 @@ class GhostApp {
     new ScrollReveal().init();
 
     const page = document.body.dataset.page;
-    if (page === 'menu') void new GhostMenu().init();
-    if (page === 'origen') void new GhostProducts().init();
+    void this.#initPage(page);
 
     this.#wireWhatsApp();
     this.#markCurrentPage();
     this.#logBrand();
+  }
+
+  /** @param {string | undefined} page */
+  async #initPage(page) {
+    if (page === 'menu') void new GhostMenu().init();
+    if (page === 'origen') void new GhostProducts().init();
+    if (page === 'home') {
+      const { GhostHome } = await import('./home.js');
+      new GhostHome().init();
+    }
   }
 
   /** Enlaza todos los CTAs de WhatsApp del DOM */
