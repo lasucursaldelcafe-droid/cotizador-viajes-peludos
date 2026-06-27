@@ -21,6 +21,7 @@
     --ghost-red: #9b1c1c;
     --ghost-lime: #8db600;
     --ghost-blue: #1e5e8e;
+    --ghost-amber: #e6a04d;
 
     /* Alias semánticos (compatibilidad con componentes) */
     --void: var(--ghost-black);
@@ -36,6 +37,7 @@
 
     --spectral-glow: color-mix(in srgb, var(--ghost-lime) calc(var(--ghost-glow-alpha) * 100%), transparent);
     --ember-glow: color-mix(in srgb, var(--ghost-red) 30%, transparent);
+    --amber-glow: color-mix(in srgb, var(--ghost-amber) 22%, transparent);
     --blue-glow: color-mix(in srgb, var(--ghost-blue) 25%, transparent);
 
     --font-display: "Barlow Condensed", "Helvetica Neue", Helvetica, "Arial Narrow", Arial, sans-serif;

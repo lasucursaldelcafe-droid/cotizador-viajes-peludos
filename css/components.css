@@ -397,6 +397,49 @@
     margin: 0;
   }
 
+  .ghost-experience__card--warm:hover {
+    border-color: color-mix(in srgb, var(--ghost-amber) 35%, transparent);
+    box-shadow: 0 1.5rem 3rem -1rem rgb(0 0 0 / 0.5), 0 0 2rem var(--amber-glow);
+  }
+
+  .ghost-experience__card--warm .ghost-experience__sub {
+    color: var(--ghost-amber);
+  }
+
+  /* —— Nuestra tienda —— */
+  .ghost-store__features {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0 0 2rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ghost-store__feature {
+    position: relative;
+    padding-inline-start: 1.25rem;
+    color: var(--ghost-dim);
+    font-size: 0.95rem;
+  }
+
+  .ghost-store__feature::before {
+    content: "";
+    position: absolute;
+    inset-block-start: 0.55em;
+    inset-inline-start: 0;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: var(--ghost-amber);
+    box-shadow: 0 0 0.5rem var(--amber-glow);
+  }
+
+  .ghost-store__visual img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
   /* —— Productos —— */
   .ghost-product {
     position: relative;
@@ -613,6 +656,14 @@
     margin: 0;
     max-width: var(--content-max);
     margin-inline: auto;
+  }
+
+  .ghost-page-hero__lead {
+    max-width: 36rem;
+    margin: 1rem auto 0;
+    color: var(--ghost-dim);
+    font-size: 1.05rem;
+    text-wrap: pretty;
   }
 
   /* —— Footer —— */
