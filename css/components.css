@@ -10,15 +10,17 @@
     align-items: center;
     justify-content: space-between;
     padding-inline: var(--gutter);
-    background: color-mix(in srgb, var(--void) 88%, transparent);
+    background: color-mix(in srgb, var(--surface-raised) 92%, transparent);
     backdrop-filter: blur(var(--nav-blur));
-    border-block-end: var(--border-spectral);
+    border-block-end: var(--border-subtle);
+    box-shadow: 0 1px 0 rgb(28 26 24 / 0.04);
     transition: --nav-blur 0.3s var(--ease-out-expo);
   }
 
   .ghost-nav.is-scrolled {
     --nav-blur: 24px;
-    background: color-mix(in srgb, var(--void) 95%, transparent);
+    background: color-mix(in srgb, var(--surface-raised) 98%, transparent);
+    box-shadow: var(--shadow-soft);
   }
 
   .ghost-nav__brand {
@@ -29,6 +31,19 @@
     font-size: 1.5rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .ghost-nav__brand-img {
+    height: 2.25rem;
+    width: auto;
+    max-width: 9rem;
+    object-fit: contain;
+  }
+
+  /* Logos blancos sobre transparente → negro en tema claro */
+  .ghost-brand-img {
+    filter: brightness(0) saturate(100%);
   }
 
   .ghost-nav__mark {
@@ -66,7 +81,7 @@
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--ghost-dim);
+    color: var(--ink-muted);
     position: relative;
     transition: color 0.2s;
   }
@@ -134,7 +149,7 @@
 
   .btn--spectral {
     background: var(--ghost-lime);
-    color: var(--void);
+    color: var(--surface-raised);
     box-shadow: var(--shadow-glow);
   }
 
@@ -145,18 +160,18 @@
 
   .btn--ghost {
     background: transparent;
-    color: var(--ghost);
-    border: 1px solid color-mix(in srgb, var(--ghost) 30%, transparent);
+    color: var(--ink);
+    border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
   }
 
   .btn--ghost:hover {
-    border-color: var(--spectral);
-    color: var(--spectral);
+    border-color: var(--ghost-blue);
+    color: var(--ghost-blue);
   }
 
   .btn--ember {
     background: var(--ghost-red);
-    color: var(--ghost);
+    color: var(--surface-raised);
     box-shadow: var(--shadow-ember);
   }
 
@@ -164,14 +179,13 @@
     transform: translateY(-2px);
   }
 
-  /* —— Hero —— */
+  /* —— Hero — guía de marca: lockup vertical + escena gráfica —— */
   .ghost-hero {
     position: relative;
     min-height: 100dvh;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-block: calc(var(--nav-h) + 2rem) clamp(3rem, 8vw, 6rem);
+    align-items: center;
+    padding-block: calc(var(--nav-h) + 2rem) clamp(3rem, 6vw, 5rem);
     padding-inline: var(--gutter);
     overflow: clip;
   }
@@ -180,36 +194,104 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 55% 45% at 72% 42%, color-mix(in srgb, var(--ghost-amber) 14%, transparent) 0%, transparent 62%),
-      radial-gradient(ellipse 45% 40% at 18% 72%, color-mix(in srgb, var(--ghost-red) 8%, transparent) 0%, transparent 55%),
-      radial-gradient(ellipse 40% 35% at 48% 18%, color-mix(in srgb, var(--ghost-blue) 10%, transparent) 0%, transparent 50%),
-      radial-gradient(ellipse 35% 30% at 85% 85%, color-mix(in srgb, var(--ghost-lime) 7%, transparent) 0%, transparent 55%),
-      linear-gradient(165deg, #0d0d0d 0%, var(--void) 45%, #0a0a12 100%);
+      radial-gradient(ellipse 50% 45% at 78% 38%, color-mix(in srgb, var(--ghost-amber) 18%, transparent) 0%, transparent 62%),
+      radial-gradient(ellipse 40% 38% at 12% 68%, color-mix(in srgb, var(--ghost-blue) 10%, transparent) 0%, transparent 55%),
+      radial-gradient(ellipse 35% 32% at 55% 12%, color-mix(in srgb, var(--ghost-lime) 8%, transparent) 0%, transparent 50%),
+      linear-gradient(165deg, var(--surface-raised) 0%, var(--surface) 55%, var(--surface-warm) 100%);
+  }
+
+  .ghost-hero__layout {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: clamp(2rem, 4vw, 3rem);
+    width: min(100%, var(--content-max));
+    margin-inline: auto;
+    align-items: center;
+  }
+
+  @media (min-width: 56rem) {
+    .ghost-hero__layout {
+      grid-template-columns: minmax(14rem, 0.85fr) minmax(18rem, 1.15fr);
+      grid-template-rows: auto auto;
+      gap: clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 5vw, 4rem);
+    }
+
+    .ghost-hero__lockup { grid-column: 1; grid-row: 1; }
+    .ghost-hero__stage { grid-column: 2; grid-row: 1 / span 2; }
+    .ghost-hero__content { grid-column: 1; grid-row: 2; align-self: start; }
+  }
+
+  /* Lockup vertical — perro + GHOST + SPECIALTY COFFEE */
+  .ghost-hero__lockup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    max-width: 18rem;
+  }
+
+  .ghost-hero__lockup-img {
+    width: min(100%, 11rem);
+    height: auto;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%);
+  }
+
+  .ghost-hero__lockup-sub {
+    margin: 0;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  /* Escena gráfica — isla + glifos de la guía */
+  .ghost-hero__stage {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: clamp(16rem, 38vw, 26rem);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background:
+      radial-gradient(ellipse 75% 70% at 50% 55%, color-mix(in srgb, var(--ghost-amber) 14%, transparent) 0%, transparent 72%),
+      var(--surface-raised);
+    border: var(--border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
   }
 
   .ghost-hero__photo {
-    position: absolute;
-    inset-block: 8% 12%;
-    inset-inline-end: clamp(0rem, 4vw, 4rem);
-    width: min(58vw, 34rem);
+    position: relative;
+    z-index: 2;
+    width: min(100%, 22rem);
     height: auto;
-    max-height: 72%;
     object-fit: contain;
-    object-position: center bottom;
-    opacity: 1;
-    filter: drop-shadow(0 2.5rem 5rem rgb(0 0 0 / 0.65)) drop-shadow(0 0 3rem var(--amber-glow));
+    filter: drop-shadow(0 1.5rem 3rem rgb(28 26 24 / 0.14));
     pointer-events: none;
   }
 
-  .ghost-hero__visual {
+  .ghost-glyph {
     position: absolute;
-    inset-block-start: calc(var(--nav-h) + 1.5rem);
-    inset-inline-start: clamp(1rem, 6vw, 5rem);
-    width: min(42vw, 18rem);
-    height: auto;
-    opacity: 1;
+    width: clamp(2rem, 5vw, 3.25rem);
+    height: clamp(2rem, 5vw, 3.25rem);
+    color: var(--ghost-blue);
+    opacity: 0.55;
     pointer-events: none;
-    filter: drop-shadow(0 1rem 2.5rem rgb(0 0 0 / 0.5)) drop-shadow(0 0 1.5rem rgb(255 255 255 / 0.08));
+  }
+
+  .ghost-glyph--leaf { inset-block-start: 8%; inset-inline-start: 8%; color: var(--ghost-lime); }
+  .ghost-glyph--cup { inset-block-end: 12%; inset-inline-start: 10%; color: var(--ghost-red); width: 2.75rem; height: 2.75rem; }
+  .ghost-glyph--compass { inset-block-start: 10%; inset-inline-end: 8%; color: var(--ghost-blue); }
+  .ghost-glyph--waves {
+    inset-block-end: 6%;
+    inset-inline-end: 6%;
+    width: clamp(3rem, 8vw, 5rem);
+    height: auto;
+    color: var(--ghost-amber);
+    opacity: 0.7;
   }
 
   .ghost-hero__orb {
@@ -217,6 +299,7 @@
     border-radius: 50%;
     filter: blur(5rem);
     animation: orb-float 8s var(--ease-in-out) infinite;
+    pointer-events: none;
   }
 
   .ghost-hero__orb--1 {
@@ -224,7 +307,7 @@
     height: min(40vw, 28rem);
     inset-block-start: 10%;
     inset-inline-end: -5%;
-    background: color-mix(in srgb, var(--spectral) 12%, transparent);
+    background: color-mix(in srgb, var(--ghost-lime) 10%, transparent);
   }
 
   .ghost-hero__orb--2 {
@@ -232,15 +315,13 @@
     height: min(30vw, 20rem);
     inset-block-end: 20%;
     inset-inline-start: -8%;
-    background: color-mix(in srgb, var(--ghost-blue) 10%, transparent);
+    background: color-mix(in srgb, var(--ghost-blue) 8%, transparent);
     animation-delay: -4s;
   }
 
   .ghost-hero__content {
     position: relative;
     z-index: 1;
-    width: min(100%, var(--content-max));
-    margin-inline: auto;
   }
 
   .ghost-kicker {
@@ -264,7 +345,7 @@
   .ghost-hero__title .ghost-hero__outline {
     display: block;
     color: transparent;
-    -webkit-text-stroke: 1px var(--ghost-dim);
+    -webkit-text-stroke: 1px color-mix(in srgb, var(--ghost-red) 70%, transparent);
   }
 
   .ghost-hero__lead {
@@ -284,21 +365,21 @@
   }
 
   .ghost-hero__meta {
-    margin-block-start: 4rem;
+    margin-block-start: 2rem;
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
     font-size: 0.7rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: color-mix(in srgb, var(--ghost) 40%, transparent);
+    color: var(--ink-soft);
   }
 
   /* —— Marquee CSS puro —— */
   .ghost-marquee {
     overflow: clip;
-    border-block: var(--border-spectral);
-    background: var(--void-mid);
+    border-block: var(--border-subtle);
+    background: var(--surface-muted);
     padding-block: 1rem;
   }
 
@@ -360,24 +441,27 @@
     justify-content: center;
     padding: 1.5rem;
     background:
-      radial-gradient(ellipse 70% 70% at 50% 50%, color-mix(in srgb, var(--ghost-amber) 10%, transparent) 0%, transparent 70%),
-      var(--void-mid);
+      radial-gradient(ellipse 70% 70% at 50% 50%, color-mix(in srgb, var(--ghost-amber) 12%, transparent) 0%, transparent 70%),
+      var(--surface-raised);
     border: var(--border-subtle);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
   }
 
   .ghost-split__visual img {
     width: min(100%, 22rem);
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 1.5rem 3rem rgb(0 0 0 / 0.55)) drop-shadow(0 0 2rem var(--amber-glow));
+    filter: drop-shadow(0 1rem 2rem rgb(28 26 24 / 0.12));
   }
 
   /* —— Cards experiencia —— */
   .ghost-experience__card {
     padding: 2.5rem;
-    background: color-mix(in srgb, var(--void-mid) 90%, transparent);
+    background: var(--surface-raised);
     border: var(--border-subtle);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
     transition:
       border-color 0.3s,
       transform 0.35s var(--ease-out-expo),
@@ -390,13 +474,17 @@
     box-shadow: var(--shadow-card);
   }
 
-  .ghost-experience__num {
-    font-family: var(--font-display);
-    font-size: 4rem;
-    line-height: 1;
-    color: color-mix(in srgb, var(--spectral) 15%, transparent);
-    margin-block-end: 0.5rem;
+  .ghost-experience__icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-block-end: 1rem;
+    color: var(--ghost-blue);
   }
+
+  .ghost-experience__card:nth-child(1) .ghost-experience__icon { color: var(--ghost-red); }
+  .ghost-experience__card:nth-child(2) .ghost-experience__icon { color: var(--ghost-amber); }
+  .ghost-experience__card:nth-child(3) .ghost-experience__icon { color: var(--ghost-lime); }
+  .ghost-experience__card:nth-child(4) .ghost-experience__icon { color: var(--ghost-blue); }
 
   .ghost-experience__title {
     font-family: var(--font-display);
@@ -420,8 +508,8 @@
   }
 
   .ghost-experience__card--warm:hover {
-    border-color: color-mix(in srgb, var(--ghost-amber) 35%, transparent);
-    box-shadow: 0 1.5rem 3rem -1rem rgb(0 0 0 / 0.5), 0 0 2rem var(--amber-glow);
+    border-color: color-mix(in srgb, var(--ghost-amber) 45%, transparent);
+    box-shadow: var(--shadow-card);
   }
 
   .ghost-experience__card--warm .ghost-experience__sub {
@@ -464,36 +552,36 @@
     min-height: clamp(16rem, 35vw, 24rem);
     padding: 2rem;
     background:
-      radial-gradient(ellipse 70% 70% at 50% 55%, color-mix(in srgb, var(--ghost-amber) 12%, transparent) 0%, transparent 70%),
-      radial-gradient(ellipse 50% 50% at 30% 80%, color-mix(in srgb, var(--ghost-blue) 8%, transparent) 0%, transparent 65%),
-      var(--void-mid);
+      radial-gradient(ellipse 70% 70% at 50% 55%, color-mix(in srgb, var(--ghost-amber) 14%, transparent) 0%, transparent 70%),
+      var(--surface-raised);
     border: var(--border-subtle);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
   }
 
   .ghost-store__visual img {
     width: min(100%, 22rem);
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 2rem 4rem rgb(0 0 0 / 0.55)) drop-shadow(0 0 2.5rem var(--amber-glow));
+    filter: drop-shadow(0 1rem 2rem rgb(28 26 24 / 0.12));
   }
 
   /* —— Productos —— */
   .ghost-product {
     position: relative;
     padding: 2rem;
-    background:
-      radial-gradient(ellipse 80% 60% at 50% 0%, color-mix(in srgb, var(--ghost-amber) 6%, transparent) 0%, transparent 70%),
-      var(--void-mid);
+    background: var(--surface-raised);
     border: var(--border-subtle);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
     overflow: visible;
     transition: transform 0.35s var(--ease-out-expo), border-color 0.3s, box-shadow 0.35s;
   }
 
   .ghost-product:hover {
     transform: translateY(-6px);
-    border-color: color-mix(in srgb, var(--spectral) 30%, transparent);
-    box-shadow: 0 1.5rem 3rem -1rem rgb(0 0 0 / 0.5), 0 0 2rem var(--amber-glow);
+    border-color: color-mix(in srgb, var(--ghost-lime) 40%, transparent);
+    box-shadow: var(--shadow-card);
   }
 
   .ghost-product--featured::before {
@@ -503,7 +591,7 @@
     inset-inline-end: -2rem;
     transform: rotate(45deg);
     background: var(--ember);
-    color: var(--ghost);
+    color: var(--surface-raised);
     font-size: 0.6rem;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -517,13 +605,13 @@
     margin-inline: auto;
     margin-block-end: 1.5rem;
     object-fit: contain;
-    filter: drop-shadow(0 1.25rem 2.5rem rgb(0 0 0 / 0.55)) drop-shadow(0 0 1.5rem rgb(255 179 71 / 0.12));
+    filter: drop-shadow(0 0.75rem 1.5rem rgb(28 26 24 / 0.1));
     transition: transform 0.4s var(--ease-out-expo), filter 0.4s;
   }
 
   .ghost-product:hover .ghost-product__img {
     transform: translateY(-6px) scale(1.03);
-    filter: drop-shadow(0 1.75rem 3rem rgb(0 0 0 / 0.6)) drop-shadow(0 0 2rem rgb(255 179 71 / 0.22));
+    filter: drop-shadow(0 1rem 2rem rgb(28 26 24 / 0.16));
   }
 
   .ghost-product__name {
@@ -642,9 +730,9 @@
     padding-block: var(--section-pad);
     padding-inline: var(--gutter);
     background:
-      radial-gradient(ellipse at center, color-mix(in srgb, var(--spectral) 10%, transparent) 0%, transparent 70%),
-      var(--void-mid);
-    border-block: var(--border-spectral);
+      radial-gradient(ellipse at center, color-mix(in srgb, var(--ghost-lime) 8%, transparent) 0%, transparent 70%),
+      var(--surface-muted);
+    border-block: var(--border-subtle);
   }
 
   .ghost-cta-band__title {
@@ -665,9 +753,10 @@
   /* —— Contacto —— */
   .ghost-contact-card {
     padding: 2rem;
-    background: var(--void-mid);
+    background: var(--surface-raised);
     border: var(--border-subtle);
     border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
   }
 
   .ghost-contact-card h3 {
@@ -693,8 +782,8 @@
   .ghost-page-hero {
     padding-block: calc(var(--nav-h) + 4rem) 3rem;
     padding-inline: var(--gutter);
-    background: linear-gradient(180deg, var(--void-mid) 0%, var(--void) 100%);
-    border-block-end: var(--border-spectral);
+    background: linear-gradient(180deg, var(--surface-raised) 0%, var(--surface) 100%);
+    border-block-end: var(--border-subtle);
   }
 
   .ghost-page-hero__title {
@@ -719,8 +808,8 @@
   .ghost-footer {
     padding-block: 3rem;
     padding-inline: var(--gutter);
-    background: var(--void);
-    border-block-start: var(--border-spectral);
+    background: var(--surface-muted);
+    border-block-start: var(--border-subtle);
   }
 
   .ghost-footer__inner {
@@ -788,8 +877,9 @@
       flex-direction: column;
       align-items: stretch;
       padding: 1.5rem;
-      background: color-mix(in srgb, var(--void) 98%, transparent);
-      border-block-end: var(--border-spectral);
+      background: color-mix(in srgb, var(--surface-raised) 98%, transparent);
+      border-block-end: var(--border-subtle);
+      box-shadow: var(--shadow-soft);
       transform: translateY(-120%);
       opacity: 0;
       pointer-events: none;
@@ -807,19 +897,8 @@
       border-block-end: var(--border-subtle);
     }
 
-    .ghost-hero__visual {
-      width: min(50vw, 10rem);
-      inset-block-start: calc(var(--nav-h) + 0.5rem);
-      inset-inline-start: auto;
-      inset-inline-end: 0.5rem;
-      opacity: 0.85;
-    }
-
-    .ghost-hero__photo {
-      width: min(70vw, 18rem);
-      inset-block: auto 28%;
-      inset-inline-end: -5%;
-      opacity: 0.75;
+    .ghost-hero__stage {
+      order: -1;
     }
   }
 
@@ -839,7 +918,7 @@
   .ghost-pillar--lime { --pillar-color: var(--ghost-lime); }
   .ghost-pillar--red { --pillar-color: var(--ghost-red); }
   .ghost-pillar--blue { --pillar-color: var(--ghost-blue); }
-  .ghost-pillar--black { --pillar-color: var(--ghost); }
+  .ghost-pillar--black { --pillar-color: var(--ghost-black); }
 
   .ghost-pillar__title {
     font-family: var(--font-display);

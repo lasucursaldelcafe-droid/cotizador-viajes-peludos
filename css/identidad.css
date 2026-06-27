@@ -7,6 +7,11 @@
 }
 
 :root {
+  --id-ink: #1c1a18;
+  --id-ink-muted: #6b635a;
+  --id-surface: #faf8f4;
+  --id-surface-raised: #ffffff;
+  --id-surface-muted: #f2ece4;
   --id-black: #080808;
   --id-white: #ffffff;
   --id-cream: #f0ede6;
@@ -39,8 +44,8 @@ body.id-page {
   margin: 0;
   font-family: var(--id-body);
   font-weight: 300;
-  background: var(--id-black);
-  color: var(--id-cream);
+  background: var(--id-surface);
+  color: var(--id-ink);
   line-height: 1.6;
   overflow-x: clip;
 }
@@ -69,7 +74,7 @@ body.id-page {
   align-items: center;
   justify-content: space-between;
   padding: 1rem var(--id-gutter);
-  background: linear-gradient(180deg, rgb(8 8 8 / 0.95) 0%, transparent 100%);
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.95) 0%, transparent 100%);
   backdrop-filter: blur(12px);
 }
 
@@ -77,7 +82,7 @@ body.id-page {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  color: var(--id-white);
+  color: var(--id-ink);
   text-decoration: none;
   font-family: var(--id-display);
   font-size: 1.35rem;
@@ -150,21 +155,21 @@ body.id-page {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, var(--id-black) 0%, transparent 35%, transparent 55%, var(--id-black) 100%),
-    radial-gradient(ellipse 60% 50% at 70% 60%, rgb(255 179 71 / 0.18) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 40% at 20% 80%, rgb(155 28 28 / 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 50% 30%, rgb(30 94 142 / 0.1) 0%, transparent 55%);
+    linear-gradient(180deg, var(--id-surface-raised) 0%, transparent 35%, transparent 55%, var(--id-surface) 100%),
+    radial-gradient(ellipse 60% 50% at 70% 60%, rgb(255 179 71 / 0.14) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgb(155 28 28 / 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 50% 30%, rgb(30 94 142 / 0.08) 0%, transparent 55%);
 }
 
 .id-hero__grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgb(255 255 255 / 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(255 255 255 / 0.03) 1px, transparent 1px);
+    linear-gradient(rgb(28 26 24 / 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(28 26 24 / 0.04) 1px, transparent 1px);
   background-size: 4rem 4rem;
   mask-image: linear-gradient(180deg, transparent, black 30%, black 70%, transparent);
-  opacity: 0.4;
+  opacity: 0.35;
 }
 
 .id-hero__content {
@@ -202,13 +207,13 @@ body.id-page {
 .id-hero__title .c-yellow { color: var(--id-yellow); text-shadow: 0 0 3rem rgb(255 179 71 / 0.45); }
 .id-hero__title .c-red { color: var(--id-red); }
 .id-hero__title .c-blue { color: var(--id-blue); text-shadow: 0 0 2rem rgb(30 94 142 / 0.5); }
-.id-hero__title .c-white { color: var(--id-white); }
+.id-hero__title .c-white { color: var(--id-ink); }
 
 .id-hero__lead {
   max-width: 32rem;
   margin: 2rem 0 0;
   font-size: clamp(1rem, 2.2vw, 1.2rem);
-  color: rgb(240 237 230 / 0.8);
+  color: var(--id-ink-muted);
 }
 
 .id-hero__source {
@@ -216,7 +221,7 @@ body.id-page {
   font-size: 0.7rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgb(240 237 230 / 0.45);
+  color: var(--id-ink-muted);
 }
 
 .id-hero__source a {
@@ -228,7 +233,7 @@ body.id-page {
 .id-marquee {
   display: flex;
   overflow: hidden;
-  border-block: 3px solid var(--id-black);
+  border-block: 1px solid color-mix(in srgb, var(--id-ink) 8%, transparent);
 }
 
 .id-marquee__strip {
@@ -247,7 +252,7 @@ body.id-page {
   white-space: nowrap;
 }
 
-.id-marquee--warm .id-marquee__strip span:nth-child(5n+1) { background: var(--id-black); color: var(--id-yellow); }
+.id-marquee--warm .id-marquee__strip span:nth-child(5n+1) { background: var(--id-blue); color: var(--id-white); }
 .id-marquee--warm .id-marquee__strip span:nth-child(5n+2) { background: var(--id-red); color: var(--id-white); }
 .id-marquee--warm .id-marquee__strip span:nth-child(5n+3) { background: var(--id-yellow); color: var(--id-black); }
 .id-marquee--warm .id-marquee__strip span:nth-child(5n+4) { background: var(--id-blue); color: var(--id-white); }
@@ -289,7 +294,7 @@ body.id-page {
 .id-intro {
   max-width: 38rem;
   font-size: 1.05rem;
-  color: rgb(240 237 230 / 0.72);
+  color: var(--id-ink-muted);
   margin: 0 0 3rem;
 }
 
@@ -298,7 +303,7 @@ body.id-page {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   min-height: clamp(18rem, 40vw, 28rem);
-  border: 2px solid var(--id-black);
+  border: 2px solid color-mix(in srgb, var(--id-ink) 10%, transparent);
 }
 
 @media (max-width: 48rem) {
@@ -387,14 +392,14 @@ body.id-page {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background:
+    background:
     radial-gradient(ellipse 70% 70% at 50% 55%, rgb(255 179 71 / 0.1) 0%, transparent 70%),
-    var(--id-black);
+    var(--id-surface-raised);
   border: 2px solid var(--id-yellow);
   box-shadow:
-    0 0 0 4px var(--id-black),
-    0 2rem 5rem rgb(0 0 0 / 0.6),
-    0 0 4rem rgb(255 179 71 / 0.2);
+    0 0 0 4px var(--id-surface),
+    0 1.25rem 3rem rgb(28 26 24 / 0.1),
+    0 0 3rem rgb(255 179 71 / 0.15);
 }
 
 .id-frame img {
@@ -435,12 +440,12 @@ body.id-page {
 
 .id-concept-card {
   padding: 2.5rem 2rem;
-  background: var(--id-black);
+  background: var(--id-surface-raised);
   transition: background 0.4s;
 }
 
 .id-concept-card:hover {
-  background: #111;
+  background: var(--id-surface-muted);
 }
 
 .id-concept-card__icon {
@@ -467,7 +472,7 @@ body.id-page {
 .id-concept-card p {
   margin: 0;
   font-size: 0.9rem;
-  color: rgb(240 237 230 / 0.65);
+  color: var(--id-ink-muted);
 }
 
 /* —— Tipografía showcase —— */
@@ -478,9 +483,9 @@ body.id-page {
 }
 
 .id-type-block--display {
-  background: linear-gradient(135deg, var(--id-black) 0%, #1a1010 50%, var(--id-black) 100%);
+  background: linear-gradient(135deg, var(--id-surface-raised) 0%, var(--id-surface-muted) 50%, var(--id-surface-raised) 100%);
   border-color: var(--id-red);
-  box-shadow: inset 0 0 4rem rgb(155 28 28 / 0.08);
+  box-shadow: inset 0 0 4rem rgb(155 28 28 / 0.04);
 }
 
 .id-type-block--body {
@@ -544,7 +549,7 @@ body.id-page {
   min-height: 14rem;
 }
 
-.id-logo-cell--dark { background: var(--id-black); }
+.id-logo-cell--dark { background: var(--id-surface-muted); }
 .id-logo-cell--light { background: var(--id-white); }
 .id-logo-cell--red { background: var(--id-red); }
 .id-logo-cell--blue { background: var(--id-blue); }
@@ -640,7 +645,7 @@ body.id-page {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin: 0 0 0.5rem;
-  color: var(--id-white);
+  color: var(--id-ink);
 }
 
 .id-voice-card p {
@@ -656,9 +661,8 @@ body.id-page {
 .id-cta {
   padding: clamp(4rem, 10vw, 7rem) var(--id-gutter);
   text-align: center;
-  background:
-    linear-gradient(180deg, var(--id-black) 0%, #120a0a 50%, var(--id-black) 100%);
-  border-block-start: 1px solid rgb(255 179 71 / 0.2);
+  background: linear-gradient(180deg, var(--id-surface) 0%, var(--id-surface-muted) 50%, var(--id-surface) 100%);
+  border-block-start: 1px solid color-mix(in srgb, var(--id-amber) 30%, transparent);
 }
 
 .id-cta__title {
@@ -705,12 +709,12 @@ body.id-page {
 
 .id-btn--ghost {
   border-color: var(--id-white);
-  color: var(--id-white);
+  color: var(--id-ink);
 }
 
 .id-btn--red {
   background: var(--id-red);
-  color: var(--id-white);
+  color: var(--id-ink);
 }
 
 /* —— Footer —— */
@@ -725,7 +729,7 @@ body.id-page {
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgb(240 237 230 / 0.4);
+  color: var(--id-ink-muted);
 }
 
 .id-footer a {
@@ -747,14 +751,14 @@ body.id-page {
 
 /* —— Color section backgrounds —— */
 .id-section--red {
-  background: linear-gradient(180deg, var(--id-black) 0%, #1a0808 50%, var(--id-black) 100%);
+  background: linear-gradient(180deg, var(--id-surface) 0%, color-mix(in srgb, var(--id-red) 6%, white) 50%, var(--id-surface) 100%);
 }
 
 .id-section--blue {
-  background: linear-gradient(180deg, var(--id-black) 0%, #081018 50%, var(--id-black) 100%);
+  background: linear-gradient(180deg, var(--id-surface) 0%, color-mix(in srgb, var(--id-blue) 6%, white) 50%, var(--id-surface) 100%);
 }
 
 .id-section--yellow-edge {
   border-block: 3px solid var(--id-yellow);
-  background: var(--id-black);
+  background: var(--id-surface-raised);
 }

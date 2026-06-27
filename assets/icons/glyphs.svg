@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none">
+  <symbol id="glyph-leaf" viewBox="0 0 64 80">
+    <path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M32 4C32 4 8 20 8 44c0 16 10 28 24 32 14-4 24-16 24-32 0-24-24-40-24-40z"/>
+    <path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" d="M32 12v56M20 28l24 8M20 40l24 8M20 52l24 8"/>
+  </symbol>
+  <symbol id="glyph-cup" viewBox="0 0 64 64">
+    <path fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" d="M14 24h30v18c0 8-6 14-15 14s-15-6-15-14V24z"/>
+    <path fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" d="M44 28h6c4 0 6 3 6 7s-2 7-6 7h-6"/>
+    <path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" d="M12 52h34"/>
+    <path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" d="M24 10c0 4 2 6 4 8M32 8c0 4 2 6 4 8M40 10c0 4 2 6 4 8"/>
+  </symbol>
+  <symbol id="glyph-beans" viewBox="0 0 64 64">
+    <path fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" d="M22 8c-8 10-8 24 0 34 8 10 20 14 28 8-8-6-12-18-4-28C38 14 30 6 22 8z"/>
+    <path fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" d="M42 8c8 10 8 24 0 34-8 10-20 14-28 8 8-6 12-18 4-28C26 14 34 6 42 8z"/>
+  </symbol>
+  <symbol id="glyph-waves" viewBox="0 0 80 32">
+    <path fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" d="M4 16c8-8 16-8 24 0s16 8 24 0M4 26c8-8 16-8 24 0s16 8 24 0"/>
+  </symbol>
+  <symbol id="glyph-compass" viewBox="0 0 64 64">
+    <circle fill="none" stroke="currentColor" stroke-width="3" cx="32" cy="32" r="10"/>
+    <circle fill="none" stroke="currentColor" stroke-width="3" cx="32" cy="32" r="24"/>
+    <path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" d="M32 8v8M32 48v8M8 32h8M48 32h8M14 14l6 6M44 44l6 6M50 14l-6 6M20 44l-6 6"/>
+  </symbol>
+  <symbol id="glyph-wheel" viewBox="0 0 64 64">
+    <circle fill="none" stroke="currentColor" stroke-width="3" cx="32" cy="32" r="10"/>
+    <circle fill="none" stroke="currentColor" stroke-width="3" cx="32" cy="32" r="26"/>
+    <path fill="none" stroke="currentColor" stroke-width="3" d="M32 6v22M32 36v22M6 32h22M36 32h22M11 11l15.5 15.5M37.5 37.5L53 53M53 11L37.5 26.5M26.5 37.5L11 53"/>
+  </symbol>
+  <symbol id="glyph-pin" viewBox="0 0 48 64">
+    <path fill="none" stroke="currentColor" stroke-width="3.5" d="M24 2c-10 0-18 8-18 18 0 14 18 32 18 32s18-18 18-32c0-10-8-18-18-18z"/>
+    <circle fill="none" stroke="currentColor" stroke-width="3" cx="24" cy="20" r="7"/>
+  </symbol>
+  <symbol id="glyph-gear" viewBox="0 0 64 64">
+    <circle fill="none" stroke="currentColor" stroke-width="3" cx="32" cy="32" r="10"/>
+    <path fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" d="M28 6h8l2 8 7 3 7-6 6 6-6 7 3 7 8 2v8l-8 2-3 7 6 7-6 6-7-6-7 3-2 8h-8l-2-8-7-3-7 6-6-6 6-7-3-7-8-2v-8l8-2 3-7-6-7 6-6 7 6 7-3z"/>
+  </symbol>
+  <symbol id="glyph-tag" viewBox="0 0 64 64">
+    <path fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" d="M32 6 54 28 32 50 10 28z"/>
+    <circle fill="currentColor" cx="32" cy="16" r="3"/>
+  </symbol>
+  <symbol id="glyph-clock" viewBox="0 0 64 64">
+    <circle fill="none" stroke="currentColor" stroke-width="3.5" cx="32" cy="34" r="22"/>
+    <path fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" d="M32 34V22M32 34h12"/>
+    <path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" d="M22 8h6M36 8h6"/>
+  </symbol>
+</svg>

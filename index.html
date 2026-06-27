@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Ghost Specialty Coffee — tienda de café de especialidad en Cali. Microlotes colombianos SCA 85+, elegancia industrial cálida y barra abierta.">
-  <meta name="theme-color" content="#080808">
+  <meta name="theme-color" content="#faf8f4">
   <meta property="og:title" content="Ghost Specialty Coffee | Especialidad y elegancia">
   <meta property="og:description" content="Café de especialidad servido en un refugio de madera, concreto y luz cálida. Barra abierta, SCA 85+ y trazabilidad completa en Cali.">
   <meta property="og:type" content="website">
@@ -33,8 +33,7 @@
 
   <header class="ghost-nav" role="banner">
     <a class="ghost-nav__brand" href="index.html" aria-label="Ghost — inicio">
-      <span class="ghost-nav__mark" aria-hidden="true"><img src="assets/images/brand/logo-mark.png" alt="" width="40" height="40" decoding="async"></span>
-      <span>Ghost</span>
+      <img class="ghost-nav__brand-img ghost-brand-img" src="assets/images/brand/logo-horizontal.png" alt="Ghost Specialty Coffee" width="140" height="40" decoding="async">
     </a>
     <button type="button" class="ghost-nav__toggle" id="ghostNavToggle" aria-expanded="false" aria-controls="ghostNavMenu">Menú</button>
     <nav aria-label="Principal">
@@ -55,29 +54,40 @@
         <div class="ghost-hero__orb ghost-hero__orb--2"></div>
       </div>
 
-      <img class="ghost-hero__photo" src="assets/images/brand/hero-island.png" alt="" width="1600" height="1066" decoding="async" fetchpriority="high">
-
-      <img class="ghost-hero__visual" src="assets/images/brand/logo-horizontal.png" alt="" width="640" height="160" decoding="async">
-
-      <div class="ghost-hero__content">
-        <p class="ghost-kicker">Del origen al ritual.</p>
-        <h1 class="ghost-hero__title" id="hero-title">
-          <span class="ghost-hero__outline">ESPECIALIDAD</span>
-          Y ELEGANCIA
-        </h1>
-        <p class="ghost-hero__lead">
-          Nuestra tienda es un refugio de café de especialidad en Cali: madera, concreto y luz cálida
-          que abraza cada extracción. Microlotes colombianos SCA 85+, curados de distintos territorios
-          y una barra donde el ritual se ve — y se siente.
-        </p>
-        <div class="ghost-hero__cta">
-          <a class="btn btn--spectral" href="menu.html">Ver menú</a>
-          <a class="btn btn--ghost" href="origen.html">Nuestros lotes</a>
+      <div class="ghost-hero__layout">
+        <div class="ghost-hero__lockup reveal">
+          <img class="ghost-hero__lockup-img" src="assets/images/brand/logo-mark.png" alt="Ghost Specialty Coffee" width="320" height="293" decoding="async" fetchpriority="high">
+          <p class="ghost-hero__lockup-sub">Specialty Coffee</p>
         </div>
-        <div class="ghost-hero__meta">
-          <span>Tienda de especialidad · Cali</span>
-          <span aria-hidden="true">·</span>
-          <span>Industrial cálida</span>
+
+        <div class="ghost-hero__stage reveal" aria-hidden="true">
+          <svg class="ghost-glyph ghost-glyph--leaf" viewBox="0 0 64 80"><use href="assets/icons/glyphs.svg#glyph-leaf"/></svg>
+          <svg class="ghost-glyph ghost-glyph--cup" viewBox="0 0 64 64"><use href="assets/icons/glyphs.svg#glyph-cup"/></svg>
+          <svg class="ghost-glyph ghost-glyph--compass" viewBox="0 0 64 64"><use href="assets/icons/glyphs.svg#glyph-compass"/></svg>
+          <svg class="ghost-glyph ghost-glyph--waves" viewBox="0 0 80 32"><use href="assets/icons/glyphs.svg#glyph-waves"/></svg>
+          <img class="ghost-hero__photo" src="assets/images/brand/hero-island.png" alt="Isla experiencial Ghost — barra de café de especialidad" width="963" height="614" decoding="async">
+        </div>
+
+        <div class="ghost-hero__content">
+          <p class="ghost-kicker">Del origen al ritual.</p>
+          <h1 class="ghost-hero__title" id="hero-title">
+            <span class="ghost-hero__outline">ESPECIALIDAD</span>
+            Y ELEGANCIA
+          </h1>
+          <p class="ghost-hero__lead">
+            Nuestra tienda es un refugio de café de especialidad en Cali: madera, concreto y luz cálida
+            que abraza cada extracción. Microlotes colombianos SCA 85+, curados de distintos territorios
+            y una barra donde el ritual se ve — y se siente.
+          </p>
+          <div class="ghost-hero__cta">
+            <a class="btn btn--spectral" href="menu.html">Ver menú</a>
+            <a class="btn btn--ghost" href="origen.html">Nuestros lotes</a>
+          </div>
+          <div class="ghost-hero__meta">
+            <span>Tienda de especialidad · Cali</span>
+            <span aria-hidden="true">·</span>
+            <span>Industrial cálida</span>
+          </div>
         </div>
       </div>
     </section>
@@ -157,25 +167,25 @@
         </p>
         <div class="ghost-grid ghost-grid--4 reveal">
           <article class="ghost-experience__card ghost-experience__card--warm">
-            <p class="ghost-experience__num">01</p>
+            <svg class="ghost-experience__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="assets/icons/glyphs.svg#glyph-cup"/></svg>
             <h3 class="ghost-experience__title">Barra</h3>
             <p class="ghost-experience__sub">Elegancia en cada extracción</p>
             <p class="ghost-experience__text">Espresso, V60, Chemex y Nitro Cold Brew bajo luz cálida. Barra abierta donde cada taza se prepara frente a ti, con notas de cata impresas.</p>
           </article>
           <article class="ghost-experience__card">
-            <p class="ghost-experience__num">02</p>
+            <svg class="ghost-experience__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="assets/icons/glyphs.svg#glyph-gear"/></svg>
             <h3 class="ghost-experience__title">Tostión</h3>
             <p class="ghost-experience__sub">Artesanal en Cali</p>
             <p class="ghost-experience__text">Control de curva exacto por lote. Desgasificación 48–72 horas. Café fresco con perfil documentado.</p>
           </article>
           <article class="ghost-experience__card">
-            <p class="ghost-experience__num">03</p>
+            <svg class="ghost-experience__icon" viewBox="0 0 64 80" aria-hidden="true"><use href="assets/icons/glyphs.svg#glyph-leaf"/></svg>
             <h3 class="ghost-experience__title">Origen</h3>
             <p class="ghost-experience__sub">Colombia · Microlotes</p>
             <p class="ghost-experience__text">Huila, Nariño, Cauca, Tolima y más. 1.400–2.200 msnm. Gesha, Bourbon, Castillo, Caturra y Papayo en procesos lavado, natural, honey y anaeróbico.</p>
           </article>
           <article class="ghost-experience__card">
-            <p class="ghost-experience__num">04</p>
+            <svg class="ghost-experience__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="assets/icons/glyphs.svg#glyph-tag"/></svg>
             <h3 class="ghost-experience__title">Retail</h3>
             <p class="ghost-experience__sub">Bolsa 250 g con QR</p>
             <p class="ghost-experience__text">Empaque con trazabilidad QR. Kits barista y merch. Lleva el ritual a casa.</p>

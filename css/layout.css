@@ -9,10 +9,10 @@
     padding-inline: var(--gutter);
   }
 
-  .ghost-section--dark { background: var(--void); }
-  .ghost-section--smoke { background: var(--smoke); }
+  .ghost-section--dark { background: var(--surface-raised); }
+  .ghost-section--smoke { background: var(--surface-muted); }
   .ghost-section--roast {
-    background: linear-gradient(135deg, var(--roast) 0%, var(--void-mid) 100%);
+    background: linear-gradient(135deg, var(--surface-warm) 0%, var(--surface) 100%);
   }
 
   /* Grid adaptativo con container queries */
@@ -63,7 +63,7 @@
 
   .ghost-stat {
     padding: clamp(1.5rem, 4vw, 2.5rem);
-    background: var(--void-mid);
+    background: var(--surface-raised);
     text-align: center;
   }
 
@@ -73,17 +73,14 @@
     line-height: 1;
     letter-spacing: 0.04em;
     color: var(--ghost-lime);
-    text-shadow: var(--shadow-glow);
   }
 
   .ghost-stat:nth-child(2) .ghost-stat__num {
     color: var(--ghost-red);
-    text-shadow: var(--shadow-ember);
   }
 
   .ghost-stat:nth-child(3) .ghost-stat__num {
     color: var(--ghost-blue);
-    text-shadow: var(--shadow-blue);
   }
 
   .ghost-stat:nth-child(4) .ghost-stat__num {

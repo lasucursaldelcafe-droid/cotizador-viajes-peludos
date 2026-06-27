@@ -1,9 +1,9 @@
-/* Design tokens — paleta oficial Ghost Specialty Coffee */
+/* Design tokens — Ghost Specialty Coffee · tema claro elegante */
 
 @property --ghost-glow-alpha {
   syntax: "<number>";
   inherits: false;
-  initial-value: 0.25;
+  initial-value: 0.2;
 }
 
 @property --nav-blur {
@@ -14,31 +14,41 @@
 
 @layer tokens {
   :root {
-    color-scheme: dark;
+    color-scheme: light;
 
-    /* Paleta oficial — manual de marca */
+    /* Paleta oficial */
     --ghost-black: #080808;
     --ghost-red: #9b1c1c;
     --ghost-lime: #8db600;
     --ghost-blue: #1e5e8e;
     --ghost-amber: #e6a04d;
+    --ghost-yellow: #ffb347;
 
-    /* Alias semánticos (compatibilidad con componentes) */
-    --void: var(--ghost-black);
-    --void-mid: #111111;
-    --ghost: #f0ede6;
-    --ghost-dim: #b8b4ab;
+    /* Superficies claras — sin fondos negros */
+    --surface: #faf8f4;
+    --surface-raised: #ffffff;
+    --surface-muted: #f2ece4;
+    --surface-warm: #f7f0e6;
+    --ink: #1c1a18;
+    --ink-muted: #6b635a;
+    --ink-soft: #8a8278;
+
+    /* Alias semánticos */
+    --void: var(--surface);
+    --void-mid: var(--surface-raised);
+    --ghost: var(--ink);
+    --ghost-dim: var(--ink-muted);
     --spectral: var(--ghost-lime);
     --spectral-dim: #6f9200;
     --ember: var(--ghost-red);
     --metal-blue: var(--ghost-blue);
-    --roast: #1a1010;
-    --smoke: #141414;
+    --roast: var(--surface-warm);
+    --smoke: var(--surface-muted);
 
     --spectral-glow: color-mix(in srgb, var(--ghost-lime) calc(var(--ghost-glow-alpha) * 100%), transparent);
-    --ember-glow: color-mix(in srgb, var(--ghost-red) 30%, transparent);
-    --amber-glow: color-mix(in srgb, var(--ghost-amber) 22%, transparent);
-    --blue-glow: color-mix(in srgb, var(--ghost-blue) 25%, transparent);
+    --ember-glow: color-mix(in srgb, var(--ghost-red) 18%, transparent);
+    --amber-glow: color-mix(in srgb, var(--ghost-amber) 20%, transparent);
+    --blue-glow: color-mix(in srgb, var(--ghost-blue) 16%, transparent);
 
     --font-display: "Barlow Condensed", "Helvetica Neue", Helvetica, "Arial Narrow", Arial, sans-serif;
     --font-body: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -50,20 +60,22 @@
     --gutter: clamp(1.25rem, 5vw, 2.5rem);
 
     --radius-sm: 0.25rem;
-    --radius-md: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1.25rem;
     --radius-pill: 999px;
 
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 
-    --shadow-glow: 0 0 2.5rem var(--spectral-glow);
-    --shadow-ember: 0 0 2rem var(--ember-glow);
-    --shadow-blue: 0 0 2rem var(--blue-glow);
-    --shadow-card: 0 1.5rem 3rem -1rem rgb(0 0 0 / 0.5);
+    --shadow-soft: 0 1rem 2.5rem -0.75rem rgb(28 26 24 / 0.1);
+    --shadow-card: 0 1.25rem 3rem -1rem rgb(28 26 24 / 0.12);
+    --shadow-glow: 0 0 2rem var(--spectral-glow);
+    --shadow-ember: 0 0 1.5rem var(--ember-glow);
+    --shadow-blue: 0 0 1.5rem var(--blue-glow);
 
-    --border-subtle: 1px solid color-mix(in srgb, var(--ghost) 8%, transparent);
-    --border-spectral: 1px solid color-mix(in srgb, var(--ghost-lime) 25%, transparent);
+    --border-subtle: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+    --border-spectral: 1px solid color-mix(in srgb, var(--ghost-lime) 35%, transparent);
     --border-red: 1px solid color-mix(in srgb, var(--ghost-red) 25%, transparent);
-    --border-blue: 1px solid color-mix(in srgb, var(--ghost-blue) 25%, transparent);
+    --border-blue: 1px solid color-mix(in srgb, var(--ghost-blue) 22%, transparent);
   }
 }

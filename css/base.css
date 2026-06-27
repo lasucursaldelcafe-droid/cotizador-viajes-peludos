@@ -44,16 +44,16 @@
     font-family: var(--font-body);
     font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
     line-height: 1.65;
-    color: var(--ghost);
-    background: var(--void);
+    color: var(--ink);
+    background: var(--surface);
     overflow-x: clip;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
 
   ::selection {
-    background: var(--spectral);
-    color: var(--void);
+    background: color-mix(in srgb, var(--ghost-lime) 35%, white);
+    color: var(--ink);
   }
 
   img,
@@ -80,7 +80,7 @@
     inset: 0;
     pointer-events: none;
     z-index: 9998;
-    opacity: 0.035;
+    opacity: 0.02;
     mix-blend-mode: overlay;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
