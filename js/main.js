@@ -39,7 +39,7 @@ class GhostApp {
 
   #logBrand() {
     if (globalThis.location?.hostname === 'localhost') {
-      console.info(`%c${BRAND.fullName}`, 'color:#00e5b8;font-weight:bold;font-size:14px');
+      console.info(`%c${BRAND.fullName}`, 'color:#8DB600;font-weight:bold;font-size:14px');
     }
   }
 }

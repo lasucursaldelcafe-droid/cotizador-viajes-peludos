@@ -3,15 +3,15 @@
     "name": "Ghost",
     "fullName": "Ghost Specialty Coffee",
     "descriptor": "Café de especialidad · Cali",
-    "tagline": "Lo invisible, hecho taza",
-    "headline": "CAFÉ QUE NO DESAPARECE",
-    "subheadline": "Tostión de precisión, origen colombiano y una experiencia que se siente antes de probarla. Ghost no es un café más: es presencia.",
+    "tagline": "Del origen al ritual.",
+    "headline": "CAFÉ DE ESPECIALIDAD CON ORIGEN VERIFICABLE",
+    "subheadline": "Origen en Bruselas, Pitalito, Huila. Puntajes SCA 85+, tostión artesanal en Cali y trazabilidad completa de cada lote.",
     "visitLine": "Cali, Valle del Cauca",
-    "footerLine": "Ghost Specialty Coffee · Tostadores de lo espectral",
-    "website": "https://lasucursaldelcafe-droid.github.io/ghost_coffee_shop/",
-    "email": "hola@ghostcoffee.co",
-    "phone": "+57 300 000 0000",
-    "whatsapp": "573000000000",
+    "footerLine": "Ghost Specialty Coffee · Del origen al ritual.",
+    "website": "https://ghostspecialtycoffee.co",
+    "email": "hola@ghostspecialtycoffee.co",
+    "phone": "+57 302 515 9900",
+    "whatsapp": "573025159900",
     "address": "Cali, Valle del Cauca, Colombia",
     "city": "Cali, Colombia",
     "hours": "Lunes a sábado 7:00am – 8:00pm · Domingos 9:00am – 6:00pm",
@@ -19,117 +19,122 @@
       "instagram": "https://www.instagram.com/ghost_specialty_coffee/",
       "facebook": ""
     },
-    "purpose": "Elevar el café de especialidad con una identidad audaz: trazabilidad radical, tostión sin concesiones y un espacio donde cada taza deja huella.",
-    "mission": "Tostar y servir microlotes colombianos con precisión técnica y una experiencia de marca que desafía lo convencional.",
-    "vision": "Ser la marca de café de especialidad más reconocida del ecosistema caleño por su carácter, su origen y su presencia.",
-    "about": "Ghost nace en el corazón de la escena cafetera de Cali. Somos tostadores, baristas y narradores de origen. Cada lote que entra a nuestro laboratorio pasa por un protocolo obsesivo: curva de tostión, desarrollo, reposo y extracción. Lo que sale no es un producto genérico: es una firma.",
+    "purpose": "Conectar el origen con el consumidor final. Cada café lleva nombre: un lote, un proceso, un productor.",
+    "mission": "Tostar y servir café de especialidad colombiano con puntajes SCA 85+, control riguroso de beneficio y una experiencia de marca que convierte el proceso en producto.",
+    "vision": "Ser la referencia del café de especialidad en Cali por trazabilidad verificable, calidad de taza y presencia de marca.",
+    "about": "Ghost Specialty Coffee es una marca de café de especialidad colombiana con origen verificable en las montañas de Bruselas, Pitalito, Huila. Trabajamos Gesha, Bourbon, Castillo y Caturra bajo métodos lavado, natural, honey y anaeróbico. Tostión artesanal en Cali con desgasificación de 48–72 horas antes de venta.",
     "values": [
       {
-        "title": "Origen sin excusas",
-        "text": "Trazabilidad completa. Conocemos al productor, la finca y la altitud. Si no podemos contarlo, no lo tostamos."
+        "title": "Origen verificable",
+        "text": "Trazabilidad completa: cada lote tiene GPS, productor y notas de cata. Si no podemos contarlo, no lo tostamos."
       },
       {
-        "title": "Tostión agresiva con control",
-        "text": "Perfiles claros, desarrollo calculado. Buscamos la nota que otros dejan pasar."
+        "title": "SCA 85+",
+        "text": "Puntaje mínimo 85 puntos. Altitud 1.700–2.000 msnm. Control riguroso en cada etapa del beneficio."
       },
       {
-        "title": "Presencia de marca",
-        "text": "Cada punto de contacto — taza, bolsa, espacio — comunica la misma intensidad."
+        "title": "El proceso es el producto",
+        "text": "Barra abierta, métodos visibles y experiencia educativa. El café es el espectáculo."
       },
       {
-        "title": "Comunidad cafetera",
-        "text": "Parte del ecosistema de La Sucursal del Café. Cata, competencia y formación."
+        "title": "Marca propia",
+        "text": "No somos franquicia: somos un origen colombiano con nombre, cara, proceso y territorio verificable."
       }
     ],
-    "story": "Empezamos con una pregunta: ¿y si el mejor café fuera el que casi no ves venir? Ghost es esa respuesta — especialidad colombiana con actitud espectral, nacida entre baristas que no aceptan lo mediocre."
+    "story": "Ghost conecta el origen con el ritual de la taza. Nacimos para demostrar que el mejor café colombiano no necesita desaparecer en la cadena: cada lote tiene historia, productor y presencia."
   },
   "theme": {
-    "void": "#08080a",
-    "voidMid": "#121218",
+    "ghostBlack": "#080808",
+    "ghostRed": "#9B1C1C",
+    "ghostLime": "#8DB600",
+    "ghostBlue": "#1E5E8E",
+    "void": "#080808",
+    "voidMid": "#111111",
     "ghost": "#f0ede6",
     "ghostDim": "#b8b4ab",
-    "spectral": "#00e5b8",
-    "spectralDim": "#00b894",
-    "ember": "#ff4d1a",
-    "roast": "#2a1810",
-    "smoke": "#1a1a22"
+    "spectral": "#8DB600",
+    "spectralDim": "#6f9200",
+    "ember": "#9B1C1C",
+    "metalBlue": "#1E5E8E",
+    "roast": "#1a1010",
+    "smoke": "#141414"
   },
   "marquee": [
-    "Microlotes colombianos",
-    "Tostión de precisión",
-    "Trazabilidad radical",
-    "Cali · Colombia",
+    "SCA 85+",
+    "Del origen al ritual",
+    "Bruselas · Pitalito · Huila",
+    "Tostión artesanal en Cali",
     "Ghost Specialty Coffee",
-    "La Sucursal del Café"
+    "Trazabilidad verificable"
   ],
   "experiences": [
     {
       "id": "bar",
       "title": "Barra",
-      "subtitle": "Extracción sin concesiones",
-      "description": "Espresso, pour over y métodos alternos con protocolo de extracción documentado. Cada servicio es una demostración.",
+      "subtitle": "El proceso es el producto",
+      "description": "Espresso, V60, Chemex y Nitro Cold Brew. Barra abierta: el barista prepara frente al cliente con notas de cata impresas.",
       "layout": "left"
     },
     {
       "id": "tostion",
       "title": "Tostión",
-      "subtitle": "Laboratorio propio",
-      "description": "Curvas personalizadas por lote. Desarrollo, reposo y control de humedad. Café fresco, siempre.",
+      "subtitle": "Artesanal en Cali",
+      "description": "Control de curva exacto por lote. Desgasificación 48–72 horas. Café fresco con perfil documentado.",
       "layout": "right"
     },
     {
       "id": "origen",
       "title": "Origen",
-      "subtitle": "Del productor a la taza",
-      "description": "Relación directa con fincas de Nariño, Huila, Tolima y Cauca. Historias que se saborean.",
+      "subtitle": "Bruselas, Pitalito, Huila",
+      "description": "1.700–2.000 msnm. Variedades Gesha, Bourbon, Castillo y Caturra. Procesos lavado, natural, honey y anaeróbico.",
       "layout": "left"
     },
     {
-      "id": "eventos",
-      "title": "Eventos",
-      "subtitle": "Ecosistema Sucursal",
-      "description": "Presentes en La Sucursal del Café: cata, V60 Championship y talleres con la comunidad cafetera de Cali.",
+      "id": "retail",
+      "title": "Retail",
+      "subtitle": "Bolsa 250 g con QR",
+      "description": "Empaque con trazabilidad QR. Kits barista y merch. Lleva el ritual a casa.",
       "layout": "right"
     }
   ],
   "products": [
     {
-      "id": "ghost-narino",
-      "name": "Ghost · Nariño",
-      "variety": "Caturra",
-      "origin": "La Unión, Nariño",
-      "region": "Nariño",
-      "farmer": "Productores aliados",
-      "altitude": "1900 msnm",
-      "price": 48000,
-      "weight": "250 g",
-      "roast": "Tostión media-clara",
-      "notes": ["Caramelo", "Cítrico", "Cacao"],
-      "featured": true
-    },
-    {
       "id": "ghost-huila",
       "name": "Ghost · Huila",
       "variety": "Castillo",
-      "origin": "Pitalito",
+      "origin": "Bruselas, Pitalito",
       "region": "Huila",
+      "farmer": "Productores aliados",
+      "altitude": "1.900 msnm",
       "price": 45000,
       "weight": "250 g",
       "roast": "Tostión media",
       "notes": ["Chocolate", "Nuez", "Dulce"],
-      "featured": false
+      "featured": true
     },
     {
-      "id": "ghost-espectral",
-      "name": "Espectral",
-      "variety": "Geisha",
-      "origin": "Tolima",
-      "region": "Tolima",
+      "id": "ghost-gesha",
+      "name": "Ghost · Gesha",
+      "variety": "Gesha",
+      "origin": "Bruselas, Pitalito",
+      "region": "Huila",
       "price": 72000,
       "weight": "250 g",
       "roast": "Tostión clara",
       "notes": ["Floral", "Bergamota", "Té"],
       "featured": true
+    },
+    {
+      "id": "ghost-bourbon",
+      "name": "Ghost · Bourbon",
+      "variety": "Bourbon",
+      "origin": "Huila",
+      "region": "Huila",
+      "price": 48000,
+      "weight": "250 g",
+      "roast": "Tostión media-clara",
+      "notes": ["Caramelo", "Cítrico", "Cacao"],
+      "featured": false
     }
   ],
   "menu": [
@@ -137,30 +142,41 @@
       "id": "espresso",
       "name": "Espresso bar",
       "items": [
-        { "name": "Espresso", "price": 7000 },
-        { "name": "Americano", "price": 7500 },
-        { "name": "Capuchino", "price": 10000 },
-        { "name": "Flat white", "price": 11000 },
-        { "name": "Ghost latte", "description": "Doble shot · leche texturizada", "price": 12000 }
+        { "name": "Espresso", "price": 12000 },
+        { "name": "Americano", "price": 12000 },
+        { "name": "Cortado", "price": 14000 },
+        { "name": "Cappuccino", "price": 15000 },
+        { "name": "Latte", "price": 16000 },
+        { "name": "Flat white", "price": 18000 }
       ]
     },
     {
       "id": "filtrados",
-      "name": "Filtrados",
+      "name": "Métodos filtrados",
       "items": [
-        { "name": "Pour over V60", "description": "Origen del día", "price": 13000 },
-        { "name": "Chemex", "description": "Lote destacado", "price": 14000 },
-        { "name": "Cold brew", "price": 12000 },
-        { "name": "Nitro", "price": 13500 }
+        { "name": "V60 Single Lot", "description": "Lote del día · notas de cata", "price": 18000 },
+        { "name": "Chemex", "description": "Lote destacado", "price": 20000 },
+        { "name": "AeroPress", "price": 16000 },
+        { "name": "Prensa francesa", "price": 14000 }
       ]
     },
     {
-      "id": "acompanamiento",
-      "name": "Acompañamiento",
+      "id": "frias",
+      "name": "Bebidas frías",
       "items": [
-        { "name": "Croissant mantequilla", "price": 9500 },
-        { "name": "Cookie chocolate 70%", "price": 8000 },
-        { "name": "Brownie espresso", "price": 10000 }
+        { "name": "Cold brew", "price": 16000 },
+        { "name": "Latte frío", "price": 18000 },
+        { "name": "Espresso tonic", "price": 17000 },
+        { "name": "Frappe artesanal", "price": 20000 }
+      ]
+    },
+    {
+      "id": "retail",
+      "name": "Retail",
+      "items": [
+        { "name": "Bolsa 250 g", "description": "Trazabilidad QR", "price": 45000 },
+        { "name": "Kit barista", "price": 85000 },
+        { "name": "Merch Ghost", "price": 28000 }
       ]
     }
   ]

@@ -1,4 +1,4 @@
-/* Design tokens — CSS avanzado con @property y color-mix */
+/* Design tokens — paleta oficial Ghost Specialty Coffee */
 
 @property --ghost-glow-alpha {
   syntax: "<number>";
@@ -16,22 +16,30 @@
   :root {
     color-scheme: dark;
 
-    /* Paleta OKLCH-inspired vía variables */
-    --void: #08080a;
-    --void-mid: #121218;
+    /* Paleta oficial — manual de marca */
+    --ghost-black: #080808;
+    --ghost-red: #9b1c1c;
+    --ghost-lime: #8db600;
+    --ghost-blue: #1e5e8e;
+
+    /* Alias semánticos (compatibilidad con componentes) */
+    --void: var(--ghost-black);
+    --void-mid: #111111;
     --ghost: #f0ede6;
     --ghost-dim: #b8b4ab;
-    --spectral: #00e5b8;
-    --spectral-dim: #00b894;
-    --ember: #ff4d1a;
-    --roast: #2a1810;
-    --smoke: #1a1a22;
+    --spectral: var(--ghost-lime);
+    --spectral-dim: #6f9200;
+    --ember: var(--ghost-red);
+    --metal-blue: var(--ghost-blue);
+    --roast: #1a1010;
+    --smoke: #141414;
 
-    --spectral-glow: color-mix(in srgb, var(--spectral) calc(var(--ghost-glow-alpha) * 100%), transparent);
-    --ember-glow: color-mix(in srgb, var(--ember) 30%, transparent);
+    --spectral-glow: color-mix(in srgb, var(--ghost-lime) calc(var(--ghost-glow-alpha) * 100%), transparent);
+    --ember-glow: color-mix(in srgb, var(--ghost-red) 30%, transparent);
+    --blue-glow: color-mix(in srgb, var(--ghost-blue) 25%, transparent);
 
-    --font-display: "Bebas Neue", "Oswald", system-ui, sans-serif;
-    --font-body: "Satoshi", system-ui, sans-serif;
+    --font-display: "Barlow Condensed", "Helvetica Neue", Helvetica, "Arial Narrow", Arial, sans-serif;
+    --font-body: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --font-editorial: "Playfair Display", Georgia, serif;
 
     --nav-h: 4.5rem;
@@ -48,9 +56,12 @@
 
     --shadow-glow: 0 0 2.5rem var(--spectral-glow);
     --shadow-ember: 0 0 2rem var(--ember-glow);
+    --shadow-blue: 0 0 2rem var(--blue-glow);
     --shadow-card: 0 1.5rem 3rem -1rem rgb(0 0 0 / 0.5);
 
     --border-subtle: 1px solid color-mix(in srgb, var(--ghost) 8%, transparent);
-    --border-spectral: 1px solid color-mix(in srgb, var(--spectral) 25%, transparent);
+    --border-spectral: 1px solid color-mix(in srgb, var(--ghost-lime) 25%, transparent);
+    --border-red: 1px solid color-mix(in srgb, var(--ghost-red) 25%, transparent);
+    --border-blue: 1px solid color-mix(in srgb, var(--ghost-blue) 25%, transparent);
   }
 }

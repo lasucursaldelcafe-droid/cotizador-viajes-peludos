@@ -129,7 +129,7 @@
   }
 
   .btn--spectral {
-    background: var(--spectral);
+    background: var(--ghost-lime);
     color: var(--void);
     box-shadow: var(--shadow-glow);
   }
@@ -151,7 +151,7 @@
   }
 
   .btn--ember {
-    background: var(--ember);
+    background: var(--ghost-red);
     color: var(--ghost);
     box-shadow: var(--shadow-ember);
   }
@@ -176,8 +176,9 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 80% 60% at 70% 20%, color-mix(in srgb, var(--spectral) 8%, transparent) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 40% at 10% 80%, color-mix(in srgb, var(--ember) 6%, transparent) 0%, transparent 50%),
+      radial-gradient(ellipse 80% 60% at 70% 20%, color-mix(in srgb, var(--ghost-lime) 8%, transparent) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 10% 80%, color-mix(in srgb, var(--ghost-red) 6%, transparent) 0%, transparent 50%),
+      radial-gradient(ellipse 40% 35% at 50% 50%, color-mix(in srgb, var(--ghost-blue) 5%, transparent) 0%, transparent 55%),
       linear-gradient(180deg, var(--void-mid) 0%, var(--void) 100%);
   }
 
@@ -210,7 +211,7 @@
     height: min(30vw, 20rem);
     inset-block-end: 20%;
     inset-inline-start: -8%;
-    background: color-mix(in srgb, var(--ember) 8%, transparent);
+    background: color-mix(in srgb, var(--ghost-blue) 10%, transparent);
     animation-delay: -4s;
   }
 

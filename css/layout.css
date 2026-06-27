@@ -72,8 +72,22 @@
     font-size: clamp(2.5rem, 6vw, 4rem);
     line-height: 1;
     letter-spacing: 0.04em;
-    color: var(--spectral);
+    color: var(--ghost-lime);
     text-shadow: var(--shadow-glow);
+  }
+
+  .ghost-stat:nth-child(2) .ghost-stat__num {
+    color: var(--ghost-red);
+    text-shadow: var(--shadow-ember);
+  }
+
+  .ghost-stat:nth-child(3) .ghost-stat__num {
+    color: var(--ghost-blue);
+    text-shadow: var(--shadow-blue);
+  }
+
+  .ghost-stat:nth-child(4) .ghost-stat__num {
+    color: var(--ghost-lime);
   }
 
   .ghost-stat__label {

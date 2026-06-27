@@ -15,8 +15,8 @@
 export const BRAND = Object.freeze({
   name: 'Ghost',
   fullName: 'Ghost Specialty Coffee',
-  whatsapp: '573000000000',
-  email: 'hola@ghostcoffee.co',
+  whatsapp: '573025159900',
+  email: 'hola@ghostspecialtycoffee.co',
   instagram: 'https://www.instagram.com/ghost_specialty_coffee/',
   basePath: detectBasePath(),
 });
