@@ -14,6 +14,15 @@ try {
     $remoteUrl = "https://github.com/$owner/$repo.git"
     $root = Get-ProjectRoot
 
+    # Si el repo objetivo es ghost_coffee_shop, usar script bash dedicado
+    if ($repo -eq "ghost_coffee_shop" -and (Test-Path (Join-Path $root "tools/crear-repo-ghost.sh"))) {
+        $bash = Get-Command bash -ErrorAction SilentlyContinue
+        if ($bash) {
+            & bash (Join-Path $root "tools/crear-repo-ghost.sh")
+            exit $LASTEXITCODE
+        }
+    }
+
     $gh = Ensure-GhInstalled
     if (-not (Ensure-GhToken -Gh $gh)) {
         Write-DeployStatus -Status auth_required -PagesUrl $pagesUrl -Message "Sin token GitHub. Ejecuta una vez: iniciar-github.bat o gh auth login"

@@ -48,6 +48,17 @@ python3 -m http.server 8080
 
 ## Deploy
 
-Push a `main` → GitHub Pages vía `.github/workflows/deploy-pages.yml`
+### Crear repositorio nuevo (primera vez)
 
-**URL objetivo:** https://lasucursaldelcafe-droid.github.io/ghost_coffee_shop/
+El proyecto está configurado para `lasucursaldelcafe-droid/ghost_coffee_shop`.
+
+```bash
+# Con GitHub CLI autenticado (permiso crear repos):
+bash tools/crear-repo-ghost.sh
+```
+
+O en Windows: `tools\crear-repo-ghost.bat`
+
+**URL del sitio:** https://lasucursaldelcafe-droid.github.io/ghost_coffee_shop/
+
+Push a `main` activa GitHub Pages vía `.github/workflows/deploy-pages.yml`.
