@@ -409,6 +409,42 @@ body.id-page {
   filter: drop-shadow(0 1.5rem 3rem rgb(0 0 0 / 0.55));
 }
 
+.id-frame--abstract {
+  min-height: 14rem;
+  aspect-ratio: 4/3;
+}
+
+.id-abstract-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 10rem;
+}
+
+.id-abstract-panel__title {
+  font-family: var(--id-display);
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  letter-spacing: 0.12em;
+  line-height: 1;
+  color: var(--id-black);
+}
+
+.id-abstract-panel__sub {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--id-ink-muted);
+}
+
+.id-abstract-panel--retail .id-abstract-panel__title {
+  color: var(--id-blue);
+}
+
 .id-frame::before {
   content: "";
   position: absolute;

@@ -15,7 +15,13 @@
   <a class="skip-link" href="#contenido">Ir al contenido</a>
 
   <header class="ghost-nav" role="banner">
-    <a class="ghost-nav__brand" href="index.html"><img class="ghost-nav__brand-img ghost-brand-img" src="assets/images/brand/logo-horizontal.png" alt="Ghost Specialty Coffee" width="140" height="40" decoding="async"></a>
+    <a class="ghost-nav__brand" href="index.html" aria-label="Ghost Specialty Coffee — inicio">
+      <img class="ghost-nav__mark" src="assets/images/brand/ghost-mark.svg" alt="" width="36" height="36" decoding="async">
+      <span class="ghost-nav__type">
+        <span class="ghost-nav__name">Ghost</span>
+        <span class="ghost-nav__sub">Specialty Coffee</span>
+      </span>
+    </a>
     <button type="button" class="ghost-nav__toggle" id="ghostNavToggle" aria-expanded="false" aria-controls="ghostNavMenu">Menú</button>
     <nav aria-label="Principal">
       <ul class="ghost-nav__menu" id="ghostNavMenu">
@@ -70,8 +76,12 @@
 
     <section class="ghost-section ghost-section--smoke" aria-labelledby="tienda-title">
       <div class="ghost-wrap ghost-split ghost-split--reverse">
-        <figure class="ghost-split__visual ghost-store__visual reveal" aria-hidden="true">
-          <img src="assets/images/brand/hero-island.png" alt="" width="800" height="533" loading="lazy">
+        <figure class="ghost-art-panel ghost-art-panel--warm reveal" aria-hidden="true">
+          <div class="ghost-seal">
+            <span class="ghost-seal__ring">Nuestra tienda</span>
+            <span class="ghost-seal__core">GHOST</span>
+            <span class="ghost-seal__tag">Industrial cálida</span>
+          </div>
         </figure>
         <div>
           <p class="ghost-section__label reveal">Nuestra tienda</p>

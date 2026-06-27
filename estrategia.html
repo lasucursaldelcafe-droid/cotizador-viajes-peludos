@@ -15,7 +15,13 @@
   <a class="skip-link" href="#contenido">Ir al contenido</a>
 
   <header class="ghost-nav" role="banner">
-    <a class="ghost-nav__brand" href="index.html"><img class="ghost-nav__brand-img ghost-brand-img" src="assets/images/brand/logo-horizontal.png" alt="Ghost Specialty Coffee" width="140" height="40" decoding="async"></a>
+    <a class="ghost-nav__brand" href="index.html" aria-label="Ghost Specialty Coffee — inicio">
+      <img class="ghost-nav__mark" src="assets/images/brand/ghost-mark.svg" alt="" width="36" height="36" decoding="async">
+      <span class="ghost-nav__type">
+        <span class="ghost-nav__name">Ghost</span>
+        <span class="ghost-nav__sub">Specialty Coffee</span>
+      </span>
+    </a>
     <button type="button" class="ghost-nav__toggle" id="ghostNavToggle" aria-expanded="false" aria-controls="ghostNavMenu">Menú</button>
     <nav aria-label="Principal">
       <ul class="ghost-nav__menu" id="ghostNavMenu">
@@ -92,13 +98,21 @@
           </div>
         </div>
         <div class="ghost-grid ghost-grid--2 reveal" style="margin-block-start:2rem">
-          <figure>
-            <img src="assets/images/brand/hero-island.png" alt="Isla experiencial Ghost Specialty Coffee" width="800" height="533" loading="lazy" style="width:100%;height:auto;border:var(--border-subtle)">
-            <figcaption class="ghost-section__intro" style="margin-block-start:0.75rem">Isla experiencial — barra abierta</figcaption>
+          <figure class="ghost-art-panel ghost-art-panel--warm">
+            <div class="ghost-seal">
+              <span class="ghost-seal__ring">Experiencia</span>
+              <span class="ghost-seal__core">BARRA</span>
+              <span class="ghost-seal__tag">Industrial cálida</span>
+            </div>
+            <figcaption class="ghost-section__intro" style="margin-block-start:0.75rem;text-align:center">Isla experiencial — barra abierta</figcaption>
           </figure>
-          <figure>
-            <img src="assets/images/brand/product-bag-papayo.png" alt="Bolsa retail Ghost con trazabilidad" width="800" height="800" loading="lazy" style="width:100%;height:auto;border:var(--border-subtle)">
-            <figcaption class="ghost-section__intro" style="margin-block-start:0.75rem">Retail 250g · Papayo Semi-Lavado · Microlote colombiano</figcaption>
+          <figure class="ghost-art-panel">
+            <div class="ghost-seal">
+              <span class="ghost-seal__ring">Retail</span>
+              <span class="ghost-seal__core">250g</span>
+              <span class="ghost-seal__tag">Trazabilidad QR</span>
+            </div>
+            <figcaption class="ghost-section__intro" style="margin-block-start:0.75rem;text-align:center">Bolsa origen · Microlote colombiano</figcaption>
           </figure>
         </div>
         <ul class="ghost-section__intro reveal" style="margin-block-start:1.5rem">

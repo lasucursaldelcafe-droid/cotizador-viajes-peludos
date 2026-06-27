@@ -13,12 +13,9 @@
 
 /** @type {Readonly<Record<string, string>>} */
 export const IMAGES = Object.freeze({
-  logoMark: 'assets/images/brand/logo-mark.png',
-  logoHorizontal: 'assets/images/brand/logo-horizontal.png',
-  logoRoundSign: 'assets/images/brand/logo-round-sign.png',
-  heroIsland: 'assets/images/brand/hero-island.png',
-  productBag: 'assets/images/products/bolsa-papayo.png',
-  productCup: 'assets/images/products/vaso-hot.png',
+  logoMark: 'assets/images/brand/ghost-mark.svg',
+  logoHorizontal: 'assets/images/brand/ghost-wordmark.svg',
+  logoRoundSign: 'assets/images/brand/ghost-mark.svg',
 });
 
 /** @type {BrandConfig} */

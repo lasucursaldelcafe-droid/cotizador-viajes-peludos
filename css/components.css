@@ -217,8 +217,8 @@
       gap: clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 5vw, 4rem);
     }
 
-    .ghost-hero__lockup { grid-column: 1; grid-row: 1; }
-    .ghost-hero__stage { grid-column: 2; grid-row: 1 / span 2; }
+    .ghost-hero__signature { grid-column: 1; grid-row: 1; }
+    .ghost-bento { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
     .ghost-hero__content { grid-column: 1; grid-row: 2; align-self: start; }
   }
 

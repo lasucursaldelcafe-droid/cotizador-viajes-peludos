@@ -125,7 +125,9 @@ class AdminDashboard {
           const shop = this.#shops.find((s) => s.id === p.shopId);
           return `
             <article class="admin-product-card">
-              ${p.imageUrl ? `<img class="admin-product-card__img" src="${escapeHtml(p.imageUrl)}" alt="${escapeHtml(p.name)}" loading="lazy">` : '<div class="admin-product-card__placeholder">Sin imagen</div>'}
+              ${p.imageUrl
+            ? `<img class="admin-product-card__img" src="${escapeHtml(p.imageUrl)}" alt="${escapeHtml(p.name)}" loading="lazy">`
+            : `<div class="admin-product-card__placeholder admin-product-card__placeholder--brand"><span>${escapeHtml(p.region)}</span></div>`}
               <div class="admin-product-card__body">
                 <h3 class="admin-product-card__name">${escapeHtml(p.name)}</h3>
                 <p class="admin-product-card__meta">${escapeHtml(p.region)} · ${escapeHtml(p.variety)}</p>

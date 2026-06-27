@@ -8,12 +8,12 @@
   <meta property="og:title" content="Ghost Specialty Coffee | Especialidad y elegancia">
   <meta property="og:description" content="Café de especialidad servido en un refugio de madera, concreto y luz cálida. Barra abierta, SCA 85+ y trazabilidad completa en Cali.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/images/brand/hero-island.png">
-  <link rel="icon" href="assets/images/brand/logo-mark.png" type="image/png">
+  <meta property="og:image" content="assets/images/brand/ghost-mark.svg">
+  <link rel="icon" href="assets/images/brand/ghost-mark.svg" type="image/svg+xml">
   <title>Ghost Specialty Coffee | Café de especialidad · Cali</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/ghost.css">
   <script type="application/ld+json">
   {
@@ -32,8 +32,12 @@
   <a class="skip-link" href="#contenido">Ir al contenido</a>
 
   <header class="ghost-nav" role="banner">
-    <a class="ghost-nav__brand" href="index.html" aria-label="Ghost — inicio">
-      <img class="ghost-nav__brand-img ghost-brand-img" src="assets/images/brand/logo-horizontal.png" alt="Ghost Specialty Coffee" width="140" height="40" decoding="async">
+    <a class="ghost-nav__brand" href="index.html" aria-label="Ghost Specialty Coffee — inicio">
+      <img class="ghost-nav__mark" src="assets/images/brand/ghost-mark.svg" alt="" width="36" height="36" decoding="async">
+      <span class="ghost-nav__type">
+        <span class="ghost-nav__name">Ghost</span>
+        <span class="ghost-nav__sub">Specialty Coffee</span>
+      </span>
     </a>
     <button type="button" class="ghost-nav__toggle" id="ghostNavToggle" aria-expanded="false" aria-controls="ghostNavMenu">Menú</button>
     <nav aria-label="Principal">
@@ -55,17 +59,27 @@
       </div>
 
       <div class="ghost-hero__layout">
-        <div class="ghost-hero__lockup reveal">
-          <img class="ghost-hero__lockup-img" src="assets/images/brand/logo-mark.png" alt="Ghost Specialty Coffee" width="320" height="293" decoding="async" fetchpriority="high">
-          <p class="ghost-hero__lockup-sub">Specialty Coffee</p>
+        <div class="ghost-hero__signature reveal">
+          <img class="ghost-hero__sig-mark" src="assets/images/brand/ghost-mark.svg" alt="" width="72" height="72" decoding="async" fetchpriority="high">
+          <p class="ghost-hero__sig-sub">Specialty Coffee · Cali</p>
         </div>
 
-        <div class="ghost-hero__stage reveal" aria-hidden="true">
-          <svg class="ghost-glyph ghost-glyph--leaf" viewBox="0 0 64 80"><use href="assets/icons/glyphs.svg#glyph-leaf"/></svg>
-          <svg class="ghost-glyph ghost-glyph--cup" viewBox="0 0 64 64"><use href="assets/icons/glyphs.svg#glyph-cup"/></svg>
-          <svg class="ghost-glyph ghost-glyph--compass" viewBox="0 0 64 64"><use href="assets/icons/glyphs.svg#glyph-compass"/></svg>
-          <svg class="ghost-glyph ghost-glyph--waves" viewBox="0 0 80 32"><use href="assets/icons/glyphs.svg#glyph-waves"/></svg>
-          <img class="ghost-hero__photo" src="assets/images/brand/hero-island.png" alt="Isla experiencial Ghost — barra de café de especialidad" width="963" height="614" decoding="async">
+        <div class="ghost-bento reveal" aria-hidden="true">
+          <div class="ghost-bento__tile ghost-bento__tile--wide ghost-bento__tile--lime">
+            <svg class="ghost-bento__icon" viewBox="0 0 64 64"><use href="assets/icons/glyphs.svg#glyph-cup"/></svg>
+            <div>
+              <span class="ghost-bento__label">Barra abierta</span>
+              <p class="ghost-bento__hint">Espresso, V60 y ritual visible bajo luz cálida.</p>
+            </div>
+          </div>
+          <div class="ghost-bento__tile ghost-bento__tile--blue">
+            <svg class="ghost-bento__icon" viewBox="0 0 64 80"><use href="assets/icons/glyphs.svg#glyph-leaf"/></svg>
+            <span class="ghost-bento__label">SCA 85+</span>
+          </div>
+          <div class="ghost-bento__tile ghost-bento__tile--ember">
+            <svg class="ghost-bento__icon" viewBox="0 0 64 64"><use href="assets/icons/glyphs.svg#glyph-compass"/></svg>
+            <span class="ghost-bento__label">Origen</span>
+          </div>
         </div>
 
         <div class="ghost-hero__content">
@@ -135,8 +149,24 @@
 
     <section class="ghost-section ghost-section--dark" aria-labelledby="store-title">
       <div class="ghost-wrap ghost-split">
-        <figure class="ghost-split__visual ghost-store__visual reveal" aria-hidden="true">
-          <img src="assets/images/brand/hero-island.png" alt="" width="800" height="533" loading="lazy">
+        <figure class="ghost-art-panel ghost-art-panel--warm reveal" aria-hidden="true">
+          <div class="ghost-bento">
+            <div class="ghost-bento__tile ghost-bento__tile--wide ghost-bento__tile--ember">
+              <svg class="ghost-bento__icon" viewBox="0 0 64 64"><use href="assets/icons/glyphs.svg#glyph-wheel"/></svg>
+              <div>
+                <span class="ghost-bento__label">Industrial cálida</span>
+                <p class="ghost-bento__hint">Madera, concreto y luz ámbar 2700K.</p>
+              </div>
+            </div>
+            <div class="ghost-bento__tile">
+              <svg class="ghost-bento__icon" viewBox="0 0 64 64"><use href="assets/icons/glyphs.svg#glyph-clock"/></svg>
+              <span class="ghost-bento__label">Ritual</span>
+            </div>
+            <div class="ghost-bento__tile ghost-bento__tile--lime">
+              <svg class="ghost-bento__icon" viewBox="0 0 64 64"><use href="assets/icons/glyphs.svg#glyph-tag"/></svg>
+              <span class="ghost-bento__label">Retail</span>
+            </div>
+          </div>
         </figure>
         <div>
           <p class="ghost-section__label reveal">Nuestra tienda</p>
@@ -202,11 +232,14 @@
           Lleva el ritual a casa: microlotes de distintos territorios colombianos, tostados en pequeños batches
           y presentados con la misma elegancia que encuentras en nuestra barra.
         </p>
-        <div class="ghost-grid ghost-grid--3 reveal">
-          <article class="ghost-product ghost-product--featured">
-            <img class="ghost-product__img" src="assets/images/products/bolsa-papayo.png" alt="Bolsa Ghost Papayo Semi-Lavado" width="200" height="180" loading="lazy">
+        <div class="ghost-grid ghost-grid--3 reveal" id="ghostProductsHome">
+          <article class="ghost-product ghost-product--featured ghost-product--huila">
+            <div class="ghost-product__visual" aria-hidden="true">
+              <svg class="ghost-product__glyph" viewBox="0 0 64 64"><use href="assets/icons/glyphs.svg#glyph-beans"/></svg>
+              <span class="ghost-product__region">Huila</span>
+            </div>
             <h3 class="ghost-product__name">Ghost · Papayo</h3>
-            <p class="ghost-product__meta">Huila · Semi-lavado · Tostión media</p>
+            <p class="ghost-product__meta">Semi-lavado · Tostión media</p>
             <ul class="ghost-product__notes">
               <li class="ghost-product__tag">Mango</li>
               <li class="ghost-product__tag">Nuez</li>
@@ -214,10 +247,13 @@
             </ul>
             <p class="ghost-product__price">$45.000 <small>/ 250 g</small></p>
           </article>
-          <article class="ghost-product">
-            <img class="ghost-product__img" src="assets/images/products/bolsa-papayo.png" alt="Ghost · Gesha — bolsa de café de especialidad" width="200" height="180" loading="lazy">
+          <article class="ghost-product ghost-product--narino">
+            <div class="ghost-product__visual" aria-hidden="true">
+              <svg class="ghost-product__glyph" viewBox="0 0 64 64"><use href="assets/icons/glyphs.svg#glyph-beans"/></svg>
+              <span class="ghost-product__region">Nariño</span>
+            </div>
             <h3 class="ghost-product__name">Ghost · Gesha</h3>
-            <p class="ghost-product__meta">Nariño · Tostión clara</p>
+            <p class="ghost-product__meta">Tostión clara</p>
             <ul class="ghost-product__notes">
               <li class="ghost-product__tag">Floral</li>
               <li class="ghost-product__tag">Bergamota</li>
@@ -225,10 +261,13 @@
             </ul>
             <p class="ghost-product__price">$72.000 <small>/ 250 g</small></p>
           </article>
-          <article class="ghost-product ghost-product--featured">
-            <img class="ghost-product__img" src="assets/images/products/vaso-hot.png" alt="Vaso Ghost Specialty Coffee" width="200" height="180" loading="lazy">
+          <article class="ghost-product ghost-product--featured ghost-product--cauca">
+            <div class="ghost-product__visual" aria-hidden="true">
+              <svg class="ghost-product__glyph" viewBox="0 0 64 64"><use href="assets/icons/glyphs.svg#glyph-beans"/></svg>
+              <span class="ghost-product__region">Cauca</span>
+            </div>
             <h3 class="ghost-product__name">Ghost · Bourbon</h3>
-            <p class="ghost-product__meta">Cauca · Tostión media-clara</p>
+            <p class="ghost-product__meta">Tostión media-clara</p>
             <ul class="ghost-product__notes">
               <li class="ghost-product__tag">Caramelo</li>
               <li class="ghost-product__tag">Cítrico</li>
@@ -254,8 +293,12 @@
           </p>
           <a class="btn btn--ghost reveal" href="nosotros.html">Conoce Ghost</a>
         </div>
-        <figure class="ghost-split__visual reveal" aria-hidden="true">
-          <img src="assets/images/brand/logo-round-sign.png" alt="Letrero Ghost Specialty Coffee" width="400" height="400" loading="lazy">
+        <figure class="ghost-art-panel reveal" aria-hidden="true">
+          <div class="ghost-seal">
+            <span class="ghost-seal__ring">Del origen al ritual</span>
+            <span class="ghost-seal__core">GHOST</span>
+            <span class="ghost-seal__tag">Cali · Colombia</span>
+          </div>
         </figure>
       </div>
     </section>

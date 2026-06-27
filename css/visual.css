@@ -1,0 +1,247 @@
+@layer components {
+  /* —— Marca tipográfica —— */
+  .ghost-nav__brand {
+    gap: 0.75rem;
+  }
+
+  .ghost-nav__mark {
+    width: 2.25rem;
+    height: 2.25rem;
+    flex-shrink: 0;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 2px 8px rgb(28 26 24 / 0.08);
+  }
+
+  .ghost-nav__type {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+  }
+
+  .ghost-nav__name {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .ghost-nav__sub {
+    font-size: 0.55rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  .ghost-hero__signature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .ghost-hero__sig-mark {
+    width: clamp(3.5rem, 8vw, 4.5rem);
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+  }
+
+  .ghost-hero__sig-sub {
+    margin: 0;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    max-width: 8rem;
+    line-height: 1.5;
+  }
+
+  /* —— Composición bento (sin fotos) —— */
+  .ghost-bento {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    width: 100%;
+    max-width: 26rem;
+    margin-inline: auto;
+  }
+
+  .ghost-bento__tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 1.25rem;
+    min-height: 7rem;
+    background: var(--surface-raised);
+    border: var(--border-subtle);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s;
+  }
+
+  .ghost-bento__tile:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .ghost-bento__tile--wide {
+    grid-column: span 2;
+    min-height: 5.5rem;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .ghost-bento__tile--lime {
+    border-color: color-mix(in srgb, var(--ghost-lime) 28%, transparent);
+    background: linear-gradient(145deg, color-mix(in srgb, var(--ghost-lime) 8%, var(--surface-raised)) 0%, var(--surface-raised) 100%);
+  }
+
+  .ghost-bento__tile--blue {
+    border-color: color-mix(in srgb, var(--ghost-blue) 22%, transparent);
+  }
+
+  .ghost-bento__tile--ember {
+    border-color: color-mix(in srgb, var(--ghost-red) 22%, transparent);
+  }
+
+  .ghost-bento__icon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--ghost-blue);
+    flex-shrink: 0;
+  }
+
+  .ghost-bento__tile--lime .ghost-bento__icon { color: var(--ghost-lime); }
+  .ghost-bento__tile--ember .ghost-bento__icon { color: var(--ghost-red); }
+
+  .ghost-bento__label {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .ghost-bento__hint {
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  /* Panel visual en secciones */
+  .ghost-art-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: clamp(14rem, 32vw, 22rem);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background:
+      linear-gradient(135deg, var(--surface-raised) 0%, var(--surface-muted) 100%);
+    border: var(--border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .ghost-art-panel--warm {
+    background:
+      radial-gradient(ellipse 80% 80% at 30% 30%, color-mix(in srgb, var(--ghost-amber) 12%, transparent) 0%, transparent 60%),
+      linear-gradient(160deg, var(--surface-raised), var(--surface-warm));
+  }
+
+  /* Sello tipográfico */
+  .ghost-seal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: min(100%, 16rem);
+    aspect-ratio: 1;
+    border: 2px solid color-mix(in srgb, var(--ink) 12%, transparent);
+    border-radius: 50%;
+    padding: 2rem;
+    background: var(--surface-raised);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .ghost-seal__ring {
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-block-end: 0.5rem;
+  }
+
+  .ghost-seal__core {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .ghost-seal__tag {
+    margin-block-start: 0.75rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--spectral);
+  }
+
+  /* Productos sin foto — visual de región */
+  .ghost-product__visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-height: 7rem;
+    margin-block-end: 1.5rem;
+    border-radius: var(--radius-md);
+    background: linear-gradient(145deg, var(--surface-muted) 0%, var(--surface-raised) 100%);
+    border: var(--border-subtle);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ghost-product__visual::before {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    width: 4px;
+    background: var(--product-accent, var(--ghost-lime));
+  }
+
+  .ghost-product__glyph {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--product-accent, var(--ghost-blue));
+    opacity: 0.85;
+  }
+
+  .ghost-product__region {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--product-accent, var(--ink)) 75%, var(--ink));
+    line-height: 1;
+  }
+
+  .ghost-product--huila { --product-accent: var(--ghost-lime); }
+  .ghost-product--narino { --product-accent: var(--ghost-blue); }
+  .ghost-product--cauca { --product-accent: var(--ghost-red); }
+  .ghost-product--tolima { --product-accent: var(--ghost-amber); }
+
+  .ghost-product--featured::before {
+    z-index: 1;
+  }
+}
