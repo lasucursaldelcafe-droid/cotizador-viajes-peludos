@@ -1,0 +1,56 @@
+/* Design tokens — CSS avanzado con @property y color-mix */
+
+@property --ghost-glow-alpha {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.25;
+}
+
+@property --nav-blur {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 16px;
+}
+
+@layer tokens {
+  :root {
+    color-scheme: dark;
+
+    /* Paleta OKLCH-inspired vía variables */
+    --void: #08080a;
+    --void-mid: #121218;
+    --ghost: #f0ede6;
+    --ghost-dim: #b8b4ab;
+    --spectral: #00e5b8;
+    --spectral-dim: #00b894;
+    --ember: #ff4d1a;
+    --roast: #2a1810;
+    --smoke: #1a1a22;
+
+    --spectral-glow: color-mix(in srgb, var(--spectral) calc(var(--ghost-glow-alpha) * 100%), transparent);
+    --ember-glow: color-mix(in srgb, var(--ember) 30%, transparent);
+
+    --font-display: "Bebas Neue", "Oswald", system-ui, sans-serif;
+    --font-body: "Satoshi", system-ui, sans-serif;
+    --font-editorial: "Playfair Display", Georgia, serif;
+
+    --nav-h: 4.5rem;
+    --section-pad: clamp(3rem, 8vw, 6rem);
+    --content-max: 75rem;
+    --gutter: clamp(1.25rem, 5vw, 2.5rem);
+
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-pill: 999px;
+
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+    --shadow-glow: 0 0 2.5rem var(--spectral-glow);
+    --shadow-ember: 0 0 2rem var(--ember-glow);
+    --shadow-card: 0 1.5rem 3rem -1rem rgb(0 0 0 / 0.5);
+
+    --border-subtle: 1px solid color-mix(in srgb, var(--ghost) 8%, transparent);
+    --border-spectral: 1px solid color-mix(in srgb, var(--spectral) 25%, transparent);
+  }
+}

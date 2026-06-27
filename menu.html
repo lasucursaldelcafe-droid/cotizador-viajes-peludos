@@ -15,23 +15,24 @@
   <a class="skip-link" href="#contenido">Ir al contenido</a>
 
   <header class="ghost-nav" role="banner">
-    <a class="ghost-nav__brand" href="index.html">
-      <span class="ghost-nav__mark" aria-hidden="true">G</span>
-      <span>Ghost</span>
-    </a>
+    <a class="ghost-nav__brand" href="index.html"><span class="ghost-nav__mark" aria-hidden="true">G</span><span>Ghost</span></a>
     <button type="button" class="ghost-nav__toggle" id="ghostNavToggle" aria-expanded="false" aria-controls="ghostNavMenu">Menú</button>
-    <ul class="ghost-nav__menu" id="ghostNavMenu">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="menu.html" aria-current="page">Menú</a></li>
-      <li><a href="origen.html">Origen</a></li>
-      <li><a href="nosotros.html">Nosotros</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
+    <nav aria-label="Principal">
+      <ul class="ghost-nav__menu" id="ghostNavMenu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="menu.html" aria-current="page">Menú</a></li>
+        <li><a href="origen.html">Origen</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
   <header class="ghost-page-hero">
-    <p class="ghost-kicker" style="max-width:var(--content-max);margin:0 auto 0.5rem;padding:0 clamp(0rem,0vw,0rem)">En la barra</p>
-    <h1 class="ghost-page-hero__title">Carta</h1>
+    <div class="ghost-wrap">
+      <p class="ghost-kicker">En la barra</p>
+      <h1 class="ghost-page-hero__title">Carta</h1>
+    </div>
   </header>
 
   <main id="contenido" class="ghost-section ghost-section--dark">
@@ -40,7 +41,39 @@
         Espresso de doble extracción, filtrados de origen y acompañamiento pensado para la barra.
         Precios referenciales en COP.
       </p>
-      <div id="ghostMenu"></div>
+
+      <section class="ghost-menu-group reveal" aria-labelledby="menu-espresso">
+        <h2 class="ghost-menu-group__title" id="menu-espresso">Espresso bar</h2>
+        <div class="ghost-menu-item"><div><p class="ghost-menu-item__name">Espresso</p></div><span class="ghost-menu-item__price">$7.000</span></div>
+        <div class="ghost-menu-item"><div><p class="ghost-menu-item__name">Americano</p></div><span class="ghost-menu-item__price">$7.500</span></div>
+        <div class="ghost-menu-item"><div><p class="ghost-menu-item__name">Capuchino</p></div><span class="ghost-menu-item__price">$10.000</span></div>
+        <div class="ghost-menu-item"><div><p class="ghost-menu-item__name">Flat white</p></div><span class="ghost-menu-item__price">$11.000</span></div>
+        <div class="ghost-menu-item">
+          <div><p class="ghost-menu-item__name">Ghost latte</p><p class="ghost-menu-item__desc">Doble shot · leche texturizada</p></div>
+          <span class="ghost-menu-item__price">$12.000</span>
+        </div>
+      </section>
+
+      <section class="ghost-menu-group reveal" aria-labelledby="menu-filtrados">
+        <h2 class="ghost-menu-group__title" id="menu-filtrados">Filtrados</h2>
+        <div class="ghost-menu-item">
+          <div><p class="ghost-menu-item__name">Pour over V60</p><p class="ghost-menu-item__desc">Origen del día</p></div>
+          <span class="ghost-menu-item__price">$13.000</span>
+        </div>
+        <div class="ghost-menu-item">
+          <div><p class="ghost-menu-item__name">Chemex</p><p class="ghost-menu-item__desc">Lote destacado</p></div>
+          <span class="ghost-menu-item__price">$14.000</span>
+        </div>
+        <div class="ghost-menu-item"><div><p class="ghost-menu-item__name">Cold brew</p></div><span class="ghost-menu-item__price">$12.000</span></div>
+        <div class="ghost-menu-item"><div><p class="ghost-menu-item__name">Nitro</p></div><span class="ghost-menu-item__price">$13.500</span></div>
+      </section>
+
+      <section class="ghost-menu-group reveal" aria-labelledby="menu-acomp">
+        <h2 class="ghost-menu-group__title" id="menu-acomp">Acompañamiento</h2>
+        <div class="ghost-menu-item"><div><p class="ghost-menu-item__name">Croissant mantequilla</p></div><span class="ghost-menu-item__price">$9.500</span></div>
+        <div class="ghost-menu-item"><div><p class="ghost-menu-item__name">Cookie chocolate 70%</p></div><span class="ghost-menu-item__price">$8.000</span></div>
+        <div class="ghost-menu-item"><div><p class="ghost-menu-item__name">Brownie espresso</p></div><span class="ghost-menu-item__price">$10.000</span></div>
+      </section>
     </div>
   </main>
 
@@ -50,19 +83,20 @@
     <a class="btn btn--spectral reveal" href="origen.html">Ver origen</a>
   </section>
 
-  <footer class="ghost-footer">
+  <footer class="ghost-footer" role="contentinfo">
     <div class="ghost-footer__inner">
-      <div class="ghost-footer__brand">Ghost</div>
-      <ul class="ghost-footer__links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="origen.html">Origen</a></li>
-        <li><a id="ghostInstagram" href="https://www.instagram.com/ghost_specialty_coffee/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-      </ul>
-      <p class="ghost-footer__copy" id="ghostFooterLine">Ghost Specialty Coffee</p>
+      <p class="ghost-footer__brand">Ghost</p>
+      <nav aria-label="Pie de página">
+        <ul class="ghost-footer__links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="origen.html">Origen</a></li>
+          <li><a href="https://www.instagram.com/ghost_specialty_coffee/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+      </nav>
+      <p class="ghost-footer__copy">Ghost Specialty Coffee · Tostadores de lo espectral</p>
     </div>
   </footer>
 
-  <script src="js/ghost-config.js"></script>
-  <script src="js/ghost-site.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

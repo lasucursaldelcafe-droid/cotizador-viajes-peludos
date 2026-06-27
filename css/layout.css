@@ -1,0 +1,87 @@
+@layer layout {
+  .ghost-wrap {
+    width: min(100% - var(--gutter) * 2, var(--content-max));
+    margin-inline: auto;
+  }
+
+  .ghost-section {
+    padding-block: var(--section-pad);
+    padding-inline: var(--gutter);
+  }
+
+  .ghost-section--dark { background: var(--void); }
+  .ghost-section--smoke { background: var(--smoke); }
+  .ghost-section--roast {
+    background: linear-gradient(135deg, var(--roast) 0%, var(--void-mid) 100%);
+  }
+
+  /* Grid adaptativo con container queries */
+  .ghost-grid {
+    container-type: inline-size;
+    display: grid;
+    gap: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  @container (min-width: 36rem) {
+    .ghost-grid--2 { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @container (min-width: 54rem) {
+    .ghost-grid--3 { grid-template-columns: repeat(3, 1fr); }
+    .ghost-grid--4 { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @container (min-width: 64rem) {
+    .ghost-grid--4 { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* Split editorial */
+  .ghost-split {
+    display: grid;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+
+  @media (min-width: 56rem) {
+    .ghost-split {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .ghost-split--reverse .ghost-split__visual {
+      order: -1;
+    }
+  }
+
+  /* Stats strip */
+  .ghost-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1px;
+    background: var(--border-spectral);
+    border: var(--border-spectral);
+  }
+
+  .ghost-stat {
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background: var(--void-mid);
+    text-align: center;
+  }
+
+  .ghost-stat__num {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1;
+    letter-spacing: 0.04em;
+    color: var(--spectral);
+    text-shadow: var(--shadow-glow);
+  }
+
+  .ghost-stat__label {
+    margin-block-start: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ghost-dim);
+  }
+}

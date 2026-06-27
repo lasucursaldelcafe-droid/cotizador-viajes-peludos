@@ -15,44 +15,45 @@
   <a class="skip-link" href="#contenido">Ir al contenido</a>
 
   <header class="ghost-nav" role="banner">
-    <a class="ghost-nav__brand" href="index.html">
-      <span class="ghost-nav__mark" aria-hidden="true">G</span>
-      <span>Ghost</span>
-    </a>
+    <a class="ghost-nav__brand" href="index.html"><span class="ghost-nav__mark" aria-hidden="true">G</span><span>Ghost</span></a>
     <button type="button" class="ghost-nav__toggle" id="ghostNavToggle" aria-expanded="false" aria-controls="ghostNavMenu">Menú</button>
-    <ul class="ghost-nav__menu" id="ghostNavMenu">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="menu.html">Menú</a></li>
-      <li><a href="origen.html">Origen</a></li>
-      <li><a href="nosotros.html">Nosotros</a></li>
-      <li><a href="contacto.html" aria-current="page">Contacto</a></li>
-    </ul>
+    <nav aria-label="Principal">
+      <ul class="ghost-nav__menu" id="ghostNavMenu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="origen.html">Origen</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
   <header class="ghost-page-hero">
-    <p class="ghost-kicker" style="max-width:var(--content-max);margin:0 auto 0.5rem">Hablemos</p>
-    <h1 class="ghost-page-hero__title">Contacto</h1>
+    <div class="ghost-wrap">
+      <p class="ghost-kicker">Hablemos</p>
+      <h1 class="ghost-page-hero__title">Contacto</h1>
+    </div>
   </header>
 
   <main id="contenido" class="ghost-section ghost-section--dark">
     <div class="ghost-wrap">
-      <div class="ghost-contact-grid">
-        <div class="ghost-contact-card reveal">
+      <div class="ghost-grid ghost-grid--2 reveal">
+        <article class="ghost-contact-card">
           <h3>Visítanos</h3>
-          <p id="ghostAddress">Cali, Valle del Cauca, Colombia</p>
-          <p id="ghostCity"></p>
-          <p id="ghostHours" style="margin-top:1rem"></p>
-        </div>
-        <div class="ghost-contact-card reveal">
+          <p>Cali, Valle del Cauca, Colombia</p>
+          <p>Cali, Colombia</p>
+          <p style="margin-block-start:1rem">Lunes a sábado 7:00am – 8:00pm<br>Domingos 9:00am – 6:00pm</p>
+        </article>
+        <article class="ghost-contact-card">
           <h3>Escríbenos</h3>
-          <p><a id="ghostEmail" href="mailto:hola@ghostcoffee.co">hola@ghostcoffee.co</a></p>
-          <p style="margin-top:1.5rem">
-            <a class="btn btn--ember" id="ghostWhatsapp" href="#">WhatsApp</a>
+          <p><a href="mailto:hola@ghostcoffee.co">hola@ghostcoffee.co</a></p>
+          <p style="margin-block-start:1.5rem">
+            <a class="btn btn--ember" data-whatsapp="Hola Ghost, quiero hacer un pedido." href="#">WhatsApp</a>
           </p>
-          <p style="margin-top:1.5rem">
-            <a id="ghostInstagram" href="https://www.instagram.com/ghost_specialty_coffee/" target="_blank" rel="noopener noreferrer">@ghost_specialty_coffee</a>
+          <p style="margin-block-start:1.5rem">
+            <a href="https://www.instagram.com/ghost_specialty_coffee/" target="_blank" rel="noopener noreferrer">@ghost_specialty_coffee</a>
           </p>
-        </div>
+        </article>
       </div>
     </div>
   </main>
@@ -60,21 +61,22 @@
   <section class="ghost-cta-band">
     <h2 class="ghost-cta-band__title reveal">¿Pedido o consulta?</h2>
     <p class="ghost-cta-band__text reveal">Lotes en bolsa, menú de barra o eventos. Respuesta rápida por WhatsApp.</p>
-    <a class="btn btn--spectral reveal" id="ghostWhatsappCta" href="#">Abrir WhatsApp</a>
+    <a class="btn btn--spectral reveal" data-whatsapp="Hola Ghost, tengo una consulta." href="#">Abrir WhatsApp</a>
   </section>
 
-  <footer class="ghost-footer">
+  <footer class="ghost-footer" role="contentinfo">
     <div class="ghost-footer__inner">
-      <div class="ghost-footer__brand">Ghost</div>
-      <ul class="ghost-footer__links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="menu.html">Menú</a></li>
-      </ul>
-      <p class="ghost-footer__copy" id="ghostFooterLine">Ghost Specialty Coffee</p>
+      <p class="ghost-footer__brand">Ghost</p>
+      <nav aria-label="Pie de página">
+        <ul class="ghost-footer__links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu.html">Menú</a></li>
+        </ul>
+      </nav>
+      <p class="ghost-footer__copy">Ghost Specialty Coffee · Tostadores de lo espectral</p>
     </div>
   </footer>
 
-  <script src="js/ghost-config.js"></script>
-  <script src="js/ghost-site.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

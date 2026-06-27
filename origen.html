@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Origen y microlotes Ghost Specialty Coffee — trazabilidad colombiana, tostión de precisión. Nariño, Huila, Tolima.">
+  <meta name="description" content="Origen y microlotes Ghost Specialty Coffee — trazabilidad colombiana, tostión de precisión.">
   <meta name="theme-color" content="#08080a">
   <title>Origen | Ghost Specialty Coffee</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,73 +15,108 @@
   <a class="skip-link" href="#contenido">Ir al contenido</a>
 
   <header class="ghost-nav" role="banner">
-    <a class="ghost-nav__brand" href="index.html">
-      <span class="ghost-nav__mark" aria-hidden="true">G</span>
-      <span>Ghost</span>
-    </a>
+    <a class="ghost-nav__brand" href="index.html"><span class="ghost-nav__mark" aria-hidden="true">G</span><span>Ghost</span></a>
     <button type="button" class="ghost-nav__toggle" id="ghostNavToggle" aria-expanded="false" aria-controls="ghostNavMenu">Menú</button>
-    <ul class="ghost-nav__menu" id="ghostNavMenu">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="menu.html">Menú</a></li>
-      <li><a href="origen.html" aria-current="page">Origen</a></li>
-      <li><a href="nosotros.html">Nosotros</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
+    <nav aria-label="Principal">
+      <ul class="ghost-nav__menu" id="ghostNavMenu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="origen.html" aria-current="page">Origen</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
   <header class="ghost-page-hero">
-    <p class="ghost-kicker" style="max-width:var(--content-max);margin:0 auto 0.5rem">Trazabilidad</p>
-    <h1 class="ghost-page-hero__title">Del grano a la firma</h1>
+    <div class="ghost-wrap">
+      <p class="ghost-kicker">Trazabilidad</p>
+      <h1 class="ghost-page-hero__title">Del grano a la firma</h1>
+    </div>
   </header>
 
   <main id="contenido">
     <section class="ghost-section ghost-section--smoke">
-      <div class="ghost-wrap">
-        <p class="ghost-section__label reveal">Protocolo</p>
-        <h2 class="ghost-section__title reveal">Origen sin excusas</h2>
-        <p class="ghost-section__intro reveal">
-          Cada lote que entra a Ghost tiene historia: productor, finca, altitud y proceso.
-          Si no podemos contarlo, no lo tostamos. Relación directa con fincas de Nariño, Huila,
-          Tolima y Cauca — el corazón del café colombiano de especialidad.
-        </p>
-        <div class="ghost-values reveal">
-          <div class="ghost-value">
+      <div class="ghost-wrap ghost-split">
+        <div>
+          <p class="ghost-section__label reveal">Protocolo</p>
+          <h2 class="ghost-section__title reveal">Origen sin excusas</h2>
+          <p class="ghost-section__intro reveal">
+            Cada lote que entra a Ghost tiene historia: productor, finca, altitud y proceso.
+            Relación directa con fincas de Nariño, Huila, Tolima y Cauca.
+          </p>
+        </div>
+        <div class="ghost-grid ghost-grid--2 reveal">
+          <article class="ghost-value">
             <h3 class="ghost-value__title">Curva de tostión</h3>
-            <p class="ghost-value__text">Perfiles personalizados por variedad y proceso. Desarrollo calculado, sin quemar el carácter del origen.</p>
-          </div>
-          <div class="ghost-value">
+            <p class="ghost-value__text">Perfiles personalizados por variedad. Desarrollo calculado, sin quemar el carácter del origen.</p>
+          </article>
+          <article class="ghost-value">
             <h3 class="ghost-value__title">Reposo controlado</h3>
-            <p class="ghost-value__text">Degasificación mínima de 48h. Café fresco que respeta la extracción y libera sus notas espectrales.</p>
-          </div>
+            <p class="ghost-value__text">Degasificación mínima de 48h. Café fresco que respeta la extracción.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="ghost-section ghost-section--dark">
+    <section class="ghost-section ghost-section--dark" aria-labelledby="lotes-title">
       <div class="ghost-wrap">
         <p class="ghost-section__label reveal">Catálogo</p>
-        <h2 class="ghost-section__title reveal">Lotes disponibles</h2>
-        <div class="ghost-products" id="ghostProducts"></div>
-        <div style="margin-top:2.5rem;text-align:center" class="reveal">
-          <a class="btn btn--ember" id="ghostWhatsapp" href="contacto.html">Pedir por WhatsApp</a>
+        <h2 class="ghost-section__title reveal" id="lotes-title">Lotes disponibles</h2>
+        <div class="ghost-grid ghost-grid--3 reveal">
+          <article class="ghost-product ghost-product--featured">
+            <img class="ghost-product__img" src="assets/images/products/caja-cafe.png" alt="Ghost · Nariño" width="200" height="180" loading="lazy">
+            <h3 class="ghost-product__name">Ghost · Nariño</h3>
+            <p class="ghost-product__meta">Caturra · 1900 msnm · La Unión</p>
+            <ul class="ghost-product__notes">
+              <li class="ghost-product__tag">Caramelo</li>
+              <li class="ghost-product__tag">Cítrico</li>
+              <li class="ghost-product__tag">Cacao</li>
+            </ul>
+            <p class="ghost-product__price">$48.000 <small>/ 250 g</small></p>
+          </article>
+          <article class="ghost-product">
+            <img class="ghost-product__img" src="assets/images/products/caja-cafe.png" alt="Ghost · Huila" width="200" height="180" loading="lazy">
+            <h3 class="ghost-product__name">Ghost · Huila</h3>
+            <p class="ghost-product__meta">Castillo · Pitalito</p>
+            <ul class="ghost-product__notes">
+              <li class="ghost-product__tag">Chocolate</li>
+              <li class="ghost-product__tag">Nuez</li>
+            </ul>
+            <p class="ghost-product__price">$45.000 <small>/ 250 g</small></p>
+          </article>
+          <article class="ghost-product ghost-product--featured">
+            <img class="ghost-product__img" src="assets/images/products/caja-cafe.png" alt="Espectral Geisha" width="200" height="180" loading="lazy">
+            <h3 class="ghost-product__name">Espectral</h3>
+            <p class="ghost-product__meta">Geisha · Tolima · Tostión clara</p>
+            <ul class="ghost-product__notes">
+              <li class="ghost-product__tag">Floral</li>
+              <li class="ghost-product__tag">Bergamota</li>
+            </ul>
+            <p class="ghost-product__price">$72.000 <small>/ 250 g</small></p>
+          </article>
         </div>
+        <p style="margin-block:2.5rem;text-align:center" class="reveal">
+          <a class="btn btn--ember" data-whatsapp="Hola Ghost, quiero pedir un lote." href="#">Pedir por WhatsApp</a>
+        </p>
       </div>
     </section>
   </main>
 
-  <footer class="ghost-footer">
+  <footer class="ghost-footer" role="contentinfo">
     <div class="ghost-footer__inner">
-      <div class="ghost-footer__brand">Ghost</div>
-      <ul class="ghost-footer__links">
-        <li><a href="menu.html">Menú</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a id="ghostInstagram" href="https://www.instagram.com/ghost_specialty_coffee/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-      </ul>
-      <p class="ghost-footer__copy" id="ghostFooterLine">Ghost Specialty Coffee</p>
+      <p class="ghost-footer__brand">Ghost</p>
+      <nav aria-label="Pie de página">
+        <ul class="ghost-footer__links">
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="https://www.instagram.com/ghost_specialty_coffee/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+      </nav>
+      <p class="ghost-footer__copy">Ghost Specialty Coffee</p>
     </div>
   </footer>
 
-  <script src="js/ghost-config.js"></script>
-  <script src="js/ghost-site.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ghost Specialty Coffee — tostadores de café de especialidad en Cali. Misión, visión y valores de una marca espectral.">
+  <meta name="description" content="Ghost Specialty Coffee — tostadores de café de especialidad en Cali. Misión, visión y valores.">
   <meta name="theme-color" content="#08080a">
   <title>Nosotros | Ghost Specialty Coffee</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,23 +15,24 @@
   <a class="skip-link" href="#contenido">Ir al contenido</a>
 
   <header class="ghost-nav" role="banner">
-    <a class="ghost-nav__brand" href="index.html">
-      <span class="ghost-nav__mark" aria-hidden="true">G</span>
-      <span>Ghost</span>
-    </a>
+    <a class="ghost-nav__brand" href="index.html"><span class="ghost-nav__mark" aria-hidden="true">G</span><span>Ghost</span></a>
     <button type="button" class="ghost-nav__toggle" id="ghostNavToggle" aria-expanded="false" aria-controls="ghostNavMenu">Menú</button>
-    <ul class="ghost-nav__menu" id="ghostNavMenu">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="menu.html">Menú</a></li>
-      <li><a href="origen.html">Origen</a></li>
-      <li><a href="nosotros.html" aria-current="page">Nosotros</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
+    <nav aria-label="Principal">
+      <ul class="ghost-nav__menu" id="ghostNavMenu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="origen.html">Origen</a></li>
+        <li><a href="nosotros.html" aria-current="page">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
   <header class="ghost-page-hero">
-    <p class="ghost-kicker" style="max-width:var(--content-max);margin:0 auto 0.5rem">La marca</p>
-    <h1 class="ghost-page-hero__title">Nosotros</h1>
+    <div class="ghost-wrap">
+      <p class="ghost-kicker">La marca</p>
+      <h1 class="ghost-page-hero__title">Nosotros</h1>
+    </div>
   </header>
 
   <main id="contenido">
@@ -39,34 +40,55 @@
       <div class="ghost-wrap">
         <p class="ghost-section__label reveal">Manifiesto</p>
         <h2 class="ghost-section__title reveal">Presencia espectral</h2>
-        <p class="ghost-section__intro reveal" id="ghostAbout">
-          Ghost nace en el corazón de la escena cafetera de Cali.
+        <p class="ghost-section__intro reveal">
+          Ghost nace en el corazón de la escena cafetera de Cali. Somos tostadores, baristas y narradores de origen.
+          Cada lote pasa por un protocolo obsesivo: curva de tostión, desarrollo, reposo y extracción.
         </p>
-        <p class="ghost-section__intro reveal" id="ghostStory"></p>
+        <p class="ghost-section__intro reveal">
+          Empezamos con una pregunta: ¿y si el mejor café fuera el que casi no ves venir?
+          Ghost es esa respuesta — especialidad colombiana con actitud espectral.
+        </p>
       </div>
     </section>
 
     <section class="ghost-section ghost-section--smoke">
       <div class="ghost-wrap">
         <p class="ghost-section__label reveal">Dirección</p>
-        <div class="ghost-contact-grid">
-          <div class="ghost-contact-card reveal">
+        <div class="ghost-grid ghost-grid--2 reveal">
+          <article class="ghost-contact-card">
             <h3>Misión</h3>
-            <p id="ghostMission"></p>
-          </div>
-          <div class="ghost-contact-card reveal">
+            <p>Tostar y servir microlotes colombianos con precisión técnica y una experiencia de marca que desafía lo convencional.</p>
+          </article>
+          <article class="ghost-contact-card">
             <h3>Visión</h3>
-            <p id="ghostVision"></p>
-          </div>
+            <p>Ser la marca de café de especialidad más reconocida del ecosistema caleño por su carácter, su origen y su presencia.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="ghost-section ghost-section--dark">
+    <section class="ghost-section ghost-section--dark" aria-labelledby="valores-title">
       <div class="ghost-wrap">
         <p class="ghost-section__label reveal">Valores</p>
-        <h2 class="ghost-section__title reveal">Lo que no negociamos</h2>
-        <div class="ghost-values" id="ghostValues"></div>
+        <h2 class="ghost-section__title reveal" id="valores-title">Lo que no negociamos</h2>
+        <div class="ghost-grid ghost-grid--2 reveal">
+          <article class="ghost-value">
+            <h3 class="ghost-value__title">Origen sin excusas</h3>
+            <p class="ghost-value__text">Trazabilidad completa. Conocemos al productor, la finca y la altitud.</p>
+          </article>
+          <article class="ghost-value">
+            <h3 class="ghost-value__title">Tostión agresiva con control</h3>
+            <p class="ghost-value__text">Perfiles claros, desarrollo calculado. Buscamos la nota que otros dejan pasar.</p>
+          </article>
+          <article class="ghost-value">
+            <h3 class="ghost-value__title">Presencia de marca</h3>
+            <p class="ghost-value__text">Cada punto de contacto — taza, bolsa, espacio — comunica la misma intensidad.</p>
+          </article>
+          <article class="ghost-value">
+            <h3 class="ghost-value__title">Comunidad cafetera</h3>
+            <p class="ghost-value__text">Parte del ecosistema de La Sucursal del Café. Cata, competencia y formación.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -75,27 +97,27 @@
         <p class="ghost-section__label">Ecosistema</p>
         <h2 class="ghost-section__title">La Sucursal del Café</h2>
         <p class="ghost-section__intro">
-          Ghost es parte del ecosistema de especialidad en Cali. Participamos en La Sucursal del Café —
-          feria de café especial con cata, V60 Championship y talleres junto a marcas como Purist,
-          Medium Café, Elixir y Black Coffee.
+          Ghost participa en La Sucursal del Café — feria de especialidad con cata, V60 Championship y talleres
+          junto a Purist, Medium Café, Elixir y Black Coffee.
         </p>
         <a class="btn btn--ghost" href="https://la-sucursal-del-cafe.web.app/" target="_blank" rel="noopener noreferrer">Ir al festival</a>
       </div>
     </section>
   </main>
 
-  <footer class="ghost-footer">
+  <footer class="ghost-footer" role="contentinfo">
     <div class="ghost-footer__inner">
-      <div class="ghost-footer__brand">Ghost</div>
-      <ul class="ghost-footer__links">
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a id="ghostInstagram" href="https://www.instagram.com/ghost_specialty_coffee/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-      </ul>
-      <p class="ghost-footer__copy" id="ghostFooterLine">Ghost Specialty Coffee</p>
+      <p class="ghost-footer__brand">Ghost</p>
+      <nav aria-label="Pie de página">
+        <ul class="ghost-footer__links">
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="https://www.instagram.com/ghost_specialty_coffee/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+      </nav>
+      <p class="ghost-footer__copy">Ghost Specialty Coffee</p>
     </div>
   </footer>
 
-  <script src="js/ghost-config.js"></script>
-  <script src="js/ghost-site.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
