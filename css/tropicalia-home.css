@@ -241,10 +241,14 @@
     inset: 0;
     background: linear-gradient(
       105deg,
-      rgb(11 57 89 / 0.55) 0%,
-      rgb(11 57 89 / 0.2) 45%,
-      transparent 70%
+      rgb(11 57 89 / 0.78) 0%,
+      rgb(11 57 89 / 0.45) 42%,
+      rgb(0 0 0 / 0.35) 100%
     );
+  }
+
+  .trop-hero__cover {
+    object-position: 55% center;
   }
 
   .trop-hero__text {
@@ -310,6 +314,27 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .trop-banner--interior .trop-banner__bg {
+    object-position: 58% center;
+  }
+
+  .trop-banner--product .trop-banner__bg,
+  .trop-banner--cup .trop-banner__bg {
+    object-fit: cover;
+    object-position: 78% center;
+  }
+
+  .trop-banner--product .trop-banner__shade,
+  .trop-banner--cup .trop-banner__shade {
+    background: linear-gradient(
+      90deg,
+      rgb(11 57 89 / 0.88) 0%,
+      rgb(11 57 89 / 0.55) 42%,
+      rgb(0 0 0 / 0.25) 72%,
+      transparent 100%
+    );
   }
 
   .trop-banner__shade {
@@ -398,7 +423,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 8% 50%;
+    object-position: center;
+  }
+
+  .trop-subs__visual--product {
+    background: #080808;
   }
 
   .trop-subs__link {
@@ -487,6 +516,23 @@
     opacity: 0.85;
   }
 
+  .trop-merch__visual img {
+    width: 86%;
+    height: 86%;
+    object-fit: contain;
+  }
+
+  .trop-merch__visual--dark {
+    background: #080808;
+  }
+
+  .trop-merch__visual--round img {
+    width: 78%;
+    height: 78%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
   .trop-merch__name {
     margin: 0 0 0.25rem;
     font-family: var(--font-trop-ui);
@@ -536,6 +582,30 @@
     border-radius: 16px;
     background: var(--trop-beige-fondo);
     text-align: center;
+  }
+
+  .trop-plato__visual {
+    aspect-ratio: 4 / 3;
+    margin: -0.5rem -0.5rem 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--trop-beige);
+  }
+
+  .trop-plato__visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .trop-plato__visual--dark {
+    background: #080808;
+  }
+
+  .trop-plato__visual--dark img {
+    object-fit: contain;
+    object-position: center;
+    padding: 1rem;
   }
 
   .trop-plato__name {
