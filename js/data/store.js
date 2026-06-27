@@ -41,7 +41,7 @@ function seedData() {
         address: 'Centro Comercial Jardín Plaza, Cali',
         city: 'Cali',
         phone: '+57 302 515 9900',
-        instagram: 'ghost_specialty_coffee',
+        instagram: 'Ghost.coffee.lab',
         active: true,
         createdAt: new Date().toISOString(),
       },

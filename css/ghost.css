@@ -6,5 +6,4 @@
 @import url("layout.css") layer(layout);
 @import url("components.css") layer(components);
 @import url("visual.css") layer(components);
-@import url("tropicalia-home.css") layer(components);
 @import url("animations.css") layer(animations);
