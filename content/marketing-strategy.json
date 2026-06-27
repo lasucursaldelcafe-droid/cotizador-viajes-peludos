@@ -1,0 +1,255 @@
+{
+  "meta": {
+    "version": "2026-06",
+    "source": "Modelo financiero Ghost + manual de marca + propuesta Jardín Plaza",
+    "spreadsheetId": "1ocvC2no4xXjt4swhAbnWW78yGR_ChCz2",
+    "tagline": "Del origen al ritual."
+  },
+  "positioning": {
+    "statement": "Primera marca de café de especialidad con identidad propia, trazabilidad verificable y barra abierta en Jardín Plaza — no franquicia, origen colombiano con presencia.",
+    "differentiators": [
+      "Exclusividad: marca propia que ningún otro mall del sur de Cali replica",
+      "SCA 85+ con GPS, productor y notas de cata en cada lote",
+      "El proceso es el producto: barra visible genera contenido orgánico",
+      "Menú educativo: cada bebida enseña y justifica el ticket premium"
+    ],
+    "competitiveFrame": "Médium validó la demanda en la isla. Ghost captura ese mercado ya educado con mayor valor percibido y storytelling exclusivo para el CC."
+  },
+  "commercialTargets": {
+    "fromSpreadsheet": {
+      "scenarioObjective": {
+        "clientsPerDay": 90,
+        "averageTicketCop": 32000,
+        "monthlyRevenueCop": 74880000,
+        "ebitdaMarginPercent": 41.6,
+        "variableCostPercent": 36
+      },
+      "breakEven": {
+        "monthlySalesCop": 26175000,
+        "clientsPerDay": 31,
+        "clientsPerPeakHour": 3.1
+      },
+      "conservative": {
+        "clientsPerDay": 55,
+        "averageTicketCop": 20000,
+        "monthlyRevenueCop": 28600000
+      },
+      "optimistic": {
+        "clientsPerDay": 140,
+        "averageTicketCop": 38000,
+        "monthlyRevenueCop": 138320000
+      }
+    }
+  },
+  "audiences": [
+    {
+      "id": "especialista",
+      "name": "El Especialista",
+      "sharePercent": 30,
+      "ageRange": "25-42",
+      "ticketRange": [25000, 35000],
+      "motivation": "Conoce varietales, puntajes SCA y procesos. Evangelizador natural.",
+      "channels": ["Instagram carruseles", "Historias de cata", "WhatsApp lotes limitados"],
+      "message": "Datos, trazabilidad y lotes que no encuentra en franquicia.",
+      "colorRole": "ghost-blue",
+      "colorHex": "#1E5E8E"
+    },
+    {
+      "id": "profesional",
+      "name": "Profesional Urbano",
+      "sharePercent": 45,
+      "ageRange": "28-48",
+      "ticketRange": [18000, 32000],
+      "motivation": "Café premium como estilo de vida. Frecuencia media-alta.",
+      "channels": ["Meta retargeting", "Google Maps", "Push de membresía"],
+      "message": "Ritual de calidad sin complicarse. Origen verificable en cada taza.",
+      "colorRole": "ghost-black",
+      "colorHex": "#080808"
+    },
+    {
+      "id": "curioso",
+      "name": "El Curioso",
+      "sharePercent": 25,
+      "ageRange": "17-30",
+      "ticketRange": [14000, 22000],
+      "motivation": "Tendencias digitales, estética de marca y cultura foodie.",
+      "channels": ["Reels/TikTok", "UGC en isla", "Colaboraciones micro-influencers"],
+      "message": "El café es espectáculo. Graba el ritual, comparte el origen.",
+      "colorRole": "ghost-red",
+      "colorHex": "#9B1C1C"
+    }
+  ],
+  "brandColors": {
+    "ghostBlack": {
+      "hex": "#080808",
+      "name": "Negro",
+      "marketingUse": "Fondos premium, tipografía principal, empaque kraft negro, autoridad de marca",
+      "ratioGuideline": "60% superficie visual"
+    },
+    "ghostLime": {
+      "hex": "#8DB600",
+      "name": "Verde Limón",
+      "marketingUse": "CTA principal, origen, crecimiento, botones, stickers de trazabilidad",
+      "ratioGuideline": "15% acentos de acción"
+    },
+    "ghostRed": {
+      "hex": "#9B1C1C",
+      "name": "Rojo Metálico",
+      "marketingUse": "Urgencia, lotes limitados, gastronomía premium, cócteles, exclusividad",
+      "ratioGuideline": "10% highlights emocionales"
+    },
+    "ghostBlue": {
+      "hex": "#1E5E8E",
+      "name": "Azul Metálico",
+      "marketingUse": "Educación, SCA 85+, datos de altitud, cold brew, confianza y QR trazabilidad",
+      "ratioGuideline": "15% contenido informativo"
+    }
+  },
+  "contentPillars": [
+    {
+      "id": "origen",
+      "title": "Origen",
+      "tagline": "Del grano verificable al ritual",
+      "color": "#8DB600",
+      "formats": ["Carrusel productor + GPS", "Bolsa 250g con QR", "Nota de cata impresa"],
+      "kpis": ["Ventas retail / total ≥ 20%", "Escaneos QR por bolsa"]
+    },
+    {
+      "id": "ritual",
+      "title": "Ritual",
+      "tagline": "El proceso es el producto",
+      "color": "#080808",
+      "formats": ["Reels barra abierta", "POV V60/Nitro", "Time-lapse espresso"],
+      "kpis": ["UGC etiquetando ubicación", "Guardados y shares en Reels"]
+    },
+    {
+      "id": "especialidad",
+      "title": "Especialidad",
+      "tagline": "SCA 85+ con nombre y apellido",
+      "color": "#1E5E8E",
+      "formats": ["Infografías altitud/variedad", "Comparativas de proceso", "Cupping notes"],
+      "kpis": ["Ticket promedio ≥ $32.000", "Mix hacia filtrados y retail"]
+    },
+    {
+      "id": "comunidad",
+      "title": "Comunidad",
+      "tagline": "Primero en Jardín Plaza",
+      "color": "#9B1C1C",
+      "formats": ["Lanzamientos exclusivos", "Membresía suscripción", "Eventos cata/taller"],
+      "kpis": ["Tasa de retorno ≥ 45%", "NPS ≥ 72"]
+    }
+  ],
+  "budget": {
+    "monthlyCop": 400000,
+    "source": "Hoja Supuestos — Marketing digital",
+    "allocation": [
+      { "channel": "Meta Ads (IG/FB)", "percent": 50, "cop": 200000, "objective": "Tráfico a isla + retargeting visitantes" },
+      { "channel": "Producción contenido", "percent": 25, "cop": 100000, "objective": "Reels, fotos de barra, props POS" },
+      { "channel": "Micro-influencers Cali", "percent": 12.5, "cop": 50000, "objective": "1-2 activaciones/mes food & lifestyle" },
+      { "channel": "CRM / WhatsApp / herramientas", "percent": 12.5, "cop": 50000, "objective": "Lista VIP, post-visita NPS, upsell retail" }
+    ],
+    "cacTargetCop": 8000,
+    "cacFormula": "Marketing $ / nuevos clientes",
+    "maxNewClientsPerMonthAtBudget": 50
+  },
+  "channelPlan": {
+    "instagram": {
+      "handle": "@ghost_specialty_coffee",
+      "cadence": "5-7 publicaciones/semana + 3-5 historias/día en operación",
+      "contentMix": {
+        "ritual": 40,
+        "origen": 25,
+        "especialidad": 20,
+        "comunidad": 15
+      },
+      "hashtags": ["#GhostSpecialtyCoffee", "#DelOrigenAlRitual", "#CafeDeEspecialidad", "#CaliCoffee", "#SCA85", "#JardinPlaza"]
+    },
+    "whatsapp": {
+      "number": "573025159900",
+      "flows": ["Pedido retail", "Lista de espera lotes", "Membresía 500g/mes", "Post-visita NPS"]
+    },
+    "googleMaps": {
+      "priority": "Alta",
+      "actions": ["Ficha optimizada", "Fotos barra y menú", "Respuesta a reseñas < 24h"]
+    },
+    "onSite": {
+      "priority": "Crítica",
+      "actions": [
+        "Notas de cata en cada bebida",
+        "QR en bolsa y vaso",
+        "Señalética negro + tiras lime/red/blue",
+        "Zona foto-friendly en barra"
+      ]
+    }
+  },
+  "campaigns": [
+    {
+      "id": "lanzamiento-isla",
+      "name": "Primero en Jardín Plaza",
+      "period": "Mes 1-2",
+      "color": "#9B1C1C",
+      "message": "La isla donde el café de especialidad tiene marca propia en el sur de Cali.",
+      "offer": "Espresso de origen + nota de cata en primera visita",
+      "kpi": "90 clientes/día al mes 3"
+    },
+    {
+      "id": "ritual-reels",
+      "name": "El proceso es el producto",
+      "period": "Continuo",
+      "color": "#080808",
+      "message": "Barra abierta. Graba tu ritual.",
+      "offer": "UGC destacado en stories semanal",
+      "kpi": "≥ 20 piezas UGC/mes etiquetando CC"
+    },
+    {
+      "id": "trazabilidad-qr",
+      "name": "Conoce tu lote",
+      "period": "Continuo",
+      "color": "#1E5E8E",
+      "message": "SCA 85+. GPS. Productor. En tu bolsa.",
+      "offer": "Box de Orígenes 3×100g $78.000",
+      "kpi": "Retail 20% de ventas totales"
+    },
+    {
+      "id": "membresia-origen",
+      "name": "Suscripción Origen",
+      "period": "Mes 3+",
+      "color": "#8DB600",
+      "message": "500g/mes. Tostión fresca. Retiro o envío.",
+      "offer": "Suscripción $82.000/mes",
+      "kpi": "LTV miembro $480.000"
+    }
+  ],
+  "calendarSample": [
+    { "week": 1, "mon": { "pillar": "origen", "format": "Carrusel finca Bruselas" }, "wed": { "pillar": "ritual", "format": "Reel V60 POV" }, "fri": { "pillar": "comunidad", "format": "Story encuesta sabor" }, "sat": { "pillar": "especialidad", "format": "Infografía SCA 85+" } },
+    { "week": 2, "mon": { "pillar": "especialidad", "format": "Comparativa honey vs natural" }, "wed": { "pillar": "ritual", "format": "Reel Nitro pour" }, "fri": { "pillar": "origen", "format": "Unboxing bolsa QR" }, "sat": { "pillar": "comunidad", "format": "Cliente del mes" } },
+    { "week": 3, "mon": { "pillar": "ritual", "format": "Behind the barista" }, "wed": { "pillar": "origen", "format": "Productor en 60s" }, "fri": { "pillar": "especialidad", "format": "Ticket educativo menú" }, "sat": { "pillar": "comunidad", "format": "Evento cata express" } },
+    { "week": 4, "mon": { "pillar": "comunidad", "format": "Lote limitado red drop" }, "wed": { "pillar": "ritual", "format": "Chemex para dos" }, "fri": { "pillar": "origen", "format": "Mapa altitud 1.900m" }, "sat": { "pillar": "especialidad", "format": "Resumen KPI mes" } }
+  ],
+  "kpis": [
+    { "name": "Ticket promedio", "target": 32000, "unit": "COP", "actionIfMiss": "Upselling filtrados, retail y brunch" },
+    { "name": "Clientes / hora pico", "target": 15, "unit": "12pm-2pm", "actionIfMiss": "Mise en place y personal pico" },
+    { "name": "Food cost %", "target": 35, "unit": "%", "actionIfMiss": "Revisar recetas y merma" },
+    { "name": "Tasa de retorno", "target": 45, "unit": "%", "actionIfMiss": "Membresía + CRM WhatsApp" },
+    { "name": "NPS", "target": 72, "unit": "0-100", "actionIfMiss": "Auditoría experiencia en barra" },
+    { "name": "Ventas retail / total", "target": 20, "unit": "%", "actionIfMiss": "Recomendación activa del barista" },
+    { "name": "CAC", "target": 8000, "unit": "COP", "actionIfMiss": "Optimizar pauta y segmentación" },
+    { "name": "LTV miembro", "target": 480000, "unit": "COP", "actionIfMiss": "Revisar beneficios suscripción" }
+  ],
+  "visualRules": {
+    "typography": "Helvetica Bold/Futura headlines · Helvetica Light cuerpo",
+    "mascot": "American Bully — fuerza, lealtad, presencia (uso secundario, no infantilizar)",
+    "photography": "Alto contraste, fondo negro, vapor y texturas. Acentos de color en tiras o luz lateral.",
+    "do": [
+      "Usar negro como lienzo dominante",
+      "Reservar verde limón para CTAs y origen",
+      "Azul para datos y educación",
+      "Rojo para urgencia y gastronomía premium"
+    ],
+    "dont": [
+      "Mezclar los cuatro colores en igual proporción",
+      "Usar gradientes arcoíris fuera de la paleta",
+      "Competir visualmente con franquicias genéricas (beige/café pastel)"
+    ]
+  }
+}

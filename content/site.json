@@ -139,45 +139,58 @@
   ],
   "menu": [
     {
-      "id": "espresso",
-      "name": "Espresso bar",
+      "id": "specialty-bar",
+      "name": "Specialty bar — calientes",
+      "averagePrice": 14125,
       "items": [
-        { "name": "Espresso", "price": 12000 },
-        { "name": "Americano", "price": 12000 },
-        { "name": "Cortado", "price": 14000 },
-        { "name": "Cappuccino", "price": 15000 },
-        { "name": "Latte", "price": 16000 },
-        { "name": "Flat white", "price": 18000 }
+        { "name": "Espresso de origen (single)", "price": 10000 },
+        { "name": "Cortado de origen", "price": 10000 },
+        { "name": "Cappuccino specialty", "price": 12000 },
+        { "name": "Latte de especialidad", "price": 14000 },
+        { "name": "Flat white Ghost", "price": 16000 },
+        { "name": "Pour over V60", "price": 17000 },
+        { "name": "Aeropress de origen", "price": 17000 },
+        { "name": "Chemex para dos", "price": 17000 }
       ]
     },
     {
-      "id": "filtrados",
-      "name": "Métodos filtrados",
+      "id": "cold",
+      "name": "Frías & cold brew",
+      "averagePrice": 19167,
       "items": [
-        { "name": "V60 Single Lot", "description": "Lote del día · notas de cata", "price": 18000 },
-        { "name": "Chemex", "description": "Lote destacado", "price": 20000 },
-        { "name": "AeroPress", "price": 16000 },
-        { "name": "Prensa francesa", "price": 14000 }
+        { "name": "Iced latte de origen", "price": 12000 },
+        { "name": "Limonada con cold brew", "price": 15000 },
+        { "name": "Cold brew Ghost 24h", "price": 22000 },
+        { "name": "Tonic espresso", "price": 20000 },
+        { "name": "Ghost signature", "price": 20000 },
+        { "name": "Cold brew nitro", "price": 26000 }
       ]
     },
     {
-      "id": "frias",
-      "name": "Bebidas frías",
+      "id": "brunch",
+      "name": "Brunch & gastronomía",
+      "averagePrice": 29000,
       "items": [
-        { "name": "Cold brew", "price": 16000 },
-        { "name": "Latte frío", "price": 18000 },
-        { "name": "Espresso tonic", "price": 17000 },
-        { "name": "Frappe artesanal", "price": 20000 }
+        { "name": "Croissant de mantequilla", "price": 18000 },
+        { "name": "Cheesecake de café de origen", "price": 20000 },
+        { "name": "Tiramisú specialty coffee", "price": 22000 },
+        { "name": "Tostadas aguacate & café", "price": 28000 },
+        { "name": "Huevos benedictinos Ghost", "price": 38000 },
+        { "name": "Tabla quesos & embutidos", "price": 52000 }
       ]
     },
     {
       "id": "retail",
       "name": "Retail",
+      "averagePrice": 86000,
       "items": [
-        { "name": "Bolsa 250 g", "description": "Trazabilidad QR", "price": 45000 },
-        { "name": "Kit barista", "price": 85000 },
-        { "name": "Merch Ghost", "price": 28000 }
+        { "name": "Café Ghost origen 250g", "price": 45000 },
+        { "name": "Café Ghost origen 500g", "price": 80000 },
+        { "name": "Box de orígenes (3×100g)", "price": 78000 },
+        { "name": "Suscripción mensual 500g", "price": 82000 },
+        { "name": "Kit barista en casa", "price": 145000 }
       ]
     }
-  ]
+  ],
+  "marketingStrategy": "content/marketing-strategy.json"
 }
