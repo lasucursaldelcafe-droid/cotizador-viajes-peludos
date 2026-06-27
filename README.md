@@ -59,6 +59,8 @@ bash tools/crear-repo-ghost.sh
 
 O en Windows: `tools\crear-repo-ghost.bat`
 
-**URL del sitio:** https://lasucursaldelcafe-droid.github.io/ghost_coffee_shop/
+**Sitio en vivo:** https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/
 
 Push a `main` activa GitHub Pages vía `.github/workflows/deploy-pages.yml`.
+
+> El repo `ghost_coffee_shop` dedicado se puede crear después con `bash tools/crear-repo-ghost.sh` (requiere `gh auth login` con permisos de crear repos).
