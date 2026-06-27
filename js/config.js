@@ -36,7 +36,9 @@ export const NAV_LINKS = Object.freeze([
  */
 function detectBasePath() {
   const { pathname } = globalThis.location ?? { pathname: '' };
-  return pathname.includes('/ghost_coffee_shop') ? '/ghost_coffee_shop' : '';
+  if (pathname.includes('/ghost_coffee_shop')) return '/ghost_coffee_shop';
+  if (pathname.includes('/cotizador-viajes-peludos')) return '/cotizador-viajes-peludos';
+  return '';
 }
 
 /**

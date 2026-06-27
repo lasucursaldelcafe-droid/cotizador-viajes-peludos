@@ -1,9 +1,9 @@
 ﻿{
   "owner": "lasucursaldelcafe-droid",
-  "repo": "ghost_coffee_shop",
-  "pages_url": "https://lasucursaldelcafe-droid.github.io/ghost_coffee_shop/",
-  "login_url": "https://lasucursaldelcafe-droid.github.io/ghost_coffee_shop/",
-  "app_url": "https://lasucursaldelcafe-droid.github.io/ghost_coffee_shop/",
+  "repo": "cotizador-viajes-peludos",
+  "pages_url": "https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/",
+  "login_url": "https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/",
+  "app_url": "https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/",
   "default_branch": "main",
   "pages_source_path": "/",
   "firebase": {
