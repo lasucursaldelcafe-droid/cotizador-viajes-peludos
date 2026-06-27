@@ -176,7 +176,12 @@
 
     var wa = $('#ghostWhatsapp');
     if (wa && brand.whatsapp) {
-      wa.href = cfg.whatsappUrl(brand.whatsapp, 'Hola Ghost, quiero información sobre su café de especialidad.');
+      var waUrl = cfg.whatsappUrl(brand.whatsapp, 'Hola Ghost, quiero información sobre su café de especialidad.');
+      wa.href = waUrl;
+    }
+    var waCta = $('#ghostWhatsappCta');
+    if (waCta && brand.whatsapp) {
+      waCta.href = cfg.whatsappUrl(brand.whatsapp, 'Hola Ghost, quiero hacer un pedido.');
     }
 
     var ig = $('#ghostInstagram');

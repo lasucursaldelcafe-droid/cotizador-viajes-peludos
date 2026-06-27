@@ -76,20 +76,5 @@
 
   <script src="js/ghost-config.js"></script>
   <script src="js/ghost-site.js"></script>
-  <script>
-    loadContent = undefined;
-    document.addEventListener('DOMContentLoaded', function () {
-      fetch((window.GHOST_SITE && GHOST_SITE.asset('content/site.json')) || 'content/site.json')
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-          var b = data.brand || {};
-          var wa = GHOST_SITE.whatsappUrl(b.whatsapp, 'Hola Ghost, quiero hacer un pedido.');
-          var waBtn = document.getElementById('ghostWhatsapp');
-          var waCta = document.getElementById('ghostWhatsappCta');
-          if (waBtn) waBtn.href = wa;
-          if (waCta) waCta.href = wa;
-        });
-    });
-  </script>
 </body>
 </html>
