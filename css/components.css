@@ -703,6 +703,282 @@
     white-space: nowrap;
   }
 
+  .ghost-menu-intro {
+    font-size: 1.05rem;
+    color: var(--ink-muted);
+    margin-block-end: 2.5rem;
+    max-width: 42rem;
+    line-height: 1.65;
+  }
+
+  .ghost-menu-loading,
+  .ghost-menu-error {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--ink-muted);
+  }
+
+  /* —— Venue hero —— */
+  .ghost-menu-venue {
+    margin: 0 0 2.5rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    background: var(--surface-raised);
+  }
+
+  .ghost-menu-venue__img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .ghost-menu-venue__caption {
+    padding: 1.5rem clamp(1.25rem, 4vw, 2rem);
+    border-block-start: var(--border-subtle);
+  }
+
+  .ghost-menu-venue__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 0.5rem;
+  }
+
+  .ghost-menu-venue__desc {
+    margin: 0;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    max-width: 50rem;
+  }
+
+  /* —— Grid de platos destacados —— */
+  .ghost-menu-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-block-end: 1.5rem;
+
+    @media (min-width: 36rem) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 64rem) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .ghost-menu-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface-raised);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: var(--border-subtle);
+    box-shadow: var(--shadow-soft);
+    transition: box-shadow 0.25s var(--ease-out-expo), transform 0.25s var(--ease-out-expo);
+  }
+
+  .ghost-menu-card:hover {
+    box-shadow: var(--shadow-card);
+    transform: translateY(-2px);
+  }
+
+  .ghost-menu-card__img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ghost-menu-card__body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+  }
+
+  .ghost-menu-card__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .ghost-menu-card__name {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .ghost-menu-card__price {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--spectral);
+    white-space: nowrap;
+  }
+
+  .ghost-menu-card__desc {
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .ghost-menu-card__details {
+    margin-block-start: auto;
+    border-block-start: var(--border-subtle);
+    padding-block-start: 0.75rem;
+  }
+
+  .ghost-menu-card__toggle {
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ghost-blue);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .ghost-menu-card__toggle::-webkit-details-marker {
+    display: none;
+  }
+
+  .ghost-menu-card__toggle::before {
+    content: "+";
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--spectral);
+    transition: transform 0.2s var(--ease-out-expo);
+  }
+
+  .ghost-menu-card__details[open] .ghost-menu-card__toggle::before {
+    content: "−";
+  }
+
+  .ghost-menu-card__ingredients {
+    padding-block-start: 0.75rem;
+  }
+
+  /* —— Acordeón lista —— */
+  .ghost-menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .ghost-menu-accordion {
+    border-block-end: var(--border-subtle);
+  }
+
+  .ghost-menu-accordion__summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 1rem;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .ghost-menu-accordion__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .ghost-menu-accordion__summary::after {
+    content: "+";
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--spectral);
+    width: 1.5rem;
+    text-align: center;
+    transition: transform 0.2s var(--ease-out-expo);
+  }
+
+  .ghost-menu-accordion[open] .ghost-menu-accordion__summary::after {
+    content: "−";
+  }
+
+  .ghost-menu-accordion__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+  }
+
+  .ghost-menu-accordion__name {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .ghost-menu-accordion__desc {
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+  }
+
+  .ghost-menu-accordion__price {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--spectral);
+    white-space: nowrap;
+  }
+
+  .ghost-menu-accordion__panel {
+    padding-block: 0 1.25rem;
+    padding-inline-start: 0.5rem;
+    animation: ghost-menu-slide 0.25s var(--ease-out-expo);
+  }
+
+  @keyframes ghost-menu-slide {
+    from {
+      opacity: 0;
+      transform: translateY(-0.35rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* —— Ingredientes —— */
+  .ghost-menu-ingredients__label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ghost-blue);
+    margin: 0 0 0.5rem;
+  }
+
+  .ghost-menu-ingredients {
+    margin: 0;
+    padding-inline-start: 1.15rem;
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .ghost-menu-ingredients li + li {
+    margin-block-start: 0.25rem;
+  }
+
+  .ghost-menu-ingredients__empty {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin: 0;
+    font-style: italic;
+  }
+
   /* —— Valores —— */
   .ghost-value {
     padding: 2rem;

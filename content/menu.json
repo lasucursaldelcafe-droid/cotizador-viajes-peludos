@@ -1,0 +1,312 @@
+{
+  "meta": {
+    "version": "2026-06",
+    "currency": "COP",
+    "ticketTarget": 32000,
+    "sources": [
+      "Modelo financiero Ghost (Google Sheets 1ocvC2no4xXjt4swhAbnWW78yGR_ChCz2)",
+      "Referencias brunch specialty coffee Colombia: Culto Bistro Bogotá, La Gracia al Parque Medellín, Ganso & Castor"
+    ],
+    "note": "Precios alineados al ticket objetivo de $32.000. Ingredientes basados en recetas estándar de barra specialty y brunch gourmet colombiano."
+  },
+  "venue": {
+    "title": "Isla Ghost · Jardín Plaza",
+    "description": "Barra abierta con estética industrial cálida: negro mate, acentos verde limón y rojo metálico. El ritual del café como espectáculo visible desde el pasillo del centro comercial.",
+    "image": "assets/images/venue/island.png"
+  },
+  "sections": [
+    {
+      "id": "specialty-bar",
+      "name": "Specialty bar — calientes",
+      "items": [
+        {
+          "id": "espresso-single",
+          "name": "Espresso de origen (single)",
+          "price": 10000,
+          "description": "SCA 85+, terroir documentado",
+          "ingredients": ["18 g café de origen molido al momento", "Extracción 25–30 s", "Agua filtrada 93 °C", "Nota de cata impresa"],
+          "image": null
+        },
+        {
+          "id": "cortado",
+          "name": "Cortado de origen",
+          "price": 10000,
+          "description": "Ratio perfecto espresso/leche",
+          "ingredients": ["Doble espresso de origen", "60 ml leche entera texturizada", "Vaso corto de cerámica"],
+          "image": null
+        },
+        {
+          "id": "cappuccino",
+          "name": "Cappuccino specialty",
+          "price": 12000,
+          "description": "Espuma sedosa y balance dulzor-amargor",
+          "ingredients": ["Espresso de origen", "Leche entera microespumada", "Cacao amargo en polvo (opcional)"],
+          "image": null
+        },
+        {
+          "id": "latte",
+          "name": "Latte de especialidad",
+          "price": 14000,
+          "description": "Latte art + nota de cata",
+          "ingredients": ["Espresso doble de origen", "Leche entera texturizada 180 ml", "Latte art"],
+          "image": null
+        },
+        {
+          "id": "flat-white",
+          "name": "Flat white Ghost",
+          "price": 16000,
+          "description": "Receta exclusiva marca",
+          "ingredients": ["Ristretto doble Papayo Huila", "Leche entera microespumada 120 ml", "Taza de cerámica 150 ml"],
+          "image": "assets/images/menu/flat-white.png",
+          "featured": true
+        },
+        {
+          "id": "v60",
+          "name": "Pour over V60",
+          "price": 17000,
+          "description": "Método filtrado ceremonial",
+          "ingredients": ["15 g café molido medio", "Agua 93 °C — ratio 1:16", "Filtro de papel Hario V60", "Servido en jarra de vidrio"],
+          "image": "assets/images/menu/pour-over-v60.png",
+          "featured": true
+        },
+        {
+          "id": "aeropress",
+          "name": "Aeropress de origen",
+          "price": 17000,
+          "description": "Cuerpo limpio, acidez brillante",
+          "ingredients": ["17 g café molido fino-medio", "Agua 85 °C", "Método invertido 2 min", "Dilución a gusto"],
+          "image": null
+        },
+        {
+          "id": "chemex",
+          "name": "Chemex para dos",
+          "price": 17000,
+          "description": "Experiencia mesa compartida",
+          "ingredients": ["30 g café molido grueso", "500 ml agua filtrada", "Filtro Chemex", "Nota de cata para dos"],
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "cold",
+      "name": "Frías & cold brew",
+      "items": [
+        {
+          "id": "iced-latte",
+          "name": "Iced latte de origen",
+          "price": 12000,
+          "description": "Espresso sobre hielo y leche fría",
+          "ingredients": ["Doble espresso", "Leche entera fría", "Hielo", "Vaso alto 400 ml"],
+          "image": null
+        },
+        {
+          "id": "limonada-cold-brew",
+          "name": "Limonada con cold brew",
+          "price": 15000,
+          "description": "Refrescante y con notas cítricas",
+          "ingredients": ["Cold brew concentrado 24 h", "Jugo de limón natural", "Jarabe de agave", "Hielo", "Rodaja de limón"],
+          "image": null
+        },
+        {
+          "id": "cold-brew-24h",
+          "name": "Cold brew Ghost 24h",
+          "price": 22000,
+          "description": "Extracción en frío 24 horas",
+          "ingredients": ["Café Papayo molido grueso", "Agua filtrada — maceración 24 h", "Servido sobre hielo", "Ratio 1:8 concentrado"],
+          "image": null
+        },
+        {
+          "id": "tonic-espresso",
+          "name": "Tonic espresso",
+          "price": 20000,
+          "description": "Espresso tonic de barra",
+          "ingredients": ["Doble espresso", "Agua tónica premium", "Hielo grande", "Cáscara de naranja"],
+          "image": null
+        },
+        {
+          "id": "ghost-signature",
+          "name": "Ghost signature",
+          "price": 20000,
+          "description": "Receta propia no replicable",
+          "ingredients": ["Cold brew concentrado", "Leche de coco", "Jarabe de vainilla artesanal", "Espuma de leche", "Cacao"],
+          "image": null
+        },
+        {
+          "id": "cold-brew-nitro",
+          "name": "Cold brew nitro",
+          "price": 26000,
+          "description": "Servido en grifo de nitrógeno",
+          "ingredients": ["Cold brew 24 h Papayo Huila", "Nitrógeno infusionado", "Vaso alto sin hielo", "Crema de cerveza de café"],
+          "image": "assets/images/menu/cold-brew-nitro.png",
+          "featured": true
+        }
+      ]
+    },
+    {
+      "id": "brunch",
+      "name": "Brunch & gastronomía",
+      "items": [
+        {
+          "id": "croissant",
+          "name": "Croissant de mantequilla",
+          "price": 18000,
+          "description": "Hojaldre francés horneado diario",
+          "ingredients": ["Mantequilla europea", "Harina de trigo", "Masa madre ligera", "Huevo para barnizado"],
+          "image": null
+        },
+        {
+          "id": "cheesecake",
+          "name": "Cheesecake de café de origen",
+          "price": 20000,
+          "description": "Postre con espresso colombiano",
+          "ingredients": ["Queso crema", "Galleta speculoos", "Reducción de espresso Papayo", "Crema batida", "Cacao"],
+          "image": null
+        },
+        {
+          "id": "tiramisu",
+          "name": "Tiramisú specialty coffee",
+          "price": 22000,
+          "description": "Clásico italiano con café de origen",
+          "ingredients": ["Queso mascarpone", "Bizcocho savoiardi", "Espresso doble", "Cacao amargo", "Licor de café (opcional)"],
+          "image": null
+        },
+        {
+          "id": "bowl-granola",
+          "name": "Bowl granola con cold brew",
+          "price": 24000,
+          "description": "Desayuno ligero y energético",
+          "ingredients": ["Granola artesanal con almendras", "Yogurt griego", "Frutas de temporada", "Miel", "Shot cold brew"],
+          "image": null
+        },
+        {
+          "id": "tostadas-aguacate",
+          "name": "Tostadas aguacate & café",
+          "price": 28000,
+          "description": "Referencia brunch Cali — precio acorde a specialty ($25k–$35k en mercado)",
+          "ingredients": ["Pan masa madre tostado", "Aguacate hass maduro", "Tomates cherry", "Microgreens", "Semillas de sésamo", "Huevo pochado", "Aceite de oliva", "Sal de mar"],
+          "image": "assets/images/menu/tostadas-aguacate.png",
+          "featured": true
+        },
+        {
+          "id": "waffles",
+          "name": "Waffles con glaze de café",
+          "price": 30000,
+          "description": "Dulce de barra con notas de origen",
+          "ingredients": ["Harina de trigo", "Huevos", "Mantequilla", "Leche", "Glaseado de espresso y azúcar glass", "Frutos rojos frescos"],
+          "image": "assets/images/menu/waffles-cafe.png",
+          "featured": true
+        },
+        {
+          "id": "huevos-benedictinos",
+          "name": "Huevos benedictinos Ghost",
+          "price": 38000,
+          "description": "Referencia Culto Bogotá $36.500 — versión premium con jamón serrano",
+          "ingredients": ["2 huevos pochados", "Pan masa madre artesanal", "Jamón serrano", "Queso crema", "Salsa holandesa casera", "Espinaca salteada", "Pimentón ahumado"],
+          "image": "assets/images/menu/huevos-benedictinos.png",
+          "featured": true
+        },
+        {
+          "id": "tabla-quesos",
+          "name": "Tabla quesos & embutidos",
+          "price": 52000,
+          "description": "Para compartir, maridaje café",
+          "ingredients": ["Queso brie", "Queso manchego", "Queso azul", "Jamón serrano", "Salchichón ibérico", "Nueces y uvas", "Mermelada de higo", "Crackers artesanales"],
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "cocktails",
+      "name": "Cócteles con café",
+      "items": [
+        {
+          "id": "affogato",
+          "name": "Affogato premium",
+          "price": 28000,
+          "description": "Postre-cóctel de barra",
+          "ingredients": ["2 bolas helado vainilla artesanal", "Doble espresso caliente", "Amaretto (opcional)", "Galleta speculoos"],
+          "image": null
+        },
+        {
+          "id": "espresso-martini",
+          "name": "Espresso martini Ghost",
+          "price": 45000,
+          "description": "Clásico de coctelería con origen",
+          "ingredients": ["Vodka premium", "Licor de café", "Espresso recién extraído", "Jarabe simple", "3 granos de café para decorar"],
+          "image": "assets/images/menu/espresso-martini.png",
+          "featured": true
+        },
+        {
+          "id": "cafe-sour",
+          "name": "Café colombiano sour",
+          "price": 42000,
+          "description": "Acidez cítrica y notas de café",
+          "ingredients": ["Bourbon o aguardiente ligero", "Jugo de limón", "Jarabe de panela", "Clara de huevo", "Cold brew reducido", "Amargo de angostura"],
+          "image": null
+        },
+        {
+          "id": "negroni-cold-brew",
+          "name": "Cold brew negroni",
+          "price": 48000,
+          "description": "Twist amargo con cold brew",
+          "ingredients": ["Gin", "Campari", "Vermut rosso", "Cold brew concentrado", "Cáscara de naranja"],
+          "image": null
+        },
+        {
+          "id": "old-fashioned",
+          "name": "Ghost old fashioned",
+          "price": 52000,
+          "description": "Whisky ahumado con reducción de café",
+          "ingredients": ["Whisky bourbon", "Azúcar morena", "Angostura", "Reducción de espresso Papayo", "Twist de naranja", "Hielo grande"],
+          "image": null
+        }
+      ]
+    },
+    {
+      "id": "retail",
+      "name": "Retail — café en grano",
+      "items": [
+        {
+          "id": "bolsa-250",
+          "name": "Café Ghost origen 250g",
+          "price": 45000,
+          "description": "Bolsa con QR trazabilidad",
+          "ingredients": ["Café verde colombiano SCA 85+", "Tostión media-clara", "Fecha de tostión", "QR GPS productor"],
+          "image": "assets/images/products/bolsa-papayo.png"
+        },
+        {
+          "id": "bolsa-500",
+          "name": "Café Ghost origen 500g",
+          "price": 80000,
+          "description": "Formato hogar o regalo",
+          "ingredients": ["Mismo lote Papayo Huila", "Empaque kraft con sello Ghost", "Nota de cata incluida"],
+          "image": "assets/images/products/bolsa-papayo.png"
+        },
+        {
+          "id": "box-origenes",
+          "name": "Box de orígenes (3×100g)",
+          "price": 78000,
+          "description": "Curaduría mensual terroirs",
+          "ingredients": ["Papayo Huila 100g", "Gesha Nariño 100g", "Bourbon Cauca 100g", "Tarjetas de cata por origen"],
+          "image": null
+        },
+        {
+          "id": "suscripcion",
+          "name": "Suscripción mensual 500g",
+          "price": 82000,
+          "description": "Lote rotativo con envío o retiro en isla",
+          "ingredients": ["500g café de temporada", "Nota del tostador", "Acceso anticipado a microlotes"],
+          "image": null
+        },
+        {
+          "id": "kit-barista",
+          "name": "Kit barista en casa",
+          "price": 145000,
+          "description": "Todo para replicar el ritual",
+          "ingredients": ["V60 + filtros", "Cuchara dosificadora", "250g café origen", "Guía de extracción impresa"],
+          "image": null
+        }
+      ]
+    }
+  ]
+}
