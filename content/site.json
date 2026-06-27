@@ -51,6 +51,7 @@
     "ghostLime": "#8DB600",
     "ghostBlue": "#1E5E8E",
     "ghostAmber": "#E6A04D",
+    "ghostYellow": "#FFB347",
     "void": "#080808",
     "voidMid": "#111111",
     "ghost": "#f0ede6",
@@ -196,6 +197,7 @@
     }
   ],
   "marketingStrategy": "content/marketing-strategy.json",
+  "brandIdentityPage": "identidad.html",
   "images": {
     "logoMark": "assets/images/brand/logo-mark.png",
     "logoHorizontal": "assets/images/brand/logo-horizontal.png",
