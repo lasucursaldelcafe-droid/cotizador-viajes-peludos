@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacto Ghost Specialty Coffee — Cali, Colombia. WhatsApp, horarios y ubicación.">
+  <meta name="theme-color" content="#08080a">
+  <title>Contacto | Ghost Specialty Coffee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/ghost.css">
+</head>
+<body data-page="contacto">
+  <a class="skip-link" href="#contenido">Ir al contenido</a>
+
+  <header class="ghost-nav" role="banner">
+    <a class="ghost-nav__brand" href="index.html">
+      <span class="ghost-nav__mark" aria-hidden="true">G</span>
+      <span>Ghost</span>
+    </a>
+    <button type="button" class="ghost-nav__toggle" id="ghostNavToggle" aria-expanded="false" aria-controls="ghostNavMenu">Menú</button>
+    <ul class="ghost-nav__menu" id="ghostNavMenu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="menu.html">Menú</a></li>
+      <li><a href="origen.html">Origen</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+    </ul>
+  </header>
+
+  <header class="ghost-page-hero">
+    <p class="ghost-kicker" style="max-width:var(--content-max);margin:0 auto 0.5rem">Hablemos</p>
+    <h1 class="ghost-page-hero__title">Contacto</h1>
+  </header>
+
+  <main id="contenido" class="ghost-section ghost-section--dark">
+    <div class="ghost-wrap">
+      <div class="ghost-contact-grid">
+        <div class="ghost-contact-card reveal">
+          <h3>Visítanos</h3>
+          <p id="ghostAddress">Cali, Valle del Cauca, Colombia</p>
+          <p id="ghostCity"></p>
+          <p id="ghostHours" style="margin-top:1rem"></p>
+        </div>
+        <div class="ghost-contact-card reveal">
+          <h3>Escríbenos</h3>
+          <p><a id="ghostEmail" href="mailto:hola@ghostcoffee.co">hola@ghostcoffee.co</a></p>
+          <p style="margin-top:1.5rem">
+            <a class="btn btn--ember" id="ghostWhatsapp" href="#">WhatsApp</a>
+          </p>
+          <p style="margin-top:1.5rem">
+            <a id="ghostInstagram" href="https://www.instagram.com/ghost_specialty_coffee/" target="_blank" rel="noopener noreferrer">@ghost_specialty_coffee</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="ghost-cta-band">
+    <h2 class="ghost-cta-band__title reveal">¿Pedido o consulta?</h2>
+    <p class="ghost-cta-band__text reveal">Lotes en bolsa, menú de barra o eventos. Respuesta rápida por WhatsApp.</p>
+    <a class="btn btn--spectral reveal" id="ghostWhatsappCta" href="#">Abrir WhatsApp</a>
+  </section>
+
+  <footer class="ghost-footer">
+    <div class="ghost-footer__inner">
+      <div class="ghost-footer__brand">Ghost</div>
+      <ul class="ghost-footer__links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="menu.html">Menú</a></li>
+      </ul>
+      <p class="ghost-footer__copy" id="ghostFooterLine">Ghost Specialty Coffee</p>
+    </div>
+  </footer>
+
+  <script src="js/ghost-config.js"></script>
+  <script src="js/ghost-site.js"></script>
+  <script>
+    loadContent = undefined;
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch((window.GHOST_SITE && GHOST_SITE.asset('content/site.json')) || 'content/site.json')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          var b = data.brand || {};
+          var wa = GHOST_SITE.whatsappUrl(b.whatsapp, 'Hola Ghost, quiero hacer un pedido.');
+          var waBtn = document.getElementById('ghostWhatsapp');
+          var waCta = document.getElementById('ghostWhatsappCta');
+          if (waBtn) waBtn.href = wa;
+          if (waCta) waCta.href = wa;
+        });
+    });
+  </script>
+</body>
+</html>

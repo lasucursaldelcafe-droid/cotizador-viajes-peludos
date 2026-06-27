@@ -30,11 +30,11 @@ try {
             Start-Sleep -Seconds 2
             git remote remove origin 2>$null | Out-Null
         }
-        [void](Commit-AllSafe -Root $root -Message "Publicacion Cotizador Viajes Peludos")
-        Invoke-Gh $gh repo create $repo --public --description "Cotizador Viajes Peludos" --source=. --remote=origin --push
+        [void](Commit-AllSafe -Root $root -Message "Publicar Ghost Specialty Coffee")
+        Invoke-Gh $gh repo create $repo --public --description "Ghost Specialty Coffee — café de especialidad Cali" --source=. --remote=origin --push
         if ($LASTEXITCODE -ne 0) { throw "No se pudo crear el repositorio" }
     } else {
-        [void](Commit-AllSafe -Root $root -Message "Actualizar cotizador Viajes Peludos")
+        [void](Commit-AllSafe -Root $root -Message "Actualizar Ghost Specialty Coffee")
         Invoke-Gh $gh repo view "$owner/$repo" 2>$null | Out-Null
         if ($LASTEXITCODE -ne 0) {
             Invoke-Gh $gh repo create $repo --public --source=. --remote=origin --push

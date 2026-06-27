@@ -1,11 +1,9 @@
-# Todo automatico: Firebase config + reglas + GitHub Pages
+# Deploy automatico Ghost Specialty Coffee — GitHub Pages
 param(
     [switch]$Recreate
 )
 
 $ErrorActionPreference = "Stop"
-. "$PSScriptRoot\sync-firebase-config.ps1"
-. "$PSScriptRoot\firebase-deploy-rules.ps1"
 
 $deployArgs = @{}
 if ($Recreate) { $deployArgs.Recreate = $true }

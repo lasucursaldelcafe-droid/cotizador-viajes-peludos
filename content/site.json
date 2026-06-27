@@ -1,0 +1,167 @@
+{
+  "brand": {
+    "name": "Ghost",
+    "fullName": "Ghost Specialty Coffee",
+    "descriptor": "Café de especialidad · Cali",
+    "tagline": "Lo invisible, hecho taza",
+    "headline": "CAFÉ QUE NO DESAPARECE",
+    "subheadline": "Tostión de precisión, origen colombiano y una experiencia que se siente antes de probarla. Ghost no es un café más: es presencia.",
+    "visitLine": "Cali, Valle del Cauca",
+    "footerLine": "Ghost Specialty Coffee · Tostadores de lo espectral",
+    "website": "https://lasucursaldelcafe-droid.github.io/ghost_coffee_shop/",
+    "email": "hola@ghostcoffee.co",
+    "phone": "+57 300 000 0000",
+    "whatsapp": "573000000000",
+    "address": "Cali, Valle del Cauca, Colombia",
+    "city": "Cali, Colombia",
+    "hours": "Lunes a sábado 7:00am – 8:00pm · Domingos 9:00am – 6:00pm",
+    "social": {
+      "instagram": "https://www.instagram.com/ghost_specialty_coffee/",
+      "facebook": ""
+    },
+    "purpose": "Elevar el café de especialidad con una identidad audaz: trazabilidad radical, tostión sin concesiones y un espacio donde cada taza deja huella.",
+    "mission": "Tostar y servir microlotes colombianos con precisión técnica y una experiencia de marca que desafía lo convencional.",
+    "vision": "Ser la marca de café de especialidad más reconocida del ecosistema caleño por su carácter, su origen y su presencia.",
+    "about": "Ghost nace en el corazón de la escena cafetera de Cali. Somos tostadores, baristas y narradores de origen. Cada lote que entra a nuestro laboratorio pasa por un protocolo obsesivo: curva de tostión, desarrollo, reposo y extracción. Lo que sale no es un producto genérico: es una firma.",
+    "values": [
+      {
+        "title": "Origen sin excusas",
+        "text": "Trazabilidad completa. Conocemos al productor, la finca y la altitud. Si no podemos contarlo, no lo tostamos."
+      },
+      {
+        "title": "Tostión agresiva con control",
+        "text": "Perfiles claros, desarrollo calculado. Buscamos la nota que otros dejan pasar."
+      },
+      {
+        "title": "Presencia de marca",
+        "text": "Cada punto de contacto — taza, bolsa, espacio — comunica la misma intensidad."
+      },
+      {
+        "title": "Comunidad cafetera",
+        "text": "Parte del ecosistema de La Sucursal del Café. Cata, competencia y formación."
+      }
+    ],
+    "story": "Empezamos con una pregunta: ¿y si el mejor café fuera el que casi no ves venir? Ghost es esa respuesta — especialidad colombiana con actitud espectral, nacida entre baristas que no aceptan lo mediocre."
+  },
+  "theme": {
+    "void": "#08080a",
+    "voidMid": "#121218",
+    "ghost": "#f0ede6",
+    "ghostDim": "#b8b4ab",
+    "spectral": "#00e5b8",
+    "spectralDim": "#00b894",
+    "ember": "#ff4d1a",
+    "roast": "#2a1810",
+    "smoke": "#1a1a22"
+  },
+  "marquee": [
+    "Microlotes colombianos",
+    "Tostión de precisión",
+    "Trazabilidad radical",
+    "Cali · Colombia",
+    "Ghost Specialty Coffee",
+    "La Sucursal del Café"
+  ],
+  "experiences": [
+    {
+      "id": "bar",
+      "title": "Barra",
+      "subtitle": "Extracción sin concesiones",
+      "description": "Espresso, pour over y métodos alternos con protocolo de extracción documentado. Cada servicio es una demostración.",
+      "layout": "left"
+    },
+    {
+      "id": "tostion",
+      "title": "Tostión",
+      "subtitle": "Laboratorio propio",
+      "description": "Curvas personalizadas por lote. Desarrollo, reposo y control de humedad. Café fresco, siempre.",
+      "layout": "right"
+    },
+    {
+      "id": "origen",
+      "title": "Origen",
+      "subtitle": "Del productor a la taza",
+      "description": "Relación directa con fincas de Nariño, Huila, Tolima y Cauca. Historias que se saborean.",
+      "layout": "left"
+    },
+    {
+      "id": "eventos",
+      "title": "Eventos",
+      "subtitle": "Ecosistema Sucursal",
+      "description": "Presentes en La Sucursal del Café: cata, V60 Championship y talleres con la comunidad cafetera de Cali.",
+      "layout": "right"
+    }
+  ],
+  "products": [
+    {
+      "id": "ghost-narino",
+      "name": "Ghost · Nariño",
+      "variety": "Caturra",
+      "origin": "La Unión, Nariño",
+      "region": "Nariño",
+      "farmer": "Productores aliados",
+      "altitude": "1900 msnm",
+      "price": 48000,
+      "weight": "250 g",
+      "roast": "Tostión media-clara",
+      "notes": ["Caramelo", "Cítrico", "Cacao"],
+      "featured": true
+    },
+    {
+      "id": "ghost-huila",
+      "name": "Ghost · Huila",
+      "variety": "Castillo",
+      "origin": "Pitalito",
+      "region": "Huila",
+      "price": 45000,
+      "weight": "250 g",
+      "roast": "Tostión media",
+      "notes": ["Chocolate", "Nuez", "Dulce"],
+      "featured": false
+    },
+    {
+      "id": "ghost-espectral",
+      "name": "Espectral",
+      "variety": "Geisha",
+      "origin": "Tolima",
+      "region": "Tolima",
+      "price": 72000,
+      "weight": "250 g",
+      "roast": "Tostión clara",
+      "notes": ["Floral", "Bergamota", "Té"],
+      "featured": true
+    }
+  ],
+  "menu": [
+    {
+      "id": "espresso",
+      "name": "Espresso bar",
+      "items": [
+        { "name": "Espresso", "price": 7000 },
+        { "name": "Americano", "price": 7500 },
+        { "name": "Capuchino", "price": 10000 },
+        { "name": "Flat white", "price": 11000 },
+        { "name": "Ghost latte", "description": "Doble shot · leche texturizada", "price": 12000 }
+      ]
+    },
+    {
+      "id": "filtrados",
+      "name": "Filtrados",
+      "items": [
+        { "name": "Pour over V60", "description": "Origen del día", "price": 13000 },
+        { "name": "Chemex", "description": "Lote destacado", "price": 14000 },
+        { "name": "Cold brew", "price": 12000 },
+        { "name": "Nitro", "price": 13500 }
+      ]
+    },
+    {
+      "id": "acompanamiento",
+      "name": "Acompañamiento",
+      "items": [
+        { "name": "Croissant mantequilla", "price": 9500 },
+        { "name": "Cookie chocolate 70%", "price": 8000 },
+        { "name": "Brownie espresso", "price": 10000 }
+      ]
+    }
+  ]
+}

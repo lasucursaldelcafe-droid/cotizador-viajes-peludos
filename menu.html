@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Menú Ghost Specialty Coffee — espresso bar, filtrados y acompañamiento. Café de especialidad en Cali.">
+  <meta name="theme-color" content="#08080a">
+  <title>Menú | Ghost Specialty Coffee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/ghost.css">
+</head>
+<body data-page="menu">
+  <a class="skip-link" href="#contenido">Ir al contenido</a>
+
+  <header class="ghost-nav" role="banner">
+    <a class="ghost-nav__brand" href="index.html">
+      <span class="ghost-nav__mark" aria-hidden="true">G</span>
+      <span>Ghost</span>
+    </a>
+    <button type="button" class="ghost-nav__toggle" id="ghostNavToggle" aria-expanded="false" aria-controls="ghostNavMenu">Menú</button>
+    <ul class="ghost-nav__menu" id="ghostNavMenu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="menu.html" aria-current="page">Menú</a></li>
+      <li><a href="origen.html">Origen</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </header>
+
+  <header class="ghost-page-hero">
+    <p class="ghost-kicker" style="max-width:var(--content-max);margin:0 auto 0.5rem;padding:0 clamp(0rem,0vw,0rem)">En la barra</p>
+    <h1 class="ghost-page-hero__title">Carta</h1>
+  </header>
+
+  <main id="contenido" class="ghost-section ghost-section--dark">
+    <div class="ghost-wrap">
+      <p class="ghost-section__intro reveal">
+        Espresso de doble extracción, filtrados de origen y acompañamiento pensado para la barra.
+        Precios referenciales en COP.
+      </p>
+      <div id="ghostMenu"></div>
+    </div>
+  </main>
+
+  <section class="ghost-cta-band">
+    <h2 class="ghost-cta-band__title reveal">¿Quieres llevarlo a casa?</h2>
+    <p class="ghost-cta-band__text reveal">Consulta nuestros lotes en bolsa y pide por WhatsApp.</p>
+    <a class="btn btn--spectral reveal" href="origen.html">Ver origen</a>
+  </section>
+
+  <footer class="ghost-footer">
+    <div class="ghost-footer__inner">
+      <div class="ghost-footer__brand">Ghost</div>
+      <ul class="ghost-footer__links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="origen.html">Origen</a></li>
+        <li><a id="ghostInstagram" href="https://www.instagram.com/ghost_specialty_coffee/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      </ul>
+      <p class="ghost-footer__copy" id="ghostFooterLine">Ghost Specialty Coffee</p>
+    </div>
+  </footer>
+
+  <script src="js/ghost-config.js"></script>
+  <script src="js/ghost-site.js"></script>
+</body>
+</html>

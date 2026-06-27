@@ -2,60 +2,128 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#7B2D8E">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <title>Viajes Peludos — Iniciar sesión</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="viajes-peludos.css">
-  <script>
-    (function () {
-      var PROD = 'https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/';
-      if (document.getElementById('loginUnconfigured') || document.getElementById('btnEnterLocal')) {
-        location.replace(PROD);
-      }
-    })();
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ghost Specialty Coffee — café de especialidad en Cali. Tostión de precisión, microlotes colombianos y una experiencia espectral que no desaparece.">
+  <meta name="theme-color" content="#08080a">
+  <meta property="og:title" content="Ghost Specialty Coffee | Café de especialidad Cali">
+  <meta property="og:description" content="Lo invisible, hecho taza. Microlotes colombianos con trazabilidad radical y tostión sin concesiones.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <title>Ghost Specialty Coffee | Café de especialidad · Cali</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/ghost.css">
 </head>
-<body class="vp-login-page">
-  <div id="envBanner" class="vp-env-banner" hidden role="alert"></div>
-  <section id="loginConfigured" class="vp-auth-gate">
-    <div class="vp-auth-card">
-      <img src="assets/logo-viajes-peludos.png" alt="Viajes Peludos" class="vp-auth-logo">
-      <h1>Viajes Peludos</h1>
-      <p>Inicia sesión con Google para acceder al cotizador.</p>
-      <button type="button" class="btn btn-google" id="btnGoogleLogin">
-        <span class="g-icon">G</span> Continuar con Google
-      </button>
-      <p class="vp-muted vp-auth-note">Después del login irás al editor de cotizaciones.</p>
+<body data-page="home">
+  <a class="skip-link" href="#contenido">Ir al contenido</a>
+
+  <header class="ghost-nav" role="banner">
+    <a class="ghost-nav__brand" href="index.html">
+      <span class="ghost-nav__mark" aria-hidden="true">G</span>
+      <span>Ghost</span>
+    </a>
+    <button type="button" class="ghost-nav__toggle" id="ghostNavToggle" aria-expanded="false" aria-controls="ghostNavMenu">Menú</button>
+    <ul class="ghost-nav__menu" id="ghostNavMenu">
+      <li><a href="index.html" aria-current="page">Inicio</a></li>
+      <li><a href="menu.html">Menú</a></li>
+      <li><a href="origen.html">Origen</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </header>
+
+  <main id="contenido">
+    <section class="ghost-hero">
+      <div class="ghost-hero__bg" aria-hidden="true">
+        <div class="ghost-hero__orb ghost-hero__orb--1"></div>
+        <div class="ghost-hero__orb ghost-hero__orb--2"></div>
+      </div>
+      <div class="ghost-hero__content">
+        <p class="ghost-kicker" id="ghostTagline">Lo invisible, hecho taza</p>
+        <h1 class="ghost-hero__title">
+          <span>CAFÉ QUE</span>
+          NO DESAPARECE
+        </h1>
+        <p class="ghost-hero__lead" id="ghostSubheadline">
+          Tostión de precisión, origen colombiano y una experiencia que se siente antes de probarla.
+        </p>
+        <div class="ghost-hero__cta">
+          <a class="btn btn--spectral" href="menu.html">Ver menú</a>
+          <a class="btn btn--ghost" href="origen.html">Nuestros lotes</a>
+        </div>
+        <div class="ghost-hero__meta">
+          <span id="ghostDescriptor">Café de especialidad · Cali</span>
+          <span>·</span>
+          <span>La Sucursal del Café</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="ghost-marquee" aria-hidden="true">
+      <div class="ghost-marquee__track" id="ghostMarqueeTrack"></div>
     </div>
-  </section>
 
-  <div id="toast" class="toast"></div>
+    <section class="ghost-section ghost-section--smoke">
+      <div class="ghost-wrap">
+        <p class="ghost-section__label reveal">Experiencia</p>
+        <h2 class="ghost-section__title reveal">Cuatro capas de presencia</h2>
+        <p class="ghost-section__intro reveal">
+          Barra, tostión, origen y comunidad. Ghost no es un café más: es un protocolo completo
+          de especialidad con identidad agresiva.
+        </p>
+        <div class="ghost-experience" id="ghostExperiences"></div>
+      </div>
+    </section>
 
-  <!--VP_FIREBASE_INLINE-->
-  <script>
-/** Firebase inline â€” Viajes Peludos */
-window.VP_FIREBASE_CONFIG = {
-  enabled: true,
-  requireAuth: true,
-  apiKey: 'AIzaSyB7-LT8T65gKM3TKxGJJibl22v0egSZ5cE',
-  authDomain: 'viajes-peludos-cotizador.firebaseapp.com',
-  projectId: 'viajes-peludos-cotizador',
-  storageBucket: 'viajes-peludos-cotizador.firebasestorage.app',
-  messagingSenderId: '182229420090',
-  appId: '1:182229420090:web:5724565f4322490a88cd03',
-  adminEmails: []
-};
-  </script>
-  <script src="js/vp-routes.js?v=20250619"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-  <script src="js/firebase-config.js?v=20250619"></script>
-  <script src="js/vp-auth.js?v=20250619"></script>
-  <script src="js/vp-login-page.js?v=20250619"></script>
+    <section class="ghost-section ghost-section--dark">
+      <div class="ghost-wrap">
+        <p class="ghost-section__label reveal">Tienda</p>
+        <h2 class="ghost-section__title reveal">Lotes con firma</h2>
+        <p class="ghost-section__intro reveal">
+          Microlotes colombianos tostados en pequeños batches. Frescura radical, trazabilidad completa.
+        </p>
+        <div class="ghost-products" id="ghostProducts"></div>
+        <div style="margin-top:2.5rem;text-align:center" class="reveal">
+          <a class="btn btn--ember" id="ghostWhatsapp" href="contacto.html">Pedir por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ghost-section ghost-section--roast">
+      <div class="ghost-wrap">
+        <p class="ghost-section__label reveal">Historia</p>
+        <h2 class="ghost-section__title reveal">Nacimos espectrales</h2>
+        <p class="ghost-section__intro reveal" id="ghostStory">
+          Empezamos con una pregunta: ¿y si el mejor café fuera el que casi no ves venir?
+        </p>
+        <a class="btn btn--ghost reveal" href="nosotros.html">Conoce Ghost</a>
+      </div>
+    </section>
+
+    <section class="ghost-cta-band">
+      <h2 class="ghost-cta-band__title reveal">¿Listo para sentirlo?</h2>
+      <p class="ghost-cta-band__text reveal">
+        Visítanos en Cali o escríbenos. Café fresco, extracción sin concesiones.
+      </p>
+      <a class="btn btn--spectral reveal" href="contacto.html">Contactar</a>
+    </section>
+  </main>
+
+  <footer class="ghost-footer">
+    <div class="ghost-footer__inner">
+      <div class="ghost-footer__brand">Ghost</div>
+      <ul class="ghost-footer__links">
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="origen.html">Origen</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a id="ghostInstagram" href="https://www.instagram.com/ghost_specialty_coffee/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      </ul>
+      <p class="ghost-footer__copy" id="ghostFooterLine">Ghost Specialty Coffee · Tostadores de lo espectral</p>
+    </div>
+  </footer>
+
+  <script src="js/ghost-config.js"></script>
+  <script src="js/ghost-site.js"></script>
 </body>
 </html>

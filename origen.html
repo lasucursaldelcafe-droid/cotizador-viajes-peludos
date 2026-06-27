@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Origen y microlotes Ghost Specialty Coffee — trazabilidad colombiana, tostión de precisión. Nariño, Huila, Tolima.">
+  <meta name="theme-color" content="#08080a">
+  <title>Origen | Ghost Specialty Coffee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/ghost.css">
+</head>
+<body data-page="origen">
+  <a class="skip-link" href="#contenido">Ir al contenido</a>
+
+  <header class="ghost-nav" role="banner">
+    <a class="ghost-nav__brand" href="index.html">
+      <span class="ghost-nav__mark" aria-hidden="true">G</span>
+      <span>Ghost</span>
+    </a>
+    <button type="button" class="ghost-nav__toggle" id="ghostNavToggle" aria-expanded="false" aria-controls="ghostNavMenu">Menú</button>
+    <ul class="ghost-nav__menu" id="ghostNavMenu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="menu.html">Menú</a></li>
+      <li><a href="origen.html" aria-current="page">Origen</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </header>
+
+  <header class="ghost-page-hero">
+    <p class="ghost-kicker" style="max-width:var(--content-max);margin:0 auto 0.5rem">Trazabilidad</p>
+    <h1 class="ghost-page-hero__title">Del grano a la firma</h1>
+  </header>
+
+  <main id="contenido">
+    <section class="ghost-section ghost-section--smoke">
+      <div class="ghost-wrap">
+        <p class="ghost-section__label reveal">Protocolo</p>
+        <h2 class="ghost-section__title reveal">Origen sin excusas</h2>
+        <p class="ghost-section__intro reveal">
+          Cada lote que entra a Ghost tiene historia: productor, finca, altitud y proceso.
+          Si no podemos contarlo, no lo tostamos. Relación directa con fincas de Nariño, Huila,
+          Tolima y Cauca — el corazón del café colombiano de especialidad.
+        </p>
+        <div class="ghost-values reveal">
+          <div class="ghost-value">
+            <h3 class="ghost-value__title">Curva de tostión</h3>
+            <p class="ghost-value__text">Perfiles personalizados por variedad y proceso. Desarrollo calculado, sin quemar el carácter del origen.</p>
+          </div>
+          <div class="ghost-value">
+            <h3 class="ghost-value__title">Reposo controlado</h3>
+            <p class="ghost-value__text">Degasificación mínima de 48h. Café fresco que respeta la extracción y libera sus notas espectrales.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ghost-section ghost-section--dark">
+      <div class="ghost-wrap">
+        <p class="ghost-section__label reveal">Catálogo</p>
+        <h2 class="ghost-section__title reveal">Lotes disponibles</h2>
+        <div class="ghost-products" id="ghostProducts"></div>
+        <div style="margin-top:2.5rem;text-align:center" class="reveal">
+          <a class="btn btn--ember" id="ghostWhatsapp" href="contacto.html">Pedir por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ghost-footer">
+    <div class="ghost-footer__inner">
+      <div class="ghost-footer__brand">Ghost</div>
+      <ul class="ghost-footer__links">
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a id="ghostInstagram" href="https://www.instagram.com/ghost_specialty_coffee/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      </ul>
+      <p class="ghost-footer__copy" id="ghostFooterLine">Ghost Specialty Coffee</p>
+    </div>
+  </footer>
+
+  <script src="js/ghost-config.js"></script>
+  <script src="js/ghost-site.js"></script>
+</body>
+</html>
