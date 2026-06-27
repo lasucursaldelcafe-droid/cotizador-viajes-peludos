@@ -192,5 +192,13 @@
       ]
     }
   ],
-  "marketingStrategy": "content/marketing-strategy.json"
+  "marketingStrategy": "content/marketing-strategy.json",
+  "images": {
+    "logoMark": "assets/images/brand/logo-mark.png",
+    "logoHorizontal": "assets/images/brand/logo-horizontal.png",
+    "logoRoundSign": "assets/images/brand/logo-round-sign.png",
+    "heroIsland": "assets/images/brand/hero-island.png",
+    "productBag": "assets/images/products/bolsa-papayo.png",
+    "productCup": "assets/images/products/vaso-hot.png"
+  }
 }
