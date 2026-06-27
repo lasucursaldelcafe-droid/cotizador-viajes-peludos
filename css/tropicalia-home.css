@@ -1,0 +1,620 @@
+/* Home — estilo Tropicália adaptado a Ghost Specialty Coffee */
+
+@layer components {
+  body[data-page="home"] {
+    --trop-beige: #fbefdb;
+    --trop-beige-fondo: #fff7e7;
+    --trop-dorado: #b36d18;
+    --trop-azul: #0b3959;
+    --trop-rojo: #b3181b;
+    --trop-white: #ffffff;
+
+    --font-trop-display: "Playfair Display", Georgia, "Times New Roman", serif;
+    --font-trop-body: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-trop-ui: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    background: var(--trop-beige-fondo);
+    color: var(--trop-azul);
+    font-family: var(--font-trop-body);
+  }
+
+  body[data-page="home"] .skip-link:focus {
+    background: var(--trop-dorado);
+    color: var(--trop-white);
+  }
+
+  /* Nav transparente sobre hero */
+  body[data-page="home"] .ghost-nav {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 900;
+    background: transparent;
+    border-bottom: none;
+    padding-inline: clamp(1.25rem, 5vw, 3rem);
+    transition: background 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  body[data-page="home"] .ghost-nav.is-scrolled {
+    background: rgb(255 247 231 / 0.94);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 rgb(11 57 89 / 0.08);
+  }
+
+  body[data-page="home"] .ghost-nav:not(.is-scrolled) .ghost-nav__name,
+  body[data-page="home"] .ghost-nav:not(.is-scrolled) .ghost-nav__sub,
+  body[data-page="home"] .ghost-nav:not(.is-scrolled) .ghost-nav__menu a,
+  body[data-page="home"] .ghost-nav:not(.is-scrolled) .ghost-nav__toggle {
+    color: var(--trop-beige-fondo);
+  }
+
+  body[data-page="home"] .ghost-nav:not(.is-scrolled) .ghost-nav__mark {
+    filter: brightness(0) invert(1);
+  }
+
+  body[data-page="home"] .ghost-nav.is-scrolled .ghost-nav__name,
+  body[data-page="home"] .ghost-nav.is-scrolled .ghost-nav__sub,
+  body[data-page="home"] .ghost-nav.is-scrolled .ghost-nav__menu a {
+    color: var(--trop-azul);
+  }
+
+  body[data-page="home"] .ghost-nav.is-scrolled .ghost-nav__mark {
+    filter: none;
+  }
+
+  body[data-page="home"] .ghost-nav__menu a[aria-current="page"] {
+    color: var(--trop-dorado);
+  }
+
+  body[data-page="home"] .ghost-nav__menu.is-open {
+    background: var(--trop-beige-fondo);
+  }
+
+  body[data-page="home"] .ghost-nav__menu.is-open a {
+    color: var(--trop-azul);
+  }
+
+  body[data-page="home"] .ghost-nav:not(.is-scrolled) .ghost-nav__menu.is-open a {
+    color: var(--trop-azul);
+  }
+
+  /* Scrollbar estilo Tropicália */
+  body[data-page="home"]::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+  }
+
+  body[data-page="home"]::-webkit-scrollbar-track {
+    background: var(--trop-beige);
+  }
+
+  body[data-page="home"]::-webkit-scrollbar-thumb {
+    background: var(--trop-dorado);
+    border-radius: 5px;
+  }
+
+  body[data-page="home"]::-webkit-scrollbar-thumb:hover {
+    background: var(--trop-azul);
+  }
+
+  /* Tipografía */
+  .trop-h1 {
+    margin: 0;
+    font-family: var(--font-trop-display);
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--trop-beige-fondo);
+  }
+
+  .trop-h2 {
+    margin: 0;
+    font-family: var(--font-trop-display);
+    font-size: clamp(1.8rem, 4vw, 2.9rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--trop-dorado);
+  }
+
+  .trop-h2--blue {
+    color: var(--trop-azul);
+  }
+
+  .trop-h2--light {
+    color: var(--trop-beige-fondo);
+  }
+
+  .trop-h3 {
+    margin: 0;
+    font-family: var(--font-trop-display);
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--trop-azul);
+  }
+
+  .trop-h3--light {
+    color: var(--trop-beige-fondo);
+  }
+
+  .trop-lead {
+    margin: 0;
+    font-family: var(--font-trop-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+    color: var(--trop-azul);
+  }
+
+  .trop-lead--light {
+    color: var(--trop-beige-fondo);
+    font-weight: 300;
+  }
+
+  .trop-kicker {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-trop-ui);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--trop-dorado);
+  }
+
+  /* Botones */
+  .trop-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.45rem 1.35rem;
+    border: none;
+    border-radius: 100px;
+    background: var(--trop-dorado);
+    color: var(--trop-white);
+    font-family: var(--font-trop-display);
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .trop-btn:hover {
+    transform: scale(1.05) translateX(4px);
+  }
+
+  .trop-btn--sm {
+    margin-top: 1rem;
+    padding: 0.35rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .trop-btn--blue {
+    background: var(--trop-azul);
+  }
+
+  .trop-btn--outline {
+    background: transparent;
+    border: 1px solid var(--trop-azul);
+    color: var(--trop-azul);
+  }
+
+  .trop-btn--outline:hover {
+    background: var(--trop-azul);
+    color: var(--trop-white);
+  }
+
+  .trop-btn--outline-light {
+    border-color: var(--trop-beige-fondo);
+    color: var(--trop-beige-fondo);
+  }
+
+  .trop-btn--outline-light:hover {
+    background: var(--trop-beige-fondo);
+    color: var(--trop-azul);
+  }
+
+  /* Hero fullscreen */
+  .trop-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 32rem;
+    overflow: hidden;
+  }
+
+  .trop-hero__cover {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 54% 50%;
+  }
+
+  .trop-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      rgb(11 57 89 / 0.55) 0%,
+      rgb(11 57 89 / 0.2) 45%,
+      transparent 70%
+    );
+  }
+
+  .trop-hero__text {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 6vh clamp(1.25rem, 6vw, 4rem);
+  }
+
+  /* Franja */
+  .trop-strip {
+    padding: clamp(2rem, 5vh, 3.5rem) clamp(1.25rem, 6vw, 4rem);
+    background: var(--trop-beige-fondo);
+    text-align: center;
+  }
+
+  .trop-strip__text {
+    margin: 0;
+    font-family: var(--font-trop-ui);
+    font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--trop-azul);
+  }
+
+  /* Intro titular */
+  .trop-intro {
+    padding: clamp(3rem, 8vh, 6rem) clamp(1.25rem, 6vw, 4rem);
+    background: var(--trop-beige-fondo);
+    text-align: center;
+  }
+
+  .trop-intro .trop-h2 {
+    max-width: 18ch;
+    margin-inline: auto;
+  }
+
+  /* Líneas de producto — banners */
+  .trop-lineas {
+    padding: 0 clamp(0.75rem, 3vw, 2rem) clamp(3rem, 8vh, 6rem);
+    background: var(--trop-beige-fondo);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.75rem, 2vh, 1.25rem);
+  }
+
+  .trop-banner {
+    position: relative;
+    width: 100%;
+    height: clamp(18rem, 50vh, 32rem);
+    border-radius: clamp(10px, 2vw, 25px);
+    overflow: hidden;
+  }
+
+  .trop-banner__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .trop-banner__shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgb(11 57 89 / 0.72) 0%,
+      rgb(11 57 89 / 0.45) 40%,
+      transparent 75%
+    );
+  }
+
+  .trop-banner__inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: clamp(1.5rem, 5vw, 3.5rem);
+    max-width: 36rem;
+  }
+
+  .trop-banner__row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .trop-banner__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    opacity: 0.9;
+  }
+
+  .trop-banner__subtitle {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-trop-ui);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--trop-beige);
+  }
+
+  .trop-banner__desc {
+    margin: 0;
+    max-width: 22ch;
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    line-height: 1.35;
+    color: var(--trop-beige-fondo);
+    font-weight: 300;
+  }
+
+  /* Suscripciones */
+  .trop-subs {
+    position: relative;
+    padding: clamp(4rem, 10vh, 8rem) clamp(1.25rem, 6vw, 4rem);
+    background: var(--trop-beige-fondo);
+    overflow: hidden;
+  }
+
+  .trop-subs__grid {
+    display: grid;
+    gap: clamp(2rem, 4vw, 3rem);
+    align-items: center;
+    max-width: 75rem;
+    margin-inline: auto;
+  }
+
+  @media (min-width: 56rem) {
+    .trop-subs__grid {
+      grid-template-columns: 1fr 1.1fr;
+    }
+  }
+
+  .trop-subs__visual {
+    border-radius: clamp(12px, 2vw, 24px);
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+  }
+
+  .trop-subs__visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 8% 50%;
+  }
+
+  .trop-subs__link {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+
+  .trop-subs__link:hover {
+    transform: translateY(-6px);
+  }
+
+  /* Statement grande */
+  .trop-statement {
+    padding: clamp(4rem, 12vh, 10rem) clamp(1.25rem, 6vw, 4rem);
+    background: var(--trop-azul);
+    text-align: center;
+  }
+
+  .trop-statement__title {
+    margin: 0 auto;
+    max-width: 22ch;
+    font-family: var(--font-trop-display);
+    font-size: clamp(1.6rem, 4.5vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--trop-beige-fondo);
+  }
+
+  /* Infaltables — merch grid */
+  .trop-infaltables {
+    padding: clamp(4rem, 10vh, 8rem) clamp(1.25rem, 5vw, 3rem) clamp(3rem, 6vh, 5rem);
+    background: var(--trop-beige-fondo);
+  }
+
+  .trop-infaltables__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 75rem;
+    margin: 0 auto 2.5rem;
+  }
+
+  .trop-infaltables__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    gap: clamp(1rem, 3vw, 1.75rem);
+    max-width: 75rem;
+    margin-inline: auto;
+  }
+
+  @media (min-width: 48rem) {
+    .trop-infaltables__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .trop-merch {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+  }
+
+  .trop-merch:hover {
+    transform: translateY(-4px);
+  }
+
+  .trop-merch__visual {
+    aspect-ratio: 1;
+    border-radius: clamp(8px, 1.5vw, 16px);
+    background: var(--trop-beige);
+    display: grid;
+    place-items: center;
+    margin-bottom: 0.85rem;
+    overflow: hidden;
+  }
+
+  .trop-merch__visual svg {
+    width: 42%;
+    height: 42%;
+    color: var(--trop-dorado);
+    opacity: 0.85;
+  }
+
+  .trop-merch__name {
+    margin: 0 0 0.25rem;
+    font-family: var(--font-trop-ui);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: lowercase;
+    color: var(--trop-azul);
+  }
+
+  .trop-merch__price {
+    margin: 0;
+    font-family: var(--font-trop-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--trop-dorado);
+  }
+
+  /* Brunch / comida */
+  .trop-brunch {
+    padding: clamp(4rem, 10vh, 8rem) clamp(1.25rem, 6vw, 4rem);
+    background: var(--trop-beige);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .trop-brunch__head {
+    text-align: center;
+    max-width: 42rem;
+    margin: 0 auto 3rem;
+  }
+
+  .trop-brunch__grid {
+    display: grid;
+    gap: clamp(1.25rem, 3vw, 2rem);
+    max-width: 75rem;
+    margin-inline: auto;
+  }
+
+  @media (min-width: 48rem) {
+    .trop-brunch__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .trop-plato {
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border-radius: 16px;
+    background: var(--trop-beige-fondo);
+    text-align: center;
+  }
+
+  .trop-plato__name {
+    margin: 0 0 0.35rem;
+    font-family: var(--font-trop-display);
+    font-size: 1.35rem;
+    text-transform: uppercase;
+    color: var(--trop-azul);
+  }
+
+  .trop-plato__desc {
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--trop-azul);
+    opacity: 0.85;
+  }
+
+  .trop-plato__price {
+    margin: 0;
+    font-weight: 600;
+    color: var(--trop-dorado);
+  }
+
+  /* Footer Tropicália */
+  body[data-page="home"] .ghost-footer {
+    background: var(--trop-beige-fondo);
+    border-top: 1px solid rgb(11 57 89 / 0.1);
+    padding: clamp(3rem, 6vh, 5rem) clamp(1.25rem, 5vw, 3rem) clamp(2rem, 4vh, 3rem);
+    color: var(--trop-azul);
+    text-align: center;
+  }
+
+  body[data-page="home"] .ghost-footer__brand {
+    font-family: var(--font-trop-display);
+    font-size: 1.5rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--trop-dorado);
+  }
+
+  body[data-page="home"] .ghost-footer__links a {
+    color: var(--trop-azul);
+    font-family: var(--font-trop-ui);
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  body[data-page="home"] .ghost-footer__links a:hover {
+    color: var(--trop-dorado);
+  }
+
+  body[data-page="home"] .ghost-footer__copy {
+    color: rgb(11 57 89 / 0.65);
+    font-size: 0.8rem;
+  }
+
+  body[data-page="home"] .ghost-footer__contact {
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  body[data-page="home"] .ghost-footer__contact a {
+    color: var(--trop-azul);
+    text-decoration: none;
+  }
+
+  body[data-page="home"] .ghost-footer__contact a:hover {
+    color: var(--trop-dorado);
+  }
+
+  body[data-page="home"] .ghost-footer__tagline {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-trop-ui);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--trop-dorado);
+  }
+}
