@@ -1,0 +1,205 @@
+/* Ghost Specialty Coffee — layout escritorio / pantalla completa */
+
+@layer layout {
+  @media (min-width: 64rem) {
+    main,
+    .ghost-page-hero,
+    .ghost-section,
+    .ghost-footer,
+    .ghost-cta-band,
+    .ghost-marquee {
+      width: 100%;
+    }
+
+    .ghost-wrap--narrow {
+      max-width: min(100%, 72rem);
+    }
+
+    body[data-page="menu"] .ghost-wrap--narrow {
+      max-width: min(100% - var(--gutter) * 2, var(--content-max));
+    }
+
+    .ghost-page-hero {
+      min-height: var(--page-hero-min);
+      display: flex;
+      align-items: flex-end;
+      padding-block: calc(var(--nav-h) + 3rem) clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .ghost-page-hero .ghost-wrap {
+      width: 100%;
+    }
+
+    .ghost-page-hero__lead {
+      max-width: 42rem;
+      font-size: 1.125rem;
+    }
+
+    .ghost-section__intro {
+      max-width: 42rem;
+    }
+
+    .ghost-split {
+      gap: clamp(3rem, 6vw, 5rem);
+    }
+
+    .ghost-contact-card {
+      min-height: 100%;
+    }
+  }
+
+  @media (min-width: 90rem) {
+    .ghost-grid--4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+@layer components {
+  @media (min-width: 64rem) {
+    /* —— Home hero inmersivo —— */
+    .ghost-slider--immersive .ghost-slider__slide--brand {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-inline: clamp(2rem, 8vw, 6rem);
+      padding-block-end: clamp(4rem, 8vw, 5.5rem);
+    }
+
+    .ghost-slider--immersive .ghost-slider__brand {
+      max-width: min(56rem, 58vw);
+      margin-inline: auto;
+    }
+
+    .ghost-slider--immersive .ghost-slider__headline-main {
+      font-size: clamp(2rem, 3.8vw, 3.5rem);
+    }
+
+    .ghost-slider--immersive .ghost-slider__headline-sub {
+      font-size: clamp(1.35rem, 2.8vw, 2rem);
+    }
+
+    .ghost-slider--immersive .ghost-slider__essence {
+      max-width: 36rem;
+      margin-inline: auto;
+      font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+    }
+
+    .ghost-hero__bar {
+      inset-inline: clamp(2rem, 6vw, 4rem);
+      bottom: clamp(1rem, 2.5vw, 1.75rem);
+    }
+
+    /* —— Proceso + tienda home —— */
+    .ghost-process {
+      padding-inline: var(--gutter);
+    }
+
+    .ghost-process__inner {
+      width: 100%;
+      max-width: var(--content-max);
+      margin-inline: auto;
+      gap: clamp(2rem, 5vw, 4rem);
+    }
+
+    .ghost-process__lead {
+      max-width: 32rem;
+    }
+
+    .ghost-process__frame {
+      max-height: min(52vh, 32rem);
+      aspect-ratio: 16 / 10;
+    }
+
+    .ghost-store-view {
+      min-height: clamp(26rem, 58dvh, 42rem);
+    }
+
+    .ghost-store-view__content {
+      max-width: 36rem;
+      margin-inline-start: max(var(--gutter), calc((100% - var(--content-max)) / 2 + var(--gutter)));
+      margin-inline-end: auto;
+    }
+
+    .ghost-story-band__inner {
+      max-width: 40rem;
+    }
+
+    body[data-page="home"] .ghost-section__intro {
+      max-width: 40rem;
+    }
+
+    /* —— Tienda —— */
+    .ghost-shop-hero {
+      width: 100%;
+      max-width: none;
+      margin-inline: 0;
+      padding-inline: var(--gutter);
+      min-height: min(44rem, 86dvh);
+    }
+
+    .ghost-shop-hero__inner {
+      max-width: 40rem;
+    }
+
+    .ghost-shop-hero__visual img {
+      max-width: min(100%, 22rem);
+      max-height: min(38rem, 72dvh);
+    }
+
+    .ghost-shop-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.5rem, 2.5vw, 2rem);
+    }
+
+    .ghost-shop-instagram__layout {
+      grid-template-columns: 1fr 1.4fr;
+      gap: clamp(2rem, 4vw, 3rem);
+    }
+
+    .ghost-shop-instagram__theme-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* —— Carta / menú —— */
+    .ghost-carta-section__title {
+      font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+    }
+
+    .ghost-carta-item__summary {
+      padding: 1.15rem 0;
+    }
+
+    /* —— Admin panel —— */
+    .admin-panel-root,
+    .admin-topbar__sub {
+      max-width: none;
+    }
+
+    .admin-main {
+      width: 100%;
+    }
+
+    .admin-cards {
+      grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    }
+
+    .admin-form--card {
+      max-width: 48rem;
+    }
+  }
+
+  @media (min-width: 90rem) {
+    .ghost-shop-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .ghost-process__inner {
+      grid-template-columns: 1fr 1.15fr;
+    }
+
+    .ghost-slider--immersive .ghost-slider__brand {
+      max-width: min(62rem, 52vw);
+    }
+  }
+}

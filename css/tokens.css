@@ -62,6 +62,8 @@
     --section-pad: clamp(1.15rem, 2.8vw, 1.85rem);
     --content-max: 75rem;
     --gutter: clamp(1.25rem, 5vw, 2.5rem);
+    --hero-immersive-min: min(38dvh, 17rem);
+    --page-hero-min: auto;
 
     --radius-sm: 0.25rem;
     --radius-md: 0.75rem;
@@ -81,5 +83,28 @@
     --border-spectral: 1px solid color-mix(in srgb, var(--ghost-lime) 40%, transparent);
     --border-red: 1px solid color-mix(in srgb, var(--ghost-red) 30%, transparent);
     --border-blue: 1px solid color-mix(in srgb, var(--ghost-blue) 28%, transparent);
+  }
+
+  @media (min-width: 48rem) {
+    :root {
+      --hero-immersive-min: min(48dvh, 26rem);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    :root {
+      --hero-immersive-min: clamp(30rem, 68dvh, 52rem);
+      --page-hero-min: clamp(18rem, 38dvh, 28rem);
+      --content-max: 96rem;
+      --section-pad: clamp(2rem, 4vw, 3.5rem);
+      --gutter: clamp(2rem, 5vw, 4rem);
+    }
+  }
+
+  @media (min-width: 90rem) {
+    :root {
+      --hero-immersive-min: clamp(34rem, 72dvh, 58rem);
+      --content-max: 100%;
+    }
   }
 }

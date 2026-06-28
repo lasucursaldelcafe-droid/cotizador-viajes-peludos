@@ -4,7 +4,7 @@
   /* —— Hero banner —— */
   .ghost-hero--immersive {
     position: relative;
-    min-height: min(38dvh, 17rem);
+    min-height: var(--hero-immersive-min);
     padding: 0;
     display: block;
     overflow: hidden;
@@ -81,12 +81,12 @@
     position: relative;
     width: 100%;
     max-width: none;
-    min-height: min(38dvh, 17rem);
+    min-height: var(--hero-immersive-min);
     margin: 0;
   }
 
   .ghost-slider--immersive .ghost-slider__viewport {
-    min-height: min(38dvh, 17rem);
+    min-height: var(--hero-immersive-min);
     height: 100%;
     border: none;
     border-radius: 0;
@@ -99,11 +99,11 @@
   }
 
   .ghost-slider--immersive .ghost-slider__track {
-    min-height: min(38dvh, 17rem);
+    min-height: var(--hero-immersive-min);
   }
 
   .ghost-slider--immersive .ghost-slider__slide--brand {
-    min-height: min(38dvh, 17rem);
+    min-height: var(--hero-immersive-min);
     align-items: flex-end;
     justify-content: flex-start;
     text-align: start;
@@ -121,7 +121,7 @@
     }
 
     .ghost-slider--immersive .ghost-slider__brand {
-      max-width: 20rem;
+      max-width: min(36rem, 75vw);
     }
   }
 
@@ -516,6 +516,7 @@
     z-index: 2;
     width: min(100% - var(--gutter) * 2, var(--content-max));
     margin: 0 auto clamp(0.9rem, 2.5vw, 1.25rem);
+    padding-inline: var(--gutter);
     color: var(--on-hero);
     max-width: 28rem;
   }

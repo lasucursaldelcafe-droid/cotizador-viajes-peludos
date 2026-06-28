@@ -51,6 +51,9 @@ for json in brand-slides menu instagram; do
   fi
 done
 
+echo "==> CSS desktop"
+check "$BASE/css/desktop.css"
+
 echo "==> Estructura slider (controles en hero, no dentro de #ghostHeroSlider)"
 if grep -q 'id="ghostHeroSlider"' "$ROOT/index.html" \
   && grep -q 'ghost-slider__prev' "$ROOT/index.html" \

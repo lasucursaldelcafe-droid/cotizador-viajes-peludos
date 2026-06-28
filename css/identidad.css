@@ -787,11 +787,37 @@ body.id-page {
 
 /* —— Color section backgrounds —— */
 .id-section--red {
-  background: linear-gradient(180deg, var(--id-surface) 0%, color-mix(in srgb, var(--id-red) 6%, white) 50%, var(--id-surface) 100%);
+  background: linear-gradient(180deg, var(--id-surface) 0%, color-mix(in srgb, var(--id-red) 8%, var(--id-surface)) 50%, var(--id-surface) 100%);
 }
 
 .id-section--blue {
-  background: linear-gradient(180deg, var(--id-surface) 0%, color-mix(in srgb, var(--id-blue) 6%, white) 50%, var(--id-surface) 100%);
+  background: linear-gradient(180deg, var(--id-surface) 0%, color-mix(in srgb, var(--id-blue) 8%, var(--id-surface)) 50%, var(--id-surface) 100%);
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --id-max: 100%;
+    --id-gutter: clamp(2rem, 5vw, 4.5rem);
+  }
+
+  .id-hero {
+    min-height: 100dvh;
+    padding-block: calc(5rem + 4vw) clamp(4rem, 8vw, 7rem);
+  }
+
+  .id-wrap {
+    width: min(100% - var(--id-gutter) * 2, 96rem);
+  }
+
+  .id-split {
+    gap: clamp(3rem, 6vw, 5rem);
+  }
+}
+
+@media (min-width: 90rem) {
+  .id-wrap {
+    width: min(100% - var(--id-gutter) * 2, 100%);
+  }
 }
 
 .id-section--yellow-edge {
