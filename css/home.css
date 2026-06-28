@@ -135,17 +135,22 @@
     background: var(--surface);
   }
 
+  .ghost-slider--immersive .ghost-slider__brand {
+    margin-inline: 0;
+    max-width: min(100%, 34rem);
+  }
+
   @media (min-width: 48rem) {
     .ghost-slider--immersive .ghost-slider__slide--brand {
       align-items: center;
       justify-content: flex-start;
+      text-align: start;
       padding-inline: clamp(2rem, 10vw, 9rem);
       padding-block-end: clamp(1.25rem, 3vw, 2rem);
     }
 
     .ghost-slider--immersive .ghost-slider__brand {
       max-width: 38rem;
-      margin-inline: 0;
     }
   }
 
