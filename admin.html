@@ -55,19 +55,15 @@
 
     <main class="admin-main">
       <header class="admin-topbar">
-        <div>
+        <div class="admin-topbar__head">
+          <nav class="admin-breadcrumb" id="panelBreadcrumb" aria-label="Ruta"></nav>
           <h1 id="panelTitle">Resumen</h1>
           <p class="admin-topbar__sub" id="panelSubtitle">Vista general del contenido publicado</p>
         </div>
         <div class="admin-topbar__actions" id="panelActions"></div>
       </header>
-      <div id="panelRoot" aria-live="polite"></div>
+      <div id="panelRoot" class="admin-panel-root" aria-live="polite"></div>
     </main>
-  </div>
-
-  <div class="admin-modal" id="adminModal" hidden>
-    <div class="admin-modal__backdrop"></div>
-    <div class="admin-modal__dialog" id="adminModalBody" role="dialog" aria-modal="true"></div>
   </div>
 
   <script type="module" src="js/admin/dashboard.js"></script>
