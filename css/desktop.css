@@ -62,8 +62,8 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding-inline: clamp(2rem, 8vw, 6rem);
-      padding-block-end: clamp(4rem, 8vw, 5.5rem);
+      padding-inline: clamp(2rem, 10vw, 9rem);
+      padding-block-end: clamp(7rem, 14vw, 9rem);
     }
 
     .ghost-slider--immersive .ghost-slider__brand {
@@ -72,22 +72,21 @@
     }
 
     .ghost-slider--immersive .ghost-slider__headline-main {
-      font-size: clamp(2rem, 3.8vw, 3.5rem);
+      font-size: clamp(3.5rem, 7vw, 6.5rem);
     }
 
     .ghost-slider--immersive .ghost-slider__headline-sub {
-      font-size: clamp(1.35rem, 2.8vw, 2rem);
+      font-size: clamp(2.5rem, 5vw, 4.75rem);
     }
 
     .ghost-slider--immersive .ghost-slider__essence {
       max-width: 36rem;
       margin-inline: auto;
-      font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
     }
 
-    .ghost-hero__bar {
+    .ghost-hero__actions {
       inset-inline: clamp(2rem, 6vw, 4rem);
-      bottom: clamp(1rem, 2.5vw, 1.75rem);
     }
 
     /* —— Proceso + tienda home —— */
