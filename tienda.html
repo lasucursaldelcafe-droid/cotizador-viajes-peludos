@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tienda Ghost Specialty Coffee — granos selectos de las mejores fincas colombianas, tostados con precisión. Origen directo y envío rápido en Cali.">
+  <meta name="theme-color" content="#faf8f4">
+  <meta property="og:title" content="Tienda | Ghost Specialty Coffee">
+  <meta property="og:description" content="Granos selectos de las mejores fincas, tostados con precisión para resaltar cada nota de sabor.">
+  <meta property="og:image" content="assets/images/brand/product-bag-papayo.png">
+  <link rel="icon" href="assets/images/brand/ghost-mark.svg" type="image/svg+xml">
+  <title>Tienda | Ghost Specialty Coffee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/ghost.css">
+  <link rel="stylesheet" href="css/shop.css">
+</head>
+<body data-page="tienda">
+  <a class="skip-link" href="#contenido">Ir al contenido</a>
+
+  <header class="ghost-nav" role="banner">
+    <a class="ghost-nav__brand" href="index.html" aria-label="Ghost Specialty Coffee — inicio">
+      <img class="ghost-nav__mark" src="assets/images/brand/ghost-mark.svg" alt="" width="36" height="36" decoding="async">
+      <span class="ghost-nav__type">
+        <span class="ghost-nav__name">Ghost</span>
+        <span class="ghost-nav__sub">Specialty Coffee</span>
+      </span>
+    </a>
+    <button type="button" class="ghost-nav__toggle" id="ghostNavToggle" aria-expanded="false" aria-controls="ghostNavMenu">Menú</button>
+    <nav aria-label="Principal">
+      <ul class="ghost-nav__menu" id="ghostNavMenu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="tienda.html" aria-current="page">Tienda</a></li>
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="origen.html">Origen</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <header class="ghost-shop-hero">
+    <div class="ghost-wrap ghost-shop-hero__inner">
+      <p class="ghost-kicker reveal">Coffee shop</p>
+      <h1 class="ghost-shop-hero__title reveal">Café de especialidad,<br>listo para llevar</h1>
+      <p class="ghost-shop-hero__lead reveal">
+        Granos selectos de las mejores fincas colombianas, tostados con precisión para resaltar
+        cada nota de sabor. Origen directo, trazabilidad completa y la elegancia Ghost en cada bolsa.
+      </p>
+      <div class="ghost-shop-hero__cta reveal">
+        <a class="btn btn--spectral" href="#productos">Ver productos</a>
+        <a class="btn btn--ghost" href="contacto.html">Visítanos en Cali</a>
+      </div>
+    </div>
+    <figure class="ghost-shop-hero__visual reveal" aria-hidden="true">
+      <img src="assets/images/brand/product-bag-papayo.png" alt="" width="794" height="1163" decoding="async" fetchpriority="high">
+    </figure>
+  </header>
+
+  <main id="contenido">
+    <section class="ghost-section ghost-section--smoke" aria-labelledby="pillars-title">
+      <div class="ghost-wrap">
+        <h2 id="pillars-title" class="visually-hidden">Por qué Ghost</h2>
+        <div class="ghost-shop-pillars reveal">
+          <article class="ghost-shop-pillar">
+            <svg class="ghost-shop-pillar__icon" viewBox="0 0 64 80" aria-hidden="true"><use href="assets/icons/glyphs.svg#glyph-leaf"/></svg>
+            <h3 class="ghost-shop-pillar__title">Origen directo</h3>
+            <p class="ghost-shop-pillar__text">Trabajamos directamente con productores para garantizar la mejor calidad y trazabilidad en cada microlote.</p>
+          </article>
+          <article class="ghost-shop-pillar">
+            <svg class="ghost-shop-pillar__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="assets/icons/glyphs.svg#glyph-gear"/></svg>
+            <h3 class="ghost-shop-pillar__title">Tueste especializado</h3>
+            <p class="ghost-shop-pillar__text">Cada lote se tuesta con precisión para resaltar las notas únicas. Desgasificación 48–72 horas antes de servir.</p>
+          </article>
+          <article class="ghost-shop-pillar">
+            <svg class="ghost-shop-pillar__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="assets/icons/glyphs.svg#glyph-tag"/></svg>
+            <h3 class="ghost-shop-pillar__title">Envío rápido</h3>
+            <p class="ghost-shop-pillar__text">Tu café recién tostado llega a tu puerta en pocos días. También retiro en nuestra tienda en Cali.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ghost-section" id="productos" aria-labelledby="catalog-title">
+      <div class="ghost-wrap">
+        <p class="ghost-section__label reveal">Catálogo</p>
+        <h2 class="ghost-section__title reveal" id="catalog-title">Productos de venta</h2>
+        <p class="ghost-section__intro reveal">
+          Microlotes colombianos en bolsa 250 g. Configura precios, fotos y disponibilidad desde el
+          <a href="login.html">panel de administración</a>.
+        </p>
+        <div class="ghost-shop-grid reveal" id="ghostShopProducts" aria-live="polite"></div>
+        <p class="ghost-shop-catalog__cta reveal">
+          <a class="btn btn--ember" data-whatsapp="Hola Ghost, quiero pedir café de la tienda." href="#">Pedir por WhatsApp</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="ghost-section ghost-section--smoke" aria-labelledby="locations-title">
+      <div class="ghost-wrap">
+        <p class="ghost-section__label reveal">Coffee shops</p>
+        <h2 class="ghost-section__title reveal" id="locations-title">Nuestras tiendas</h2>
+        <p class="ghost-section__intro reveal">
+          Encuéntranos en Cali. Cada ubicación ofrece barra de especialidad, retail y la experiencia Ghost completa.
+        </p>
+        <div class="ghost-shop-locations reveal" id="ghostShopLocations" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ghost-footer" role="contentinfo">
+    <div class="ghost-footer__inner">
+      <p class="ghost-footer__brand">Ghost</p>
+      <nav aria-label="Pie de página">
+        <ul class="ghost-footer__links">
+          <li><a href="tienda.html">Tienda</a></li>
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="origen.html">Origen</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="https://www.instagram.com/Ghost.coffee.lab/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="login.html" class="ghost-footer__admin">Administración</a></li>
+        </ul>
+      </nav>
+      <p class="ghost-footer__copy">Ghost Specialty Coffee · Del origen al ritual.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

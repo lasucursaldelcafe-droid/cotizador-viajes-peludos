@@ -5,6 +5,26 @@
 
 import { listProducts } from './data/store.js';
 import { escapeHtml, formatCop } from './utils.js';
+import { whatsappUrl } from './config.js';
+
+/** @typedef {{ layout?: 'grid' | 'shop' }} ProductRenderOptions */
+
+const DEFAULT_IMAGES = {
+  papayo: 'assets/images/brand/product-bag-papayo.png',
+  gesha: 'assets/images/brand/product-bag-papayo.png',
+  bourbon: 'assets/images/brand/product-bag-papayo.png',
+  default: 'assets/images/brand/product-cup-hot.png',
+};
+
+/** @param {import('./data/store.js').RetailProduct} product */
+function resolveImage(product) {
+  if (product.imageUrl) return product.imageUrl;
+  const key = `${product.name} ${product.variety}`.toLowerCase();
+  if (key.includes('papayo')) return DEFAULT_IMAGES.papayo;
+  if (key.includes('gesha')) return DEFAULT_IMAGES.gesha;
+  if (key.includes('bourbon')) return DEFAULT_IMAGES.bourbon;
+  return DEFAULT_IMAGES.default;
+}
 
 /** @param {string} region */
 function regionClass(region) {
@@ -23,8 +43,16 @@ export class GhostProducts {
   /** @type {HTMLElement | null} */
   #root = null;
 
-  constructor(selector = '#ghostProductsRoot') {
+  /** @type {ProductRenderOptions} */
+  #options;
+
+  /**
+   * @param {string} selector
+   * @param {ProductRenderOptions} [options]
+   */
+  constructor(selector = '#ghostProductsRoot', options = {}) {
     this.#root = document.querySelector(selector);
+    this.#options = options;
   }
 
   async init() {
@@ -33,28 +61,65 @@ export class GhostProducts {
     try {
       const products = await listProducts();
       if (!products.length) {
-        this.#root.innerHTML = '<p class="ghost-products-empty">Próximamente nuevos lotes. Escríbenos por WhatsApp.</p>';
+        this.#root.innerHTML = '<p class="ghost-products-empty">Próximamente nuevos lotes. Escríbenos por WhatsApp o configura productos en el <a href="login.html">panel admin</a>.</p>';
         return;
       }
 
-      this.#root.innerHTML = products.map((p) => {
-        const region = regionClass(p.region);
-        return `
-        <article class="ghost-product ${p.featured ? 'ghost-product--featured' : ''} ghost-product--${region}">
-          <div class="ghost-product__visual" aria-hidden="true">
-            <svg class="ghost-product__glyph" viewBox="0 0 64 64"><use href="assets/icons/glyphs.svg#glyph-beans"/></svg>
-            <span class="ghost-product__region">${escapeHtml(p.region)}</span>
-          </div>
-          <h3 class="ghost-product__name">${escapeHtml(p.name)}</h3>
-          <p class="ghost-product__meta">${escapeHtml(p.region)} · ${escapeHtml(p.roast || p.variety)}</p>
-          ${p.notes?.length ? `<ul class="ghost-product__notes">${p.notes.map((n) => `<li class="ghost-product__tag">${escapeHtml(n)}</li>`).join('')}</ul>` : ''}
-          <p class="ghost-product__price">${escapeHtml(formatCop(p.price))} <small>/ ${escapeHtml(p.weight)}</small></p>
-        </article>
-      `;
-      }).join('');
+      const layout = this.#options.layout ?? 'grid';
+      this.#root.innerHTML = products.map((p) =>
+        layout === 'shop' ? this.#renderShopCard(p) : this.#renderGridCard(p)
+      ).join('');
     } catch (err) {
       console.error('GhostProducts:', err);
       this.#root.innerHTML = '<p class="ghost-products-empty">No pudimos cargar el catálogo.</p>';
     }
+  }
+
+  /** @param {import('./data/store.js').RetailProduct} p */
+  #renderShopCard(p) {
+    const img = resolveImage(p);
+    const msg = `Hola Ghost, quiero pedir ${p.name} (${p.weight}).`;
+    const notes = p.notes?.length
+      ? `<ul class="ghost-shop-card__notes">${p.notes.map((n) => `<li class="ghost-shop-card__tag">${escapeHtml(n)}</li>`).join('')}</ul>`
+      : '';
+
+    return `
+      <article class="ghost-shop-card ${p.featured ? 'ghost-shop-card--featured' : ''}">
+        <div class="ghost-shop-card__media">
+          ${p.featured ? '<span class="ghost-shop-card__badge">Destacado</span>' : ''}
+          <img src="${escapeHtml(img)}" alt="${escapeHtml(p.name)}" width="400" height="600" loading="lazy" decoding="async">
+        </div>
+        <div class="ghost-shop-card__body">
+          <p class="ghost-shop-card__region">${escapeHtml(p.region)}</p>
+          <h3 class="ghost-shop-card__name">${escapeHtml(p.name)}</h3>
+          <p class="ghost-shop-card__meta">${escapeHtml(p.variety)} · ${escapeHtml(p.roast || '')}</p>
+          ${notes}
+          <div class="ghost-shop-card__footer">
+            <p class="ghost-shop-card__price">${escapeHtml(formatCop(p.price))} <small>/ ${escapeHtml(p.weight)}</small></p>
+            <a class="ghost-shop-card__buy" href="${escapeHtml(whatsappUrl(msg))}" target="_blank" rel="noopener noreferrer">Pedir</a>
+          </div>
+        </div>
+      </article>`;
+  }
+
+  /** @param {import('./data/store.js').RetailProduct} p */
+  #renderGridCard(p) {
+    const region = regionClass(p.region);
+    const img = resolveImage(p);
+    const notes = p.notes?.length
+      ? `<ul class="ghost-product__notes">${p.notes.map((n) => `<li class="ghost-product__tag">${escapeHtml(n)}</li>`).join('')}</ul>`
+      : '';
+
+    return `
+      <article class="ghost-product ${p.featured ? 'ghost-product--featured' : ''} ghost-product--${region}">
+        <div class="ghost-product__visual ghost-product__visual--photo" aria-hidden="true">
+          <img src="${escapeHtml(img)}" alt="" width="400" height="600" loading="lazy" decoding="async">
+          <span class="ghost-product__region">${escapeHtml(p.region)}</span>
+        </div>
+        <h3 class="ghost-product__name">${escapeHtml(p.name)}</h3>
+        <p class="ghost-product__meta">${escapeHtml(p.region)} · ${escapeHtml(p.roast || p.variety)}</p>
+        ${notes}
+        <p class="ghost-product__price">${escapeHtml(formatCop(p.price))} <small>/ ${escapeHtml(p.weight)}</small></p>
+      </article>`;
   }
 }

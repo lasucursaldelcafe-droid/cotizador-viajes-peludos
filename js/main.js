@@ -27,9 +27,14 @@ class GhostApp {
   async #initPage(page) {
     if (page === 'menu') void new GhostMenu().init();
     if (page === 'origen') void new GhostProducts().init();
+    if (page === 'tienda') {
+      const { GhostShop } = await import('./shop.js');
+      void new GhostShop().init();
+    }
     if (page === 'home') {
       const { GhostHome } = await import('./home.js');
       new GhostHome().init();
+      void new GhostProducts('#ghostProductsHome').init();
     }
   }
 

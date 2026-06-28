@@ -1,5 +1,5 @@
 /**
- * @file Inicialización de la home — slider y escena industrial
+ * @file Inicialización de la home — slider
  * @module home
  */
 
@@ -10,3 +10,4 @@ export class GhostHome {
     new ProductSlider().init('#ghostHeroSlider');
   }
 }
+

@@ -1,0 +1,372 @@
+/* Ghost Specialty Coffee — tienda profesional */
+
+.ghost-shop-hero {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
+  padding-block: clamp(3rem, 8vw, 5.5rem);
+  padding-inline: clamp(1rem, 4vw, 2rem);
+  max-width: var(--content-max);
+  margin-inline: auto;
+  background:
+    radial-gradient(ellipse 60% 50% at 10% 20%, rgb(141 182 0 / 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 45% 40% at 90% 80%, rgb(230 160 77 / 0.1) 0%, transparent 50%),
+    var(--surface);
+}
+
+@media (min-width: 56rem) {
+  .ghost-shop-hero {
+    grid-template-columns: 1.1fr 0.9fr;
+    min-height: min(34rem, 80vh);
+  }
+}
+
+.ghost-shop-hero__inner {
+  max-width: 36rem;
+}
+
+.ghost-shop-hero__title {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.ghost-shop-hero__lead {
+  margin: 0 0 1.75rem;
+  font-size: clamp(1rem, 2.2vw, 1.125rem);
+  line-height: 1.65;
+  color: var(--ink-muted);
+  max-width: 34rem;
+}
+
+.ghost-shop-hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.ghost-shop-hero__visual {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 3vw, 2rem);
+  background: linear-gradient(180deg, var(--surface-muted) 0%, var(--surface-raised) 100%);
+  border: var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.ghost-shop-hero__visual img {
+  width: auto;
+  max-width: min(100%, 18rem);
+  max-height: min(28rem, 55vh);
+  object-fit: contain;
+}
+
+.ghost-shop-pillars {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 48rem) {
+  .ghost-shop-pillars {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.ghost-shop-pillar {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  background: var(--surface-raised);
+  border: var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  transition: transform 0.25s var(--ease-out-expo), box-shadow 0.25s ease;
+}
+
+.ghost-shop-pillar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1.25rem 2.5rem -1rem rgb(28 26 24 / 0.12);
+}
+
+.ghost-shop-pillar__icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-inline: auto;
+  margin-block-end: 1rem;
+  color: var(--ghost-amber);
+}
+
+.ghost-shop-pillar__title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.ghost-shop-pillar__text {
+  margin: 0;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+
+.ghost-shop-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-block-start: 2rem;
+}
+
+@media (min-width: 40rem) {
+  .ghost-shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .ghost-shop-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.ghost-shop-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-raised);
+  border: var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s var(--ease-out-expo), box-shadow 0.25s ease;
+}
+
+.ghost-shop-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1.5rem 3rem -1rem rgb(28 26 24 / 0.14);
+}
+
+.ghost-shop-card--featured {
+  border-color: color-mix(in srgb, var(--ghost-amber) 35%, transparent);
+}
+
+.ghost-shop-card__media {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 14rem;
+  padding: 1.25rem;
+  background: linear-gradient(180deg, var(--surface-muted) 0%, var(--surface) 100%);
+}
+
+.ghost-shop-card__media img {
+  width: auto;
+  max-width: 78%;
+  max-height: 12rem;
+  object-fit: contain;
+}
+
+.ghost-shop-card__badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--surface);
+  background: var(--ghost-amber);
+  border-radius: 999px;
+}
+
+.ghost-shop-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.5rem;
+  padding: 1.25rem 1.35rem 1.5rem;
+}
+
+.ghost-shop-card__region {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.ghost-shop-card__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.ghost-shop-card__meta {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--ink-muted);
+}
+
+.ghost-shop-card__notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ghost-shop-card__tag {
+  padding: 0.2rem 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  background: var(--surface-muted);
+  border-radius: 999px;
+}
+
+.ghost-shop-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-block-start: auto;
+  padding-block-start: 0.75rem;
+  border-top: var(--border-subtle);
+}
+
+.ghost-shop-card__price {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.ghost-shop-card__price small {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+
+.ghost-shop-card__buy {
+  padding: 0.45rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--surface);
+  background: var(--ghost-red);
+  border-radius: var(--radius-sm);
+  transition: background 0.2s ease;
+}
+
+.ghost-shop-card__buy:hover {
+  background: color-mix(in srgb, var(--ghost-red) 85%, black);
+}
+
+.ghost-shop-catalog__cta {
+  margin-block: 2.5rem 0;
+  text-align: center;
+}
+
+.ghost-shop-locations {
+  display: grid;
+  gap: 1.25rem;
+  margin-block-start: 2rem;
+}
+
+@media (min-width: 48rem) {
+  .ghost-shop-locations {
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  }
+}
+
+.ghost-shop-location {
+  padding: 1.5rem;
+  background: var(--surface-raised);
+  border: var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.ghost-shop-location__name {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.ghost-shop-location__city {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ghost-amber);
+}
+
+.ghost-shop-location__address,
+.ghost-shop-location__phone {
+  margin: 0 0 0.35rem;
+  font-size: 0.925rem;
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+
+.ghost-shop-location__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block-start: 1rem;
+}
+
+.ghost-shop-location__links a {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ghost-red);
+}
+
+.ghost-shop-location__links a:hover {
+  text-decoration: underline;
+}
+
+.ghost-footer__admin {
+  opacity: 0.75;
+}
+
+.ghost-footer__admin:hover {
+  opacity: 1;
+}
+
+.ghost-products-empty {
+  grid-column: 1 / -1;
+  padding: 2.5rem;
+  text-align: center;
+  color: var(--ink-muted);
+  background: var(--surface-muted);
+  border: var(--border-subtle);
+  border-radius: var(--radius-lg);
+}

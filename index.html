@@ -43,6 +43,7 @@
     <nav aria-label="Principal">
       <ul class="ghost-nav__menu" id="ghostNavMenu">
         <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="tienda.html">Tienda</a></li>
         <li><a href="menu.html">Menú</a></li>
         <li><a href="origen.html">Origen</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
@@ -99,8 +100,8 @@
             y una barra donde el ritual se ve — y se siente.
           </p>
           <div class="ghost-hero__cta">
-            <a class="btn btn--spectral" href="menu.html">Ver menú</a>
-            <a class="btn btn--ghost" href="origen.html">Nuestros lotes</a>
+            <a class="btn btn--spectral" href="tienda.html">Ver productos</a>
+            <a class="btn btn--ghost" href="menu.html">Ver menú</a>
           </div>
           <div class="ghost-hero__meta">
             <span>Tienda de especialidad · Cali</span>
@@ -238,51 +239,9 @@
           Lleva el ritual a casa: microlotes de distintos territorios colombianos, tostados en pequeños batches
           y presentados con la misma elegancia que encuentras en nuestra barra.
         </p>
-        <div class="ghost-grid ghost-grid--3 reveal" id="ghostProductsHome">
-          <article class="ghost-product ghost-product--featured ghost-product--huila">
-            <div class="ghost-product__visual ghost-product__visual--photo" aria-hidden="true">
-              <img src="assets/images/brand/product-bag-papayo.png" alt="" width="794" height="1163" loading="lazy" decoding="async">
-              <span class="ghost-product__region">Huila</span>
-            </div>
-            <h3 class="ghost-product__name">Ghost · Papayo</h3>
-            <p class="ghost-product__meta">Semi-lavado · Tostión media</p>
-            <ul class="ghost-product__notes">
-              <li class="ghost-product__tag">Mango</li>
-              <li class="ghost-product__tag">Nuez</li>
-              <li class="ghost-product__tag">Dulce</li>
-            </ul>
-            <p class="ghost-product__price">$45.000 <small>/ 250 g</small></p>
-          </article>
-          <article class="ghost-product ghost-product--narino">
-            <div class="ghost-product__visual ghost-product__visual--photo" aria-hidden="true">
-              <img src="assets/images/brand/product-cup-hot.png" alt="" width="418" height="590" loading="lazy" decoding="async">
-              <span class="ghost-product__region">Nariño</span>
-            </div>
-            <h3 class="ghost-product__name">Ghost · Gesha</h3>
-            <p class="ghost-product__meta">Tostión clara</p>
-            <ul class="ghost-product__notes">
-              <li class="ghost-product__tag">Floral</li>
-              <li class="ghost-product__tag">Bergamota</li>
-              <li class="ghost-product__tag">Té</li>
-            </ul>
-            <p class="ghost-product__price">$72.000 <small>/ 250 g</small></p>
-          </article>
-          <article class="ghost-product ghost-product--featured ghost-product--cauca">
-            <div class="ghost-product__visual ghost-product__visual--photo" aria-hidden="true">
-              <img src="assets/images/brand/product-bag-papayo.png" alt="" width="794" height="1163" loading="lazy" decoding="async">
-              <span class="ghost-product__region">Cauca</span>
-            </div>
-            <h3 class="ghost-product__name">Ghost · Bourbon</h3>
-            <p class="ghost-product__meta">Tostión media-clara</p>
-            <ul class="ghost-product__notes">
-              <li class="ghost-product__tag">Caramelo</li>
-              <li class="ghost-product__tag">Cítrico</li>
-              <li class="ghost-product__tag">Cacao</li>
-            </ul>
-            <p class="ghost-product__price">$48.000 <small>/ 250 g</small></p>
-          </article>
-        </div>
+        <div class="ghost-grid ghost-grid--3 reveal" id="ghostProductsHome" aria-live="polite"></div>
         <p style="margin-block:2.5rem;text-align:center" class="reveal">
+          <a class="btn btn--ghost" href="tienda.html">Ver tienda completa</a>
           <a class="btn btn--ember" data-whatsapp="Hola Ghost, quiero pedir café en bolsa." href="#">Pedir por WhatsApp</a>
         </p>
       </div>
@@ -319,11 +278,13 @@
       <p class="ghost-footer__brand">Ghost</p>
       <nav aria-label="Pie de página">
         <ul class="ghost-footer__links">
+          <li><a href="tienda.html">Tienda</a></li>
           <li><a href="menu.html">Menú</a></li>
           <li><a href="origen.html">Origen</a></li>
           <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="contacto.html">Contacto</a></li>
           <li><a href="https://www.instagram.com/Ghost.coffee.lab/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="login.html">Administración</a></li>
         </ul>
       </nav>
       <p class="ghost-footer__copy">Ghost Specialty Coffee · Del origen al ritual.</p>
