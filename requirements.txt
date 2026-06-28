@@ -1,0 +1,7 @@
+# Ghost Specialty Coffee — herramientas Python (tools/)
+# Instalar: bash tools/setup-python.sh
+
+Pillow>=10.4.0,<12
+
+# Opcional: quitar fondos (process_images.py — solo con --force)
+rembg>=2.0.50; platform_system != "Windows" or python_version >= "3.10"

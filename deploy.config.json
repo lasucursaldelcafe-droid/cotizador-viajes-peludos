@@ -1,4 +1,5 @@
 ﻿{
+  "project": "Ghost Specialty Coffee",
   "owner": "lasucursaldelcafe-droid",
   "repo": "cotizador-viajes-peludos",
   "pages_url": "https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/",
@@ -21,11 +22,12 @@
     "adminPin": "ghost2026"
   },
   "auto": {
-    "script": "tools/automatizar-todo.ps1",
+    "script_linux": "tools/automatizar-todo.sh",
+    "script_windows": "tools/automatizar-todo.ps1",
     "public_repo": true,
     "pages_build_type": "workflow",
     "commit_without_prompt": true,
-    "sync_firebase": false,
+    "sync_firebase": true,
     "deploy_firestore_rules": false
   }
 }

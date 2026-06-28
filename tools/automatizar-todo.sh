@@ -4,6 +4,9 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
+echo "==> Sincronizar Firebase config"
+bash "$ROOT/tools/sync-firebase-config.sh" || true
+
 echo "==> Sincronizar foto de tienda"
 bash "$ROOT/tools/automatizar-tienda-foto.sh" || true
 

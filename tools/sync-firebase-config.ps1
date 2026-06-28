@@ -18,6 +18,8 @@ $emailLines = ($emails | ForEach-Object { "'$_'" }) -join ", "
 $enabled = if ($null -ne $fb.enabled) { $fb.enabled.ToString().ToLower() } else { "true" }
 $requireAuth = if ($null -ne $fb.requireAuth) { $fb.requireAuth.ToString().ToLower() } else { "true" }
 
+$adminPin = if ($fb.adminPin) { $fb.adminPin } else { "ghost2026" }
+
 $configObj = @"
 window.VP_FIREBASE_CONFIG = {
   enabled: $enabled,
@@ -28,12 +30,13 @@ window.VP_FIREBASE_CONFIG = {
   storageBucket: '$($fb.storageBucket)',
   messagingSenderId: '$($fb.messagingSenderId)',
   appId: '$($fb.appId)',
-  adminEmails: [$emailLines]
+  adminEmails: [$emailLines],
+  adminPin: '$adminPin'
 };
 "@
 
 $jsFile = @"
-/** Firebase — Viajes Peludos Cotizador (auto desde deploy.config.json) */
+/** Firebase — Ghost Specialty Coffee (auto desde deploy.config.json) */
 $configObj
 "@
 
@@ -41,7 +44,7 @@ $configObj
 
 $inlineBlock = @"
   <script>
-/** Firebase inline — Viajes Peludos */
+/** Firebase inline — Ghost Specialty Coffee */
 $configObj
   </script>
 "@

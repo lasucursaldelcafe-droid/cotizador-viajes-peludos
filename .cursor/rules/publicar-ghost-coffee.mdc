@@ -1,0 +1,41 @@
+---
+description: Publicar Ghost Specialty Coffee en GitHub Pages desde el chat
+alwaysApply: false
+---
+
+# Publicar Ghost Specialty Coffee (GitHub Pages)
+
+Cuando el usuario pida **publicar**, **subir**, **actualizar en GitHub**, **GitHub Pages**, **desplegar**, **recrear repo** o ver la versión en el **celular**:
+
+## Publicar normalmente
+
+1. Lee `deploy.config.json` en la raíz para owner, repo y `pages_url`.
+2. Ejecuta (sin pedir confirmación interactiva al usuario):
+
+**Linux / Cloud Agent:**
+```bash
+bash /workspace/tools/automatizar-todo.sh
+```
+
+**Windows:**
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File "tools\automatizar-todo.ps1"
+```
+
+3. Interpreta la salida:
+   - `STATUS=ok` → informa la URL en `PAGES_URL` / `deploy.config.json`.
+   - `STATUS=auth_required` → guía **una sola vez**:
+     - `gh auth login` (HTTPS, cuenta `lasucursaldelcafe-droid`, permisos repo)
+     - Vuelve a ejecutar el script de automatización.
+   - `STATUS=error` → muestra `MESSAGE` y propón corrección.
+
+## Recrear repositorio
+
+- **Windows:** `tools/automatizar-todo.ps1 -Recreate`
+- **Repo dedicado Ghost:** `bash tools/crear-repo-ghost.sh`
+
+## Reglas
+
+- **No** uses `git config --global`, **no** force push, **no** commitees `.env`, tokens ni archivos en `.gitignore` de secretos.
+
+Repo actual: https://github.com/lasucursaldelcafe-droid/cotizador-viajes-peludos

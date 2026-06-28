@@ -1,4 +1,4 @@
-/** Firebase — Ghost Specialty Coffee (desde deploy.config.json) */
+/** Firebase — Ghost Specialty Coffee (auto desde deploy.config.json) */
 window.VP_FIREBASE_CONFIG = {
   enabled: false,
   requireAuth: false,
@@ -8,6 +8,6 @@ window.VP_FIREBASE_CONFIG = {
   storageBucket: '',
   messagingSenderId: '',
   appId: '',
-  adminEmails: [],
+  adminEmails: ["hola@ghostspecialtycoffee.co"],
   adminPin: 'ghost2026',
 };

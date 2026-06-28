@@ -10,4 +10,9 @@ if [[ -f "$ARTIFACT" ]]; then
   cp -f "$ARTIFACT" "$INCOMING"
 fi
 
-python3 "$ROOT/tools/discover-tienda-foto.py" "$@"
+PYTHON="python3"
+if [[ -x "$ROOT/.venv/bin/python3" ]]; then
+  PYTHON="$ROOT/.venv/bin/python3"
+fi
+
+"$PYTHON" "$ROOT/tools/discover-tienda-foto.py" "$@"
