@@ -60,15 +60,15 @@
     /* —— Home hero inmersivo —— */
     .ghost-slider--immersive .ghost-slider__slide--brand {
       align-items: center;
-      justify-content: center;
-      text-align: center;
+      justify-content: flex-start;
+      text-align: start;
       padding-inline: clamp(2rem, 10vw, 9rem);
-      padding-block-end: clamp(7rem, 14vw, 9rem);
+      padding-block-end: clamp(1.25rem, 3vw, 2rem);
     }
 
     .ghost-slider--immersive .ghost-slider__brand {
-      max-width: min(56rem, 58vw);
-      margin-inline: auto;
+      max-width: min(42rem, 46vw);
+      margin-inline: 0;
     }
 
     .ghost-slider--immersive .ghost-slider__headline-main {
@@ -80,13 +80,13 @@
     }
 
     .ghost-slider--immersive .ghost-slider__essence {
-      max-width: 36rem;
-      margin-inline: auto;
+      max-width: 34rem;
+      margin-inline: 0;
       font-size: clamp(1rem, 1.6vw, 1.2rem);
     }
 
-    .ghost-hero__actions {
-      inset-inline: clamp(2rem, 6vw, 4rem);
+    .ghost-hero__bar {
+      padding-inline: clamp(2rem, 6vw, 4rem);
     }
 
     /* —— Proceso + tienda home —— */
