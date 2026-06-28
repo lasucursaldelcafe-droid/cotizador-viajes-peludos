@@ -38,11 +38,6 @@
     box-shadow: 0 1px 0 rgb(28 26 24 / 0.04);
   }
 
-  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__name,
-  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__sub {
-    text-shadow: 0 1px 12px rgb(255 255 255 / 0.85);
-  }
-
   .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__menu a {
     color: color-mix(in srgb, var(--ink) 78%, transparent);
     text-shadow: 0 1px 10px rgb(255 255 255 / 0.8);

@@ -47,8 +47,9 @@
   }
 
   .ghost-nav__mark {
-    width: 2rem;
-    height: 2rem;
+    height: 2.25rem;
+    width: auto;
+    max-width: 7.5rem;
     display: block;
     flex-shrink: 0;
     object-fit: contain;
