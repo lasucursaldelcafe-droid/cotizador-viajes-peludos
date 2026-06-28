@@ -54,9 +54,9 @@
     --font-body: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --font-editorial: "Playfair Display", Georgia, serif;
 
-    --nav-h: 3rem;
-    --nav-h-immersive: 2.5rem;
-    --section-pad: clamp(1rem, 2.5vw, 1.75rem);
+    --nav-h: 3.75rem;
+    --nav-h-immersive: 3.25rem;
+    --section-pad: clamp(1.15rem, 2.8vw, 1.85rem);
     --content-max: 75rem;
     --gutter: clamp(1.25rem, 5vw, 2.5rem);
 

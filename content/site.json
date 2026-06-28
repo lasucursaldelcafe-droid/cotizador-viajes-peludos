@@ -212,7 +212,7 @@
   "marketingStrategy": "content/marketing-strategy.json",
   "brandIdentityPage": "identidad.html",
   "images": {
-    "logoMark": "assets/images/brand/logo-mark-clear.png",
+    "logoMark": "assets/images/brand/logo-mark.png",
     "logoHorizontal": "assets/images/brand/logo-horizontal.png"
   }
 }

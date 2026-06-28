@@ -4,20 +4,13 @@
   /* —— Hero banner —— */
   .ghost-hero--immersive {
     position: relative;
-    min-height: min(28dvh, 12.5rem);
+    min-height: min(38dvh, 17rem);
     padding: 0;
     display: block;
     overflow: hidden;
   }
 
-  /* Nav integrado al hero: sin barra, sin botones */
-  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) {
-    background: transparent !important;
-    border-block-end: none !important;
-    box-shadow: none !important;
-    backdrop-filter: none !important;
-  }
-
+  /* Nav integrado al hero: sin barra ni botones al inicio */
   .ghost-hero--immersive .ghost-nav--immersive {
     position: absolute;
     inset-block-start: 0;
@@ -47,12 +40,12 @@
 
   .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__name,
   .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__sub {
-    text-shadow: 0 0 18px rgb(255 255 255 / 0.9);
+    text-shadow: 0 1px 12px rgb(255 255 255 / 0.85);
   }
 
   .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__menu a {
-    color: color-mix(in srgb, var(--ink) 72%, transparent);
-    text-shadow: 0 0 14px rgb(255 255 255 / 0.85);
+    color: color-mix(in srgb, var(--ink) 78%, transparent);
+    text-shadow: 0 1px 10px rgb(255 255 255 / 0.8);
   }
 
   .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__menu a:hover,
@@ -71,9 +64,9 @@
     background: transparent !important;
     border: none !important;
     border-radius: 0;
-    color: color-mix(in srgb, var(--ink) 55%, transparent) !important;
+    color: color-mix(in srgb, var(--ink) 60%, transparent) !important;
     font-weight: 600 !important;
-    text-shadow: 0 0 14px rgb(255 255 255 / 0.85);
+    text-shadow: 0 1px 10px rgb(255 255 255 / 0.8);
   }
 
   .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__admin:hover {
@@ -84,68 +77,26 @@
   .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__toggle {
     border: none;
     background: transparent;
-    color: color-mix(in srgb, var(--ink) 70%, transparent);
+    color: color-mix(in srgb, var(--ink) 75%, transparent);
     padding: 0.25rem 0;
-    text-shadow: 0 0 14px rgb(255 255 255 / 0.85);
-  }
-
-  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__mark {
-    filter: drop-shadow(0 0 10px rgb(255 255 255 / 0.75));
+    text-shadow: 0 1px 10px rgb(255 255 255 / 0.8);
   }
 
   .ghost-slider--immersive {
     position: relative;
     width: 100%;
     max-width: none;
-    min-height: min(28dvh, 12.5rem);
+    min-height: min(38dvh, 17rem);
     margin: 0;
   }
 
   .ghost-slider--immersive .ghost-slider__viewport {
-    min-height: min(28dvh, 12.5rem);
+    min-height: min(38dvh, 17rem);
     height: 100%;
     border: none;
     border-radius: 0;
     box-shadow: none;
-    background:
-      linear-gradient(
-        180deg,
-        rgb(250 248 244 / 0.55) 0%,
-        rgb(250 248 244 / 0.78) 42%,
-        rgb(250 248 244 / 0.92) 100%
-      ),
-      url("../assets/images/brand/tienda-real.jpg") center 32% / cover no-repeat;
-  }
-
-  .ghost-slider--immersive .ghost-slider__slide--brand {
-    background: transparent;
-  }
-
-  .ghost-slider--immersive .ghost-slider__slide--amber .ghost-slider__glow:not(.ghost-slider__glow--secondary),
-  .ghost-slider--immersive .ghost-slider__slide--red .ghost-slider__glow:not(.ghost-slider__glow--secondary),
-  .ghost-slider--immersive .ghost-slider__slide--blue .ghost-slider__glow:not(.ghost-slider__glow--secondary),
-  .ghost-slider--immersive .ghost-slider__slide--lime .ghost-slider__glow:not(.ghost-slider__glow--secondary) {
-    inset-block-start: -42%;
-    opacity: 0.38;
-  }
-
-  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__menu {
-    gap: clamp(0.65rem, 2vw, 1.35rem);
-  }
-
-  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__menu a {
-    font-size: 0.6rem;
-  }
-
-  body[data-page="home"] .ghost-marquee {
-    border-block-start: none;
-    padding-block: 0.3rem;
-    background: color-mix(in srgb, var(--surface-muted) 80%, transparent);
-  }
-
-  body[data-page="home"] .ghost-marquee__track span {
-    font-size: 0.62rem;
-    padding-inline: 0.85rem;
+    background: var(--surface);
   }
 
   .ghost-hero--immersive > .ghost-hero__bg {
@@ -153,19 +104,19 @@
   }
 
   .ghost-slider--immersive .ghost-slider__track {
-    min-height: min(28dvh, 12.5rem);
+    min-height: min(38dvh, 17rem);
   }
 
   .ghost-slider--immersive .ghost-slider__slide--brand {
-    min-height: min(28dvh, 12.5rem);
+    min-height: min(38dvh, 17rem);
     align-items: flex-end;
     justify-content: flex-start;
     text-align: start;
     padding:
-      calc(var(--nav-h-immersive) + 0.35rem)
+      calc(var(--nav-h-immersive) + 0.5rem)
       var(--gutter)
-      clamp(2.5rem, 5vw, 2.85rem);
-    background: var(--surface);
+      clamp(3rem, 6vw, 3.5rem);
+    background: transparent;
   }
 
   @media (min-width: 48rem) {
@@ -175,13 +126,21 @@
     }
 
     .ghost-slider--immersive .ghost-slider__brand {
-      max-width: 18rem;
+      max-width: 20rem;
     }
   }
 
   .ghost-slider--immersive .ghost-slider__glow {
     filter: blur(2.5rem);
     opacity: 0.45;
+  }
+
+  .ghost-slider--immersive .ghost-slider__slide--amber .ghost-slider__glow:not(.ghost-slider__glow--secondary),
+  .ghost-slider--immersive .ghost-slider__slide--red .ghost-slider__glow:not(.ghost-slider__glow--secondary),
+  .ghost-slider--immersive .ghost-slider__slide--blue .ghost-slider__glow:not(.ghost-slider__glow--secondary),
+  .ghost-slider--immersive .ghost-slider__slide--lime .ghost-slider__glow:not(.ghost-slider__glow--secondary) {
+    inset-block-start: -35%;
+    opacity: 0.42;
   }
 
   .ghost-slider--immersive .ghost-slider__slide--amber .ghost-slider__glow:not(.ghost-slider__glow--secondary) {
@@ -204,28 +163,32 @@
     height: min(74vw, 17.5rem);
   }
 
+  body[data-page="home"] .ghost-marquee {
+    border-block-start: none;
+  }
+
   .ghost-slider--immersive .ghost-slider__headline-main {
-    font-size: clamp(1.1rem, 3.2vw, 1.55rem);
+    font-size: clamp(1.2rem, 3.5vw, 1.7rem);
   }
 
   .ghost-slider--immersive .ghost-slider__headline-sub {
-    font-size: clamp(0.85rem, 2.2vw, 1.1rem);
+    font-size: clamp(0.95rem, 2.6vw, 1.25rem);
   }
 
   .ghost-slider--immersive .ghost-slider__essence {
-    font-size: clamp(0.72rem, 1.2vw, 0.8rem);
-    max-width: 18rem;
+    font-size: clamp(0.75rem, 1.3vw, 0.85rem);
+    max-width: 20rem;
     color: var(--ink-soft);
     line-height: 1.55;
   }
 
   .ghost-slider--immersive .ghost-slider__kicker {
-    margin-bottom: 0.25rem;
-    font-size: clamp(0.68rem, 1.2vw, 0.75rem);
+    margin-bottom: 0.3rem;
+    font-size: clamp(0.72rem, 1.4vw, 0.8rem);
   }
 
   .ghost-slider--immersive .ghost-slider__headline {
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.4rem;
   }
 
   /* Barra inferior: controles discretos + enlaces texto */
@@ -233,11 +196,11 @@
     position: absolute;
     z-index: 6;
     inset-inline: var(--gutter);
-    bottom: 0.45rem;
+    bottom: 0.55rem;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 0.35rem;
+    gap: 0.4rem;
   }
 
   @media (min-width: 40rem) {
@@ -350,7 +313,7 @@
 
   /* —— Proceso —— */
   .ghost-process {
-    padding-block: clamp(1rem, 2.5vw, 1.75rem);
+    padding-block: clamp(1.15rem, 2.8vw, 1.85rem);
     padding-inline: var(--gutter);
     background: var(--surface);
   }
@@ -651,7 +614,7 @@
 
   /* —— Historia —— */
   .ghost-story-band {
-    padding-block: clamp(1rem, 2.5vw, 1.75rem);
+    padding-block: clamp(1.15rem, 2.8vw, 1.85rem);
     padding-inline: var(--gutter);
     background: linear-gradient(135deg, var(--surface-warm) 0%, var(--surface) 100%);
   }
@@ -696,7 +659,7 @@
   }
 
   body[data-page="home"] .ghost-cta-band {
-    padding-block: clamp(1rem, 2.5vw, 1.75rem);
+    padding-block: clamp(1.15rem, 2.8vw, 1.85rem);
   }
 
   body[data-page="home"] .ghost-cta-band__title {
