@@ -5,44 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
   <title>Admin | Ghost Specialty Coffee</title>
+  <link rel="icon" href="assets/images/brand/logo-mark.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/admin.css">
   <script src="js/firebase-config.js"></script>
 </head>
 <body class="admin-body">
-  <div class="admin-layout">
+  <div id="login-screen" class="admin-login-wrap">
+    <form class="admin-login-card" id="adminLoginForm">
+      <img class="admin-login-card__logo" src="assets/images/brand/logo-horizontal.png" alt="Ghost Specialty Coffee" width="220" height="64" decoding="async">
+      <h1 class="admin-login-card__title">Panel de administración</h1>
+      <p class="admin-login-card__sub">Mismo modelo que Más Café — edita tienda, productos y menú</p>
+      <p class="admin-login__error" id="loginError" hidden></p>
+      <label class="admin-field">
+        <span>Usuario o correo</span>
+        <input type="text" name="user" required placeholder="admin" autocomplete="username">
+      </label>
+      <label class="admin-field">
+        <span>Contraseña</span>
+        <input type="password" name="pin" required autocomplete="current-password">
+      </label>
+      <button type="submit" class="admin-btn admin-btn--primary admin-btn--block">Entrar</button>
+      <p class="admin-login-card__hint">Usuario: <code>admin</code> · Contraseña: <code>ghost2026</code></p>
+      <p class="admin-login-card__hint"><a href="tienda.html">Ver tienda</a> · <a href="index.html">Volver al sitio</a></p>
+    </form>
+  </div>
+
+  <div id="app" class="admin-app hidden">
     <aside class="admin-sidebar">
-      <p class="admin-brand">Ghost <small>Administración</small></p>
-      <nav class="admin-nav" role="tablist" aria-label="Secciones admin">
-        <button type="button" class="admin-tab admin-tab--active" data-admin-tab="shops" aria-selected="true">Coffee shops</button>
-        <button type="button" class="admin-tab" data-admin-tab="products" aria-selected="false">Productos venta</button>
-      </nav>
+      <div class="admin-sidebar__brand">
+        <img src="assets/images/brand/logo-mark.png" alt="" width="40" height="40" decoding="async">
+        <div>
+          <strong>Ghost</strong>
+          <span>Administración</span>
+        </div>
+      </div>
+      <nav class="admin-nav" id="sidebarNav" aria-label="Secciones admin"></nav>
       <div class="admin-sidebar__foot">
         <p id="adminUserEmail"></p>
-        <button type="button" class="admin-btn admin-btn--ghost" id="adminLogout">Cerrar sesión</button>
-        <p style="margin-top:1rem"><a href="tienda.html">Ver tienda pública</a></p>
-        <p style="margin-top:0.5rem"><a href="index.html">← Volver al sitio</a></p>
+        <p class="admin-sidebar__status" id="adminStorageBadge">Local</p>
+        <button type="button" class="admin-nav-btn" id="adminPreviewSite">Ver sitio</button>
+        <button type="button" class="admin-nav-btn" id="adminLogout">Cerrar sesión</button>
       </div>
     </aside>
 
     <main class="admin-main">
-      <header class="admin-header">
+      <header class="admin-topbar">
         <div>
-          <h1>Dashboard</h1>
-          <p style="margin:0.35rem 0 0;color:var(--ink-muted);font-size:0.9rem">Gestiona tiendas y productos de venta. La carta del menú es independiente.</p>
+          <h1 id="panelTitle">Resumen</h1>
+          <p class="admin-topbar__sub" id="panelSubtitle">Vista general del contenido publicado</p>
         </div>
-        <div class="admin-header__actions">
-          <span class="admin-badge" id="adminStorageBadge">Local</span>
-          <button type="button" class="admin-btn admin-btn--primary" id="adminNewShop" hidden>Nueva coffee shop</button>
-          <button type="button" class="admin-btn admin-btn--primary" id="adminNewProduct" hidden>Nuevo producto</button>
-        </div>
+        <div class="admin-topbar__actions" id="panelActions"></div>
       </header>
-
-      <div id="adminPanel" aria-live="polite"></div>
+      <div id="panelRoot" aria-live="polite"></div>
     </main>
   </div>
 
@@ -51,22 +70,6 @@
     <div class="admin-modal__dialog" id="adminModalBody" role="dialog" aria-modal="true"></div>
   </div>
 
-  <script type="module">
-    import { requireAuth } from './js/admin/auth.js';
-    requireAuth();
-
-    const shopsBtn = document.querySelector('#adminNewShop');
-    const productsBtn = document.querySelector('#adminNewProduct');
-
-    document.querySelectorAll('[data-admin-tab]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const tab = btn.dataset.adminTab;
-        if (shopsBtn) shopsBtn.hidden = tab !== 'shops';
-        if (productsBtn) productsBtn.hidden = tab !== 'products';
-      });
-    });
-    if (shopsBtn) shopsBtn.hidden = false;
-  </script>
   <script type="module" src="js/admin/dashboard.js"></script>
 </body>
 </html>

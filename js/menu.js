@@ -3,6 +3,7 @@
  * @module menu
  */
 
+import { getMenuData } from './data/store.js';
 import { $, escapeHtml, formatCop } from './utils.js';
 
 /**
@@ -20,9 +21,7 @@ export class GhostMenu {
     if (!this.#root) return;
 
     try {
-      const res = await fetch('content/menu.json');
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
+      const data = await getMenuData();
       this.#root.innerHTML = this.#render(data);
       this.#root.setAttribute('aria-busy', 'false');
     } catch (err) {

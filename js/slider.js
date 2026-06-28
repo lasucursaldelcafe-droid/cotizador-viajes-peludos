@@ -5,6 +5,8 @@
 
 import { $, $$ } from './utils.js';
 
+const AUTOPLAY_MS = 4500;
+
 export class ProductSlider {
   /** @param {string} rootSelector */
   init(rootSelector) {
@@ -18,6 +20,8 @@ export class ProductSlider {
     const dots = $$('.ghost-slider__dot', root);
     const prev = $('.ghost-slider__prev', root);
     const next = $('.ghost-slider__next', root);
+    const prefersReduced = globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+    const finePointer = globalThis.matchMedia?.('(pointer: fine)').matches ?? true;
 
     let index = 0;
     /** @type {ReturnType<typeof setInterval> | null} */
@@ -31,13 +35,28 @@ export class ProductSlider {
         dot.setAttribute('aria-selected', j === index ? 'true' : 'false');
       }
       for (const [j, slide] of slides.entries()) {
-        slide.toggleAttribute('hidden', j !== index);
+        const active = j === index;
+        slide.toggleAttribute('hidden', !active);
+        slide.setAttribute('aria-hidden', active ? 'false' : 'true');
       }
     };
 
+    const stopTimer = () => {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    };
+
+    const startTimer = () => {
+      if (prefersReduced || slides.length < 2) return;
+      stopTimer();
+      timer = setInterval(() => go(index + 1), AUTOPLAY_MS);
+    };
+
     const resetTimer = () => {
-      if (timer) clearInterval(timer);
-      timer = setInterval(() => go(index + 1), 5500);
+      stopTimer();
+      startTimer();
     };
 
     prev?.addEventListener('click', () => {
@@ -55,12 +74,17 @@ export class ProductSlider {
       });
     }
 
-    root.addEventListener('mouseenter', () => {
-      if (timer) clearInterval(timer);
+    if (finePointer) {
+      root.addEventListener('mouseenter', stopTimer);
+      root.addEventListener('mouseleave', startTimer);
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopTimer();
+      else startTimer();
     });
-    root.addEventListener('mouseleave', resetTimer);
 
     go(0);
-    resetTimer();
+    startTimer();
   }
 }

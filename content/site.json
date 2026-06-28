@@ -200,7 +200,7 @@
   "marketingStrategy": "content/marketing-strategy.json",
   "brandIdentityPage": "identidad.html",
   "images": {
-    "logoMark": "assets/images/brand/ghost-mark.svg",
-    "logoHorizontal": "assets/images/brand/ghost-wordmark.svg"
+    "logoMark": "assets/images/brand/logo-mark.png",
+    "logoHorizontal": "assets/images/brand/logo-horizontal.png"
   }
 }

@@ -4,6 +4,8 @@
  */
 
 const STORAGE_KEY = 'ghost_admin_v1';
+const MENU_STORAGE_KEY = 'ghost_admin_menu_v1';
+const BRAND_STORAGE_KEY = 'ghost_admin_brand_v1';
 
 /** @typedef {{ id: string; name: string; slug: string; address: string; city: string; phone: string; instagram?: string; active: boolean; createdAt: string }} CoffeeShop */
 /** @typedef {{ id: string; shopId: string; name: string; variety: string; region: string; price: number; weight: string; roast: string; notes: string[]; imageUrl: string; featured: boolean; active: boolean; createdAt: string }} RetailProduct */
@@ -224,6 +226,48 @@ export async function deleteProduct(id) {
 export function resetToSeed() {
   writeLocal(seedData());
   return Promise.resolve();
+}
+
+/** @returns {Promise<object>} */
+export async function getMenuData() {
+  try {
+    const raw = localStorage.getItem(MENU_STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch {
+    /* ignore */
+  }
+  const res = await fetch('content/menu.json');
+  if (!res.ok) throw new Error('No se pudo cargar menu.json');
+  return await res.json();
+}
+
+/** @param {object} data */
+export function saveMenuData(data) {
+  localStorage.setItem(MENU_STORAGE_KEY, JSON.stringify(data));
+}
+
+/** @returns {object} */
+export function getBrandSettings() {
+  try {
+    const raw = localStorage.getItem(BRAND_STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch {
+    /* ignore */
+  }
+  return {
+    tagline: 'Del origen al ritual.',
+    headline: 'ESPECIALIDAD Y ELEGANCIA',
+    phone: '+57 302 515 9900',
+    email: 'hola@ghostspecialtycoffee.co',
+    instagram: 'Ghost.coffee.lab',
+    address: 'Centro Comercial Jardín Plaza, Cali',
+    hours: 'Lunes a sábado 7:00am – 8:00pm · Domingos 9:00am – 6:00pm',
+  };
+}
+
+/** @param {object} settings */
+export function saveBrandSettings(settings) {
+  localStorage.setItem(BRAND_STORAGE_KEY, JSON.stringify(settings));
 }
 
 /* —— Firebase stubs (activos cuando VP_FIREBASE_CONFIG.enabled) —— */

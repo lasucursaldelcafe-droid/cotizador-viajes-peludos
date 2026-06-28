@@ -38,6 +38,7 @@ export const BRAND = Object.freeze({
 /** @type {readonly string[]} */
 export const NAV_LINKS = Object.freeze([
   { href: 'index.html', label: 'Inicio', id: 'home' },
+  { href: 'tienda.html', label: 'Tienda', id: 'tienda' },
   { href: 'menu.html', label: 'Menú', id: 'menu' },
   { href: 'origen.html', label: 'Origen', id: 'origen' },
   { href: 'nosotros.html', label: 'Nosotros', id: 'nosotros' },

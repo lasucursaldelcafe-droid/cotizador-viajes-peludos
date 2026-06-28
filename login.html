@@ -2,38 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="0;url=admin.html">
   <meta name="robots" content="noindex">
-  <title>Login | Ghost Admin</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/admin.css">
-  <script src="js/firebase-config.js"></script>
+  <title>Redirigiendo… | Ghost Admin</title>
+  <script>globalThis.location.replace('admin.html');</script>
 </head>
-<body class="admin-body">
-  <div class="admin-login">
-    <div class="admin-login__card">
-      <h1 class="admin-login__title">Ghost Admin</h1>
-      <p class="admin-login__sub">Gestiona coffee shops, productos y la tienda pública</p>
-      <p class="admin-login__error" id="loginError" hidden></p>
-      <form class="admin-form" id="loginForm">
-        <label class="admin-field">
-          <span>Correo</span>
-          <input type="email" name="email" required placeholder="admin@ghost.com" autocomplete="username">
-        </label>
-        <label class="admin-field">
-          <span>PIN de administración</span>
-          <input type="password" name="pin" required autocomplete="current-password">
-        </label>
-        <button type="submit" class="admin-btn admin-btn--primary" style="width:100%;margin-top:0.5rem">Entrar</button>
-      </form>
-      <p class="admin-login__hint">PIN por defecto: <code>ghost2026</code> · Correo: <code>hola@ghostspecialtycoffee.co</code></p>
-      <p class="admin-login__hint"><a href="tienda.html">Ver tienda pública</a> · <a href="index.html">← Volver al sitio</a></p>
-    </div>
-  </div>
-  <script type="module" src="js/admin/login.js"></script>
+<body>
+  <p><a href="admin.html">Ir al panel de administración</a></p>
 </body>
 </html>

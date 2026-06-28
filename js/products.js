@@ -61,7 +61,7 @@ export class GhostProducts {
     try {
       const products = await listProducts();
       if (!products.length) {
-        this.#root.innerHTML = '<p class="ghost-products-empty">Próximamente nuevos lotes. Escríbenos por WhatsApp o configura productos en el <a href="login.html">panel admin</a>.</p>';
+        this.#root.innerHTML = '<p class="ghost-products-empty">Próximamente nuevos lotes. Escríbenos por WhatsApp o configura productos en el <a href="admin.html">panel admin</a>.</p>';
         return;
       }
 
