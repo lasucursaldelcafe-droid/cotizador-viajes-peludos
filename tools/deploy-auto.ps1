@@ -14,6 +14,11 @@ try {
     $remoteUrl = "https://github.com/$owner/$repo.git"
     $root = Get-ProjectRoot
 
+    $syncScript = Join-Path $root "tools\sync-firebase-config.ps1"
+    if (Test-Path $syncScript) {
+        & $syncScript | Out-Null
+    }
+
     # Si el repo objetivo es ghost_coffee_shop, usar script bash dedicado
     if ($repo -eq "ghost_coffee_shop" -and (Test-Path (Join-Path $root "tools/crear-repo-ghost.sh"))) {
         $bash = Get-Command bash -ErrorAction SilentlyContinue

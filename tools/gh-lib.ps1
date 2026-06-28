@@ -99,7 +99,7 @@ function Test-SecretPath {
 function Commit-AllSafe {
     param(
         [string]$Root,
-        [string]$Message = "Actualizar cotizador Viajes Peludos"
+        [string]$Message = "Actualizar Ghost Specialty Coffee"
     )
     Push-Location $Root
     try {
