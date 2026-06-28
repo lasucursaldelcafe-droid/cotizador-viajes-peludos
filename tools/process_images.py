@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
-"""Remove backgrounds and crop images to content bounds."""
+"""Remove backgrounds and crop images to content bounds.
+
+WARNING: Do not run on official Ghost product photos — rembg degrades packaging
+and dark backgrounds. This script is kept for optional one-off assets only.
+"""
 
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 
 from PIL import Image
@@ -62,6 +67,13 @@ def process_image(path: Path) -> None:
 
 
 def main() -> None:
+    if "--force" not in sys.argv:
+        print(
+            "Aborted: background removal damages official product photos. "
+            "Pass --force to run anyway.",
+            file=sys.stderr,
+        )
+        raise SystemExit(1)
     for directory in IMAGE_DIRS:
         if not directory.exists():
             continue

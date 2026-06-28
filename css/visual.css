@@ -249,60 +249,25 @@
   .ghost-slider {
     position: relative;
     width: 100%;
-    max-width: 26rem;
+    max-width: min(100%, 22rem);
     margin-inline: auto;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    background: #0a0908;
-    border: 1px solid rgb(230 160 77 / 0.15);
-    box-shadow:
-      0 1.5rem 3rem -1rem rgb(0 0 0 / 0.45),
-      inset 0 1px 0 rgb(255 255 255 / 0.04);
+    background: var(--surface-raised);
+    border: var(--border-subtle);
+    box-shadow: var(--shadow-card);
   }
 
   .ghost-slider__ambient {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .ghost-slider__spot {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(40px);
-    opacity: 0.55;
-  }
-
-  .ghost-slider__spot--1 {
-    width: 55%;
-    height: 45%;
-    top: 8%;
-    left: 22%;
-    background: rgb(230 160 77 / 0.35);
-  }
-
-  .ghost-slider__spot--2 {
-    width: 40%;
-    height: 35%;
-    bottom: 18%;
-    right: 10%;
-    background: rgb(155 28 28 / 0.2);
-  }
-
-  .ghost-slider__spot--3 {
-    width: 30%;
-    height: 25%;
-    top: 45%;
-    left: 5%;
-    background: rgb(141 182 0 / 0.12);
+    display: none;
   }
 
   .ghost-slider__viewport {
     position: relative;
     z-index: 1;
     overflow: hidden;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 3 / 4;
+    background: linear-gradient(180deg, var(--surface-muted) 0%, var(--surface-raised) 100%);
   }
 
   .ghost-slider__track {
@@ -318,18 +283,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 0.75rem;
-    padding: clamp(1.5rem, 4vw, 2rem) clamp(1rem, 3vw, 1.5rem) 1rem;
+    padding: clamp(0.75rem, 2vw, 1.25rem);
     min-height: 100%;
   }
 
   .ghost-slider__slide img {
-    width: auto;
-    max-width: 78%;
-    max-height: min(22rem, 68vh);
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: min(26rem, 72vh);
     object-fit: contain;
-    filter: drop-shadow(0 1rem 2rem rgb(0 0 0 / 0.5));
+    object-position: center;
   }
 
   .ghost-slider__caption {
@@ -338,7 +305,7 @@
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgb(230 160 77 / 0.9);
+    color: var(--ink-muted);
     text-align: center;
   }
 
@@ -350,16 +317,17 @@
     justify-content: center;
     gap: 0.75rem;
     padding: 0.75rem 1rem 1rem;
-    background: linear-gradient(180deg, transparent, rgb(0 0 0 / 0.35));
+    background: var(--surface-raised);
+    border-top: var(--border-subtle);
   }
 
   .ghost-slider__btn {
     width: 2rem;
     height: 2rem;
-    border: 1px solid rgb(230 160 77 / 0.35);
+    border: var(--border-subtle);
     border-radius: 50%;
-    background: rgb(0 0 0 / 0.35);
-    color: var(--ghost-amber);
+    background: var(--surface);
+    color: var(--ink);
     font-size: 1.25rem;
     line-height: 1;
     cursor: pointer;
@@ -367,8 +335,9 @@
   }
 
   .ghost-slider__btn:hover {
-    background: rgb(230 160 77 / 0.15);
+    background: var(--surface-muted);
     border-color: var(--ghost-amber);
+    color: var(--ghost-amber);
   }
 
   .ghost-slider__dots {
@@ -545,10 +514,11 @@
 
   .ghost-industrial__shelf img {
     width: auto;
-    max-height: 88%;
-    max-width: 42%;
+    max-height: 95%;
+    max-width: 46%;
     object-fit: contain;
-    filter: drop-shadow(0 0.5rem 1rem rgb(0 0 0 / 0.55));
+    border-radius: 4px;
+    box-shadow: 0 0.5rem 1.25rem rgb(0 0 0 / 0.35);
   }
 
   .ghost-industrial__plant {
@@ -600,18 +570,20 @@
   }
 
   .ghost-product__visual--photo {
-    background: #0a0a0a;
+    background: linear-gradient(180deg, var(--surface-muted) 0%, var(--surface-raised) 100%);
     flex-direction: column;
     gap: 0.5rem;
     padding: 1rem;
+    min-height: 12rem;
   }
 
   .ghost-product__visual--photo img {
+    display: block;
     width: auto;
-    max-height: 8.5rem;
-    max-width: 72%;
+    max-height: 11rem;
+    max-width: 88%;
     object-fit: contain;
-    filter: drop-shadow(0 0.5rem 1.5rem rgb(0 0 0 / 0.35));
+    object-position: center;
   }
 
   .ghost-product__visual--photo .ghost-product__region {
