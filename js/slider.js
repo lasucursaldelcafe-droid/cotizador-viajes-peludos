@@ -14,13 +14,19 @@ export class BrandSlider {
     if (!root) return;
 
     const track = $('.ghost-slider__track', root);
-    const slides = $$('.ghost-slider__slide', root);
-    if (!track || slides.length === 0) return;
+    if (!track) return;
+
+    /** Controles pueden vivir fuera de #ghostHeroSlider (p. ej. .ghost-hero__bar) */
+    const scope = root.closest('.ghost-hero') ?? root;
 
     const viewport = $('.ghost-slider__viewport', root);
-    const dots = $$('.ghost-slider__dot', root);
-    const prev = $('.ghost-slider__prev', root);
-    const next = $('.ghost-slider__next', root);
+    const slides = $$('.ghost-slider__slide', track);
+    const dots = $$('.ghost-slider__dot', scope);
+    const prev = $('.ghost-slider__prev', scope);
+    const next = $('.ghost-slider__next', scope);
+
+    if (slides.length === 0) return;
+
     const prefersReduced = globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
     const finePointer = globalThis.matchMedia?.('(pointer: fine)').matches ?? true;
 
@@ -37,19 +43,28 @@ export class BrandSlider {
       viewport.classList.add('is-animating');
     };
 
+    const setSlideState = (slide, active) => {
+      slide.classList.toggle('is-active', active);
+      slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+      slide.removeAttribute('hidden');
+      if ('inert' in slide) {
+        slide.inert = !active;
+      }
+    };
+
     const go = (i) => {
       index = (i + slides.length) % slides.length;
       track.style.transform = `translate3d(-${index * 100}%, 0, 0)`;
+
       for (const [j, dot] of dots.entries()) {
         dot.classList.toggle('is-active', j === index);
         dot.setAttribute('aria-selected', j === index ? 'true' : 'false');
       }
+
       for (const [j, slide] of slides.entries()) {
-        const active = j === index;
-        slide.toggleAttribute('hidden', !active);
-        slide.setAttribute('aria-hidden', active ? 'false' : 'true');
-        slide.classList.toggle('is-active', active);
+        setSlideState(slide, j === index);
       }
+
       restartProgress();
     };
 
@@ -71,24 +86,28 @@ export class BrandSlider {
       startTimer();
     };
 
-    prev?.addEventListener('click', () => {
+    prev?.addEventListener('click', (e) => {
+      e.preventDefault();
       go(index - 1);
       resetTimer();
     });
-    next?.addEventListener('click', () => {
+    next?.addEventListener('click', (e) => {
+      e.preventDefault();
       go(index + 1);
       resetTimer();
     });
+
     for (const [i, dot] of dots.entries()) {
-      dot.addEventListener('click', () => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
         go(i);
         resetTimer();
       });
     }
 
     if (finePointer) {
-      root.addEventListener('mouseenter', stopTimer);
-      root.addEventListener('mouseleave', startTimer);
+      scope.addEventListener('mouseenter', stopTimer);
+      scope.addEventListener('mouseleave', startTimer);
     }
 
     document.addEventListener('visibilitychange', () => {

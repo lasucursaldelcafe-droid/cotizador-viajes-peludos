@@ -189,7 +189,7 @@
   /* Barra inferior: controles discretos + enlaces texto */
   .ghost-hero__bar {
     position: absolute;
-    z-index: 6;
+    z-index: 25;
     inset-inline: var(--gutter);
     bottom: 0.55rem;
     display: flex;
@@ -230,7 +230,8 @@
     width: auto;
     height: auto;
     min-width: 0;
-    padding: 0 0.15rem;
+    min-height: 2rem;
+    padding: 0.25rem 0.35rem;
     font-size: 0.85rem;
     line-height: 1;
     border: none;
@@ -238,6 +239,7 @@
     background: transparent;
     backdrop-filter: none;
     color: color-mix(in srgb, var(--ink) 55%, transparent);
+    cursor: pointer;
   }
 
   .ghost-slider--immersive .ghost-slider__btn:hover {
@@ -250,9 +252,12 @@
   }
 
   .ghost-slider--immersive .ghost-slider__dot {
-    width: 0.28rem;
-    height: 0.28rem;
+    width: 0.35rem;
+    height: 0.35rem;
+    padding: 0;
+    border: none;
     background: color-mix(in srgb, var(--ink) 20%, transparent);
+    cursor: pointer;
   }
 
   .ghost-slider--immersive .ghost-slider__dot.is-active {

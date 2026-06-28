@@ -548,6 +548,16 @@
     will-change: transform;
   }
 
+  .ghost-slider__track > .ghost-slider__slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
+
+  .ghost-slider__slide[aria-hidden="true"] {
+    pointer-events: none;
+    user-select: none;
+  }
+
   .ghost-slider__slide {
     flex: 0 0 100%;
     margin: 0;

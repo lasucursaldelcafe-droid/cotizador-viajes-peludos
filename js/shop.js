@@ -6,7 +6,7 @@
 import { listShops } from './data/store.js';
 import { GhostProducts } from './products.js';
 import { escapeHtml } from './utils.js';
-import { BRAND } from './config.js';
+import { BRAND, asset } from './config.js';
 
 /** @typedef {{ step: number; title: string; text: string }} InstagramGuideStep */
 /** @typedef {{ id: string; title: string; description: string; varieties: string[]; weight?: string }} InstagramPostTheme */
@@ -31,7 +31,7 @@ export class GhostShop {
     if (!root) return;
 
     try {
-      const res = await fetch('content/instagram.json');
+      const res = await fetch(asset('content/instagram.json'));
       if (!res.ok) throw new Error('instagram.json');
       const data = await res.json();
 

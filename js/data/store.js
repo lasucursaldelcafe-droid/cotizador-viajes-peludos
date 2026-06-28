@@ -3,6 +3,8 @@
  * @module data/store
  */
 
+import { asset } from '../config.js';
+
 const STORAGE_KEY = 'ghost_admin_v2';
 const MENU_STORAGE_KEY = 'ghost_admin_menu_v1';
 const BRAND_STORAGE_KEY = 'ghost_admin_brand_v1';
@@ -251,7 +253,7 @@ export async function getMenuData() {
   } catch {
     /* ignore */
   }
-  const res = await fetch('content/menu.json');
+  const res = await fetch(asset('content/menu.json'));
   if (!res.ok) throw new Error('No se pudo cargar menu.json');
   return await res.json();
 }

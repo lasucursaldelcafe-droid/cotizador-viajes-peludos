@@ -51,6 +51,40 @@ for json in brand-slides menu instagram; do
   fi
 done
 
+echo "==> Estructura slider (controles en hero, no dentro de #ghostHeroSlider)"
+if grep -q 'id="ghostHeroSlider"' "$ROOT/index.html" \
+  && grep -q 'ghost-slider__prev' "$ROOT/index.html" \
+  && grep -q 'id="ghostBrandDots"' "$ROOT/index.html"; then
+  echo "OK   index.html slider markup presente"
+else
+  echo "FAIL index.html slider markup incompleto"
+  FAIL=1
+fi
+
+if grep -q "closest('.ghost-hero')" "$ROOT/js/slider.js"; then
+  echo "OK   slider.js busca controles en .ghost-hero"
+else
+  echo "FAIL slider.js no enlaza controles del hero"
+  FAIL=1
+fi
+
+if ! grep -q "toggleAttribute('hidden'" "$ROOT/js/slider.js"; then
+  echo "OK   slider.js no usa hidden (flex intacto)"
+else
+  echo "FAIL slider.js aún usa hidden en slides"
+  FAIL=1
+fi
+
+echo "==> Rutas asset() en fetch de contenido"
+for f in js/home.js js/shop.js js/data/store.js; do
+  if grep -q "fetch(asset(" "$ROOT/$f"; then
+    echo "OK   $f usa fetch(asset(...))"
+  else
+    echo "FAIL $f sin fetch(asset(...))"
+    FAIL=1
+  fi
+done
+
 if [[ "$FAIL" -eq 0 ]]; then
   echo "STATUS=ok"
   exit 0

@@ -4,6 +4,7 @@
  */
 
 import { initParallaxVisual, initProcessHotspots } from './home-interactive.js';
+import { asset } from './config.js';
 import { BrandSlider } from './slider.js';
 import { escapeHtml } from './utils.js';
 
@@ -27,13 +28,13 @@ export class GhostHome {
     dotsRoot.setAttribute('aria-busy', 'true');
 
     try {
-      const res = await fetch('content/brand-slides.json');
+      const res = await fetch(asset('content/brand-slides.json'));
       if (!res.ok) throw new Error('brand-slides.json');
       const data = await res.json();
       const slides = /** @type {BrandSlide[]} */ (data.slides ?? []);
 
       track.innerHTML = slides.map((slide, i) => `
-        <article class="ghost-slider__slide ghost-slider__slide--brand ghost-slider__slide--${escapeHtml(slide.tint)}"${i > 0 ? ' hidden' : ''} data-tint="${escapeHtml(slide.tint)}">
+        <article class="ghost-slider__slide ghost-slider__slide--brand ghost-slider__slide--${escapeHtml(slide.tint)}${i === 0 ? ' is-active' : ''}" data-tint="${escapeHtml(slide.tint)}" aria-hidden="${i === 0 ? 'false' : 'true'}">
           <div class="ghost-slider__glow" aria-hidden="true"></div>
           <div class="ghost-slider__glow ghost-slider__glow--secondary" aria-hidden="true"></div>
           <div class="ghost-slider__brand">
