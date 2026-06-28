@@ -34,7 +34,6 @@ class GhostApp {
     if (page === 'home') {
       const { GhostHome } = await import('./home.js');
       await new GhostHome().init();
-      void new GhostProducts('#ghostProductsHome').init();
     }
   }
 

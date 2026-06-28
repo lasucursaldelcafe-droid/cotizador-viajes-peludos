@@ -1,8 +1,9 @@
 /**
- * @file Inicialización de la home — slider de marca
+ * @file Inicialización de la home — slider de marca e interacciones
  * @module home
  */
 
+import { initParallaxVisual, initProcessHotspots } from './home-interactive.js';
 import { BrandSlider } from './slider.js';
 import { escapeHtml } from './utils.js';
 
@@ -12,13 +13,15 @@ export class GhostHome {
   async init() {
     await this.#buildBrandSlider();
     new BrandSlider().init('#ghostHeroSlider');
+    initParallaxVisual('#ghostProcessParallax');
+    initParallaxVisual('#ghostStoreParallax');
+    initProcessHotspots();
   }
 
   async #buildBrandSlider() {
-    const root = document.querySelector('#ghostHeroSlider');
     const track = document.querySelector('#ghostBrandTrack');
     const dotsRoot = document.querySelector('#ghostBrandDots');
-    if (!root || !track || !dotsRoot) return;
+    if (!track || !dotsRoot) return;
 
     try {
       const res = await fetch('content/brand-slides.json');
