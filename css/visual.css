@@ -316,7 +316,7 @@
   .ghost-slider--brand .ghost-slider__viewport {
     position: relative;
     aspect-ratio: auto;
-    min-height: clamp(18rem, 42vw, 24rem);
+    min-height: clamp(14rem, 32vw, 19rem);
     overflow: hidden;
     border-radius: var(--radius-lg);
     background: var(--surface-raised);
@@ -353,7 +353,7 @@
     position: relative;
     align-items: center;
     justify-content: center;
-    padding: clamp(2rem, 6vw, 3.5rem) clamp(1.5rem, 5vw, 2.5rem);
+    padding: clamp(1.5rem, 4vw, 2.25rem) clamp(1.25rem, 3.5vw, 2rem);
     text-align: center;
     overflow: hidden;
     background: var(--surface-raised);
@@ -432,10 +432,10 @@
   }
 
   .ghost-slider__kicker {
-    margin: 0 0 0.85rem;
+    margin: 0 0 0.6rem;
     font-family: var(--font-editorial);
     font-style: italic;
-    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
     color: var(--ghost-amber);
   }
 
@@ -449,14 +449,14 @@
 
   .ghost-slider__headline-main {
     display: block;
-    font-size: clamp(2.75rem, 10vw, 4.5rem);
+    font-size: clamp(2rem, 6.5vw, 3.25rem);
     font-weight: 700;
     color: var(--ink);
   }
 
   .ghost-slider__headline-sub {
     display: block;
-    font-size: clamp(2rem, 7vw, 3.25rem);
+    font-size: clamp(1.45rem, 4.5vw, 2.35rem);
     font-weight: 700;
     color: transparent;
     -webkit-text-stroke: 1px color-mix(in srgb, var(--ghost-red) 65%, transparent);

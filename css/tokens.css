@@ -55,7 +55,7 @@
     --font-editorial: "Playfair Display", Georgia, serif;
 
     --nav-h: 4.5rem;
-    --section-pad: clamp(3rem, 8vw, 6rem);
+    --section-pad: clamp(2.25rem, 5.5vw, 4rem);
     --content-max: 75rem;
     --gutter: clamp(1.25rem, 5vw, 2.5rem);
 
