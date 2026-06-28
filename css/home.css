@@ -35,12 +35,12 @@
     background: color-mix(in srgb, var(--surface-raised) 94%, transparent);
     backdrop-filter: blur(12px);
     border-block-end: var(--border-subtle);
-    box-shadow: 0 1px 0 rgb(28 26 24 / 0.04);
+    box-shadow: 0 1px 0 rgb(255 255 255 / 0.05);
   }
 
   .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__menu a {
-    color: color-mix(in srgb, var(--ink) 78%, transparent);
-    text-shadow: 0 1px 10px rgb(255 255 255 / 0.8);
+    color: color-mix(in srgb, var(--ink) 88%, transparent);
+    text-shadow: 0 1px 14px rgb(0 0 0 / 0.75);
   }
 
   .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__menu a:hover,
@@ -59,22 +59,22 @@
     background: transparent !important;
     border: none !important;
     border-radius: 0;
-    color: color-mix(in srgb, var(--ink) 60%, transparent) !important;
+    color: color-mix(in srgb, var(--ghost-amber) 92%, var(--ink)) !important;
     font-weight: 600 !important;
-    text-shadow: 0 1px 10px rgb(255 255 255 / 0.8);
+    text-shadow: 0 1px 14px rgb(0 0 0 / 0.75);
   }
 
   .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__admin:hover {
-    color: var(--ink) !important;
+    color: var(--ghost-amber) !important;
     background: transparent !important;
   }
 
   .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__toggle {
     border: none;
     background: transparent;
-    color: color-mix(in srgb, var(--ink) 75%, transparent);
+    color: color-mix(in srgb, var(--ink) 85%, transparent);
     padding: 0.25rem 0;
-    text-shadow: 0 1px 10px rgb(255 255 255 / 0.8);
+    text-shadow: 0 1px 14px rgb(0 0 0 / 0.75);
   }
 
   .ghost-slider--immersive {
@@ -444,9 +444,10 @@
     font-size: 0.68rem;
     line-height: 1.4;
     color: var(--ink);
-    background: rgb(255 255 255 / 0.92);
-    border: 1px solid rgb(28 26 24 / 0.08);
-    box-shadow: 0 0.4rem 1rem rgb(28 26 24 / 0.1);
+    background: color-mix(in srgb, var(--surface-raised) 94%, transparent);
+    border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+    box-shadow: 0 0.4rem 1.25rem rgb(0 0 0 / 0.55);
+    backdrop-filter: blur(8px);
     opacity: 0;
     pointer-events: none;
     transform: translateY(0.2rem);

@@ -1,17 +1,17 @@
 @layer admin {
   :root {
     --admin-sidebar-w: 16.25rem;
-    --admin-bg: #f0ebe3;
-    --admin-surface: #ffffff;
-    --admin-border: #d8d0c6;
-    --admin-sidebar-bg: #121110;
+    --admin-bg: #080808;
+    --admin-surface: #101010;
+    --admin-border: color-mix(in srgb, #ece8e0 12%, transparent);
+    --admin-sidebar-bg: #060606;
     --admin-sidebar-text: #f5f0e8;
-    --admin-sidebar-muted: #c4bbb0;
-    --admin-sidebar-faint: #9a9288;
+    --admin-sidebar-muted: #9c948a;
+    --admin-sidebar-faint: #6e6760;
     --admin-accent: #e6a04d;
-    --admin-ink: #1c1a18;
-    --admin-ink-muted: #524c45;
-    --admin-ink-soft: #6b635a;
+    --admin-ink: #ece8e0;
+    --admin-ink-muted: #9c948a;
+    --admin-ink-soft: #6e6760;
   }
 
   .hidden { display: none !important; }
@@ -306,7 +306,7 @@
 
   .admin-btn--primary {
     background: var(--ghost-lime, #8db600);
-    color: #fff;
+    color: var(--ghost-black, #080808);
   }
 
   .admin-btn--primary:hover {
@@ -320,8 +320,8 @@
   }
 
   .admin-btn--ghost:hover {
-    background: #f7f2eb;
-    border-color: #c4bbb0;
+    background: color-mix(in srgb, var(--admin-ink) 8%, var(--admin-surface));
+    border-color: color-mix(in srgb, var(--admin-ink) 22%, transparent);
   }
 
   .admin-btn--danger {
@@ -555,7 +555,7 @@
     padding: 0.55rem 0.75rem;
     border: 1px solid var(--admin-border);
     border-radius: 0.4rem;
-    background: #fff;
+    background: var(--admin-surface);
     color: var(--admin-ink);
   }
 
@@ -633,7 +633,7 @@
   }
 
   .admin-login-card__hint code {
-    background: #f2ece4;
+    background: color-mix(in srgb, var(--admin-ink) 10%, var(--admin-surface));
     padding: 0.1rem 0.35rem;
     border-radius: 0.25rem;
     color: var(--admin-ink);

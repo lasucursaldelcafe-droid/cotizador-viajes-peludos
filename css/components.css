@@ -13,13 +13,13 @@
     background: color-mix(in srgb, var(--surface-raised) 92%, transparent);
     backdrop-filter: blur(var(--nav-blur));
     border-block-end: var(--border-subtle);
-    box-shadow: 0 1px 0 rgb(28 26 24 / 0.04);
+    box-shadow: 0 1px 0 rgb(255 255 255 / 0.05);
     transition: --nav-blur 0.3s var(--ease-out-expo);
   }
 
   .ghost-nav.is-scrolled {
     --nav-blur: 24px;
-    background: color-mix(in srgb, var(--surface-raised) 98%, transparent);
+    background: color-mix(in srgb, var(--surface-raised) 96%, transparent);
     box-shadow: var(--shadow-soft);
   }
 
@@ -41,9 +41,9 @@
     object-fit: contain;
   }
 
-  /* Logos blancos sobre transparente → negro en tema claro */
+  /* Logos blancos sobre transparente — sin filtro en tema oscuro */
   .ghost-brand-img {
-    filter: brightness(0) saturate(100%);
+    filter: none;
   }
 
   .ghost-nav__mark {
@@ -126,10 +126,10 @@
     font-weight: 700 !important;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--surface) !important;
-    background: color-mix(in srgb, var(--ink) 88%, transparent);
+    color: var(--on-brand) !important;
+    background: var(--ghost-amber);
     border-radius: 0.35rem;
-    border: 1px solid color-mix(in srgb, var(--ghost-amber) 35%, transparent);
+    border: 1px solid color-mix(in srgb, var(--ghost-amber) 65%, transparent);
   }
 
   .ghost-nav__admin::after {
@@ -137,8 +137,8 @@
   }
 
   .ghost-nav__admin:hover {
-    background: var(--ink) !important;
-    color: var(--ghost-amber) !important;
+    background: color-mix(in srgb, var(--ghost-amber) 88%, white) !important;
+    color: var(--on-brand) !important;
   }
 
   .ghost-nav__toggle {
@@ -181,7 +181,7 @@
 
   .btn--spectral {
     background: var(--ghost-lime);
-    color: var(--surface-raised);
+    color: var(--on-brand);
     box-shadow: var(--shadow-glow);
   }
 
@@ -203,7 +203,7 @@
 
   .btn--ember {
     background: var(--ghost-red);
-    color: var(--surface-raised);
+    color: var(--on-accent);
     box-shadow: var(--shadow-ember);
   }
 
@@ -274,7 +274,7 @@
     width: min(100%, 11rem);
     height: auto;
     object-fit: contain;
-    filter: brightness(0) saturate(100%);
+    filter: none;
   }
 
   .ghost-hero__lockup-sub {
@@ -308,7 +308,7 @@
     width: min(100%, 22rem);
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 1.5rem 3rem rgb(28 26 24 / 0.14));
+    filter: drop-shadow(0 1.5rem 3rem rgb(0 0 0 / 0.45));
     pointer-events: none;
   }
 
@@ -491,7 +491,7 @@
     width: min(100%, 22rem);
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 1rem 2rem rgb(28 26 24 / 0.12));
+    filter: drop-shadow(0 1rem 2rem rgb(0 0 0 / 0.4));
   }
 
   /* —— Cards experiencia —— */
@@ -602,7 +602,7 @@
     width: min(100%, 22rem);
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 1rem 2rem rgb(28 26 24 / 0.12));
+    filter: drop-shadow(0 1rem 2rem rgb(0 0 0 / 0.4));
   }
 
   /* —— Productos —— */
@@ -644,13 +644,13 @@
     margin-inline: auto;
     margin-block-end: 1.5rem;
     object-fit: contain;
-    filter: drop-shadow(0 0.75rem 1.5rem rgb(28 26 24 / 0.1));
+    filter: drop-shadow(0 0.75rem 1.5rem rgb(0 0 0 / 0.35));
     transition: transform 0.4s var(--ease-out-expo), filter 0.4s;
   }
 
   .ghost-product:hover .ghost-product__img {
     transform: translateY(-6px) scale(1.03);
-    filter: drop-shadow(0 1rem 2rem rgb(28 26 24 / 0.16));
+    filter: drop-shadow(0 1rem 2rem rgb(0 0 0 / 0.5));
   }
 
   .ghost-product__name {

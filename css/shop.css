@@ -92,7 +92,7 @@
 
 .ghost-shop-pillar:hover {
   transform: translateY(-3px);
-  box-shadow: 0 1.25rem 2.5rem -1rem rgb(28 26 24 / 0.12);
+  box-shadow: 0 1.25rem 2.5rem -1rem rgb(0 0 0 / 0.55);
 }
 
 .ghost-shop-pillar__icon {
@@ -151,7 +151,7 @@
 
 .ghost-shop-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 1.5rem 3rem -1rem rgb(28 26 24 / 0.14);
+  box-shadow: 0 1.5rem 3rem -1rem rgb(0 0 0 / 0.6);
 }
 
 .ghost-shop-card--featured {
