@@ -453,7 +453,7 @@
   }
 
   .admin-index-list__link:hover {
-    background: #f7f2eb;
+    background: color-mix(in srgb, var(--admin-ink) 6%, var(--admin-surface));
   }
 
   .admin-index-list__name {
