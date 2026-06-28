@@ -1,13 +1,13 @@
 /**
- * @file Slider de productos — Ghost Specialty Coffee
+ * @file Slider de marca — mensajes y esencia Ghost
  * @module slider
  */
 
 import { $, $$ } from './utils.js';
 
-const AUTOPLAY_MS = 4500;
+const AUTOPLAY_MS = 5500;
 
-export class ProductSlider {
+export class BrandSlider {
   /** @param {string} rootSelector */
   init(rootSelector) {
     const root = $(rootSelector);
@@ -17,6 +17,7 @@ export class ProductSlider {
     const slides = $$('.ghost-slider__slide', root);
     if (!track || slides.length === 0) return;
 
+    const viewport = $('.ghost-slider__viewport', root);
     const dots = $$('.ghost-slider__dot', root);
     const prev = $('.ghost-slider__prev', root);
     const next = $('.ghost-slider__next', root);
@@ -26,6 +27,13 @@ export class ProductSlider {
     let index = 0;
     /** @type {ReturnType<typeof setInterval> | null} */
     let timer = null;
+
+    const restartProgress = () => {
+      if (!viewport) return;
+      viewport.classList.remove('is-animating');
+      void viewport.offsetWidth;
+      viewport.classList.add('is-animating');
+    };
 
     const go = (i) => {
       index = (i + slides.length) % slides.length;
@@ -38,7 +46,9 @@ export class ProductSlider {
         const active = j === index;
         slide.toggleAttribute('hidden', !active);
         slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+        slide.classList.toggle('is-active', active);
       }
+      restartProgress();
     };
 
     const stopTimer = () => {
@@ -88,3 +98,6 @@ export class ProductSlider {
     startTimer();
   }
 }
+
+/** @deprecated Usar BrandSlider */
+export const ProductSlider = BrandSlider;

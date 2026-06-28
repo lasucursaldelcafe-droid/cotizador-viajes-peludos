@@ -1,0 +1,44 @@
+{
+  "slides": [
+    {
+      "id": "essence",
+      "kicker": "Del origen al ritual",
+      "title": "Especialidad",
+      "titleLine2": "y elegancia",
+      "essence": "Un refugio de café de especialidad en Cali: madera, concreto y luz cálida que abraza cada extracción.",
+      "tint": "amber"
+    },
+    {
+      "id": "concept",
+      "kicker": "Nuestra tienda",
+      "title": "Industrial",
+      "titleLine2": "cálida",
+      "essence": "Luz ámbar, barra abierta y materiales honestos. El café es el espectáculo — intimidad con presencia.",
+      "tint": "red"
+    },
+    {
+      "id": "origin",
+      "kicker": "Colombia · Microlotes",
+      "title": "Origen",
+      "titleLine2": "verificable",
+      "essence": "Cada lote tiene territorio, productor y trazabilidad. Si no podemos contarlo, no lo tostamos.",
+      "tint": "blue"
+    },
+    {
+      "id": "process",
+      "kicker": "Barra abierta",
+      "title": "El proceso",
+      "titleLine2": "es el producto",
+      "essence": "Métodos visibles, tostión artesanal y desgasificación de 48–72 h. Especialidad sin atajos.",
+      "tint": "lime"
+    },
+    {
+      "id": "quality",
+      "kicker": "SCA 85+",
+      "title": "Calidad",
+      "titleLine2": "con propósito",
+      "essence": "Puntaje mínimo 85 puntos. Elegancia que no necesita gritar — solo honrar el grano.",
+      "tint": "amber"
+    }
+  ]
+}

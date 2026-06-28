@@ -33,7 +33,7 @@ class GhostApp {
     }
     if (page === 'home') {
       const { GhostHome } = await import('./home.js');
-      new GhostHome().init();
+      await new GhostHome().init();
       void new GhostProducts('#ghostProductsHome').init();
     }
   }

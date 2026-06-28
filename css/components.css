@@ -109,6 +109,33 @@
     transform-origin: inline-start;
   }
 
+  .ghost-nav__admin-item {
+    margin-inline-start: 0.35rem;
+  }
+
+  .ghost-nav__admin {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.75rem !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--surface) !important;
+    background: color-mix(in srgb, var(--ink) 88%, transparent);
+    border-radius: 0.35rem;
+    border: 1px solid color-mix(in srgb, var(--ghost-amber) 35%, transparent);
+  }
+
+  .ghost-nav__admin::after {
+    display: none !important;
+  }
+
+  .ghost-nav__admin:hover {
+    background: var(--ink) !important;
+    color: var(--ghost-amber) !important;
+  }
+
   .ghost-nav__toggle {
     display: none;
     background: transparent;
@@ -1053,6 +1080,18 @@
     .ghost-nav__menu a {
       padding-block: 0.75rem;
       border-block-end: var(--border-subtle);
+    }
+
+    .ghost-nav__admin-item {
+      margin-inline-start: 0;
+      margin-block-start: 0.5rem;
+      padding-block-start: 0.75rem;
+      border-top: var(--border-subtle);
+    }
+
+    .ghost-nav__admin {
+      justify-content: center;
+      width: 100%;
     }
 
     .ghost-hero__stage {

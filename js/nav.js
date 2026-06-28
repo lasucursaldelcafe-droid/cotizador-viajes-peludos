@@ -3,6 +3,7 @@
  * @module nav
  */
 
+import { NAV_ADMIN, NAV_LINKS } from './config.js';
 import { debounce, $, $$ } from './utils.js';
 
 export class GhostNavigation {
@@ -28,6 +29,7 @@ export class GhostNavigation {
 
     if (!this.#nav) return;
 
+    this.#renderMenu();
     this.#toggle?.addEventListener('click', () => this.#toggleMenu());
     $$('.ghost-nav__menu a', this.#menu ?? document).forEach((link) => {
       link.addEventListener('click', () => this.#closeMenu());
@@ -44,6 +46,24 @@ export class GhostNavigation {
 
     globalThis.addEventListener('scroll', this.#onScroll, { passive: true });
     this.#onScroll();
+  }
+
+  #renderMenu() {
+    if (!this.#menu) return;
+
+    const page = document.body.dataset.page ?? '';
+    const links = NAV_LINKS.map((link) => {
+      const isCurrent =
+        (page === 'home' && link.id === 'home') ||
+        (page && page !== 'home' && link.id === page);
+      return `<li><a href="${link.href}"${isCurrent ? ' aria-current="page"' : ''}>${link.label}</a></li>`;
+    });
+
+    links.push(
+      `<li class="ghost-nav__admin-item"><a class="ghost-nav__admin" href="${NAV_ADMIN.href}">${NAV_ADMIN.label}</a></li>`
+    );
+
+    this.#menu.innerHTML = links.join('');
   }
 
   #toggleMenu() {

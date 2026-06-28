@@ -41,73 +41,40 @@
     </a>
     <button type="button" class="ghost-nav__toggle" id="ghostNavToggle" aria-expanded="false" aria-controls="ghostNavMenu">Menú</button>
     <nav aria-label="Principal">
-      <ul class="ghost-nav__menu" id="ghostNavMenu">
-        <li><a href="index.html" aria-current="page">Inicio</a></li>
-        <li><a href="tienda.html">Tienda</a></li>
-        <li><a href="menu.html">Menú</a></li>
-        <li><a href="origen.html">Origen</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
+      <ul class="ghost-nav__menu" id="ghostNavMenu"></ul>
     </nav>
   </header>
 
   <main id="contenido">
-    <section class="ghost-hero" aria-labelledby="hero-title">
+    <section class="ghost-hero ghost-hero--brand" aria-labelledby="hero-title">
       <div class="ghost-hero__bg" aria-hidden="true">
         <div class="ghost-hero__orb ghost-hero__orb--1"></div>
         <div class="ghost-hero__orb ghost-hero__orb--2"></div>
       </div>
 
-      <div class="ghost-hero__layout">
-        <div class="ghost-hero__signature reveal">
-          <img class="ghost-hero__sig-mark" src="assets/images/brand/logo-mark.png" alt="" width="72" height="72" decoding="async" fetchpriority="high">
-          <p class="ghost-hero__sig-sub">Specialty Coffee · Cali</p>
+      <div class="ghost-brand-hero">
+        <div class="ghost-brand-hero__top reveal">
+          <img class="ghost-brand-hero__mark" src="assets/images/brand/logo-mark.png" alt="" width="56" height="56" decoding="async" fetchpriority="high">
+          <p class="ghost-brand-hero__sig">Ghost <span>Specialty Coffee · Cali</span></p>
         </div>
 
-        <div class="ghost-slider ghost-slider--hero ghost-slider--autoplay reveal" id="ghostHeroSlider" role="region" aria-roledescription="Carrusel" aria-label="Productos Ghost" aria-live="polite">
-          <div class="ghost-slider__viewport">
-            <div class="ghost-slider__track">
-              <figure class="ghost-slider__slide">
-                <img src="assets/images/brand/product-bag-papayo.png" alt="Bolsa Ghost Papayo Special Edition 250 g" width="794" height="1163" decoding="async" fetchpriority="high">
-                <figcaption class="ghost-slider__caption">Papayo · Special Edition</figcaption>
-              </figure>
-              <figure class="ghost-slider__slide" hidden>
-                <img src="assets/images/brand/product-cup-hot.png" alt="Vaso take away Ghost Specialty Coffee" width="418" height="590" loading="lazy" decoding="async">
-                <figcaption class="ghost-slider__caption">Take away · Ritual en movimiento</figcaption>
-              </figure>
-            </div>
+        <h1 class="visually-hidden" id="hero-title">Ghost Specialty Coffee — Especialidad y elegancia</h1>
+
+        <div class="ghost-slider ghost-slider--brand ghost-slider--hero ghost-slider--autoplay reveal" id="ghostHeroSlider" role="region" aria-roledescription="Carrusel" aria-label="Esencia de marca Ghost" aria-live="polite">
+          <div class="ghost-slider__viewport is-animating">
+            <div class="ghost-slider__track" id="ghostBrandTrack"></div>
           </div>
           <div class="ghost-slider__controls">
-            <button type="button" class="ghost-slider__btn ghost-slider__prev" aria-label="Producto anterior">‹</button>
-            <div class="ghost-slider__dots" role="tablist" aria-label="Seleccionar producto">
-              <button type="button" class="ghost-slider__dot is-active" aria-label="Slide 1" aria-selected="true"></button>
-              <button type="button" class="ghost-slider__dot" aria-label="Slide 2" aria-selected="false"></button>
-            </div>
-            <button type="button" class="ghost-slider__btn ghost-slider__next" aria-label="Producto siguiente">›</button>
+            <button type="button" class="ghost-slider__btn ghost-slider__prev" aria-label="Mensaje anterior">‹</button>
+            <div class="ghost-slider__dots" id="ghostBrandDots" role="tablist" aria-label="Seleccionar mensaje"></div>
+            <button type="button" class="ghost-slider__btn ghost-slider__next" aria-label="Mensaje siguiente">›</button>
           </div>
         </div>
 
-        <div class="ghost-hero__content">
-          <p class="ghost-kicker">Del origen al ritual.</p>
-          <h1 class="ghost-hero__title" id="hero-title">
-            <span class="ghost-hero__outline">ESPECIALIDAD</span>
-            Y ELEGANCIA
-          </h1>
-          <p class="ghost-hero__lead">
-            Nuestra tienda es un refugio de café de especialidad en Cali: madera, concreto y luz cálida
-            que abraza cada extracción. Microlotes colombianos SCA 85+, curados de distintos territorios
-            y una barra donde el ritual se ve — y se siente.
-          </p>
-          <div class="ghost-hero__cta">
-            <a class="btn btn--spectral" href="tienda.html">Ver productos</a>
-            <a class="btn btn--ghost" href="menu.html">Ver menú</a>
-          </div>
-          <div class="ghost-hero__meta">
-            <span>Tienda de especialidad · Cali</span>
-            <span aria-hidden="true">·</span>
-            <span>Industrial cálida</span>
-          </div>
+        <div class="ghost-brand-hero__cta reveal">
+          <a class="btn btn--spectral" href="nosotros.html">Conoce Ghost</a>
+          <a class="btn btn--ghost" href="menu.html">Menú coffee shop</a>
+          <a class="btn btn--ghost" href="tienda.html">Tienda</a>
         </div>
       </div>
     </section>
@@ -278,13 +245,13 @@
       <p class="ghost-footer__brand">Ghost</p>
       <nav aria-label="Pie de página">
         <ul class="ghost-footer__links">
-          <li><a href="tienda.html">Tienda</a></li>
-          <li><a href="menu.html">Menú</a></li>
-          <li><a href="origen.html">Origen</a></li>
           <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="origen.html">Origen</a></li>
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="tienda.html">Tienda</a></li>
           <li><a href="contacto.html">Contacto</a></li>
           <li><a href="https://www.instagram.com/ghost_specialty_coffee/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-          <li><a href="admin.html">Administración</a></li>
+          <li><a href="admin.html" class="ghost-footer__admin">Admin</a></li>
         </ul>
       </nav>
       <p class="ghost-footer__copy">Ghost Specialty Coffee · Del origen al ritual.</p>

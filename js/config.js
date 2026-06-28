@@ -38,15 +38,22 @@ export const BRAND = Object.freeze({
   basePath: detectBasePath(),
 });
 
-/** @type {readonly string[]} */
+/** @type {readonly { href: string; label: string; id: string }[]} */
 export const NAV_LINKS = Object.freeze([
   { href: 'index.html', label: 'Inicio', id: 'home' },
-  { href: 'tienda.html', label: 'Tienda', id: 'tienda' },
-  { href: 'menu.html', label: 'Menú', id: 'menu' },
-  { href: 'origen.html', label: 'Origen', id: 'origen' },
   { href: 'nosotros.html', label: 'Nosotros', id: 'nosotros' },
+  { href: 'origen.html', label: 'Origen', id: 'origen' },
+  { href: 'menu.html', label: 'Menú', id: 'menu' },
+  { href: 'tienda.html', label: 'Tienda', id: 'tienda' },
   { href: 'contacto.html', label: 'Contacto', id: 'contacto' },
 ]);
+
+/** Enlace al panel de administración (menú principal) */
+export const NAV_ADMIN = Object.freeze({
+  href: 'admin.html',
+  label: 'Admin',
+  id: 'admin',
+});
 
 /**
  * Detecta subpath de GitHub Pages
