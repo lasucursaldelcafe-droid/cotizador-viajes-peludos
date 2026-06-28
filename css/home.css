@@ -4,46 +4,167 @@
   /* —— Hero banner —— */
   .ghost-hero--immersive {
     position: relative;
-    min-height: min(44dvh, 20rem);
+    min-height: min(28dvh, 12.5rem);
     padding: 0;
     display: block;
     overflow: hidden;
   }
 
-  .ghost-hero--immersive > .ghost-hero__bg {
-    display: none;
+  /* Nav integrado al hero: sin barra, sin botones */
+  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) {
+    background: transparent !important;
+    border-block-end: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .ghost-hero--immersive .ghost-nav--immersive {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline: 0;
+    z-index: 20;
+    height: var(--nav-h-immersive);
+    padding-inline: var(--gutter);
+    background: transparent;
+    border-block-end: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    transition:
+      background 0.35s ease,
+      box-shadow 0.35s ease,
+      backdrop-filter 0.35s ease;
+  }
+
+  .ghost-hero--immersive .ghost-nav--immersive.is-scrolled {
+    position: fixed;
+    inset-block-start: 0;
+    height: var(--nav-h);
+    background: color-mix(in srgb, var(--surface-raised) 94%, transparent);
+    backdrop-filter: blur(12px);
+    border-block-end: var(--border-subtle);
+    box-shadow: 0 1px 0 rgb(28 26 24 / 0.04);
+  }
+
+  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__name,
+  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__sub {
+    text-shadow: 0 0 18px rgb(255 255 255 / 0.9);
+  }
+
+  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__menu a {
+    color: color-mix(in srgb, var(--ink) 72%, transparent);
+    text-shadow: 0 0 14px rgb(255 255 255 / 0.85);
+  }
+
+  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__menu a:hover,
+  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__menu a[aria-current="page"] {
+    color: var(--ink);
+  }
+
+  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__menu a::after {
+    height: 1px;
+    inset-block-end: -2px;
+    background: color-mix(in srgb, var(--ghost-amber) 70%, transparent);
+  }
+
+  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__admin {
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0;
+    color: color-mix(in srgb, var(--ink) 55%, transparent) !important;
+    font-weight: 600 !important;
+    text-shadow: 0 0 14px rgb(255 255 255 / 0.85);
+  }
+
+  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__admin:hover {
+    color: var(--ink) !important;
+    background: transparent !important;
+  }
+
+  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__toggle {
+    border: none;
+    background: transparent;
+    color: color-mix(in srgb, var(--ink) 70%, transparent);
+    padding: 0.25rem 0;
+    text-shadow: 0 0 14px rgb(255 255 255 / 0.85);
+  }
+
+  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__mark {
+    filter: drop-shadow(0 0 10px rgb(255 255 255 / 0.75));
   }
 
   .ghost-slider--immersive {
     position: relative;
     width: 100%;
     max-width: none;
-    min-height: min(44dvh, 20rem);
+    min-height: min(28dvh, 12.5rem);
     margin: 0;
   }
 
   .ghost-slider--immersive .ghost-slider__viewport {
-    min-height: min(44dvh, 20rem);
+    min-height: min(28dvh, 12.5rem);
     height: 100%;
     border: none;
     border-radius: 0;
     box-shadow: none;
-    background: var(--surface);
-  }
-
-  .ghost-slider--immersive .ghost-slider__track {
-    min-height: min(44dvh, 20rem);
+    background:
+      linear-gradient(
+        180deg,
+        rgb(250 248 244 / 0.55) 0%,
+        rgb(250 248 244 / 0.78) 42%,
+        rgb(250 248 244 / 0.92) 100%
+      ),
+      url("../assets/images/brand/tienda-real.jpg") center 32% / cover no-repeat;
   }
 
   .ghost-slider--immersive .ghost-slider__slide--brand {
-    min-height: min(44dvh, 20rem);
+    background: transparent;
+  }
+
+  .ghost-slider--immersive .ghost-slider__slide--amber .ghost-slider__glow:not(.ghost-slider__glow--secondary),
+  .ghost-slider--immersive .ghost-slider__slide--red .ghost-slider__glow:not(.ghost-slider__glow--secondary),
+  .ghost-slider--immersive .ghost-slider__slide--blue .ghost-slider__glow:not(.ghost-slider__glow--secondary),
+  .ghost-slider--immersive .ghost-slider__slide--lime .ghost-slider__glow:not(.ghost-slider__glow--secondary) {
+    inset-block-start: -42%;
+    opacity: 0.38;
+  }
+
+  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__menu {
+    gap: clamp(0.65rem, 2vw, 1.35rem);
+  }
+
+  .ghost-hero--immersive .ghost-nav--immersive:not(.is-scrolled) .ghost-nav__menu a {
+    font-size: 0.6rem;
+  }
+
+  body[data-page="home"] .ghost-marquee {
+    border-block-start: none;
+    padding-block: 0.3rem;
+    background: color-mix(in srgb, var(--surface-muted) 80%, transparent);
+  }
+
+  body[data-page="home"] .ghost-marquee__track span {
+    font-size: 0.62rem;
+    padding-inline: 0.85rem;
+  }
+
+  .ghost-hero--immersive > .ghost-hero__bg {
+    display: none;
+  }
+
+  .ghost-slider--immersive .ghost-slider__track {
+    min-height: min(28dvh, 12.5rem);
+  }
+
+  .ghost-slider--immersive .ghost-slider__slide--brand {
+    min-height: min(28dvh, 12.5rem);
     align-items: flex-end;
     justify-content: flex-start;
     text-align: start;
     padding:
-      calc(var(--nav-h) + 0.65rem)
+      calc(var(--nav-h-immersive) + 0.35rem)
       var(--gutter)
-      clamp(3.25rem, 7vw, 3.75rem);
+      clamp(2.5rem, 5vw, 2.85rem);
     background: var(--surface);
   }
 
@@ -54,7 +175,7 @@
     }
 
     .ghost-slider--immersive .ghost-slider__brand {
-      max-width: 22rem;
+      max-width: 18rem;
     }
   }
 
@@ -84,39 +205,39 @@
   }
 
   .ghost-slider--immersive .ghost-slider__headline-main {
-    font-size: clamp(1.35rem, 4vw, 1.9rem);
+    font-size: clamp(1.1rem, 3.2vw, 1.55rem);
   }
 
   .ghost-slider--immersive .ghost-slider__headline-sub {
-    font-size: clamp(1rem, 2.8vw, 1.35rem);
+    font-size: clamp(0.85rem, 2.2vw, 1.1rem);
   }
 
   .ghost-slider--immersive .ghost-slider__essence {
-    font-size: clamp(0.78rem, 1.4vw, 0.875rem);
-    max-width: 22rem;
+    font-size: clamp(0.72rem, 1.2vw, 0.8rem);
+    max-width: 18rem;
     color: var(--ink-soft);
     line-height: 1.55;
   }
 
   .ghost-slider--immersive .ghost-slider__kicker {
-    margin-bottom: 0.35rem;
-    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+    margin-bottom: 0.25rem;
+    font-size: clamp(0.68rem, 1.2vw, 0.75rem);
   }
 
   .ghost-slider--immersive .ghost-slider__headline {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
   }
 
-  /* Barra inferior: controles + CTAs alineados */
+  /* Barra inferior: controles discretos + enlaces texto */
   .ghost-hero__bar {
     position: absolute;
     z-index: 6;
     inset-inline: var(--gutter);
-    bottom: 0.65rem;
+    bottom: 0.45rem;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 0.5rem;
+    gap: 0.35rem;
   }
 
   @media (min-width: 40rem) {
@@ -148,16 +269,31 @@
   }
 
   .ghost-slider--immersive .ghost-slider__btn {
-    width: 1.5rem;
-    height: 1.5rem;
-    font-size: 0.95rem;
-    background: rgb(255 255 255 / 0.55);
-    backdrop-filter: blur(8px);
+    width: auto;
+    height: auto;
+    min-width: 0;
+    padding: 0 0.15rem;
+    font-size: 0.85rem;
+    line-height: 1;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    backdrop-filter: none;
+    color: color-mix(in srgb, var(--ink) 55%, transparent);
+  }
+
+  .ghost-slider--immersive .ghost-slider__btn:hover {
+    color: var(--ink);
+    background: transparent;
+  }
+
+  .ghost-slider--immersive .ghost-slider__dots {
+    gap: 0.3rem;
   }
 
   .ghost-slider--immersive .ghost-slider__dot {
-    width: 0.35rem;
-    height: 0.35rem;
+    width: 0.28rem;
+    height: 0.28rem;
     background: color-mix(in srgb, var(--ink) 20%, transparent);
   }
 
@@ -170,16 +306,30 @@
     position: static;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: flex-end;
-    gap: 0.4rem;
+    gap: 0.25rem;
     flex-shrink: 0;
   }
 
-  .ghost-hero__actions .btn--ghost {
-    background: rgb(255 255 255 / 0.6);
-    backdrop-filter: blur(8px);
-    border-color: color-mix(in srgb, var(--ink) 14%, transparent);
+  .ghost-hero__link {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--ink) 70%, transparent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .ghost-hero__link:hover {
     color: var(--ink);
+  }
+
+  .ghost-hero__link-sep {
+    font-size: 0.62rem;
+    color: color-mix(in srgb, var(--ink) 35%, transparent);
+    user-select: none;
   }
 
   /* —— Acciones de sección (botones alineados) —— */
@@ -200,7 +350,7 @@
 
   /* —— Proceso —— */
   .ghost-process {
-    padding-block: clamp(1.25rem, 3vw, 2rem);
+    padding-block: clamp(1rem, 2.5vw, 1.75rem);
     padding-inline: var(--gutter);
     background: var(--surface);
   }
@@ -222,7 +372,7 @@
   .ghost-process__title {
     margin: 0 0 0.4rem;
     font-family: var(--font-display);
-    font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+    font-size: clamp(1.05rem, 2.5vw, 1.3rem);
     line-height: 1;
     letter-spacing: 0.03em;
     text-transform: uppercase;
@@ -367,7 +517,7 @@
   /* —— Vista tienda (foto real) —— */
   .ghost-store-view {
     position: relative;
-    min-height: clamp(10rem, 28vw, 14rem);
+    min-height: clamp(9rem, 24vw, 12rem);
     display: grid;
     align-items: end;
     overflow: hidden;
@@ -501,7 +651,7 @@
 
   /* —— Historia —— */
   .ghost-story-band {
-    padding-block: clamp(1.25rem, 3vw, 2rem);
+    padding-block: clamp(1rem, 2.5vw, 1.75rem);
     padding-inline: var(--gutter);
     background: linear-gradient(135deg, var(--surface-warm) 0%, var(--surface) 100%);
   }
@@ -546,7 +696,7 @@
   }
 
   body[data-page="home"] .ghost-cta-band {
-    padding-block: clamp(1.25rem, 3vw, 2rem);
+    padding-block: clamp(1rem, 2.5vw, 1.75rem);
   }
 
   body[data-page="home"] .ghost-cta-band__title {

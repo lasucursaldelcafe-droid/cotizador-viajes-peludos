@@ -13,7 +13,7 @@
 
 /** @type {Readonly<Record<string, string>>} */
 export const IMAGES = Object.freeze({
-  logoMark: 'assets/images/brand/logo-mark.png',
+  logoMark: 'assets/images/brand/logo-mark-clear.png',
   logoHorizontal: 'assets/images/brand/logo-horizontal.png',
   logoRoundSign: 'assets/images/brand/logo-round-sign.png',
   heroIsland: 'assets/images/brand/hero-island.png',
