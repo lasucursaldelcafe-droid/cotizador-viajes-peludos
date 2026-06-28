@@ -24,6 +24,8 @@ export class BrandSlider {
     const prefersReduced = globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
     const finePointer = globalThis.matchMedia?.('(pointer: fine)').matches ?? true;
 
+    root.setAttribute('tabindex', '0');
+
     let index = 0;
     /** @type {ReturnType<typeof setInterval> | null} */
     let timer = null;
@@ -92,6 +94,18 @@ export class BrandSlider {
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) stopTimer();
       else startTimer();
+    });
+
+    root.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        go(index - 1);
+        resetTimer();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        go(index + 1);
+        resetTimer();
+      }
     });
 
     go(0);

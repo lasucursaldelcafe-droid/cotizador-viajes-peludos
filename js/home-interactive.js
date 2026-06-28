@@ -12,7 +12,8 @@ export function initParallaxVisual(selector) {
   if (!root || !img) return;
 
   const finePointer = globalThis.matchMedia?.('(pointer: fine)').matches ?? false;
-  if (!finePointer) return;
+  const reducedMotion = globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+  if (!finePointer || reducedMotion) return;
 
   let raf = 0;
 
@@ -42,14 +43,32 @@ export function initProcessHotspots() {
   const root = document.querySelector('#ghostProcessVisual');
   if (!root) return;
 
+  const closeAll = () => {
+    root.querySelectorAll('[data-panel]').forEach((p) => p.classList.remove('is-open'));
+    root.querySelectorAll('[data-hotspot]').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+  };
+
   root.querySelectorAll('[data-hotspot]').forEach((btn) => {
-    btn.addEventListener('click', () => {
+    btn.setAttribute('aria-expanded', 'false');
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const id = btn.getAttribute('data-hotspot');
       const panel = root.querySelector(`[data-panel="${id}"]`);
       if (!panel) return;
       const open = panel.classList.contains('is-open');
-      root.querySelectorAll('[data-panel]').forEach((p) => p.classList.remove('is-open'));
-      if (!open) panel.classList.add('is-open');
+      closeAll();
+      if (!open) {
+        panel.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!root.contains(/** @type {Node} */ (e.target))) closeAll();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAll();
   });
 }

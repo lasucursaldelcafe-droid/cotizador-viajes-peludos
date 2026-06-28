@@ -28,6 +28,7 @@ python tools/discover-tienda-foto.py
 |--------|-----|
 | `automatizar-tienda-foto.sh` | Sincroniza foto de tienda desde artefactos o incoming |
 | `sync-firebase-config.sh` | Regenera `js/firebase-config.js` desde `deploy.config.json` |
+| `smoke-test.sh` | Verifica páginas, JSON, CSS oscuro y módulos JS (`bash tools/smoke-test.sh [url]`) |
 | `crear-repo-ghost.sh` | Crea repo dedicado `ghost_coffee_shop` (opcional) |
 
 ## Configuración central

@@ -111,7 +111,7 @@
       calc(var(--nav-h-immersive) + 0.5rem)
       var(--gutter)
       clamp(3rem, 6vw, 3.5rem);
-    background: transparent;
+    background: var(--surface);
   }
 
   @media (min-width: 48rem) {
@@ -127,7 +127,7 @@
 
   .ghost-slider--immersive .ghost-slider__glow {
     filter: blur(2.5rem);
-    opacity: 0.45;
+    opacity: 0.28;
   }
 
   .ghost-slider--immersive .ghost-slider__slide--amber .ghost-slider__glow:not(.ghost-slider__glow--secondary),
@@ -135,7 +135,7 @@
   .ghost-slider--immersive .ghost-slider__slide--blue .ghost-slider__glow:not(.ghost-slider__glow--secondary),
   .ghost-slider--immersive .ghost-slider__slide--lime .ghost-slider__glow:not(.ghost-slider__glow--secondary) {
     inset-block-start: -35%;
-    opacity: 0.42;
+    opacity: 0.26;
   }
 
   .ghost-slider--immersive .ghost-slider__slide--amber .ghost-slider__glow:not(.ghost-slider__glow--secondary) {
@@ -511,7 +511,7 @@
     z-index: 2;
     width: min(100% - var(--gutter) * 2, var(--content-max));
     margin: 0 auto clamp(0.9rem, 2.5vw, 1.25rem);
-    color: #f5f0e8;
+    color: var(--on-hero);
     max-width: 28rem;
   }
 

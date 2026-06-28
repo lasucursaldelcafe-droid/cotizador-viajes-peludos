@@ -66,15 +66,18 @@ export class GhostNavigation {
     this.#menu.innerHTML = links.join('');
   }
 
+  #setMenuOpen(open) {
+    this.#open = open;
+    this.#menu?.classList.toggle('is-open', open);
+    this.#toggle?.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('nav-open', open);
+  }
+
   #toggleMenu() {
-    this.#open = !this.#open;
-    this.#menu?.classList.toggle('is-open', this.#open);
-    this.#toggle?.setAttribute('aria-expanded', String(this.#open));
+    this.#setMenuOpen(!this.#open);
   }
 
   #closeMenu() {
-    this.#open = false;
-    this.#menu?.classList.remove('is-open');
-    this.#toggle?.setAttribute('aria-expanded', 'false');
+    this.#setMenuOpen(false);
   }
 }

@@ -22,8 +22,8 @@ export function formatCop(value) {
  * @returns {string}
  */
 export function escapeHtml(str) {
-  const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' };
-  return String(str ?? '').replace(/[&<>"]/g, (ch) => map[ch] ?? ch);
+  const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+  return String(str ?? '').replace(/[&<>"']/g, (ch) => map[ch] ?? ch);
 }
 
 /**

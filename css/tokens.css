@@ -31,9 +31,10 @@
     --surface-warm: #12100e;
     --ink: #ece8e0;
     --ink-muted: #9c948a;
-    --ink-soft: #6e6760;
+    --ink-soft: #8a8278;
     --on-brand: #080808;
     --on-accent: #f5f0e8;
+    --on-hero: #f5f0e8;
 
     /* Alias semánticos */
     --void: var(--surface);

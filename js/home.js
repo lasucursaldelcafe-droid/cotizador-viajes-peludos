@@ -23,6 +23,9 @@ export class GhostHome {
     const dotsRoot = document.querySelector('#ghostBrandDots');
     if (!track || !dotsRoot) return;
 
+    track.setAttribute('aria-busy', 'true');
+    dotsRoot.setAttribute('aria-busy', 'true');
+
     try {
       const res = await fetch('content/brand-slides.json');
       if (!res.ok) throw new Error('brand-slides.json');
@@ -60,6 +63,9 @@ export class GhostHome {
           </div>
         </article>`;
       dotsRoot.innerHTML = '<button type="button" class="ghost-slider__dot is-active" aria-label="Mensaje 1" aria-selected="true"></button>';
+    } finally {
+      track.removeAttribute('aria-busy');
+      dotsRoot.removeAttribute('aria-busy');
     }
   }
 }

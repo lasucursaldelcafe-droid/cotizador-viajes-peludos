@@ -8,7 +8,7 @@ import { GhostMenu } from './menu.js';
 import { GhostNavigation } from './nav.js';
 import { GhostProducts } from './products.js';
 import { ScrollReveal } from './reveal.js';
-import { $, $$ } from './utils.js';
+import { $$ } from './utils.js';
 
 class GhostApp {
   init() {
@@ -19,7 +19,6 @@ class GhostApp {
     void this.#initPage(page);
 
     this.#wireWhatsApp();
-    this.#markCurrentPage();
     this.#logBrand();
   }
 
@@ -46,15 +45,6 @@ class GhostApp {
       link.setAttribute('target', '_blank');
       link.setAttribute('rel', 'noopener noreferrer');
     }
-  }
-
-  /** Marca página activa según data-page del body */
-  #markCurrentPage() {
-    const page = document.body.dataset.page;
-    if (!page) return;
-
-    const active = $(`.ghost-nav__menu a[href*="${page === 'home' ? 'index' : page}"]`);
-    active?.setAttribute('aria-current', 'page');
   }
 
   #logBrand() {

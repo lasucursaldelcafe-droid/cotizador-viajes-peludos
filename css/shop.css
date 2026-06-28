@@ -389,7 +389,7 @@
   padding: 1.5rem;
   background: linear-gradient(145deg, #1a1010 0%, #2a1818 55%, #1e1a14 100%);
   border-radius: var(--radius-lg);
-  color: #f5f0e8;
+  color: var(--on-hero);
 }
 
 .ghost-shop-instagram__handle {
@@ -401,7 +401,7 @@
 }
 
 .ghost-shop-instagram__handle a {
-  color: #ffb347;
+  color: var(--ghost-yellow);
   text-decoration: none;
 }
 

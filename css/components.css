@@ -53,6 +53,7 @@
     display: block;
     flex-shrink: 0;
     object-fit: contain;
+    filter: none;
     border-radius: 0;
     box-shadow: none;
     transition: transform 0.3s var(--ease-out-expo), opacity 0.3s;
@@ -1079,7 +1080,8 @@
       flex-direction: column;
       align-items: stretch;
       padding: 1.5rem;
-      background: color-mix(in srgb, var(--surface-raised) 98%, transparent);
+      background: color-mix(in srgb, var(--surface-raised) 96%, transparent);
+      backdrop-filter: blur(16px);
       border-block-end: var(--border-subtle);
       box-shadow: var(--shadow-soft);
       transform: translateY(-120%);

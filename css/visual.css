@@ -489,7 +489,7 @@
 
   .ghost-slider--brand .ghost-slider__btn {
     background: var(--surface-raised);
-    border-color: var(--admin-border, #d8d0c6);
+    border: var(--border-subtle);
   }
 
   .ghost-slider--brand .ghost-slider__dot {

@@ -1,4 +1,8 @@
 @layer base {
+  body.nav-open {
+    overflow: hidden;
+  }
+
   @font-face {
     font-family: "Satoshi";
     src: url("../assets/fonts/Satoshi-Regular.woff2") format("woff2");
@@ -36,6 +40,8 @@
   html {
     scroll-behavior: smooth;
     hanging-punctuation: first last;
+    color-scheme: dark;
+    background-color: var(--ghost-black, #080808);
   }
 
   body {

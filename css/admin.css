@@ -326,8 +326,8 @@
 
   .admin-btn--danger {
     background: transparent;
-    color: #8b1515;
-    border-color: #d4a0a0;
+    color: color-mix(in srgb, var(--ghost-red) 75%, var(--on-accent));
+    border-color: color-mix(in srgb, var(--ghost-red) 35%, transparent);
   }
 
   .admin-btn--danger:hover {
@@ -347,7 +347,7 @@
     border: 1px solid var(--admin-border);
     border-radius: 0.85rem;
     padding: 1.25rem;
-    box-shadow: 0 2px 8px rgb(28 26 24 / 0.04);
+    box-shadow: 0 2px 12px rgb(0 0 0 / 0.35);
   }
 
   .admin-card--wide { padding: 1.5rem; max-width: none; }
@@ -430,7 +430,7 @@
     border: 1px solid var(--admin-border);
     border-radius: 0.85rem;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgb(28 26 24 / 0.04);
+    box-shadow: 0 2px 12px rgb(0 0 0 / 0.35);
   }
 
   .admin-index-list__item {
@@ -510,7 +510,7 @@
     border: 1px solid var(--admin-border);
     border-radius: 0.85rem;
     padding: 1.5rem;
-    box-shadow: 0 2px 8px rgb(28 26 24 / 0.04);
+    box-shadow: 0 2px 12px rgb(0 0 0 / 0.35);
   }
 
   .admin-form--card { max-width: 36rem; }
