@@ -331,7 +331,7 @@
   }
 
   .admin-btn--danger:hover {
-    background: #fdf5f5;
+    background: color-mix(in srgb, var(--ghost-red) 12%, var(--admin-surface));
   }
 
   /* —— Cards resumen —— */
