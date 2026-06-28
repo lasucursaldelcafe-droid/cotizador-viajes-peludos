@@ -18,8 +18,8 @@
     "city": "Cali, Colombia",
     "hours": "Lunes a sábado 7:00am – 8:00pm · Domingos 9:00am – 6:00pm",
     "social": {
-      "instagram": "https://www.instagram.com/Ghost.coffee.lab/",
-      "instagramHandle": "@Ghost.coffee.lab",
+      "instagram": "https://www.instagram.com/ghost_specialty_coffee/",
+      "instagramHandle": "@ghost_specialty_coffee",
       "facebook": ""
     },
     "purpose": "Conectar el origen con el consumidor final. Cada café lleva nombre: un lote, un proceso, un productor.",
@@ -104,6 +104,30 @@
   ],
   "products": [
     {
+      "id": "ghost-valle-castillo",
+      "name": "Ghost · Regional Valle",
+      "variety": "Castillo",
+      "origin": "Valle del Cauca",
+      "region": "Valle del Cauca",
+      "price": 0,
+      "weight": "5 Lb",
+      "roast": "Tostión media · Selección electrónica",
+      "notes": ["Grano entero", "Mayorista"],
+      "featured": true
+    },
+    {
+      "id": "ghost-valle-caturra",
+      "name": "Ghost · Regional Valle",
+      "variety": "Caturra",
+      "origin": "Valle del Cauca",
+      "region": "Valle del Cauca",
+      "price": 0,
+      "weight": "5 Lb",
+      "roast": "Tostión media · Selección electrónica",
+      "notes": ["Grano entero", "Mayorista"],
+      "featured": true
+    },
+    {
       "id": "ghost-papayo",
       "name": "Ghost · Papayo",
       "variety": "Papayo",
@@ -115,7 +139,7 @@
       "weight": "250 g",
       "roast": "Semi-lavado · Tostión media",
       "notes": ["Mango", "Nuez", "Dulce"],
-      "featured": true
+      "featured": false
     },
     {
       "id": "ghost-gesha",
@@ -127,18 +151,6 @@
       "weight": "250 g",
       "roast": "Tostión clara",
       "notes": ["Floral", "Bergamota", "Té"],
-      "featured": true
-    },
-    {
-      "id": "ghost-bourbon",
-      "name": "Ghost · Bourbon",
-      "variety": "Bourbon",
-      "origin": "Microlote Cauca",
-      "region": "Cauca",
-      "price": 48000,
-      "weight": "250 g",
-      "roast": "Tostión media-clara",
-      "notes": ["Caramelo", "Cítrico", "Cacao"],
       "featured": false
     }
   ],

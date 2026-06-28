@@ -1,0 +1,50 @@
+{
+  "handle": "ghost_specialty_coffee",
+  "url": "https://www.instagram.com/ghost_specialty_coffee/",
+  "displayHandle": "@ghost_specialty_coffee",
+  "bioSummary": "Café en grano regional del Valle — Castillo y Caturra. Paquete 5 Lb, selección electrónica y tostión media.",
+  "siteReturnUrl": "tienda.html#desde-instagram",
+  "guide": [
+    {
+      "step": 1,
+      "title": "Descubre los lotes en Instagram",
+      "text": "En @ghost_specialty_coffee publicamos microlotes, lanzamientos (como ExpoCafé) y el catálogo en grano: regional Valle, Castillo y Caturra en paquete 5 Lb con tostión media y selección electrónica."
+    },
+    {
+      "step": 2,
+      "title": "Vuelve a la web desde la bio",
+      "text": "Desde cualquier publicación, toca el nombre del perfil arriba. En la bio verás el enlace a esta tienda — es la forma oficial de pasar de Instagram al catálogo completo con precios y pedidos."
+    },
+    {
+      "step": 3,
+      "title": "Elige y pide",
+      "text": "En esta página encuentras el mismo café con ficha completa. Pulsa Pedir para WhatsApp o escríbenos por DM en Instagram citando el nombre del lote que viste en el post."
+    },
+    {
+      "step": 4,
+      "title": "Guarda el acceso",
+      "text": "Añade esta tienda a favoritos o usa siempre el enlace de la bio. Así vuelves al sitio sin buscar de nuevo."
+    }
+  ],
+  "postThemes": [
+    {
+      "id": "grano-5lb",
+      "title": "Grano 5 Lb · Regional Valle",
+      "description": "Castillo y Caturra colombiano, selección electrónica, tostión media. Formato mayorista para barra y distribución.",
+      "varieties": ["Castillo", "Caturra"],
+      "weight": "5 Lb"
+    },
+    {
+      "id": "eventos",
+      "title": "Eventos y lanzamientos",
+      "description": "Presencia en ferias como ExpoCafé y colaboraciones con aliados del ecosistema cafetero.",
+      "varieties": []
+    },
+    {
+      "id": "ritual",
+      "title": "Ritual y proceso",
+      "description": "Contenido del grano a la taza: preparación, barra y la experiencia Ghost.",
+      "varieties": []
+    }
+  ]
+}

@@ -23,6 +23,7 @@ function resolveImage(product) {
   if (key.includes('papayo')) return DEFAULT_IMAGES.papayo;
   if (key.includes('gesha')) return DEFAULT_IMAGES.gesha;
   if (key.includes('bourbon')) return DEFAULT_IMAGES.bourbon;
+  if (key.includes('castillo') || key.includes('caturra') || key.includes('valle')) return DEFAULT_IMAGES.papayo;
   return DEFAULT_IMAGES.default;
 }
 
@@ -76,9 +77,17 @@ export class GhostProducts {
   }
 
   /** @param {import('./data/store.js').RetailProduct} p */
+  #priceLabel(p) {
+    if (!p.price || p.price <= 0) return 'Consultar precio';
+    return `${formatCop(p.price)} <small>/ ${escapeHtml(p.weight)}</small>`;
+  }
+
+  /** @param {import('./data/store.js').RetailProduct} p */
   #renderShopCard(p) {
     const img = resolveImage(p);
-    const msg = `Hola Ghost, quiero pedir ${p.name} (${p.weight}).`;
+    const msg = p.price && p.price > 0
+      ? `Hola Ghost, quiero pedir ${p.name} ${p.variety} (${p.weight}).`
+      : `Hola Ghost, vi ${p.name} ${p.variety} (${p.weight}) en Instagram y quiero cotizar.`;
     const notes = p.notes?.length
       ? `<ul class="ghost-shop-card__notes">${p.notes.map((n) => `<li class="ghost-shop-card__tag">${escapeHtml(n)}</li>`).join('')}</ul>`
       : '';
@@ -95,7 +104,7 @@ export class GhostProducts {
           <p class="ghost-shop-card__meta">${escapeHtml(p.variety)} · ${escapeHtml(p.roast || '')}</p>
           ${notes}
           <div class="ghost-shop-card__footer">
-            <p class="ghost-shop-card__price">${escapeHtml(formatCop(p.price))} <small>/ ${escapeHtml(p.weight)}</small></p>
+            <p class="ghost-shop-card__price">${this.#priceLabel(p)}</p>
             <a class="ghost-shop-card__buy" href="${escapeHtml(whatsappUrl(msg))}" target="_blank" rel="noopener noreferrer">Pedir</a>
           </div>
         </div>
@@ -119,7 +128,7 @@ export class GhostProducts {
         <h3 class="ghost-product__name">${escapeHtml(p.name)}</h3>
         <p class="ghost-product__meta">${escapeHtml(p.region)} · ${escapeHtml(p.roast || p.variety)}</p>
         ${notes}
-        <p class="ghost-product__price">${escapeHtml(formatCop(p.price))} <small>/ ${escapeHtml(p.weight)}</small></p>
+        <p class="ghost-shop-card__price">${this.#priceLabel(p)}</p>
       </article>`;
   }
 }

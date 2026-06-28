@@ -29,9 +29,12 @@ export const BRAND = Object.freeze({
   fullName: 'Ghost Specialty Coffee',
   whatsapp: '573025159900',
   email: 'hola@ghostspecialtycoffee.co',
-  instagram: 'https://www.instagram.com/Ghost.coffee.lab/',
-  instagramHandle: '@Ghost.coffee.lab',
+  instagram: 'https://www.instagram.com/ghost_specialty_coffee/',
+  instagramHandle: '@ghost_specialty_coffee',
   siteUrl: 'https://lasucursaldelcafe-droid.github.io/cotizador-viajes-peludos/',
+  phone: '+57 302 515 9900',
+  address: 'Cali, Valle del Cauca, Colombia',
+  city: 'Cali, Colombia',
   basePath: detectBasePath(),
 });
 

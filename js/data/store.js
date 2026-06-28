@@ -3,7 +3,7 @@
  * @module data/store
  */
 
-const STORAGE_KEY = 'ghost_admin_v1';
+const STORAGE_KEY = 'ghost_admin_v2';
 const MENU_STORAGE_KEY = 'ghost_admin_menu_v1';
 const BRAND_STORAGE_KEY = 'ghost_admin_brand_v1';
 
@@ -43,12 +43,42 @@ function seedData() {
         address: 'Centro Comercial Jardín Plaza, Cali',
         city: 'Cali',
         phone: '+57 302 515 9900',
-        instagram: 'Ghost.coffee.lab',
+        instagram: 'ghost_specialty_coffee',
         active: true,
         createdAt: new Date().toISOString(),
       },
     ],
     products: [
+      {
+        id: 'prod-valle-castillo-5lb',
+        shopId,
+        name: 'Ghost · Regional Valle',
+        variety: 'Castillo',
+        region: 'Valle del Cauca',
+        price: 0,
+        weight: '5 Lb',
+        roast: 'Tostión media · Selección electrónica',
+        notes: ['Grano entero', 'Mayorista', 'Colombia'],
+        imageUrl: 'assets/images/brand/product-bag-papayo.png',
+        featured: true,
+        active: true,
+        createdAt: new Date().toISOString(),
+      },
+      {
+        id: 'prod-valle-caturra-5lb',
+        shopId,
+        name: 'Ghost · Regional Valle',
+        variety: 'Caturra',
+        region: 'Valle del Cauca',
+        price: 0,
+        weight: '5 Lb',
+        roast: 'Tostión media · Selección electrónica',
+        notes: ['Grano entero', 'Mayorista', 'Colombia'],
+        imageUrl: 'assets/images/brand/product-bag-papayo.png',
+        featured: true,
+        active: true,
+        createdAt: new Date().toISOString(),
+      },
       {
         id: 'prod-papayo',
         shopId,
@@ -60,7 +90,7 @@ function seedData() {
         roast: 'Semi-lavado · 1.800 msnm',
         notes: ['Mango', 'Nuez', 'Dulce'],
         imageUrl: 'assets/images/brand/product-bag-papayo.png',
-        featured: true,
+        featured: false,
         active: true,
         createdAt: new Date().toISOString(),
       },
@@ -76,21 +106,6 @@ function seedData() {
         notes: ['Floral', 'Bergamota'],
         imageUrl: 'assets/images/brand/product-bag-papayo.png',
         featured: false,
-        active: true,
-        createdAt: new Date().toISOString(),
-      },
-      {
-        id: 'prod-bourbon',
-        shopId,
-        name: 'Ghost · Bourbon',
-        variety: 'Bourbon',
-        region: 'Cauca',
-        price: 48000,
-        weight: '250 g',
-        roast: 'Tostión media-clara',
-        notes: ['Caramelo', 'Cítrico'],
-        imageUrl: 'assets/images/brand/product-cup-hot.png',
-        featured: true,
         active: true,
         createdAt: new Date().toISOString(),
       },
@@ -259,7 +274,7 @@ export function getBrandSettings() {
     headline: 'ESPECIALIDAD Y ELEGANCIA',
     phone: '+57 302 515 9900',
     email: 'hola@ghostspecialtycoffee.co',
-    instagram: 'Ghost.coffee.lab',
+    instagram: 'ghost_specialty_coffee',
     address: 'Centro Comercial Jardín Plaza, Cali',
     hours: 'Lunes a sábado 7:00am – 8:00pm · Domingos 9:00am – 6:00pm',
   };
