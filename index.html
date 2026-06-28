@@ -9,7 +9,7 @@
   <meta property="og:description" content="Café de especialidad servido en un refugio de madera, concreto y luz cálida. Barra abierta, SCA 85+ y trazabilidad completa en Cali.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/images/brand/tienda-real.jpg">
-  <link rel="icon" href="assets/images/brand/logo-mark.png" type="image/png">
+  <link rel="icon" href="assets/images/brand/logo-mark-clear.png" type="image/png">
   <title>Ghost Specialty Coffee | Café de especialidad · Cali</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,22 +31,21 @@
 <body data-page="home">
   <a class="skip-link" href="#contenido">Ir al contenido</a>
 
-  <header class="ghost-nav" role="banner">
-    <a class="ghost-nav__brand" href="index.html" aria-label="Ghost Specialty Coffee — inicio">
-      <img class="ghost-nav__mark" src="assets/images/brand/logo-mark.png" alt="" width="36" height="36" decoding="async">
-      <span class="ghost-nav__type">
-        <span class="ghost-nav__name">Ghost</span>
-        <span class="ghost-nav__sub">Specialty Coffee</span>
-      </span>
-    </a>
-    <button type="button" class="ghost-nav__toggle" id="ghostNavToggle" aria-expanded="false" aria-controls="ghostNavMenu">Menú</button>
-    <nav aria-label="Principal">
-      <ul class="ghost-nav__menu" id="ghostNavMenu"></ul>
-    </nav>
-  </header>
-
   <main id="contenido">
     <section class="ghost-hero ghost-hero--immersive" aria-labelledby="hero-title">
+      <header class="ghost-nav ghost-nav--immersive" role="banner">
+        <a class="ghost-nav__brand" href="index.html" aria-label="Ghost Specialty Coffee — inicio">
+          <img class="ghost-nav__mark" src="assets/images/brand/logo-mark-clear.png" alt="" width="24" height="24" decoding="async">
+          <span class="ghost-nav__type">
+            <span class="ghost-nav__name">Ghost</span>
+            <span class="ghost-nav__sub">Specialty Coffee</span>
+          </span>
+        </a>
+        <button type="button" class="ghost-nav__toggle" id="ghostNavToggle" aria-expanded="false" aria-controls="ghostNavMenu">Menú</button>
+        <nav aria-label="Principal">
+          <ul class="ghost-nav__menu" id="ghostNavMenu"></ul>
+        </nav>
+      </header>
       <h1 class="visually-hidden" id="hero-title">Ghost Specialty Coffee — Especialidad y elegancia</h1>
 
       <div class="ghost-slider ghost-slider--brand ghost-slider--immersive ghost-slider--autoplay" id="ghostHeroSlider" role="region" aria-roledescription="Carrusel" aria-label="Esencia de marca Ghost" aria-live="polite">
@@ -62,8 +61,9 @@
           <button type="button" class="ghost-slider__btn ghost-slider__next" aria-label="Mensaje siguiente">›</button>
         </div>
         <div class="ghost-hero__actions reveal">
-          <a class="btn btn--sm btn--spectral" href="nosotros.html">Conoce Ghost</a>
-          <a class="btn btn--sm btn--ghost" href="menu.html">Ver menú</a>
+          <a class="ghost-hero__link" href="nosotros.html">Conoce Ghost</a>
+          <span class="ghost-hero__link-sep" aria-hidden="true">·</span>
+          <a class="ghost-hero__link" href="menu.html">Ver menú</a>
         </div>
       </div>
     </section>
