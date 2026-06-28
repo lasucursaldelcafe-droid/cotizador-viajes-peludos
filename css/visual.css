@@ -449,14 +449,14 @@
 
   .ghost-slider__headline-main {
     display: block;
-    font-size: clamp(2rem, 6.5vw, 3.25rem);
+    font-size: clamp(1.35rem, 4.5vw, 2rem);
     font-weight: 700;
     color: var(--ink);
   }
 
   .ghost-slider__headline-sub {
     display: block;
-    font-size: clamp(1.45rem, 4.5vw, 2.35rem);
+    font-size: clamp(1rem, 3vw, 1.35rem);
     font-weight: 700;
     color: transparent;
     -webkit-text-stroke: 1px color-mix(in srgb, var(--ghost-red) 65%, transparent);

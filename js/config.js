@@ -17,6 +17,7 @@ export const IMAGES = Object.freeze({
   logoHorizontal: 'assets/images/brand/logo-horizontal.png',
   logoRoundSign: 'assets/images/brand/logo-round-sign.png',
   heroIsland: 'assets/images/brand/hero-island.png',
+  storeReal: 'assets/images/brand/tienda-real.jpg',
   productBagPapayo: 'assets/images/brand/product-bag-papayo.png',
   productCupHot: 'assets/images/brand/product-cup-hot.png',
   bolsaPapayo: 'assets/images/products/bolsa-papayo.png',
